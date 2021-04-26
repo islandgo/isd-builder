@@ -17,11 +17,15 @@
     </div>
     <div class="custom-regions">
         <h3>Custom Regions</h3>
-        <div class="comp-custom-regions-container" *ngFor="let customRegion of customRegions">
-            <div>
-                {{customRegion.region_name}}
+        <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+            <div class="comp-custom-regions-container" *ngFor="let customRegion of customRegions" cdkDrag>
+                <div class="custom-region-item">
+                    <i class="fa fa-sort" aria-hidden="true"> </i>
+                    {{customRegion.region_name}}
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 

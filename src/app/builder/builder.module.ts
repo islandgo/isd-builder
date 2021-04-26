@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { BuilderComponent } from './component/builder.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { CommonModule } from '@angular/common';
     BuilderRoutes,
     FormsModule,
     ReactiveFormsModule,
+    DragDropModule,
     CommonModule
   ],
   providers: []

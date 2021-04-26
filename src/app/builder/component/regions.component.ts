@@ -1,7 +1,7 @@
 import { RegionsService } from './../services/regions.service';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, FormControl, ValidatorFn } from '@angular/forms';
-import { of } from 'rxjs';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
     selector: 'regions-root',
@@ -12,7 +12,14 @@ import { of } from 'rxjs';
 export class RegionsComponent {
     form: FormGroup;
     defaultRegions = [];
-    customRegions = [];
+    customRegions = [
+        
+    ];
+
+    drop(event: CdkDragDrop<string[]>) {
+        moveItemInArray(this.customRegions, event.previousIndex, event.currentIndex);
+        console.log(this.customRegions);
+    }
 
     get defaultRegionsFormArray() {
         return this.form.controls.defaultRegions as FormArray;
@@ -30,6 +37,8 @@ export class RegionsComponent {
     ngOnInit() {
         this.getRegions();
     }
+
+
 
     public getRegions() {
 
@@ -50,6 +59,7 @@ export class RegionsComponent {
 
         this.customRegions = selectedRegionIds;
         console.log(this.customRegions);
+        
     }
 }
 
