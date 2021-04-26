@@ -12,9 +12,10 @@ import { of } from 'rxjs';
 export class RegionsComponent {
     form: FormGroup;
     defaultRegions = [];
+    customRegions = [];
 
     get defaultRegionsFormArray() {
-        return this.form.controls.orders as FormArray;
+        return this.form.controls.defaultRegions as FormArray;
     }
 
     constructor(
@@ -22,7 +23,7 @@ export class RegionsComponent {
         private formBuilder: FormBuilder
     ) {
         this.form = this.formBuilder.group({
-            orders: new FormArray([], minSelectedCheckboxes(1))
+            defaultRegions: new FormArray([], minSelectedCheckboxes(1))
         });
     }
 
@@ -33,7 +34,6 @@ export class RegionsComponent {
     public getRegions() {
 
         this.RegionsService.getRegions().subscribe(data => {
-            console.log(data['template_regions']);
             this.defaultRegions = data['template_regions'];
             this.addCheckboxes();
         });
@@ -43,12 +43,13 @@ export class RegionsComponent {
         this.defaultRegions.forEach(() => this.defaultRegionsFormArray.push(new FormControl(false)));
     }
 
-    submit() {
-        const selectedRegionIds = this.form.value.orders
-            .map((checked, i) => checked ? this.defaultRegions[i].region_id : null)
+    moveToCustomRegions() {
+        const selectedRegionIds = this.form.value.defaultRegions
+            .map((checked, i) => checked ? this.defaultRegions[i] : null)
             .filter(v => v !== null);
 
-        console.log(selectedRegionIds);
+        this.customRegions = selectedRegionIds;
+        console.log(this.customRegions);
     }
 }
 

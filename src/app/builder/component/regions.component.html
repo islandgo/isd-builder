@@ -2,8 +2,8 @@
 <div class="comp-region-container">
     <div class="default-regions">
         <h3>Default Regions</h3>
-        <form [formGroup]="form" (ngSubmit)="submit()" class="form-regions">
-            <label formArrayName="orders" *ngFor="let order of defaultRegionsFormArray.controls; let i = index">
+        <form [formGroup]="form" (ngSubmit)="moveToCustomRegions()" class="form-regions">
+            <label formArrayName="defaultRegions" *ngFor="let region of defaultRegionsFormArray.controls; let i = index">
                 <input type="checkbox" [formControlName]="i">
                 {{defaultRegions[i].region_name}}
             </label>
@@ -17,6 +17,11 @@
     </div>
     <div class="custom-regions">
         <h3>Custom Regions</h3>
+        <div class="comp-custom-regions-container" *ngFor="let customRegion of customRegions">
+            <div>
+                {{customRegion.region_name}}
+            </div>
+        </div>
     </div>
 </div>
 
