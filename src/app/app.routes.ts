@@ -6,7 +6,7 @@ export const AppRoutes = RouterModule.forRoot([
         children: [
             {
                 path: '',
-                redirectTo: 'builder',
+                redirectTo: 'builder/regions',
                 pathMatch: 'full'
             },
         
