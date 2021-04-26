@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
+  selector: 'app',
+  template: `
+    <div class="site-main-container">
+      <router-outlet></router-outlet>
+    </div>
+  `,
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
