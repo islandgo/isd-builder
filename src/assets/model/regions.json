@@ -2,67 +2,67 @@
     "template_regions": [
         {
             "template_region_code": "BANNER_HOMEPAGE",
-            "template_id": "1",
+            "region_id": "1",
             "region_name": "Banner Region",
             "description": "Home Banner Region"
         },
         {
             "template_region_code": "QUICK_SEARCH_HOMEPAGE",
-            "template_id": "2",
+            "region_id": "2",
             "region_name": "Quick Search Region",
             "description": "Quick Search Region"
         },
         {
             "template_region_code": "PROPERTIES_HOMEPAGE",
-            "template_id": "3",
+            "region_id": "3",
             "region_name": "Properties Region",
             "description": "Properties Region"
         },
         {
             "template_region_code": "AREAS_HOMEPAGE",
-            "template_id": "4",
+            "region_id": "4",
             "region_name": "Areas Region",
             "description": "Areas Region"
         },
         {
             "template_region_code": "CTA_HOMEPAGE",
-            "template_id": "5",
+            "region_id": "5",
             "region_name": "Cta Region",
             "description": "Cta Region"
         },
         {
             "template_region_code": "ABOUT_HOMEPAGE",
-            "template_id": "6",
+            "region_id": "6",
             "region_name": "About Region",
             "description": "About Region"
         },
         {
             "template_region_code": "TEAM_HOMEPAGE",
-            "template_id": "7",
+            "region_id": "7",
             "region_name": "Team Region",
             "description": "Team Region"
         },
         {
             "template_region_code": "VIDEOS_HOMEPAGE",
-            "template_id": "8",
+            "region_id": "8",
             "region_name": "Videos Region",
             "description": "Videos Region"
         },
         {
             "template_region_code": "TESTIMONIALS_HOMEPAGE",
-            "template_id": "9",
+            "region_id": "9",
             "region_name": "Testimonial Region",
             "description": "Testimonial Region"
         },
         {
             "template_region_code": "CONTACTUS_HOMEPAGE",
-            "template_id": "9",
+            "region_id": "9",
             "region_name": "Contact us Region",
             "description": "Contact us Region"
         },
         {
             "template_region_code": "STATIC_HOMEPAGE",
-            "template_id": "9",
+            "region_id": "9",
             "region_name": "Static Region",
             "description": "Static Region"
         }

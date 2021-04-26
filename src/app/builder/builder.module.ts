@@ -4,6 +4,8 @@ import { WidgetsComponent } from './component/widgets.component';
 import { BuilderRoutes } from './config/builder.routes';
 import { NgModule } from '@angular/core';
 import { BuilderComponent } from './component/builder.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,10 @@ import { BuilderComponent } from './component/builder.component';
     CodeGeneratorComponent
   ],
   imports: [
-    BuilderRoutes
+    BuilderRoutes,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: []
 })
