@@ -12,9 +12,8 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 export class RegionsComponent {
     form: FormGroup;
     defaultRegions = [];
-    customRegions = [
-        
-    ];
+    customRegions = [];
+    customRegionsIds = [];
 
     drop(event: CdkDragDrop<string[]>) {
         moveItemInArray(this.customRegions, event.previousIndex, event.currentIndex);
@@ -35,21 +34,35 @@ export class RegionsComponent {
     }
 
     ngOnInit() {
-        this.getRegions();
+        this.getCustomRegions();
+        this.getDefaultRegions();
     }
 
 
 
-    public getRegions() {
+    public getDefaultRegions() {
 
-        this.RegionsService.getRegions().subscribe(data => {
+        this.RegionsService.getDefaultRegions().subscribe(data => {
             this.defaultRegions = data['template_regions'];
             this.addCheckboxes();
         });
     }
 
+    public getCustomRegions() {
+        this.RegionsService.getCustomRegions().subscribe(data => {
+            this.customRegions = data;
+            this.customRegionsIds =  this.customRegions.map(function(item){
+                return item.region_id;
+            });
+        });
+
+
+    }
+    
+
     private addCheckboxes() {
-        this.defaultRegions.forEach(() => this.defaultRegionsFormArray.push(new FormControl(false)));
+        this.defaultRegions.forEach((item) => 
+        this.customRegionsIds.indexOf(item.region_id) !== -1 ? this.defaultRegionsFormArray.push(new FormControl(true)):this.defaultRegionsFormArray.push(new FormControl(false)));
     }
 
     moveToCustomRegions() {
@@ -58,7 +71,7 @@ export class RegionsComponent {
             .filter(v => v !== null);
 
         this.customRegions = selectedRegionIds;
-        console.log(this.customRegions);
+        this.RegionsService.setCustomRegions(this.customRegions);
         
     }
 }
