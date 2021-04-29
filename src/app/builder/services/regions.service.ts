@@ -24,6 +24,9 @@ export class RegionsService {
 
     public getCustomRegions() {
         let customRegions = localStorage.getItem('__customRegions');
+        if (!customRegions || customRegions == 'undefined') {
+            return of([])
+        }
          return of(JSON.parse(customRegions))
     }
 }

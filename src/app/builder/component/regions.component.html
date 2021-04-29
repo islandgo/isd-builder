@@ -5,7 +5,7 @@
         <form [formGroup]="form" (ngSubmit)="moveToCustomRegions()" class="form-regions">
             <label formArrayName="defaultRegions" *ngFor="let region of defaultRegionsFormArray.controls; let i = index">
                 <input type="checkbox" [formControlName]="i">
-                {{defaultRegions[i].region_name}}
+                {{defaultRegions[i][0]}}
             </label>
 
             <div  *ngIf="!form.valid" class="alert alert-danger" role="alert">
@@ -18,10 +18,10 @@
     <div class="custom-regions">
         <h3>Custom Regions</h3>
         <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-            <div class="comp-custom-regions-container" *ngFor="let customRegion of customRegions" cdkDrag>
+            <div class="comp-custom-regions-container" *ngFor="let customRegion of customRegions;" cdkDrag>
                 <div class="custom-region-item">
                     <i class="fa fa-sort" aria-hidden="true"> </i>
-                    {{customRegion.region_name}}
+                    {{customRegion[0]}}
                 </div>
             </div>
         </div>
