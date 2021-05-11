@@ -1,1 +1,28 @@
-<h1>Widget</h1>
+<div *ngFor="let region of customRegions; let i = index">
+    <div class="region-container">
+        <div class="region-header">
+            <h5 class="region-title">
+                {{region[1]['description'] }}
+            </h5>
+            <div class="add-section-container">
+                <i class="fa fa-plus" aria-hidden="true"> </i>
+            </div>
+
+        </div>
+        <div class="region-content">
+            <div class="parent-container panel">
+                <div class="title">
+                    {{region[1]['keyword_class'] }}-section
+                </div>
+                <div class="btn-action">
+                    <i class="fa fa-plus" aria-hidden="true"> </i>
+                </div>
+            </div>
+            <div class="child-container" *ngIf="region[1]['region_sections']">
+                <div class="panel" *ngFor="let child of convertObjectToArray(region[1]['region_sections']); let i = index">
+                    {{child[0]}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

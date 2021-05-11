@@ -2,7 +2,27 @@
     "BANNER_HOMEPAGE": {
         "region_id": "1",
         "region_name": "Banner Region",
-        "description": "Home Banner Region"
+        "description": "Home Banner Region",
+        "keyword_class":"banner",
+        "grid_template_columns": 100,
+        "grid_max_width": "1600px",
+        "has_background":"true",
+        "background_url":"images/fa-bg.jpg",
+        "region_sections":{
+            
+            "primary_section":{
+                "section_class_name":"primary-section", 
+                "row_start":1,
+                "row_end":1,
+                "column_start":1,
+                "column_end":1,
+                "has_background":"true" 
+            },
+            "secondary_section":{
+                "section_class_name":"secondary-section", 
+                "has_background":"false" 
+            }
+        }
     },
     "QUICK_SEARCH_HOMEPAGE": {
         "region_id": "2",

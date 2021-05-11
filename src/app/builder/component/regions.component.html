@@ -2,12 +2,6 @@
     <div class="default-regions">
         <h3>Default Regions</h3>
         <form [formGroup]="form" (ngSubmit)="moveToCustomRegions()" class="form-regions">
-            <!-- <label formArrayName="defaultRegions"
-                *ngFor="let region of defaultRegionsFormArray.controls; let i = index">
-                <input type="checkbox" [formControlName]="i">
-                {{defaultRegions['ABOUT_HOMEPAGE'][0]['region_name']}}
-            </label> -->
-
             <label formArrayName="defaultRegions" *ngFor="let region of defaultRegionsObject; let i = index">
                 <input type="checkbox" [formControlName]="i">
                 {{region[0] }}
