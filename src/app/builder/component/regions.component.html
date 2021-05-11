@@ -1,16 +1,21 @@
-
 <div class="comp-region-container">
     <div class="default-regions">
         <h3>Default Regions</h3>
         <form [formGroup]="form" (ngSubmit)="moveToCustomRegions()" class="form-regions">
-            <label formArrayName="defaultRegions" *ngFor="let region of defaultRegionsFormArray.controls; let i = index">
+            <!-- <label formArrayName="defaultRegions"
+                *ngFor="let region of defaultRegionsFormArray.controls; let i = index">
                 <input type="checkbox" [formControlName]="i">
-                {{defaultRegions[i][0]}}
+                {{defaultRegions['ABOUT_HOMEPAGE'][0]['region_name']}}
+            </label> -->
+
+            <label formArrayName="defaultRegions" *ngFor="let region of defaultRegionsObject; let i = index">
+                <input type="checkbox" [formControlName]="i">
+                {{region[0] }}
             </label>
 
-            <div  *ngIf="!form.valid" class="alert alert-danger" role="alert">
+            <div *ngIf="!form.valid" class="alert alert-danger" role="alert">
                 At least one order must be selected
-              </div>
+            </div>
             <br>
             <button class="btn btn-primary" [disabled]="!form.valid">Move to custom Regions</button>
         </form>
@@ -27,5 +32,3 @@
         </div>
     </div>
 </div>
-
-

@@ -11,92 +11,15 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 export class RegionsComponent {
     form: FormGroup;
-    defaultRegions = [];
-    customRegions = [];
+    defaultRegions;
+    customRegions ;
     customRegionsIds = [];
-    sampleData = Object.entries({
-        "BANNER_HOMEPAGE": [
-            {
-                "region_id": "1",
-                "region_name": "Banner Region",
-                "description": "Home Banner Region"
-            }
-        ],
-        "QUICK_SEARCH_HOMEPAGE": [
-            {
-                "region_id": "2",
-                "region_name": "Quick Search Region",
-                "description": "Quick Search Region"
-            }
-        ],
-        "PROPERTIES_HOMEPAGE": [
-            {
-                "region_id": "3",
-                "region_name": "Properties Region",
-                "description": "Properties Region"
-            }
-        ],
-        "AREAS_HOMEPAGE": [
-            {
-                "region_id": "4",
-                "region_name": "Areas Region",
-                "description": "Areas Region"
-            }
-        ],
-        "CTA_HOMEPAGE": [
-            {
-                "region_id": "5",
-                "region_name": "Cta Region",
-                "description": "Cta Region"
-            }
-        ],
-        "ABOUT_HOMEPAGE": [
-            {
-                "region_id": "6",
-                "region_name": "About Region",
-                "description": "About Region"
-            }
-        ],
-        "TEAM_HOMEPAGE": [
-            {
-                "region_id": "7",
-                "region_name": "Team Region",
-                "description": "Team Region"
-            }
-        ],
-        "VIDEOS_HOMEPAGE": [
-            {
-                "region_id": "8",
-                "region_name": "Videos Region",
-                "description": "Videos Region"
-            }
-        ],
-        "TESTIMONIALS_HOMEPAGE": [
-            {
-                "region_id": "9",
-                "region_name": "Testimonial Region",
-                "description": "Testimonial Region"
-            }
-        ],
-        "CONTACTUS_HOMEPAGE": [
-            {
-                "region_id": "10",
-                "region_name": "Contact us Region",
-                "description": "Contact us Region"
-            }
-        ],
-        "STATIC_HOMEPAGE": [
-            {
-                "region_id": "11",
-                "region_name": "Static Region",
-                "description": "Static Region"
-            }
-        ]
-    });
+    defaultRegionsObject: [string, any][];
 
     drop(event: CdkDragDrop<string[]>) {
         moveItemInArray(this.customRegions, event.previousIndex, event.currentIndex);
-        this.RegionsService.setCustomRegions(this.customRegions);
+        let jsonFormatRegions = this.regionJsonFormatter(this.customRegions);
+        this.RegionsService.setCustomRegions(jsonFormatRegions);
     }
 
     get defaultRegionsFormArray() {
@@ -120,9 +43,9 @@ export class RegionsComponent {
 
 
     public getDefaultRegions() {
-
         this.RegionsService.getDefaultRegions().subscribe(data => {
-            this.defaultRegions = Object.entries(data);
+            this.defaultRegions = data;
+            this.defaultRegionsObject = Object.entries(data);
             this.addCheckboxes();
         });
     }
@@ -130,30 +53,38 @@ export class RegionsComponent {
     public getCustomRegions() {
         this.RegionsService.getCustomRegions().subscribe(data => {
             if (data) {
-                this.customRegions = data;
+                this.customRegions = Object.entries(data);
                 this.customRegionsIds =  this.customRegions.map(function([key, value]){
-                    return value[0]['region_id'];
+                    return value['region_id'];
                 });
             }
         });
-
-
     }
     
 
     private addCheckboxes() {
-        this.defaultRegions.forEach(([key, value]) => 
-        this.customRegionsIds.indexOf(value[0]['region_id']) !== -1 ? this.defaultRegionsFormArray.push(new FormControl(true)):this.defaultRegionsFormArray.push(new FormControl(false)));
+        Object.entries(this.defaultRegions).forEach(([key, value]) => 
+        this.customRegionsIds.indexOf(value['region_id']) !== -1 ? this.defaultRegionsFormArray.push(new FormControl(true)):this.defaultRegionsFormArray.push(new FormControl(false)));
     }
 
     moveToCustomRegions() {
-        const selectedRegionIds = this.form.value.defaultRegions
-            .map((checked, i) => checked ? this.defaultRegions[i] : null)
+       let jsonCustomRegions = {};
+        const defaultRegions = this.form.value.defaultRegions
+            .map((checked, i) => checked ? this.defaultRegionsObject[i] : null)
             .filter(v => v !== null);
-
-        this.customRegions = selectedRegionIds;
-        this.RegionsService.setCustomRegions(selectedRegionIds);
+            jsonCustomRegions = this.regionJsonFormatter(defaultRegions);
+      
+        this.customRegions = Object.entries(jsonCustomRegions);
+        this.RegionsService.setCustomRegions(jsonCustomRegions);
         
+    }
+
+    regionJsonFormatter(regions) {
+        let jsonCustomRegions = {};
+        regions.forEach(function (value) {
+            jsonCustomRegions[value[0]] = value[1];
+        });
+        return jsonCustomRegions;
     }
 }
 
