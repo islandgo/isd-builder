@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app',
@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
       <router-outlet></router-outlet>
     </div>
   `,
-  styleUrls: ['./app.component.less']
+  styleUrls: ['./app.component.less'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
   title = 'isd-builder';

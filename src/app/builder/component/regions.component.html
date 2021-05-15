@@ -2,9 +2,10 @@
     <div class="default-regions">
         <h3>Default Regions</h3>
         <form [formGroup]="form" (ngSubmit)="moveToCustomRegions()" class="form-regions">
-            <label formArrayName="defaultRegions" *ngFor="let region of defaultRegionsObject; let i = index">
-                <input type="checkbox" [formControlName]="i">
+            <label class="checkbox-container" formArrayName="defaultRegions" *ngFor="let region of defaultRegionsObject; let i = index">
                 {{region[0] }}
+                <input type="checkbox" [formControlName]="i">
+                <span class="checkmark"></span>
             </label>
 
             <div *ngIf="!form.valid" class="alert alert-danger" role="alert">

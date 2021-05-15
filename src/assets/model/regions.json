@@ -21,6 +21,10 @@
             "secondary_section":{
                 "section_class_name":"secondary-section", 
                 "has_background":"false" 
+            },
+            "tertiary_section":{
+                "section_class_name":"tertiary-section", 
+                "has_background":"false" 
             }
         }
     },
