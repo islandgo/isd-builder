@@ -1,3 +1,7 @@
+<div *ngIf="customRegions.length < 1">
+    <h4>Please set Region first</h4>
+</div>
+
 <div *ngFor="let region of customRegions; let i = index">
     <div class="region-container">
         <div class="region-header">

@@ -22,6 +22,10 @@ export class RegionsService {
          return of(localStorage.setItem('__customRegions', JSON.stringify(jsonData)));
     }
 
+    resetCustomRegions() {
+      return of(localStorage.removeItem('__customRegions'));
+    }
+
     getCustomRegions() {
         let customRegions = localStorage.getItem('__customRegions');
         if (!customRegions || customRegions == 'undefined') {

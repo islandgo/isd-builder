@@ -1,6 +1,6 @@
 <div class="comp-region-container">
     <div class="default-regions">
-        <h3>Default Regions</h3>
+        <h4>Default Regions</h4>
         <form [formGroup]="form" (ngSubmit)="moveToCustomRegions()" class="form-regions">
             <label class="checkbox-container" formArrayName="defaultRegions" *ngFor="let region of defaultRegionsObject; let i = index">
                 {{region[0] }}
@@ -16,7 +16,7 @@
         </form>
     </div>
     <div class="custom-regions">
-        <h3>Custom Regions</h3>
+        <h4>Custom Regions</h4>
         <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
             <div class="comp-custom-regions-container" *ngFor="let customRegion of customRegions;" cdkDrag>
                 <div class="custom-region-item">

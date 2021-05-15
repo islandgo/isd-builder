@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { RegionSectionModel } from './model/payment.model';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { RegionSectionModel } from './model/payment.model';
   imports: [
     BuilderRoutes,
     FormsModule,
+    ModalModule.forRoot(),
     ReactiveFormsModule,
     DragDropModule,
     CommonModule
