@@ -75,7 +75,7 @@ export class RegionsComponent {
             jsonCustomRegions = this.regionJsonFormatter(defaultRegions);
       
         this.customRegions = Object.entries(jsonCustomRegions);
-        this.RegionsService.setCustomRegions(jsonCustomRegions);
+        this.RegionsService.setCustomRegions(jsonCustomRegions).subscribe(() => console.log("complete"));
         
     }
 

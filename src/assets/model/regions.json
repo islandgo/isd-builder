@@ -8,6 +8,7 @@
         "grid_max_width": "1600px",
         "has_background":"true",
         "background_url":"images/fa-bg.jpg",
+        "last_region_section":3,
         "region_sections":{
             
             "primary_section":{
@@ -31,51 +32,62 @@
     "QUICK_SEARCH_HOMEPAGE": {
         "region_id": "2",
         "region_name": "Quick Search Region",
-        "description": "Quick Search Region"
+        "description": "Quick Search Region",
+        "last_region_section":0
+
     },
     "PROPERTIES_HOMEPAGE": {
         "region_id": "3",
         "region_name": "Properties Region",
-        "description": "Properties Region"
+        "description": "Properties Region",
+        "last_region_section":0
     },
     "AREAS_HOMEPAGE": {
         "region_id": "4",
         "region_name": "Areas Region",
-        "description": "Areas Region"
+        "description": "Areas Region",
+        "last_region_section":0
     },
     "CTA_HOMEPAGE": {
         "region_id": "5",
         "region_name": "Cta Region",
-        "description": "Cta Region"
+        "description": "Cta Region",
+        "last_region_section":0
     },
     "ABOUT_HOMEPAGE": {
         "region_id": "6",
         "region_name": "About Region",
-        "description": "About Region"
+        "description": "About Region",
+        "last_region_section":0
     },
     "TEAM_HOMEPAGE": {
         "region_id": "7",
         "region_name": "Team Region",
-        "description": "Team Region"
+        "description": "Team Region",
+        "last_region_section":0
     },
     "VIDEOS_HOMEPAGE": {
         "region_id": "8",
         "region_name": "Videos Region",
-        "description": "Videos Region"
+        "description": "Videos Region",
+        "last_region_section":0
     },
     "TESTIMONIALS_HOMEPAGE": {
         "region_id": "9",
         "region_name": "Testimonial Region",
-        "description": "Testimonial Region"
+        "description": "Testimonial Region",
+        "last_region_section":0
     },
     "CONTACTUS_HOMEPAGE": {
         "region_id": "10",
         "region_name": "Contact us Region",
-        "description": "Contact us Region"
+        "description": "Contact us Region",
+        "last_region_section":0
     },
     "STATIC_HOMEPAGE": {
         "region_id": "11",
         "region_name": "Static Region",
-        "description": "Static Region"
+        "description": "Static Region",
+        "last_region_section":0
     }
 }

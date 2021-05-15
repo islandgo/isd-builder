@@ -7,6 +7,7 @@ import { BuilderComponent } from './component/builder.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { RegionSectionModel } from './model/payment.model';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     DragDropModule,
     CommonModule
   ],
-  providers: []
+  providers: [
+    RegionSectionModel
+  ]
 })
 export class AppBuilderModule { }

@@ -12,18 +12,20 @@
         <div class="region-content">
             <div class="parent-container panel">
                 <div class="title">
+                    <i class="fa fa-edit" aria-hidden="true"> </i>
                     {{region[1]['keyword_class'] }}-section
                 </div>
-                <div class="btn-action">
+                <div class="btn-action" (click)="addSection(region)">
                     <i class="fa fa-plus" aria-hidden="true"> </i>
                 </div>
             </div>
             <div class="child-container" *ngIf="region[1]['region_sections']">
                 <div class="panel" *ngFor="let child of convertObjectToArray(region[1]['region_sections']); let i = index">
                     <div class="chid-name">
+                        <i class="fa fa-edit" aria-hidden="true"> </i>
                         {{region[1]['keyword_class'] }}-{{child[1].section_class_name}}
                     </div>
-                    <div class="btn-action">
+                    <div class="btn-action" (click)="removeSection(region,child[0])">
                         <i class="fa fa-remove" aria-hidden="true"> </i>
                     </div>
                 </div>

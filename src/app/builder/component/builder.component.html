@@ -1,19 +1,22 @@
 <div class="container">
     <img class="img-fluid img-logo" src="../../../assets/images/IslandLogoV2.PNG" alt="">
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" id="home-tab" data-toggle="tab" [routerLink]="['regions']" role="tab" aria-controls="home"
-                aria-selected="true">Regions</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" id="profile-tab" data-toggle="tab" [routerLink]="['widgets-list']" role="tab" aria-controls="profile"
-                aria-selected="false">Widgets</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" id="contact-tab" data-toggle="tab" [routerLink]="['code-generator']" role="tab" aria-controls="contact"
-                aria-selected="false">Code Generator</a>
-        </li>
-    </ul>
+    <div class="tab-header">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" id="home-tab" data-toggle="tab" [routerLink]="['regions']" role="tab" aria-controls="home"
+                    aria-selected="true">Regions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" id="profile-tab" data-toggle="tab" [routerLink]="['widgets-list']" role="tab" aria-controls="profile"
+                    aria-selected="false">Widgets</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" id="contact-tab" data-toggle="tab" [routerLink]="['code-generator']" role="tab" aria-controls="contact"
+                    aria-selected="false">Code Generator</a>
+            </li>
+        </ul>
+        <button class="btn btn-primary reset-regions" >reset regions</button>
+    </div>
     <div class="tab-content" id="myTabContent">
         <router-outlet></router-outlet>
     </div>
