@@ -8,9 +8,8 @@
         "grid_max_width": "1600px",
         "has_background":"true",
         "background_url":"images/fa-bg.jpg",
-        "last_region_section":3,
+        "last_region_section":1,
         "region_sections":{
-            
             "primary_section":{
                 "section_class_name":"primary-section", 
                 "row_start":1,
@@ -18,14 +17,6 @@
                 "column_start":1,
                 "column_end":1,
                 "has_background":"true" 
-            },
-            "secondary_section":{
-                "section_class_name":"secondary-section", 
-                "has_background":"false" 
-            },
-            "tertiary_section":{
-                "section_class_name":"tertiary-section", 
-                "has_background":"false" 
             }
         }
     },
@@ -33,61 +24,169 @@
         "region_id": "2",
         "region_name": "Quick Search Region",
         "description": "Quick Search Region",
-        "last_region_section":0
+        "keyword_class":"quick-search",
+        "last_region_section":1,
+        "region_sections":{
+            "primary_section":{
+                "section_class_name":"primary-section", 
+                "row_start":1,
+                "row_end":1,
+                "column_start":1,
+                "column_end":1,
+                "has_background":"true" 
+            }
+        }
 
     },
     "PROPERTIES_HOMEPAGE": {
         "region_id": "3",
         "region_name": "Properties Region",
         "description": "Properties Region",
-        "last_region_section":0
+        "keyword_class":"properties",
+        "last_region_section":1,
+        "region_sections":{
+            "primary_section":{
+                "section_class_name":"primary-section", 
+                "row_start":1,
+                "row_end":1,
+                "column_start":1,
+                "column_end":1,
+                "has_background":"true" 
+            }
+        }
     },
     "AREAS_HOMEPAGE": {
         "region_id": "4",
         "region_name": "Areas Region",
         "description": "Areas Region",
-        "last_region_section":0
+        "keyword_class":"areas",
+        "last_region_section":1,
+        "region_sections":{
+            "primary_section":{
+                "section_class_name":"primary-section", 
+                "row_start":1,
+                "row_end":1,
+                "column_start":1,
+                "column_end":1,
+                "has_background":"true" 
+            }
+        }
     },
     "CTA_HOMEPAGE": {
         "region_id": "5",
         "region_name": "Cta Region",
         "description": "Cta Region",
-        "last_region_section":0
+        "keyword_class":"cta",
+        "last_region_section":1,
+        "region_sections":{
+            "primary_section":{
+                "section_class_name":"primary-section", 
+                "row_start":1,
+                "row_end":1,
+                "column_start":1,
+                "column_end":1,
+                "has_background":"true" 
+            }
+        }
     },
     "ABOUT_HOMEPAGE": {
         "region_id": "6",
         "region_name": "About Region",
         "description": "About Region",
-        "last_region_section":0
+        "keyword_class":"about",
+        "last_region_section":1,
+        "region_sections":{
+            "primary_section":{
+                "section_class_name":"primary-section", 
+                "row_start":1,
+                "row_end":1,
+                "column_start":1,
+                "column_end":1,
+                "has_background":"true" 
+            }
+        }
     },
     "TEAM_HOMEPAGE": {
         "region_id": "7",
         "region_name": "Team Region",
         "description": "Team Region",
-        "last_region_section":0
+        "keyword_class":"team",
+         "last_region_section":1,
+        "region_sections":{
+            "primary_section":{
+                "section_class_name":"primary-section", 
+                "row_start":1,
+                "row_end":1,
+                "column_start":1,
+                "column_end":1,
+                "has_background":"true" 
+            }
+        }
     },
     "VIDEOS_HOMEPAGE": {
         "region_id": "8",
         "region_name": "Videos Region",
         "description": "Videos Region",
-        "last_region_section":0
+        "keyword_class":"videos",
+         "last_region_section":1,
+        "region_sections":{
+            "primary_section":{
+                "section_class_name":"primary-section", 
+                "row_start":1,
+                "row_end":1,
+                "column_start":1,
+                "column_end":1,
+                "has_background":"true" 
+            }
+        }
     },
     "TESTIMONIALS_HOMEPAGE": {
         "region_id": "9",
         "region_name": "Testimonial Region",
         "description": "Testimonial Region",
-        "last_region_section":0
+        "keyword_class":"testimonials",
+         "last_region_section":1,
+        "region_sections":{
+            "primary_section":{
+                "section_class_name":"primary-section", 
+                "row_start":1,
+                "row_end":1,
+                "column_start":1,
+                "column_end":1,
+                "has_background":"true" 
+            }
+        }
     },
     "CONTACTUS_HOMEPAGE": {
         "region_id": "10",
         "region_name": "Contact us Region",
         "description": "Contact us Region",
-        "last_region_section":0
+         "last_region_section":1,
+        "region_sections":{
+            "primary_section":{
+                "section_class_name":"primary-section", 
+                "row_start":1,
+                "row_end":1,
+                "column_start":1,
+                "column_end":1,
+                "has_background":"true" 
+            }
+        }
     },
     "STATIC_HOMEPAGE": {
         "region_id": "11",
         "region_name": "Static Region",
         "description": "Static Region",
-        "last_region_section":0
+         "last_region_section":1,
+        "region_sections":{
+            "primary_section":{
+                "section_class_name":"primary-section", 
+                "row_start":1,
+                "row_end":1,
+                "column_start":1,
+                "column_end":1,
+                "has_background":"true" 
+            }
+        }
     }
 }
