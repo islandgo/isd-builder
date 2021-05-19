@@ -16,6 +16,13 @@ export const AppRoutes = RouterModule.forRoot([
                 data: {
                     title: '',
                 }
+            },
+            {
+                path: 'section',
+                loadChildren: './section/section.module#AppSectionModule',
+                data: {
+                    title: '',
+                }
             }
         ]
     },

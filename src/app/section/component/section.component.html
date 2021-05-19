@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="tab-header">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" id="home-tab" data-toggle="tab" [routerLink]="['region']" role="tab" aria-controls="home"
+                    aria-selected="true">Regions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" id="profile-tab" data-toggle="tab" [routerLink]="['widget']" role="tab" aria-controls="profile"
+                    aria-selected="false">Widgets</a>
+            </li>
+        </ul>
+        <button class="btn btn-primary reset-regions" [routerLink]="['/builder/widgets-list']">back</button>
+    </div>
+    <div class="tab-content" id="myTabContent">
+        <router-outlet></router-outlet>
+    </div>
+</div>
