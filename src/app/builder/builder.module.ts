@@ -12,6 +12,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { RegionSectionModel } from './model/payment.model';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { JsGeneratorComponent } from './component/js-generator.component';
+import { CssMobileGeneratorComponent } from './component/css-mobile-generator.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { JsGeneratorComponent } from './component/js-generator.component';
     CodeGeneratorComponent,
     CssGeneratorComponent,
     HtmlGeneratorComponent,
-    JsGeneratorComponent
+    JsGeneratorComponent,
+    CssMobileGeneratorComponent
   ],
   imports: [
     BuilderRoutes,

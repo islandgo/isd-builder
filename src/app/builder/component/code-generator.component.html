@@ -11,7 +11,7 @@
                 Desktop Css
             </h4>
             <div contenteditable="true" class="html-text-input" rows="25" cols="100">
-                <css-generator></css-generator>
+                <css-generator [customRegions] = "customRegions"></css-generator>
             </div>
         </div>
         <div class="mobile-builder">
@@ -19,11 +19,12 @@
                 Mobile Css
             </h4>
             <div contenteditable="true" class="html-text-input" rows="25" cols="100">
+                <css-mobile-generator [customRegions]="customRegions"></css-mobile-generator>
             </div>
         </div>
     </div>
     <h3 class="primary-builder-title">JS Builder</h3>
     <div contenteditable="true" class="html-text-input" rows="25" cols="100">
-        <js-generator></js-generator>
+        <js-generator [customRegions] = "customRegions"></js-generator>
     </div>
 </div>
