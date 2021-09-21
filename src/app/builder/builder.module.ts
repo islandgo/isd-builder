@@ -1,3 +1,5 @@
+import { HtmlGeneratorComponent } from './component/html-generator.component';
+import { CssGeneratorComponent } from './component/css-generator.component';
 import { CodeGeneratorComponent } from './component/code-generator.component';
 import { RegionsComponent } from './component/regions.component';
 import { WidgetsComponent } from './component/widgets.component';
@@ -9,13 +11,17 @@ import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { RegionSectionModel } from './model/payment.model';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { JsGeneratorComponent } from './component/js-generator.component';
 
 @NgModule({
   declarations: [
     BuilderComponent,
     WidgetsComponent,
     RegionsComponent,
-    CodeGeneratorComponent
+    CodeGeneratorComponent,
+    CssGeneratorComponent,
+    HtmlGeneratorComponent,
+    JsGeneratorComponent
   ],
   imports: [
     BuilderRoutes,
