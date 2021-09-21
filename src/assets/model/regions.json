@@ -3,7 +3,7 @@
         "region_id": "1",
         "region_name": "Banner Region",
         "description": "Home Banner Region",
-        "keyword_class":"banner",
+        "keyword_class":"hp-banner",
         "grid_template_columns": 100,
         "grid_max_width": "1600px",
         "has_background":"true",
@@ -24,7 +24,7 @@
         "region_id": "2",
         "region_name": "Quick Search Region",
         "description": "Quick Search Region",
-        "keyword_class":"quick-search",
+        "keyword_class":"hp-quick-search",
         "last_region_section":1,
         "region_sections":{
             "primary_section":{
@@ -42,7 +42,7 @@
         "region_id": "3",
         "region_name": "Properties Region",
         "description": "Properties Region",
-        "keyword_class":"properties",
+        "keyword_class":"hp-properties",
         "last_region_section":1,
         "region_sections":{
             "primary_section":{
@@ -59,7 +59,7 @@
         "region_id": "4",
         "region_name": "Areas Region",
         "description": "Areas Region",
-        "keyword_class":"areas",
+        "keyword_class":"hp-areas",
         "last_region_section":1,
         "region_sections":{
             "primary_section":{
@@ -76,7 +76,7 @@
         "region_id": "5",
         "region_name": "Cta Region",
         "description": "Cta Region",
-        "keyword_class":"cta",
+        "keyword_class":"hp-cta",
         "last_region_section":1,
         "region_sections":{
             "primary_section":{
@@ -93,7 +93,7 @@
         "region_id": "6",
         "region_name": "About Region",
         "description": "About Region",
-        "keyword_class":"about",
+        "keyword_class":"hp-about",
         "last_region_section":1,
         "region_sections":{
             "primary_section":{
@@ -110,7 +110,7 @@
         "region_id": "7",
         "region_name": "Team Region",
         "description": "Team Region",
-        "keyword_class":"team",
+        "keyword_class":"hp-team",
          "last_region_section":1,
         "region_sections":{
             "primary_section":{
@@ -127,7 +127,7 @@
         "region_id": "8",
         "region_name": "Videos Region",
         "description": "Videos Region",
-        "keyword_class":"videos",
+        "keyword_class":"hp-videos",
          "last_region_section":1,
         "region_sections":{
             "primary_section":{
@@ -144,7 +144,7 @@
         "region_id": "9",
         "region_name": "Testimonial Region",
         "description": "Testimonial Region",
-        "keyword_class":"testimonials",
+        "keyword_class":"hp-testimonials",
          "last_region_section":1,
         "region_sections":{
             "primary_section":{

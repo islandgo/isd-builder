@@ -1,1 +1,32 @@
-<h1>Code Generator</h1>
+<div class="code-generator-contaier">
+    <h3 class="primary-builder-title">HTML Builder</h3>
+    <div contenteditable="true" class="html-text-input" rows="25" cols="100">
+        <div *ngFor="let region of customRegions; let i = index">
+                {{createOpenTagBuilder('section', region[1]['keyword_class'])}} <br>
+
+                {{createCloseTagBuilder('section')}}  <br>
+
+        </div>
+    </div>
+    <h3 class="primary-builder-title">CSS Builder</h3>
+    <div class="css-builder-container">
+        <div class="desktop-builder">
+            <h4 class="secondary-builder-title">
+                Desktop Css
+            </h4>
+            <div contenteditable="true" class="html-text-input" rows="25" cols="100">
+            </div>
+        </div>
+        <div class="mobile-builder">
+            <h4 class="secondary-builder-title">
+                Mobile Css
+            </h4>
+            <div contenteditable="true" class="html-text-input" rows="25" cols="100">
+            </div>
+        </div>
+    </div>
+    <h3 class="primary-builder-title">JS Builder</h3>
+    <div contenteditable="true" class="html-text-input" rows="25" cols="100">
+    
+    </div>
+</div>
