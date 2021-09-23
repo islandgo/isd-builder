@@ -36,4 +36,7 @@ export class HtmlGeneratorComponent {
         return '</'+tag+'>';
     }
 
+    prefixHashConverted(data) {
+        return data+'-';
+    }
 }
