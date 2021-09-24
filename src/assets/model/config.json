@@ -1,6 +1,7 @@
 {
     "background": {
         "enable": false,
+        "name": "region-background",
         "configuration":{
             "hasRgba":false,
             "file_name":""
@@ -8,6 +9,15 @@
     },
     "slick": {
         "enable": false,
+        "name": "slick",
+        "configuration":{
+            "toShow": 1,
+            "asNav": false
+        }
+    },
+    "elementPeek": {
+        "enable": false,
+        "name": "elementPeek",
         "configuration":{
             "toShow": 1,
             "asNav": false

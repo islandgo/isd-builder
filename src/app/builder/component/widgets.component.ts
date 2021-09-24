@@ -1,6 +1,8 @@
+import { PageService } from './../services/page.service';
 import { RegionsService } from './../services/regions.service';
 import { Component } from '@angular/core';
 import { RegionSectionModel } from '../model/payment.model';
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'widgets-root',
@@ -14,7 +16,9 @@ export class WidgetsComponent {
     cloneCustomRegions;
     constructor(
         public RegionsService: RegionsService,
+        public PageService: PageService,
         protected RegionSectionModel: RegionSectionModel,
+        private Router: Router,
 
     ) {
 
@@ -65,5 +69,11 @@ export class WidgetsComponent {
                 this.getCustomRegions();
             }
         );
+    }
+
+    goToWidgetView(selectedRegion) {
+        console.log(selectedRegion);
+        this.RegionsService.setSelectedRegion(selectedRegion[0]);
+        this.Router.navigate(['/section/region']);
     }
 }

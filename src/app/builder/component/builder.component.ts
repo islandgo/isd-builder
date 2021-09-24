@@ -1,3 +1,4 @@
+import { PageService } from './../services/page.service';
 import { RegionsService } from './../services/regions.service';
 import { Component, ViewEncapsulation, TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
@@ -13,6 +14,7 @@ export class BuilderComponent {
     modalRef: BsModalRef;
     constructor(
         private modalService: BsModalService,
+        protected PageService: PageService,
         protected RegionsService: RegionsService
     ) {
 
@@ -24,6 +26,7 @@ export class BuilderComponent {
 
     resetRegions() {
         this.RegionsService.resetCustomRegions();
+        this.PageService.resetPageSetUp();
         window.location.reload();
         this.modalRef.hide();
     }

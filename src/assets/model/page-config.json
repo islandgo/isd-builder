@@ -1,0 +1,28 @@
+{
+    "popup_modal": {
+        "enable": false,
+        "name": "popup-modal",
+        "configuration":{
+            "isFull": false
+        }
+    },
+    "split_nav": {
+        "enable": false,
+        "name": "split-nav",
+        "configuration":{
+        }
+    },
+    "side_bar": {
+        "enable": false,
+        "name": "side-bar",
+        "configuration":{
+        }
+    },
+    "social_fix_nav": {
+        "enable": false,
+        "name": "social-fix-nav",
+        "configuration":{
+        }
+    }
+   
+}

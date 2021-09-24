@@ -13,6 +13,8 @@ import { RegionSectionModel } from './model/payment.model';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { JsGeneratorComponent } from './component/js-generator.component';
 import { CssMobileGeneratorComponent } from './component/css-mobile-generator.component';
+import { WidgetConverterComponent } from './component/widget-converter.component';
+import { PageSetUpComponent } from './component/page-setup.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { CssMobileGeneratorComponent } from './component/css-mobile-generator.co
     RegionsComponent,
     CodeGeneratorComponent,
     CssGeneratorComponent,
+    WidgetConverterComponent,
+    PageSetUpComponent,
     HtmlGeneratorComponent,
     JsGeneratorComponent,
     CssMobileGeneratorComponent

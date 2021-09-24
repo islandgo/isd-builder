@@ -2,6 +2,10 @@
     <div class="tab-header">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" id="page-setup" data-toggle="tab" [routerLink]="['page-setup']" role="tab" aria-controls="page setup"
+                    aria-selected="false">Page Setup</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" routerLinkActive="active" id="home-tab" data-toggle="tab" [routerLink]="['regions']" role="tab" aria-controls="home"
                     aria-selected="true">Regions</a>
             </li>
@@ -12,6 +16,10 @@
             <li class="nav-item">
                 <a class="nav-link" routerLinkActive="active" id="contact-tab" data-toggle="tab" [routerLink]="['code-generator']" role="tab" aria-controls="contact"
                     aria-selected="false">Code Generator</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" id="widget-converter" data-toggle="tab" [routerLink]="['widget-converter']" role="tab" aria-controls="contact"
+                    aria-selected="false">Widget Converter</a>
             </li>
         </ul>
         <button class="btn btn-primary reset-regions" (click)="openResetModal(template)" >reset regions</button>

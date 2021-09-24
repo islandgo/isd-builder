@@ -1,1 +1,18 @@
-<h4>REGION SECTION</h4>
+<div class="region-setting-container">
+    <label for="options">Region Settings:</label>
+    <div *ngFor="let option of config; let i = index">
+        <div class="form-group">
+            <label class="checkbox-container">
+                {{option[0]}} 
+                <input 
+                    type="checkbox" 
+                    name="options"
+                    value="{{option[1]['name']}}"
+                    [(ngModel)]="option[1]['enable']"
+                 />
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+    <button class="btn btn-primary" (click)="saveRegionSetting()">save settings</button>
+</div>

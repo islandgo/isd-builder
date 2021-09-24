@@ -16,7 +16,6 @@ export class RegionsService {
     getDefaultRegions() {
         let regionResponse = this.httpClient.get("assets/model/regions.json");
         let regionConfigResponse = this.httpClient.get("assets/model/config.json");
-    
         return forkJoin([regionResponse, regionConfigResponse]);
 
     }
@@ -24,11 +23,23 @@ export class RegionsService {
  
 
     getRegionsConfigSection() {
-        return this.httpClient.get("assets/model/regions_config_section.json");
+        return this.httpClient.get("assets/model/regions-config.json");
     }
 
     setCustomRegions(jsonData) {
         return of(localStorage.setItem('__customRegions', JSON.stringify(jsonData)));
+    }
+
+    setSelectedRegion(jsonData) {
+        return of(localStorage.setItem('__selectedRegion', JSON.stringify(jsonData)));
+    }
+
+    getSelectedRegion() {
+        let selectedRegion = localStorage.getItem('__selectedRegion');
+        if (!selectedRegion || selectedRegion == 'undefined') {
+            return of([])
+        }
+        return of(JSON.parse(selectedRegion))
     }
 
     resetCustomRegions() {

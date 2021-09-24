@@ -1,3 +1,4 @@
+import { PageService } from './../services/page.service';
 import { RegionsService } from './../services/regions.service';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, FormControl, ValidatorFn } from '@angular/forms';
@@ -19,7 +20,7 @@ export class RegionsComponent {
 
     drop(event: CdkDragDrop<string[]>) {
         moveItemInArray(this.customRegions, event.previousIndex, event.currentIndex);
-        let jsonFormatRegions = this.regionJsonFormatter(this.customRegions);
+        let jsonFormatRegions = this.PageService.jsonFormatter(this.customRegions);
         this.RegionsService.setCustomRegions(jsonFormatRegions);
     }
 
@@ -29,6 +30,7 @@ export class RegionsComponent {
 
     constructor(
         public RegionsService: RegionsService,
+        public PageService: PageService,
         private formBuilder: FormBuilder
     ) {
         this.form = this.formBuilder.group({
@@ -87,20 +89,14 @@ export class RegionsComponent {
         const defaultRegions = this.form.value.defaultRegions
             .map((checked, i) => checked ? this.defaultRegionsObject[i] : null)
             .filter(v => v !== null);
-            jsonCustomRegions = this.regionJsonFormatter(defaultRegions);
+            jsonCustomRegions = this.PageService.jsonFormatter(defaultRegions);
       
         this.customRegions = Object.entries(jsonCustomRegions);
         this.RegionsService.setCustomRegions(jsonCustomRegions).subscribe(() => console.log("complete"));
         
     }
 
-    regionJsonFormatter(regions) {
-        let jsonCustomRegions = {};
-        regions.forEach(function (value) {
-            jsonCustomRegions[value[0]] = value[1];
-        });
-        return jsonCustomRegions;
-    }
+
 }
 
 function minSelectedCheckboxes(min = 1) {
