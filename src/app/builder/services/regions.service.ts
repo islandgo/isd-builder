@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { of } from "rxjs";
+import { forkJoin, of } from "rxjs";
 
 
 
@@ -14,8 +14,17 @@ export class RegionsService {
     constructor(private httpClient: HttpClient) { }
 
     getDefaultRegions() {
-        return this.httpClient.get("assets/model/regions.json");
+        let regionResponse = this.httpClient.get("assets/model/regions.json");
+        let regionConfigResponse = this.httpClient.get("assets/model/config.json");
+    
+        return forkJoin([regionResponse, regionConfigResponse]);
 
+    }
+
+ 
+
+    getRegionsConfigSection() {
+        return this.httpClient.get("assets/model/regions_config_section.json");
     }
 
     setCustomRegions(jsonData) {

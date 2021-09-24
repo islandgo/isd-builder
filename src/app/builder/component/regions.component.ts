@@ -13,6 +13,7 @@ export class RegionsComponent {
     form: FormGroup;
     defaultRegions;
     customRegions ;
+    regionsConfig;
     customRegionsIds = [];
     defaultRegionsObject: [string, any][];
 
@@ -43,12 +44,26 @@ export class RegionsComponent {
 
 
     public getDefaultRegions() {
+   
         this.RegionsService.getDefaultRegions().subscribe(data => {
-            this.defaultRegions = data;
-            this.defaultRegionsObject = Object.entries(data);
+            this.defaultRegions = data[0];
+            let regionConfig = data[1];
+            this.defaultRegionsObject = Object.entries(this.defaultRegions);
+
+
+            this.RegionsService.getRegionsConfigSection().subscribe(regionConfigSection => {
+                
+                this.defaultRegionsObject.forEach(function (data) {
+                    data[1]["region_sections"] = regionConfigSection;
+                    data[1]["config"] = regionConfig;
+                });
+            });
+
             this.addCheckboxes();
         });
     }
+
+    
 
     public getCustomRegions() {
         this.RegionsService.getCustomRegions().subscribe(data => {

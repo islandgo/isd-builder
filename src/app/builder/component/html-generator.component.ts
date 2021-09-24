@@ -16,7 +16,7 @@ export class HtmlGeneratorComponent {
     }
 
     ngOnInit() {
-      
+       
     }
 
     createOpenTagBuilder(tag, className, prefix, suffix ) {

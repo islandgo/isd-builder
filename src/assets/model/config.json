@@ -1,0 +1,16 @@
+{
+    "background": {
+        "enable": false,
+        "configuration":{
+            "hasRgba":false,
+            "file_name":""
+        }
+    },
+    "slick": {
+        "enable": false,
+        "configuration":{
+            "toShow": 1,
+            "asNav": false
+        }
+    }
+}
