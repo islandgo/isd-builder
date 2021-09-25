@@ -1,3 +1,4 @@
+import { PageService } from './../services/page.service';
 import { RegionsService } from './../services/regions.service';
 import { Component } from '@angular/core';
 
@@ -10,17 +11,20 @@ export class CodeGeneratorComponent {
     title = 'isd-builder';
     customRegions;
     cloneCustomRegions;
+    pageSettings;
     sectionTagOpen = '<section>';
     sectionTagClose = '</section>';
 
     constructor(
         public RegionsService: RegionsService,
+        public PageService: PageService
     ) {
 
     }
 
     ngOnInit() {
         this.getCustomRegions();
+        this.getPageSettings();
     }
 
     getCustomRegions() {
@@ -28,6 +32,14 @@ export class CodeGeneratorComponent {
             if (data) {
                 this.customRegions = Object.entries(data);
                 this.cloneCustomRegions = data;
+            }
+        });
+    }
+
+    getPageSettings() {
+        this.PageService.getPage().subscribe(data => {
+            if (data) {
+                this.pageSettings = Object.entries(data);
             }
         });
     }

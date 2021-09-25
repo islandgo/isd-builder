@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class JsGeneratorComponent {
     @Input() public customRegions;
+    @Input() public pageSettings;
 
 
     constructor(
@@ -17,7 +18,6 @@ export class JsGeneratorComponent {
     }
 
     ngOnInit() {
-
     }
 
     convertToCamelCase(name) {
@@ -29,5 +29,7 @@ export class JsGeneratorComponent {
         name = name.replace(/\w\S*/g, function (t) { return t.charAt(0).toUpperCase() + t.substr(1).toLowerCase(); });
         return name.replace(/\s/g, ""); 
     }
+    
+ 
 
 }

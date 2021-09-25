@@ -15,6 +15,7 @@ import { JsGeneratorComponent } from './component/js-generator.component';
 import { CssMobileGeneratorComponent } from './component/css-mobile-generator.component';
 import { WidgetConverterComponent } from './component/widget-converter.component';
 import { PageSetUpComponent } from './component/page-setup.component';
+import { HeaderGeneratorComponent } from './component/header-generator.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PageSetUpComponent } from './component/page-setup.component';
     PageSetUpComponent,
     HtmlGeneratorComponent,
     JsGeneratorComponent,
-    CssMobileGeneratorComponent
+    CssMobileGeneratorComponent,
+    HeaderGeneratorComponent
   ],
   imports: [
     BuilderRoutes,

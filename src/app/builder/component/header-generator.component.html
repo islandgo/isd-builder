@@ -1,0 +1,83 @@
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html &lt;?php language_attributes(); ?&gt;&gt;
+&lt;head&gt;
+	&lt;meta http-equiv="X-UA-Compatible" content="IE=edge" /&gt;
+	&lt;meta charset="&lt;?php bloginfo( 'charset' ); ?&gt;" /&gt;
+	&lt;meta id="viewport-tag" name="viewport" content="width=device-width, initial-scale=1"/&gt;
+	&lt;title&gt;&lt;?php wp_title( '|', true, 'right' ); ?&gt;&lt;/title&gt;
+	&lt;link rel="pingback" href="&lt;?php bloginfo( 'pingback_url' ); ?&gt;" /&gt;
+	&lt;?php wp_head(); ?&gt;
+&lt;/head&gt;
+&lt;body &lt;?php body_class(); ?&gt;&gt;
+	&lt;?php if ( has_action( 'aios_seotools_gtm_body' ) ) {{' {'}} do_action('aios_seotools_gtm_body'); } ?&gt;
+	&lt;?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Mobile Header") ) : ?&gt;&lt;?php endif ?&gt;
+
+	&lt;div id="main-wrapper"&gt;
+
+
+    &lt;?php do_action('aios_landing_page_header'); ?&gt;
+    &lt;?php do_action('aios_neighborhoods_header'); ?&gt;
+
+
+	&lt;header class="header"&gt;
+		&lt;div class="header-container"&gt;
+			&lt;div class="header-logo"&gt;
+				&lt;a href="[blogurl]" aria-label="logo"&gt;
+					&lt;div class="header-img"&gt;
+						&lt;img
+							alt="header"
+							class="img-header"
+							src="&lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/header-logo.png"
+						/&gt;
+					&lt;/div&gt;
+				&lt;/a&gt;
+			&lt;/div&gt;
+
+			&lt;nav class="navigation"&gt;
+				&lt;?php wp_nav_menu( array( 'sort_column' =&gt; 'menu_order', 'menu_id' =&gt; 'nav', 'theme_location' =&gt; 'primary-menu' ) ); ?&gt;
+			&lt;/nav&gt;
+			<div *ngFor="let setting of pageSettings; let i = index">
+				<div *ngIf="setting[0] == 'burger_menu' && setting[1]['enable']">
+					&lt;!-- Burger Menu --&gt;
+					&lt;div class="burger-menu is-active"&gt;
+						&lt;span&gt;&lt;/span&gt;
+						&lt;span&gt;&lt;/span&gt;
+						&lt;span&gt;Menu&lt;/span&gt;
+					&lt;/div&gt;
+				</div>
+			</div>
+		&lt;/div&gt;
+	&lt;/header&gt;
+	<div *ngFor="let setting of pageSettings; let i = index">
+		<div *ngIf="setting[0] == 'burger_menu' && setting[1]['enable']">
+			&lt;!-- Burger Menu Content --&gt;
+			&lt;div class="bm-menu bm-view"&gt;
+				&lt;div class="bm-content" data-simplebar="init"&gt;
+					&lt;div class="burger-navs"&gt;
+						&lt;?php wp_nav_menu( array( 'sort_column' =&gt; 'menu_order', 'menu_id' =&gt; 'nav2', 'theme_location' =&gt; 'primary-menu','depth'=&gt;1 ) ); ?&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="bm-drop bm-view"&gt;&lt;/div&gt;
+		</div>
+	</div>
+	&lt;main&gt;
+		&lt;h2 class="aios-starter-theme-hide-title"&gt;Main Content&lt;/h2&gt;
+
+		&lt;!-- ip banner goes here --&gt;
+    &lt;?php
+    if ( ! is_home() && !is_page_template( 'template-homepage.php' ) && is_custom_field_banner( get_queried_object() ) && is_active_sidebar('aios-inner-pages-banner')) {{' {'}}
+      dynamic_sidebar('aios-inner-pages-banner');
+    }
+    ?&gt;
+		&lt;!-- ip banner goes here --&gt;
+
+
+		&lt;?php if ( !is_home() && !is_page_template( 'template-fullwidth.php' ) && !is_page_template( 'template-homepage.php' ) ) : ?&gt;
+
+		&lt;div id="inner-page-wrapper"&gt;
+			&lt;div class="container"&gt;
+
+		&lt;?php endif ?&gt;
+	</pre>

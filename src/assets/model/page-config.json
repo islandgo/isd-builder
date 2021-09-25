@@ -12,9 +12,9 @@
         "configuration":{
         }
     },
-    "side_bar": {
+    "burger_menu": {
         "enable": false,
-        "name": "side-bar",
+        "name": "burger-menu",
         "configuration":{
         }
     },

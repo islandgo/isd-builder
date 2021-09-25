@@ -3,13 +3,17 @@
     <div contenteditable="true" class="html-text-input" rows="25" cols="100">
         <html-generator [customRegions] = "customRegions"></html-generator>
     </div>
+    <h4 class="primary-builder-title">Header Builder</h4>
+    <div contenteditable="true" class="html-text-input" rows="25" cols="100">
+        <header-generator [customRegions] = "customRegions" [pageSettings] = "pageSettings"></header-generator>
+    </div>
     <div class="css-builder-container">
         <div class="desktop-builder">
             <h4 class="secondary-builder-title">
                 Desktop Css
             </h4>
             <div contenteditable="true" class="html-text-input" rows="25" cols="100">
-                <css-generator [customRegions] = "customRegions"></css-generator>
+                <css-generator [customRegions] = "customRegions" [pageSettings] = "pageSettings"></css-generator>
             </div>
         </div>
         <div class="mobile-builder">
@@ -23,6 +27,6 @@
     </div>
     <h4 class="primary-builder-title">JS Builder</h4>
     <div contenteditable="true" class="html-text-input" rows="25" cols="100">
-        <js-generator [customRegions] = "customRegions"></js-generator>
+        <js-generator [customRegions] = "customRegions" [pageSettings] = "pageSettings"></js-generator>
     </div>
 </div>
