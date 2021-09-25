@@ -2,25 +2,52 @@
     "background": {
         "enable": false,
         "name": "region-background",
-        "configuration":{
-            "hasRgba":false,
-            "file_name":""
+        "settings":{
+            "hasRgba": {
+                "inpuType": "select",
+                "selectValue": [true,false],
+                "value": true,
+                "name": "has rbga"
+            },
+            "file_name":{
+                "inpuType": "text",
+                "value": "fileName.png",
+                "name": "fileName"
+            }
         }
     },
     "slick": {
         "enable": false,
         "name": "slick",
-        "configuration":{
-            "toShow": 1,
-            "asNav": false
+        "settings":{
+            "asNaV": {
+                "inpuType": "text",
+                "selectValue": [true,false],
+                "value": true,
+                "name": "asNaV"
+            },
+            "file_name":{
+                "inpuType": "text",
+                "value": "fileName.png",
+                "name": "fileName"
+            }
         }
     },
     "elementPeek": {
         "enable": false,
         "name": "elementPeek",
-        "configuration":{
-            "toShow": 1,
-            "asNav": false
+        "settings":{
+            "hasRgba": {
+                "inpuType": "text",
+                "selectValue": [true,false],
+                "value": true,
+                "name": "has rbga"
+            },
+            "file_name":{
+                "inpuType": "text",
+                "value": "fileName.png",
+                "name": "fileName"
+            }
         }
     }
 }

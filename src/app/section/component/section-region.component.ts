@@ -39,4 +39,9 @@ export class SectionRegionComponent {
         this.customRegion[this.selectedRegionKey]['config'] = this.PageService.jsonFormatter(this.config);
         this.RegionsService.setCustomRegions(this.customRegion);
     }
+
+
+    indexTracker(index: number, value: any) {
+        return index;
+    }
 }

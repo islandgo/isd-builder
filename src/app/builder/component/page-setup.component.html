@@ -2,17 +2,18 @@
     <div class="form-group">
         <label for="options">Page Settings:</label>
         <div *ngFor="let option of pageSettings">
-            <label class="checkbox-container">
-                {{option[0]}} {{ option[1]['enable'] }}
-                <input type="checkbox"
-                       name="options"
-                       value="{{option[1]['name']}}"
-                       [(ngModel)]="option[1]['enable']"
-                />
-                <span class="checkmark"></span>
-    
-            </label>
+            <div>
+                <label class="checkbox-container">
+                    {{option[0]}}
+                    <input type="checkbox" name="options" value="{{option[1]['name']}}"
+                        [(ngModel)]="option[1]['enable']" />
+                    <span class="checkmark"></span>
+
+                </label>
+            </div>
+            
+
         </div>
-        <button class="btn btn-primary" (click)="savePageSetting()">save settings</button>
     </div>
+    <button class="btn btn-primary" (click)="savePageSetting()">save settings</button>
 </div>

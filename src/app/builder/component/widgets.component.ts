@@ -72,7 +72,6 @@ export class WidgetsComponent {
     }
 
     goToWidgetView(selectedRegion) {
-        console.log(selectedRegion);
         this.RegionsService.setSelectedRegion(selectedRegion[0]);
         this.Router.navigate(['/section/region']);
     }
