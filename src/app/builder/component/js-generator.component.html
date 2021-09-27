@@ -49,6 +49,20 @@ jQuery("header.header").removeClass("show-fixed");
 </div>
 
 
+<div *ngIf="PageService.headerType == 'split-nav' ">
+    initSplitHeader: function () {{' {'}}
+        /* Split Nav */
+        jQuery(".header #nav").splitNav({{' {'}}
+            logo: ".header-logo",
+            navClasses: "header-item menu",
+            splitCount: 3,
+            splitCountEqual: false,
+        });
+
+        jQuery(".header-logo").addClass("no-padding");
+    },
+</div>
+
 <div *ngFor="let region of customRegions; let i = index">
     init{{convertToCamelCase(region[1]['keyword_class'])}}: function (){{' {'}}
     //code here
@@ -61,6 +75,9 @@ jQuery(document).ready(function (){{' {'}}
 app.initNavigation();
 <div *ngIf="PageService.enablePageBurgerMenu">
     app.initBurgerMenu();
+</div>
+<div *ngIf="PageService.headerType == 'split-nav' ">
+    app.initSplitHeader();
 </div>
 <div *ngFor="let region of customRegions; let i = index">
     app.init{{convertToCamelCase(region[1]['keyword_class']) }}();<br>

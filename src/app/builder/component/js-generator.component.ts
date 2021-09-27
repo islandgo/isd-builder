@@ -21,7 +21,6 @@ export class JsGeneratorComponent {
     }
 
     ngOnInit() {
-        console.log(this.PageService.enablePagePopUpModal);
     }
 
     convertToCamelCase(name) {

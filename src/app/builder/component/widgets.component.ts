@@ -65,7 +65,6 @@ export class WidgetsComponent {
     saveCustomRegions(cloneCustomRegions) {
         this.RegionsService.setCustomRegions(cloneCustomRegions).subscribe(
             () => {
-                console.log("success");
                 this.getCustomRegions();
             }
         );

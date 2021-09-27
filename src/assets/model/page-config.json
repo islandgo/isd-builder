@@ -2,8 +2,8 @@
     "popup_modal": {
         "enable": false,
         "name": "popup-modal",
-        "configuration":{
-            "isFull": false
+        "settings": {
+            
         }
     },
     "header": {
@@ -21,13 +21,15 @@
     "burger_menu": {
         "enable": false,
         "name": "burger-menu",
-        "configuration":{
+        "settings": {
+            
         }
     },
     "social_fix_nav": {
         "enable": false,
         "name": "social-fix-nav",
-        "configuration":{
+        "settings": {
+            
         }
     }
    

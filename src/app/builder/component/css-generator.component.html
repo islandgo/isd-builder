@@ -55,7 +55,7 @@ TABLE OF CONTENTS
  *******************************************************/
 
 /*#region Sub Menu */
-#nav .sub-menu{{' {'}}
+.menu .sub-menu{{' {'}}
     position: absolute;
     width: 100%;
     min-width: 190px;
@@ -71,15 +71,15 @@ TABLE OF CONTENTS
     transition: all 0.35s ease-in-out;
 {{'}'}}
 
-#nav li:nth-child(2) .sub-menu{{' {'}}
+.menu li:nth-child(2) .sub-menu{{' {'}}
     min-width: 204px;
 {{'}'}}
 
-#nav li:nth-child(4) .sub-menu{{' {'}}
+.menu li:nth-child(4) .sub-menu{{' {'}}
     min-width: 262px;
 {{'}'}}
 
-#nav li:hover > .sub-menu{{' {'}}
+.menu li:hover > .sub-menu{{' {'}}
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -87,24 +87,24 @@ TABLE OF CONTENTS
     transform: translateY(0);
 {{'}'}}
 
-#nav > li > .sub-menu{{' {'}}
+.menu > li > .sub-menu{{' {'}}
     left: -150%;
     right: -150%;
     margin: auto;
     padding-top: 28px;
 {{'}'}}
 
-#nav .sub-menu .sub-menu #fnav .sub-menu .sub-menu{{' {'}}
+.menu .sub-menu .sub-menu #fnav .sub-menu .sub-menu{{' {'}}
     top: 0;
     margin-left: 100%;
 {{'}'}}
 
-#nav li{{' {'}}
+.menu li{{' {'}}
     position: relative;
     display: inline-block;
 {{'}'}}
 
-#nav .sub-menu a{{' {'}}
+.menu .sub-menu a{{' {'}}
     background: #ffffff;
     color: #333333;
     display: block;
@@ -113,28 +113,28 @@ TABLE OF CONTENTS
     margin: 1px 6px 0;
 {{'}'}}
 
-#nav .sub-menu a:hover{{' {'}}
+.menu .sub-menu a:hover{{' {'}}
     background: #1092b2;
     color: #ffffff;
     text-decoration: none;
 {{'}'}}
-#nav .sub-menu .sub-menu{{' {'}}
+.menu .sub-menu .sub-menu{{' {'}}
     margin-left: 100%;
     top: 0;
     text-align: left;
 {{'}'}}
 
-#nav li:hover > .sub-menu{{' {'}}
+.menu li:hover > .sub-menu{{' {'}}
     display: block;
 {{'}'}}
 
-#nav .sub-menu li{{' {'}}
+.menu .sub-menu li{{' {'}}
     position: relative;
     width: 100%;
     background: transparent;
 {{'}'}}
 
-#nav .sub-menu .sub-menu > li:first-child:before{{' {'}}
+.menu .sub-menu .sub-menu > li:first-child:before{{' {'}}
     content: "";
     position: absolute;
     top: 50%;
@@ -154,7 +154,7 @@ TABLE OF CONTENTS
     opacity: 0;
 {{'}'}}
 
-#nav .sub-menu li:hover .sub-menu > li:first-child:before{{' {'}}
+.menu .sub-menu li:hover .sub-menu > li:first-child:before{{' {'}}
     opacity: 1;
 {{'}'}}
 
@@ -358,7 +358,8 @@ aside menu{{' {'}}
 /*#endregion Ip */
 
 /*#region Header */
-header.header {{' {'}}
+<div *ngIf="PageService.headerType == 'normal-header' ">
+    header.header {{' {'}}
     position: fixed;
     left: 0;
     top: 0;
@@ -412,6 +413,41 @@ header.header {{' {'}}
 .header.show-fixed #nav .sub-menu {{' {'}}
     padding-top: 44px;
 }
+</div>
+
+<div *ngIf="PageService.headerType == 'split-nav' ">
+        header.header {{' {'}}
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 4;
+        width: 100%;
+        background: gray;
+    {{'}'}}
+
+    header.header .navigation {{' {'}}
+        font-size: 14px;
+        letter-spacing: 00.05em;
+        color: #ffffff;
+        text-transform: uppercase;
+    {{'}'}}
+
+    .header-logo .header-img {{' {'}}
+        padding: 0 50px;
+    {{'}'}}
+
+    .header .menu-primary-menu-container {{' {'}}
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 24px;
+    {{'}'}}
+    ul.aios-split-nav.nav.header-item {{' {'}}
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    {{'}'}}
+</div>
 /*#endregion Header */
 
 <div *ngIf="PageService.enablePageBurgerMenu">
