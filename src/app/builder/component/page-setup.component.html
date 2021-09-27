@@ -11,7 +11,9 @@
 
                 </label>
             </div>
-            
+            <div class="custom-input-container" *ngIf="option[1]['enable']">
+                <custom-input-type [customInputs]="RegionsService.converObjectToArray(option[1]['settings'])"></custom-input-type>
+            </div>
 
         </div>
     </div>

@@ -16,6 +16,7 @@ import { CssMobileGeneratorComponent } from './component/css-mobile-generator.co
 import { WidgetConverterComponent } from './component/widget-converter.component';
 import { PageSetUpComponent } from './component/page-setup.component';
 import { HeaderGeneratorComponent } from './component/header-generator.component';
+import { AppCommonModule } from '../common/common.module';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { HeaderGeneratorComponent } from './component/header-generator.component
     ModalModule.forRoot(),
     ReactiveFormsModule,
     DragDropModule,
+    AppCommonModule,
     CommonModule
   ],
   providers: [

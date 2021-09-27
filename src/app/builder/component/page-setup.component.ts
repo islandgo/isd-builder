@@ -1,3 +1,4 @@
+import { RegionsService } from './../services/regions.service';
 import { PageService } from './../services/page.service';
 import { Component } from '@angular/core';
 
@@ -11,6 +12,7 @@ export class PageSetUpComponent {
     pageSettings;
     constructor(
         public PageService: PageService,
+        public RegionsService: RegionsService,
     ) {
 
     }

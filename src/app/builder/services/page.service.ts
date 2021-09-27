@@ -82,5 +82,9 @@ export class PageService {
             }
         });
     }
+
+    indexTracker(index: number, value: any) {
+        return index;
+    }
   
 }

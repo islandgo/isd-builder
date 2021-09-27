@@ -6,10 +6,16 @@
             "isFull": false
         }
     },
-    "split_nav": {
-        "enable": false,
-        "name": "split-nav",
-        "configuration":{
+    "header": {
+        "enable": true,
+        "name": "header",
+        "settings": {
+            "headerType": {
+                "value":"normal-header",
+                "inpuType": "select",
+                "selectValue":["normal-header","split-nav"],
+                "name": "header type"
+            }
         }
     },
     "burger_menu": {

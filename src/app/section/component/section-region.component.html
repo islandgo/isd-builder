@@ -14,21 +14,7 @@
             </label>
         </div>
         <div class="custom-input-container" *ngIf="option[1]['enable']">
-            <div *ngFor="let setting of RegionsService.converObjectToArray(option[1]['settings']); trackBy:indexTracker">
-                <div class="custom-input">
-                    <label>{{ setting[1]['name']  }}</label>
-                    <div [ngSwitch]="setting[1]['inpuType']">
-                        <div *ngSwitchCase="'text'">
-                            <input [(ngModel)]="setting[1]['value']" type="text" name="" id="">
-                        </div>
-                        <div *ngSwitchCase="'select'">
-                            <select [(ngModel)]="setting[1]['value']"> 
-                                <option  *ngFor="let obj of setting[1]['selectValue']" [value]="obj">{{obj}}</option>
-                            </select>
-                        </div>
-                      </div>
-                </div>
-            </div>
+            <custom-input-type [customInputs]="RegionsService.converObjectToArray(option[1]['settings'])"></custom-input-type>
         </div>
     </div>
     <button class="btn btn-primary" (click)="saveRegionSetting()">save settings</button>

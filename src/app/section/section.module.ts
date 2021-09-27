@@ -7,6 +7,8 @@ import { SectionRoutes } from './config/section.routes';
 import { SectionComponent } from './component/section.component';
 import { SectionRegionComponent } from './component/section-region.component';
 import { SectionWidgetComponent } from './component/section-widget.component';
+import { AppCommonModule } from '../common/common.module';
+import { CustomInputTypeComponent } from '../common/component/custom-input-type.component';
 
 
 @NgModule({
@@ -16,6 +18,7 @@ import { SectionWidgetComponent } from './component/section-widget.component';
     SectionWidgetComponent
   ],
   imports: [
+    AppCommonModule,
     FormsModule,
     ReactiveFormsModule,
     CommonModule,

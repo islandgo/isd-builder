@@ -41,7 +41,5 @@ export class SectionRegionComponent {
     }
 
 
-    indexTracker(index: number, value: any) {
-        return index;
-    }
+
 }
