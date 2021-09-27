@@ -25,30 +25,27 @@ jQuery("header.header").removeClass("show-fixed");
 {{'}'}}
 {{'}'}},
 
-<div *ngFor="let setting of pageSettings; let i = index">
-    <div *ngIf="setting[0] == 'burger_menu' && setting[1]['enable']">
-        initBurgerMenu: function (){{' {'}}
-        jQuery('.burger-menu').on('click', function (e){{' {'}}
-        e.preventDefault();
-        if (jQuery(this).hasClass('is-open')){{' {'}}
-        jQuery(this).removeClass('is-active');
-        jQuery('.bm-view').removeClass('is-open');
-        jQuery('body').removeClass('is-open');
-        {{'}'}} else{{' {'}}
-        jQuery(this).addClass('is-active');
-        jQuery('.bm-view').addClass('is-open');
-        jQuery('body').addClass('is-open');
-        {{'}'}}
-        {{'}'}});
-        jQuery('.bm-drop, .bm-close').on('click', function (e){{' {'}}
-        e.preventDefault();
-        jQuery('.bm-view').removeClass('is-open');
-        jQuery('.bm-btn').removeClass('is-active');
-        jQuery('body').removeClass('is-open');
-        {{'}'}});
-        {{'}'}},
-
-    </div>
+<div *ngIf="PageService.enablePageBurgerMenu">
+    initBurgerMenu: function (){{' {'}}
+    jQuery('.burger-menu').on('click', function (e){{' {'}}
+    e.preventDefault();
+    if (jQuery(this).hasClass('is-open')){{' {'}}
+    jQuery(this).removeClass('is-active');
+    jQuery('.bm-view').removeClass('is-open');
+    jQuery('body').removeClass('is-open');
+    {{'}'}} else{{' {'}}
+    jQuery(this).addClass('is-active');
+    jQuery('.bm-view').addClass('is-open');
+    jQuery('body').addClass('is-open');
+    {{'}'}}
+    {{'}'}});
+    jQuery('.bm-drop, .bm-close').on('click', function (e){{' {'}}
+    e.preventDefault();
+    jQuery('.bm-view').removeClass('is-open');
+    jQuery('.bm-btn').removeClass('is-active');
+    jQuery('body').removeClass('is-open');
+    {{'}'}});
+    {{'}'}},
 </div>
 
 
@@ -62,10 +59,8 @@ jQuery("header.header").removeClass("show-fixed");
 
 jQuery(document).ready(function (){{' {'}}
 app.initNavigation();
-<div *ngFor="let setting of pageSettings; let i = index">
-    <div *ngIf="setting[0] == 'burger_menu' && setting[1]['enable']">
-        app.initBurgerMenu();
-    </div>
+<div *ngIf="PageService.enablePageBurgerMenu">
+    app.initBurgerMenu();
 </div>
 <div *ngFor="let region of customRegions; let i = index">
     app.init{{convertToCamelCase(region[1]['keyword_class']) }}();<br>
@@ -77,13 +72,11 @@ app.initDetectScroll();
 });
 
 jQuery(window).on('load', function (){{' {'}}
-<div *ngFor="let setting of pageSettings; let i = index">
-    <div *ngIf="setting[0] == 'popup_modal' && setting[1]['enable']">
-        setTimeout(function () {{' {'}}
-            jQuery("a.introPopupTrigger").trigger("click");
-            jQuery(".aios-popup-body").addClass("intro-popup-body");
-        }, 5000);
-    </div>
+<div *ngIf="PageService.enablePagePopUpModal">
+    setTimeout(function () {{' {'}}
+        jQuery("a.introPopupTrigger").trigger("click");
+        jQuery(".aios-popup-body").addClass("intro-popup-body");
+    }, 5000);
 </div>
 });
 

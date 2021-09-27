@@ -25,6 +25,7 @@ export class CodeGeneratorComponent {
     ngOnInit() {
         this.getCustomRegions();
         this.getPageSettings();
+        this.PageService.getPageSettings();
     }
 
     getCustomRegions() {
@@ -37,6 +38,7 @@ export class CodeGeneratorComponent {
     }
 
     getPageSettings() {
+  
         this.PageService.getPage().subscribe(data => {
             if (data) {
                 this.pageSettings = Object.entries(data);

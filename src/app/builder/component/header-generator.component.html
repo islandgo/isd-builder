@@ -37,30 +37,26 @@
 			&lt;nav class="navigation"&gt;
 				&lt;?php wp_nav_menu( array( 'sort_column' =&gt; 'menu_order', 'menu_id' =&gt; 'nav', 'theme_location' =&gt; 'primary-menu' ) ); ?&gt;
 			&lt;/nav&gt;
-			<div *ngFor="let setting of pageSettings; let i = index">
-				<div *ngIf="setting[0] == 'burger_menu' && setting[1]['enable']">
-					&lt;!-- Burger Menu --&gt;
-					&lt;div class="burger-menu is-active"&gt;
-						&lt;span&gt;&lt;/span&gt;
-						&lt;span&gt;&lt;/span&gt;
-						&lt;span&gt;Menu&lt;/span&gt;
-					&lt;/div&gt;
-				</div>
+			<div *ngIf="PageService.enablePageBurgerMenu">
+				&lt;!-- Burger Menu --&gt;
+				&lt;div class="burger-menu is-active"&gt;
+					&lt;span&gt;&lt;/span&gt;
+					&lt;span&gt;&lt;/span&gt;
+					&lt;span&gt;Menu&lt;/span&gt;
+				&lt;/div&gt;
 			</div>
 		&lt;/div&gt;
 	&lt;/header&gt;
-	<div *ngFor="let setting of pageSettings; let i = index">
-		<div *ngIf="setting[0] == 'burger_menu' && setting[1]['enable']">
-			&lt;!-- Burger Menu Content --&gt;
-			&lt;div class="bm-menu bm-view"&gt;
-				&lt;div class="bm-content" data-simplebar="init"&gt;
-					&lt;div class="burger-navs"&gt;
-						&lt;?php wp_nav_menu( array( 'sort_column' =&gt; 'menu_order', 'menu_id' =&gt; 'nav2', 'theme_location' =&gt; 'primary-menu','depth'=&gt;1 ) ); ?&gt;
-					&lt;/div&gt;
+	<div *ngIf="PageService.enablePageBurgerMenu">
+		&lt;!-- Burger Menu Content --&gt;
+		&lt;div class="bm-menu bm-view"&gt;
+			&lt;div class="bm-content" data-simplebar="init"&gt;
+				&lt;div class="burger-navs"&gt;
+					&lt;?php wp_nav_menu( array( 'sort_column' =&gt; 'menu_order', 'menu_id' =&gt; 'nav2', 'theme_location' =&gt; 'primary-menu','depth'=&gt;1 ) ); ?&gt;
 				&lt;/div&gt;
 			&lt;/div&gt;
-			&lt;div class="bm-drop bm-view"&gt;&lt;/div&gt;
-		</div>
+		&lt;/div&gt;
+		&lt;div class="bm-drop bm-view"&gt;&lt;/div&gt;
 	</div>
 	&lt;main&gt;
 		&lt;h2 class="aios-starter-theme-hide-title"&gt;Main Content&lt;/h2&gt;

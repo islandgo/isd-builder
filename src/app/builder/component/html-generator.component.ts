@@ -1,3 +1,4 @@
+import { PageService } from './../services/page.service';
 import { RegionsService } from '../services/regions.service';
 import { Component, Input } from '@angular/core';
 
@@ -11,6 +12,7 @@ export class HtmlGeneratorComponent {
 
     constructor(
         public RegionsService: RegionsService,
+        public PageService: PageService,
     ) {
 
     }

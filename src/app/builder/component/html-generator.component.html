@@ -12,6 +12,24 @@
     {{createCloseTagBuilder('section')}}  <br>
 
 </div>
+
+<div *ngIf="PageService.enablePagePopUpModal">
+    &lt;!-- Intro Popup --&gt;
+    &lt;div class="intro-popup"&gt;
+        &lt;a href="#introPopupHolder" class="aios-content-popup introPopupTrigger"
+            &gt;Intro Popup Form&lt;/a
+        &gt;
+        &lt;div class="aiosp-hide" id="introPopupHolder"&gt;
+            &lt;div class="introPopupHolder-content"&gt;
+                &lt;div class="intro-popup-form"&gt;
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, nulla qui magni praesentium quia impedit quae ipsam, recusandae, eum sequi ex eligendi vel doloribus accusantium? Laborum corporis nesciunt quam deserunt.
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Intro Popup end --&gt;
+</div>
+
 <!-- your home html -->
 
 <?php get_footer(); ?>

@@ -1,3 +1,4 @@
+import { PageService } from './../services/page.service';
 import { RegionsService } from '../services/regions.service';
 import { Component, Input } from '@angular/core';
 
@@ -13,11 +14,14 @@ export class JsGeneratorComponent {
 
     constructor(
         public RegionsService: RegionsService,
+        public PageService: PageService,
+        
     ) {
 
     }
 
     ngOnInit() {
+        console.log(this.PageService.enablePagePopUpModal);
     }
 
     convertToCamelCase(name) {
