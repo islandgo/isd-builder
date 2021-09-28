@@ -1,34 +1,53 @@
 <?php get_header(); ?>
 <!-- your home html -->
 <div *ngFor="let region of customRegions; let i = index">
-    {{createOpenTagBuilder('section', region[1]['keyword_class'],'hp-')}} <br>
-    {{createOpenTagBuilder('div', region[1]['keyword_class'],'region-','-container')}} <br>
-    <div *ngFor="let regionChild of RegionsService.converObjectToArray(region[1]['region_sections']); let childIndex = index">
-        {{createOpenTagBuilder('div', regionChild[1]['section_class_name'],prefixHashConverted(region[1]['keyword_class']),'')}} <br>
-        {{createCloseTagBuilder('div')}}  <br>
-   
-    </div>
-    {{createCloseTagBuilder('div')}}  <br>
-    {{createCloseTagBuilder('section')}}  <br>
-
+  {{ createOpenTagBuilder("section", region[1]["keyword_class"], "hp-") }}
+  <br />
+  {{
+    createOpenTagBuilder(
+      "div",
+      region[1]["keyword_class"],
+      "region-",
+      "-container"
+    )
+  }}
+  <br />
+  <div
+    *ngFor="
+      let regionChild of RegionsService.converObjectToArray(
+        region[1]['region_sections']
+      );
+      let childIndex = index
+    "
+  >
+    {{
+      createOpenTagBuilder(
+        "div",
+        regionChild[1]["section_class_name"],
+        prefixHashConverted(region[1]["keyword_class"]),
+        ""
+      )
+    }}
+    <br />
+    {{ createCloseTagBuilder("div") }} <br />
+  </div>
+  {{ createCloseTagBuilder("div") }} <br />
+  {{ createCloseTagBuilder("section") }} <br />
 </div>
 
 <div *ngIf="PageService.enablePagePopUpModal">
-    &lt;!-- Intro Popup --&gt;
-    &lt;div class="intro-popup"&gt;
-        &lt;a href="#introPopupHolder" class="aios-content-popup introPopupTrigger"
-            &gt;Intro Popup Form&lt;/a
-        &gt;
-        &lt;div class="aiosp-hide" id="introPopupHolder"&gt;
-            &lt;div class="introPopupHolder-content"&gt;
-                &lt;div class="intro-popup-form"&gt;
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, nulla qui magni praesentium quia impedit quae ipsam, recusandae, eum sequi ex eligendi vel doloribus accusantium? Laborum corporis nesciunt quam deserunt.
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- Intro Popup end --&gt;
+  &lt;!-- Intro Popup --&gt; &lt;div class="intro-popup"&gt; &lt;a
+  href="#introPopupHolder" class="aios-content-popup introPopupTrigger"
+  &gt;Intro Popup Form&lt;/a &gt; &lt;div class="aiosp-hide"
+  id="introPopupHolder"&gt; &lt;div class="introPopupHolder-content"&gt; &lt;div
+  class="intro-popup-form"&gt; Lorem ipsum dolor sit amet consectetur
+  adipisicing elit. Officiis, nulla qui magni praesentium quia impedit quae
+  ipsam, recusandae, eum sequi ex eligendi vel doloribus accusantium? Laborum
+  corporis nesciunt quam deserunt. &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;
+  &lt;/div&gt; &lt;!-- Intro Popup end --&gt;
 </div>
+
+<div *ngIf="PageService.enablePageFloatingMenu">Sample sample</div>
 
 <!-- your home html -->
 

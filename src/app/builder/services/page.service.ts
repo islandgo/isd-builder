@@ -16,6 +16,7 @@ export class PageService {
     enablePageBurgerMenu: boolean = false;
     enablePageNormalHeader: boolean = false;
     headerType:string;
+    enablePageFloatingMenu: boolean;
     constructor(private httpClient: HttpClient) { }
 
     ngOnInit() {
@@ -58,6 +59,7 @@ export class PageService {
         this.enablePagePopUpModal = false;
         this.enablePagePopUpModal = false;
         this.enablePageNormalHeader = false;
+        this.enablePageFloatingMenu = false;
         this.getPage().subscribe(data => {
             if (data) {
                 this.pageSettings = Object.entries(data);
@@ -76,6 +78,11 @@ export class PageService {
                         if (obj[0] == "social_fix_nav") {
                             this.enablePagePopUpModal = true;
                         }
+                        if (obj[0] == "floating_menu") {
+                            
+                            this.enablePageFloatingMenu = true;
+                            
+                        }
                         if (obj[0] == "header") {
                             this.headerType = obj[1]["settings"]["headerType"]["value"];
                             if (obj[1]["settings"]["headerType"]["value"] == "normal-header") {
@@ -84,7 +91,6 @@ export class PageService {
                         }
                     }
                 });
-       
             }
         });
     }

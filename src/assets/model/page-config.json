@@ -2,18 +2,19 @@
     "popup_modal": {
         "enable": false,
         "name": "popup-modal",
-        "settings": {
-            
-        }
+        "settings": {}
     },
     "header": {
         "enable": true,
         "name": "header",
         "settings": {
             "headerType": {
-                "value":"normal-header",
+                "value": "normal-header",
                 "inpuType": "select",
-                "selectValue":["normal-header","split-nav"],
+                "selectValue": [
+                    "normal-header",
+                    "split-nav"
+                ],
                 "name": "header type"
             }
         }
@@ -21,16 +22,47 @@
     "burger_menu": {
         "enable": false,
         "name": "burger-menu",
-        "settings": {
-            
-        }
+        "settings": {}
     },
     "social_fix_nav": {
         "enable": false,
         "name": "social-fix-nav",
         "settings": {
-            
+            "position": {
+                "value": "left",
+                "inpuType": "select",
+                "selectValue": [
+                    "right",
+                    "left"
+                ],
+                "name": "position"
+            },
+            "scroll_down": {
+                "value": "false",
+                "inpuType": "select",
+                "selectValue": [
+                    "true",
+                    "false"
+                ],
+                "name": "scroll down"
+            }
+        }
+    },
+    "floating_menu": {
+        "enable": false,
+        "name": "floating-menu",
+        "settings": {
+            "floatingPosition": {
+                "value": "left",
+                "inpuType": "select",
+                "selectValue": [
+                    "left",
+                    "right",
+                    "top",
+                    "bottom"
+                ],
+                "name": "floating menu"
+            }
         }
     }
-   
 }

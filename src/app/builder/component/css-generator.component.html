@@ -554,6 +554,17 @@ aside menu{{' {'}}
 
 </div>
 
+<div *ngIf="PageService.enablePageFloatingMenu">
+    /*#region floating menu */
+    .floating {{' {'}}
+        background: red;
+        color : blue;
+    }
+    /*#endregion floating menu */
+</div>
+
+
+
 
 <div *ngFor="let region of customRegions; let i = index">
     /*#region {{region[1]['region_name'] }} */ <br>
