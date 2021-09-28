@@ -1,3 +1,4 @@
+import { RegionsService } from './../../builder/services/regions.service';
 import { PageService } from './../../builder/services/page.service';
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
@@ -9,9 +10,17 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 })
 export class CustomInputTypeComponent {
     @Input() public customInputs;
+    sampleConfig;
     constructor(
-        public PageService:PageService
+        public PageService:PageService,
+        public RegionsService:RegionsService
     ) {
+    }
+
+    ngOnInit(): void {
+       this.sampleConfig = "sample"
+       console.log(this.customInputs);
+        
     }
 
 }

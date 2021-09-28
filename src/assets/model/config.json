@@ -13,6 +13,20 @@
                 "inpuType": "text",
                 "value": "fileName.png",
                 "name": "fileName"
+            },
+            "checkListing":{
+                "inpuType": "checkbox",
+                "checkListSetting": {
+                    "facebook": {
+                        "enable": true,
+                        "name" : "facebook"
+                    },
+                    "twitter": {
+                        "enable": true,
+                        "name" : "twitter"
+                    }
+
+                }
             }
         }
     },
