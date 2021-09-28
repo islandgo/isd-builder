@@ -45,6 +45,20 @@
                     "false"
                 ],
                 "name": "scroll down"
+            },
+            "socialIcons": {
+                "inpuType": "checkbox",
+                "checkListSetting": {
+                    "facebook": {
+                        "enable": true,
+                        "name": "facebook"
+                    },
+                    "twitter": {
+                        "enable": true,
+                        "name": "twitter"
+                    }
+                },
+                "name": "social icons"
             }
         }
     },

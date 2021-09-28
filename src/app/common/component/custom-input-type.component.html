@@ -1,33 +1,40 @@
-<div *ngFor="let setting of customInputs; trackBy:PageService.indexTracker">
-    <div class="custom-input">
-        <label>{{ setting[1]['name']  }}</label>
-        <div [ngSwitch]="setting[1]['inpuType']">
-            <div *ngSwitchCase="'text'">
-                <input [(ngModel)]="setting[1]['value']" type="text" name="" id="">
-            </div>
-            <div *ngSwitchCase="'select'">
-                <select [(ngModel)]="setting[1]['value']"> 
-                    <option  *ngFor="let obj of setting[1]['selectValue']" [value]="obj">{{obj}}</option>
-                </select>
-            </div>
-            <div *ngSwitchCase="'checkbox'">
-                
-                <div *ngFor="let option of RegionsService.converObjectToArray(setting[1]['checkListSetting']); trackBy:PageService.indexTracker">
-                    <div class="form-group">
-                        <label class="checkbox-container">
-                            {{option[0]}}
-                            <input 
-                                type="checkbox" 
-                                name="options"
-                                value="{{option[1]['name']}}"
-                                [(ngModel)]="option[1]['enable']"
-                             />
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
+<div *ngFor="let setting of customInputs; trackBy: PageService.indexTracker">
+  <div class="custom-input">
+    <label>{{ setting[1]["name"] }}</label>
+    <div [ngSwitch]="setting[1]['inpuType']">
+      <div *ngSwitchCase="'text'">
+        <input [(ngModel)]="setting[1]['value']" type="text" name="" id="" />
+      </div>
+      <div *ngSwitchCase="'select'">
+        <select [(ngModel)]="setting[1]['value']">
+          <option *ngFor="let obj of setting[1]['selectValue']" [value]="obj">
+            {{ obj }}
+          </option>
+        </select>
+      </div>
+      <div *ngSwitchCase="'checkbox'">
+        <div
+          *ngFor="
+            let option of RegionsService.converObjectToArray(
+              setting[1]['checkListSetting']
+            );
+            trackBy: PageService.indexTracker
+          "
+        >
+          <div class="form-group">
+            <label class="checkbox-container">
+              {{ option[0] }}
+              <input
+                type="checkbox"
+                name="options"
+                value="{{ option[1]['name'] }}"
+                [(ngModel)]="option[1]['enable']"
+              />
+              <span class="checkmark"></span>
+            </label>
           </div>
+        </div>
+      </div>
     </div>
-
+  </div>
 </div>

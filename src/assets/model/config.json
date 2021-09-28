@@ -2,30 +2,32 @@
     "background": {
         "enable": false,
         "name": "region-background",
-        "settings":{
+        "settings": {
             "hasRgba": {
                 "inpuType": "select",
-                "selectValue": [true,false],
+                "selectValue": [
+                    true,
+                    false
+                ],
                 "value": true,
                 "name": "has rbga"
             },
-            "file_name":{
+            "file_name": {
                 "inpuType": "text",
                 "value": "fileName.png",
                 "name": "fileName"
             },
-            "checkListing":{
+            "checkListing": {
                 "inpuType": "checkbox",
                 "checkListSetting": {
                     "facebook": {
                         "enable": true,
-                        "name" : "facebook"
+                        "name": "facebook"
                     },
                     "twitter": {
                         "enable": true,
-                        "name" : "twitter"
+                        "name": "twitter"
                     }
-
                 }
             }
         }
@@ -33,14 +35,17 @@
     "slick": {
         "enable": false,
         "name": "slick",
-        "settings":{
+        "settings": {
             "asNaV": {
                 "inpuType": "text",
-                "selectValue": [true,false],
+                "selectValue": [
+                    true,
+                    false
+                ],
                 "value": true,
                 "name": "asNaV"
             },
-            "file_name":{
+            "file_name": {
                 "inpuType": "text",
                 "value": "fileName.png",
                 "name": "fileName"
@@ -50,14 +55,17 @@
     "elementPeek": {
         "enable": false,
         "name": "elementPeek",
-        "settings":{
+        "settings": {
             "hasRgba": {
                 "inpuType": "text",
-                "selectValue": [true,false],
+                "selectValue": [
+                    true,
+                    false
+                ],
                 "value": true,
                 "name": "has rbga"
             },
-            "file_name":{
+            "file_name": {
                 "inpuType": "text",
                 "value": "fileName.png",
                 "name": "fileName"
