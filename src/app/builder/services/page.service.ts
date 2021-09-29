@@ -17,6 +17,7 @@ export class PageService {
     enablePageNormalHeader: boolean = false;
     headerType:string;
     enablePageFloatingMenu: boolean;
+    floatingMenuType: any;
     constructor(private httpClient: HttpClient) { }
 
     ngOnInit() {
@@ -79,8 +80,8 @@ export class PageService {
                             this.enablePagePopUpModal = true;
                         }
                         if (obj[0] == "floating_menu") {
-                            
                             this.enablePageFloatingMenu = true;
+                            this.floatingMenuType = obj[1]["settings"]["floatingPosition"]["value"];
                             
                         }
                         if (obj[0] == "header") {

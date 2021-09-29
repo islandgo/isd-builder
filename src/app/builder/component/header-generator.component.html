@@ -34,21 +34,9 @@
 					&lt;/div&gt;
 				&lt;/a&gt;
 			&lt;/div&gt;
-			<div *ngIf="PageService.enablePageFloatingMenu">
-				&lt;div class="floating-form-view hidden-sm hidden-xs"&gt;
-					&lt;div class="floating-view-wrap floating-view"&gt;
-						&lt;div class="floating-form--btn js-trigger-form"&gt;
-							&lt;span class="floating-text"&gt;Mls Search&lt;/span&gt;
-						&lt;/div&gt;
-						&lt;div class="floating-body"&gt;
-							&lt;div class="close-sidebar ai-font-close-a"&gt;
-								&lt;span class="hidden"&gt;close&lt;/span&gt;
-							&lt;/div&gt;
-						&lt;/div&gt;
-					&lt;/div&gt;
-				&lt;/div&gt;
-				&lt;div class="floating-form-drop floating-view"&gt;&lt;/div&gt;
-			</div>
+			&lt;nav class="navigation"&gt;
+				&lt;?php wp_nav_menu( array( 'sort_column' =&gt; 'menu_order', 'menu_id' =&gt; 'nav', 'theme_location' =&gt; 'primary-menu' ) ); ?&gt;
+			&lt;/nav&gt;
 			<div *ngIf="PageService.enablePageBurgerMenu">
 				&lt;!-- Burger Menu --&gt;
 				&lt;div class="burger-menu is-active"&gt;
@@ -59,6 +47,21 @@
 			</div>
 		&lt;/div&gt;
 	&lt;/header&gt;
+	<div *ngIf="PageService.enablePageFloatingMenu">
+		&lt;div class="floating-form-view hidden-sm hidden-xs"&gt;
+			&lt;div class="floating-view-wrap floating-view"&gt;
+				&lt;div class="floating-form--btn js-trigger-form"&gt;
+					&lt;span class="floating-text"&gt;Mls Search&lt;/span&gt;
+				&lt;/div&gt;
+				&lt;div class="floating-body"&gt;
+					&lt;div class="close-sidebar ai-font-close-a"&gt;
+						&lt;span class="hidden"&gt;close&lt;/span&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="floating-form-drop floating-view"&gt;&lt;/div&gt;
+	</div>
 	<div *ngIf="PageService.enablePageBurgerMenu">
 		&lt;!-- Burger Menu Content --&gt;
 		&lt;div class="bm-menu bm-view"&gt;
