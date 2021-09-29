@@ -48,6 +48,29 @@ jQuery("header.header").removeClass("show-fixed");
     {{'}'}},
 </div>
 
+<div *ngIf="PageService.enablePageBurgerMenu">
+    initFloatingForm: function () {{' {'}}
+        jQuery(".js-trigger-form").on("click", function (e) {{' {'}}
+            e.stopPropagation();
+            if (jQuery(this).hasClass("is-active")) {{' {'}}
+                jQuery(this).removeClass("is-active");
+                jQuery(".floating-view").removeClass("is-open");
+                {{' }'}} else {{' {'}}
+                jQuery(this).addClass("is-active");
+                jQuery(".floating-view").addClass("is-open");
+                {{' }'}}
+                {{' }'}});
+        jQuery(".floating-form-drop").on("click", function (e) {{' {'}}
+            jQuery(".js-trigger-form").removeClass("is-active");
+            jQuery(".floating-view").removeClass("is-open");
+            {{' }'}});
+        jQuery(".close-sidebar").on("click", function (e) {{' {'}}
+            jQuery(".js-trigger-form").removeClass("is-active");
+            jQuery(".floating-view").removeClass("is-open");
+            {{' }'}});
+            {{' }'}},
+</div>
+
 
 <div *ngIf="PageService.headerType == 'split-nav' ">
     initSplitHeader: function () {{' {'}}
@@ -75,6 +98,9 @@ jQuery(document).ready(function (){{' {'}}
 app.initNavigation();
 <div *ngIf="PageService.enablePageBurgerMenu">
     app.initBurgerMenu();
+</div>
+<div *ngIf="PageService.enablePageFloatingMenu">
+    app.initFloatingForm();
 </div>
 <div *ngIf="PageService.headerType == 'split-nav' ">
     app.initSplitHeader();

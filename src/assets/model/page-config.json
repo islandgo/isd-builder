@@ -71,9 +71,7 @@
                 "inpuType": "select",
                 "selectValue": [
                     "left",
-                    "right",
-                    "top",
-                    "bottom"
+                    "right"
                 ],
                 "name": "floating menu"
             }
