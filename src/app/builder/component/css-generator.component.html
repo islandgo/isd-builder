@@ -201,6 +201,10 @@ select{{' {'}}
     overflow: hidden;
 {{'}'}}
 
+section{{' {'}}
+    min-height: 500px;
+{{'}'}}
+
 .canvas-wrapper{{' {'}}
     position: relative;
 {{'}'}}
@@ -852,6 +856,103 @@ aside menu{{' {'}}
 
     /*#endregion floating menu */
     </div>
+</div>
+
+<div *ngIf="PageService.enablePageSocialFiXNav">
+    /*#region Fixed smi */
+        ul.comp-social-sidebar {{' {'}}
+            position: fixed;
+            top: 50%;
+            left: 0;
+            color: #000000;
+            transform: translateY(-50%);
+            padding-left: 20px;
+            z-index: 111;
+        }
+
+        ul.comp-social-sidebar .side-smi a {{' {'}}
+            font-size: 22px;
+        }
+        ul.comp-social-sidebar li:first-child {{' {'}}
+            margin-bottom: 17px;
+        }
+
+        ul.comp-social-sidebar li {{' {'}}
+            margin-bottom: 21px;
+        }
+
+        ul.comp-social-sidebar .side-smi a {{' {'}}
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+
+        ul.comp-social-sidebar .side-smi a:hover {{' {'}}
+            color: #c4ad91;
+        }
+
+        ul.comp-social-sidebar .side-smi a span {{' {'}}
+            font-size: 16px;
+        }
+
+        li.smi-title {{' {'}}
+            writing-mode: tb-rl;
+            transform: scale(-1);
+            color: #000000;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin: 0 auto;
+        }
+
+        li.smi-title::before {{' {'}}
+            content: " ";
+            position: absolute;
+            height: 68px;
+            background: #000000;
+            width: 1px;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 111;
+        }
+
+        .nav-active-section-hp-slideshow .side-smi a,
+        .nav-active-section-hp-touch .side-smi {{' {'}}
+            color: #fff;
+        }
+
+        .nav-active-section-hp-slideshow .smi-title,
+        .nav-active-section-hp-touch .smi-title {{' {'}}
+            color: #fff;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .nav-active-section-hp-slideshow .smi-title::before,
+        .nav-active-section-hp-touch .smi-title::before {{' {'}}
+            background: #fff;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+
+        div#scroll-down {{' {'}}
+            font-size: 0;
+        }
+
+        /*#endregion Fixed smi */
+    <div *ngIf="PageService.enablePageSocialFiXNav=='left'">
+        
+    </div>
+    <div *ngIf="PageService.enablePageSocialFiXNav=='right'"></div>
 </div>
 
 

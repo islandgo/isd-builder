@@ -96,6 +96,9 @@ jQuery("header.header").removeClass("show-fixed");
 
 jQuery(document).ready(function (){{' {'}}
 app.initNavigation();
+<div *ngIf="PageService.enablePageSocialFiXNav">
+    jQuery("#scroll-down").sideNavigation();
+</div>
 <div *ngIf="PageService.enablePageBurgerMenu">
     app.initBurgerMenu();
 </div>

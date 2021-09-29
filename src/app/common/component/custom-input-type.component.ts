@@ -19,7 +19,6 @@ export class CustomInputTypeComponent {
 
     ngOnInit(): void {
        this.sampleConfig = "sample"
-       console.log(this.customInputs);
         
     }
 

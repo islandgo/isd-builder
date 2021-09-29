@@ -53,9 +53,29 @@
                         "enable": true,
                         "name": "facebook"
                     },
+                    "linkedin": {
+                        "enable": true,
+                        "name": "linkedin"
+                    },
                     "twitter": {
                         "enable": true,
                         "name": "twitter"
+                    },
+                    "youtube": {
+                        "enable": true,
+                        "name": "youtube"
+                    },
+                    "instagram": {
+                        "enable": true,
+                        "name": "instagram"
+                    },
+                    "snapchat": {
+                        "enable": true,
+                        "name": "snapchat"
+                    },
+                    "zillow": {
+                        "enable": true,
+                        "name": "zillow"
                     }
                 },
                 "name": "social icons"

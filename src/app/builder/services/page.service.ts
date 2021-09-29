@@ -18,6 +18,9 @@ export class PageService {
     headerType:string;
     enablePageFloatingMenu: boolean;
     floatingMenuType: any;
+    enablePageSocialFiXNav: boolean;
+    socialFixNavType: any;
+    socialFixNavList: any;
     constructor(private httpClient: HttpClient) { }
 
     ngOnInit() {
@@ -61,6 +64,7 @@ export class PageService {
         this.enablePagePopUpModal = false;
         this.enablePageNormalHeader = false;
         this.enablePageFloatingMenu = false;
+        this.enablePageSocialFiXNav = false;
         this.getPage().subscribe(data => {
             if (data) {
                 this.pageSettings = Object.entries(data);
@@ -77,12 +81,14 @@ export class PageService {
                             this.enablePageBurgerMenu = true;
                         }
                         if (obj[0] == "social_fix_nav") {
-                            this.enablePagePopUpModal = true;
+                            this.enablePageSocialFiXNav = true;
+                            this.socialFixNavType = obj[1]["settings"]["position"]["value"];
+                            this.socialFixNavList = obj[1]["settings"]["socialIcons"]["checkListSetting"];
+                            console.log(this.socialFixNavList);
                         }
                         if (obj[0] == "floating_menu") {
                             this.enablePageFloatingMenu = true;
                             this.floatingMenuType = obj[1]["settings"]["floatingPosition"]["value"];
-                            
                         }
                         if (obj[0] == "header") {
                             this.headerType = obj[1]["settings"]["headerType"]["value"];
