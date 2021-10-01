@@ -36,6 +36,23 @@
 			&lt;/div&gt;
 			&lt;nav class="navigation"&gt;
 				&lt;?php wp_nav_menu( array( 'sort_column' =&gt; 'menu_order', 'menu_id' =&gt; 'nav', 'theme_location' =&gt; 'primary-menu' ) ); ?&gt;
+				<div *ngIf="PageService.enablePageGoogleTranslator">
+					&lt;div class="translate-wrapper"&gt;
+					  &lt;div class="nav-translate"&gt;
+						  &lt;img
+							  alt="logo"
+							  class="translate-img"
+							  src="&lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/translate.png"
+						  /&gt;
+						  &lt;a
+							  href="#"
+							  class="google-translator-flag"
+							  role="button"
+							  aria-label="translate"
+						  &gt;&lt;/a&gt;
+					  &lt;/div&gt;
+				   &lt;/div&gt;
+				</div>
 			&lt;/nav&gt;
 			<div *ngIf="PageService.enablePageBurgerMenu">
 				&lt;!-- Burger Menu --&gt;

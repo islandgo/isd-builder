@@ -71,5 +71,16 @@
                 "name": "fileName"
             }
         }
+    },
+    "double_tap": {
+        "enable": false,
+        "name": "double-tap",
+        "settings": {
+            "className": {
+                "inpuType": "text",
+                "value": "fc-list a",
+                "name": "Class Name"
+            }
+        }
     }
 }

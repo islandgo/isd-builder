@@ -58,11 +58,11 @@
                         "name": "linkedin"
                     },
                     "twitter": {
-                        "enable": true,
+                        "enable": false,
                         "name": "twitter"
                     },
                     "youtube": {
-                        "enable": true,
+                        "enable": false,
                         "name": "youtube"
                     },
                     "instagram": {
@@ -70,11 +70,11 @@
                         "name": "instagram"
                     },
                     "snapchat": {
-                        "enable": true,
+                        "enable": false,
                         "name": "snapchat"
                     },
                     "zillow": {
-                        "enable": true,
+                        "enable": false,
                         "name": "zillow"
                     }
                 },
@@ -96,5 +96,10 @@
                 "name": "floating menu"
             }
         }
+    },
+    "google_translator": {
+        "enable": false,
+        "name": "google-translator",
+        "settings": {}
     }
 }

@@ -859,7 +859,9 @@ aside menu{{' {'}}
 </div>
 
 <div *ngIf="PageService.enablePageSocialFiXNav">
-    /*#region Fixed smi */
+    
+    <div *ngIf="PageService.socialFixNavType=='left'">
+        /*#region Fixed smi */
         ul.comp-social-sidebar {{' {'}}
             position: fixed;
             top: 50%;
@@ -949,13 +951,159 @@ aside menu{{' {'}}
         }
 
         /*#endregion Fixed smi */
-    <div *ngIf="PageService.enablePageSocialFiXNav=='left'">
-        
     </div>
-    <div *ngIf="PageService.enablePageSocialFiXNav=='right'"></div>
+    <div *ngIf="PageService.socialFixNavType=='right'">
+        /*#region Fixed smi */
+        ul.comp-social-sidebar {{' {'}}
+            position: fixed;
+            top: 50%;
+            right: 0;
+            color: #000000;
+            transform: translateY(-50%);
+            padding-right: 20px;
+            z-index: 111;
+        }
+
+        ul.comp-social-sidebar .side-smi a {{' {'}}
+            font-size: 22px;
+        }
+        ul.comp-social-sidebar li:first-child {{' {'}}
+            margin-bottom: 17px;
+        }
+
+        ul.comp-social-sidebar li {{' {'}}
+            margin-bottom: 21px;
+        }
+
+        ul.comp-social-sidebar .side-smi a {{' {'}}
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+
+        ul.comp-social-sidebar .side-smi a:hover {{' {'}}
+            color: #c4ad91;
+        }
+
+        ul.comp-social-sidebar .side-smi a span {{' {'}}
+            font-size: 16px;
+        }
+
+        li.smi-title {{' {'}}
+            writing-mode: tb-rl;
+            transform: scale(-1);
+            color: #000000;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin: 0 auto;
+        }
+
+        li.smi-title::before {{' {'}}
+            content: " ";
+            position: absolute;
+            height: 68px;
+            background: #000000;
+            width: 1px;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 111;
+        }
+
+        .nav-active-section-hp-slideshow .side-smi a,
+        .nav-active-section-hp-touch .side-smi {{' {'}}
+            color: #fff;
+        }
+
+        .nav-active-section-hp-slideshow .smi-title,
+        .nav-active-section-hp-touch .smi-title {{' {'}}
+            color: #fff;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .nav-active-section-hp-slideshow .smi-title::before,
+        .nav-active-section-hp-touch .smi-title::before {{' {'}}
+            background: #fff;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+
+        div#scroll-down {{' {'}}
+            font-size: 0;
+        }
+
+        /*#endregion Fixed smi */
+    </div>
 </div>
 
+<div *ngIf="PageService.enablePageGoogleTranslator">
+    /* Gtranslate */
+    .translate-wrapper {{' {'}}
+    position: absolute;
+    right: 0;
+    top: 18px;
+    }
 
+    .nav-translate {{' {'}}
+    position: relative;
+    font-size: 0;
+    }
+
+    .nav-translate .ai-translator-dropdown-wrap,
+    .nav-translate a.google-translator-flag {{' {'}}
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    }
+
+    .skiptranslate {{' {'}}
+    display: none !important;
+    }
+
+    .nav-translate .ai-translator-dropdown-wrap,
+    .nav-translate a.google-translator-flag {{' {'}}
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    }
+
+    .nav-translate img {{' {'}}
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    }
+
+    .nav-translate:hover img,
+    .nav-translate:focus img {{' {'}}
+    opacity: 0.7;
+    }
+
+    .nav .ai-translator-dropdown {{' {'}}
+    left: initial;
+    right: 0;
+    }
+
+    .ai-translator-dropdown ul li {{' {'}}
+    color: #000000;
+    }
+
+    /* Gtranslate end */
+</div>
 
 
 <div *ngFor="let region of customRegions; let i = index">
