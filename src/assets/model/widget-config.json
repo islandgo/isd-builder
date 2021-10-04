@@ -132,9 +132,9 @@
             }
         }
     },
-    "custom_grid": {
+    "custom_gallery": {
         "enable": false,
-        "name": "custom-grid",
+        "name": "custom-gallery",
         "settings": {
             "selected_section": {
                 "inpuType": "select",
@@ -147,11 +147,6 @@
                 ],
                 "value": "primary-section",
                 "name": "selected-section"
-            },
-            "className": {
-                "inpuType": "text",
-                "value": "fc-list a",
-                "name": "Class Name"
             }
         }
     },

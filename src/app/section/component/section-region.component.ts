@@ -12,7 +12,8 @@ export class SectionRegionComponent {
     selectedRegion;
     customRegion;
     selectedRegionKey;
-    config;
+    widgets;
+    backgroundSettings;
     constructor(
         protected RegionsService: RegionsService,
         protected PageService: PageService
@@ -30,19 +31,20 @@ export class SectionRegionComponent {
                 this.customRegion = customRegion;
                 this.selectedRegion = customRegion[this.selectedRegionKey];
                 if (customRegion) {
-                    this.config = this.RegionsService.converObjectToArray(customRegion[this.selectedRegionKey]['config']);
+                    this.widgets = this.RegionsService.converObjectToArray(customRegion[this.selectedRegionKey]['widgets']);
+                    this.backgroundSettings = this.RegionsService.converObjectToArray(customRegion[this.selectedRegionKey]['background_setting']);
                 }
             });
         });
     }
 
     saveRegionSetting() {
-        this.customRegion[this.selectedRegionKey]['config'] = this.PageService.jsonFormatter(this.config);
+        this.customRegion[this.selectedRegionKey]['config'] = this.PageService.jsonFormatter(this.widgets);
+        this.customRegion[this.selectedRegionKey]['background_setting'] = this.PageService.jsonFormatter(this.backgroundSettings);
         this.RegionsService.setCustomRegions(this.customRegion);
     }
 
     getOption(option) {
-        console.log(this.RegionsService.converObjectToArray(option[1]['grid_settings']));
         return this.RegionsService.converObjectToArray(option[1]['grid_settings']);
     }
 

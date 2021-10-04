@@ -101,5 +101,16 @@
         "enable": false,
         "name": "google-translator",
         "settings": {}
+    },
+    "footer_bg": {
+        "enable": false,
+        "name": "footer-background",
+        "settings": {
+            "position": {
+                "value": "footer-bg.png",
+                "inpuType": "text",
+                "name": "Image File Name"
+            }
+        }
     }
 }

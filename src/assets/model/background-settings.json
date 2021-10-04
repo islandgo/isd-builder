@@ -1,0 +1,22 @@
+{
+    "background": {
+        "enable": false,
+        "name": "section background",
+        "settings": {
+            "imageFileName": {
+                "value": "sample.png",
+                "inpuType": "text",
+                "name": "Image File Name"
+            },
+            "hasRbga": {
+                "value": "false",
+                "inpuType": "select",
+                "selectValue": [
+                    "true",
+                    "false"
+                ],
+                "name": "Enable Rbga"
+            }
+        }
+    }
+}

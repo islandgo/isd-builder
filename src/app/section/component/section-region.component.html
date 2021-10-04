@@ -1,5 +1,25 @@
 <div class="region-setting-container">
         <fieldset>
+            <legend >Background Settings:</legend>
+            <div *ngFor="let option of backgroundSettings; let i = index">
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        {{option[0]}}
+                        <input 
+                            type="checkbox" 
+                            name="options"
+                            value="{{option[1]['name']}}"
+                            [(ngModel)]="option[1]['enable']"
+                         />
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="custom-input-container" *ngIf="option[1]['enable']">
+                    <custom-input-type [customInputs]="RegionsService.converObjectToArray(option[1]['settings'])"></custom-input-type>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
             <legend >Grid Settings:</legend>
             <h5>Parent Section</h5>
             <custom-input-type [customInputs]="RegionsService.converObjectToArray(selectedRegion['grid_setting'])"></custom-input-type>
@@ -11,7 +31,7 @@
 
         <fieldset>
             <legend >Widget Settings:</legend>
-            <div *ngFor="let option of config; let i = index">
+            <div *ngFor="let option of widgets; let i = index">
                 <div class="form-group">
                     <label class="checkbox-container">
                         {{option[0]}}

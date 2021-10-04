@@ -68,22 +68,14 @@
         "region_id": "10",
         "region_name": "Contact us Region",
         "description": "Contact us Region",
-        "last_region_section": 0,
-        "region_sections": {
-            "primary_section": {
-                "section_class_name": "primary-section",
-                "row_start": 1,
-                "row_end": 1,
-                "column_start": 1,
-                "column_end": 1,
-                "has_background": "true"
-            }
-        }
+        "keyword_class": "contact-us",
+        "last_region_section": 0
     },
     "STATIC_HOMEPAGE": {
         "region_id": "11",
         "region_name": "Static Region",
         "description": "Static Region",
+        "keyword_class": "static",
         "last_region_section": 0
     },
     "BLOGS_HOMEPAGE": {

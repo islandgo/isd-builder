@@ -20,8 +20,11 @@ export class RegionsService {
 
     }
 
-    getGridParentSetting() {
-        return this.httpClient.get("assets/model/grid-settings.json");
+    getRegionSetting() {
+        let gridSetting =  this.httpClient.get("assets/model/grid-settings.json");
+        let backgroundSetting =  this.httpClient.get("assets/model/background-settings.json");
+        return forkJoin([gridSetting, backgroundSetting]);
+
     }
 
     setCustomRegions(jsonData) {

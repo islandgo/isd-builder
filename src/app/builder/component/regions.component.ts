@@ -49,15 +49,18 @@ export class RegionsComponent {
    
         this.RegionsService.getDefaultRegions().subscribe(data => {
             this.defaultRegions = data[0];
-            let regionConfig = data[1];
+            let regionWidgets = data[1];
             this.defaultRegionsObject = Object.entries(this.defaultRegions);
 
 
-            this.RegionsService.getGridParentSetting().subscribe(grid => {
+            this.RegionsService.getRegionSetting().subscribe(region => {
                 this.defaultRegionsObject.forEach(function (data) {
+                    console.log(data[1]['keyword_class']);
+                    // console.log(region[1]['background']['settings']['imageFileName']['value']);
                     data[1]["region_sections"] = {};
-                    data[1]["grid_setting"] = grid;
-                    data[1]["config"] = regionConfig;
+                    data[1]["grid_setting"] = region[0];
+                    data[1]["background_setting"] = region[1];
+                    data[1]["widgets"] = regionWidgets;
                 });
                
             });
