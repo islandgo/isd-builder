@@ -15,15 +15,13 @@ export class RegionsService {
 
     getDefaultRegions() {
         let regionResponse = this.httpClient.get("assets/model/regions.json");
-        let regionConfigResponse = this.httpClient.get("assets/model/config.json");
+        let regionConfigResponse = this.httpClient.get("assets/model/widget-config.json");
         return forkJoin([regionResponse, regionConfigResponse]);
 
     }
 
- 
-
-    getRegionsConfigSection() {
-        return this.httpClient.get("assets/model/regions-config.json");
+    getGridParentSetting() {
+        return this.httpClient.get("assets/model/grid-settings.json");
     }
 
     setCustomRegions(jsonData) {

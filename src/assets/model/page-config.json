@@ -1,9 +1,4 @@
 {
-    "popup_modal": {
-        "enable": false,
-        "name": "popup-modal",
-        "settings": {}
-    },
     "header": {
         "enable": true,
         "name": "header",
@@ -18,6 +13,11 @@
                 "name": "header type"
             }
         }
+    },
+    "popup_modal": {
+        "enable": false,
+        "name": "popup-modal",
+        "settings": {}
     },
     "burger_menu": {
         "enable": false,

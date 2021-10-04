@@ -1,0 +1,22 @@
+{
+    "grid_parent": {
+        "inpuType": "select",
+        "selectValue": [
+            "grid",
+            "block"
+        ],
+        "value": "grid",
+        "name": "display"
+    },
+    "grid_max_width": {
+        "inpuType": "text",
+        "value": "1250px",
+        "name": "max-width"
+    },
+    "grid_template_columns": {
+        "inpuType": "text",
+        "value": "repeat(100,1fr)",
+        "name": "grid-template-columns"
+    }
+
+}

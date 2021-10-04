@@ -1,0 +1,176 @@
+{
+    "background": {
+        "enable": false,
+        "name": "region-background",
+        "settings": {
+            "selected_section": {
+                "inpuType": "select",
+                "selectValue": [
+                    "parent-section",
+                    "primary-section",
+                    "secondary-section",
+                    "tertiary-section",
+                    "fourth-section"
+                ],
+                "value": "primary-section",
+                "name": "selected-section"
+            },
+            "hasRgba": {
+                "inpuType": "select",
+                "selectValue": [
+                    true,
+                    false
+                ],
+                "value": true,
+                "name": "has rbga"
+            },
+            "file_name": {
+                "inpuType": "text",
+                "value": "fileName.png",
+                "name": "fileName"
+            },
+            "checkListing": {
+                "inpuType": "checkbox",
+                "name": "Social icons",
+                "checkListSetting": {
+                    "facebook": {
+                        "enable": true,
+                        "name": "facebook"
+                    },
+                    "twitter": {
+                        "enable": true,
+                        "name": "twitter"
+                    }
+                }
+            }
+        }
+    },
+    "slick": {
+        "enable": false,
+        "name": "slick",
+        "settings": {
+            "selected_section": {
+                "inpuType": "select",
+                "selectValue": [
+                    "parent-section",
+                    "primary-section",
+                    "secondary-section",
+                    "tertiary-section",
+                    "fourth-section"
+                ],
+                "value": "primary-section",
+                "name": "selected-section"
+            },
+            "asNaV": {
+                "inpuType": "text",
+                "selectValue": [
+                    true,
+                    false
+                ],
+                "value": true,
+                "name": "asNaV"
+            },
+            "file_name": {
+                "inpuType": "text",
+                "value": "fileName.png",
+                "name": "fileName"
+            }
+        }
+    },
+    "elementPeek": {
+        "enable": false,
+        "name": "elementPeek",
+        "settings": {
+            "selected_section": {
+                "inpuType": "select",
+                "selectValue": [
+                    "parent-section",
+                    "primary-section",
+                    "secondary-section",
+                    "tertiary-section",
+                    "fourth-section"
+                ],
+                "value": "primary-section",
+                "name": "selected-section"
+            },
+            "hasRgba": {
+                "inpuType": "text",
+                "selectValue": [
+                    true,
+                    false
+                ],
+                "value": true,
+                "name": "has rbga"
+            },
+            "file_name": {
+                "inpuType": "text",
+                "value": "fileName.png",
+                "name": "fileName"
+            }
+        }
+    },
+    "double_tap": {
+        "enable": false,
+        "name": "double-tap",
+        "settings": {
+            "selected_section": {
+                "inpuType": "select",
+                "selectValue": [
+                    "parent-section",
+                    "primary-section",
+                    "secondary-section",
+                    "tertiary-section",
+                    "fourth-section"
+                ],
+                "value": "primary-section",
+                "name": "selected-section"
+            },
+            "className": {
+                "inpuType": "text",
+                "value": "fc-list a",
+                "name": "Class Name"
+            }
+        }
+    },
+    "custom_grid": {
+        "enable": false,
+        "name": "custom-grid",
+        "settings": {
+            "selected_section": {
+                "inpuType": "select",
+                "selectValue": [
+                    "parent-section",
+                    "primary-section",
+                    "secondary-section",
+                    "tertiary-section",
+                    "fourth-section"
+                ],
+                "value": "primary-section",
+                "name": "selected-section"
+            },
+            "className": {
+                "inpuType": "text",
+                "value": "fc-list a",
+                "name": "Class Name"
+            }
+        }
+    },
+    "custom_title": {
+        "enable": false,
+        "name": "custom-title",
+        "settings": {
+            "selected_section": {
+                "inpuType": "select",
+                "selectValue": [
+                    "parent-section",
+                    "primary-section",
+                    "secondary-section",
+                    "tertiary-section",
+                    "fourth-section"
+                ],
+                "value": "primary-section",
+                "name": "selected-section"
+            }
+        }
+    }
+}

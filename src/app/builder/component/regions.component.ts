@@ -53,12 +53,13 @@ export class RegionsComponent {
             this.defaultRegionsObject = Object.entries(this.defaultRegions);
 
 
-            this.RegionsService.getRegionsConfigSection().subscribe(regionConfigSection => {
-                
+            this.RegionsService.getGridParentSetting().subscribe(grid => {
                 this.defaultRegionsObject.forEach(function (data) {
-                    data[1]["region_sections"] = regionConfigSection;
+                    data[1]["region_sections"] = {};
+                    data[1]["grid_setting"] = grid;
                     data[1]["config"] = regionConfig;
                 });
+               
             });
 
             this.addCheckboxes();

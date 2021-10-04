@@ -111,7 +111,7 @@ export class PageService {
         });
     }
 
-    indexTracker(index: number, value: any) {
+    indexTracker(index: number) {
         return index;
     }
   

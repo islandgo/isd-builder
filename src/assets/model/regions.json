@@ -4,73 +4,71 @@
         "region_name": "Banner Region",
         "description": "Slideshow Region",
         "keyword_class": "slideshow",
-        "grid_template_columns": 100,
-        "grid_max_width": "1600px",
         "has_background": "true",
         "background_url": "images/fa-bg.jpg",
-        "last_region_section": 1
+        "last_region_section": 0
     },
     "QUICK_SEARCH_HOMEPAGE": {
         "region_id": "2",
         "region_name": "Quick Search Region",
         "description": "Quick Search Region",
         "keyword_class": "quick-search",
-        "last_region_section": 1
+        "last_region_section": 0
     },
     "PROPERTIES_HOMEPAGE": {
         "region_id": "3",
         "region_name": "Properties Region",
         "description": "Properties Region",
         "keyword_class": "properties",
-        "last_region_section": 1
+        "last_region_section": 0
     },
     "AREAS_HOMEPAGE": {
         "region_id": "4",
         "region_name": "Areas Region",
         "description": "Areas Region",
         "keyword_class": "areas",
-        "last_region_section": 1
+        "last_region_section": 0
     },
     "CTA_HOMEPAGE": {
         "region_id": "5",
         "region_name": "Cta Region",
         "description": "Cta Region",
         "keyword_class": "cta",
-        "last_region_section": 1
+        "last_region_section": 0
     },
     "ABOUT_HOMEPAGE": {
         "region_id": "6",
         "region_name": "About Region",
         "description": "About Region",
         "keyword_class": "about",
-        "last_region_section": 1
+        "last_region_section": 0
     },
     "TEAM_HOMEPAGE": {
         "region_id": "7",
         "region_name": "Team Region",
         "description": "Team Region",
         "keyword_class": "team",
-        "last_region_section": 1
+        "last_region_section": 0
     },
     "VIDEOS_HOMEPAGE": {
         "region_id": "8",
         "region_name": "Videos Region",
         "description": "Videos Region",
         "keyword_class": "videos",
-        "last_region_section": 1
+        "last_region_section": 0
     },
     "TESTIMONIALS_HOMEPAGE": {
         "region_id": "9",
         "region_name": "Testimonial Region",
         "description": "Testimonial Region",
         "keyword_class": "testimonials",
-        "last_region_section": 1
+        "last_region_section": 0
     },
     "CONTACTUS_HOMEPAGE": {
         "region_id": "10",
         "region_name": "Contact us Region",
         "description": "Contact us Region",
-        "last_region_section": 1,
+        "last_region_section": 0,
         "region_sections": {
             "primary_section": {
                 "section_class_name": "primary-section",
@@ -86,41 +84,41 @@
         "region_id": "11",
         "region_name": "Static Region",
         "description": "Static Region",
-        "last_region_section": 1
+        "last_region_section": 0
     },
     "BLOGS_HOMEPAGE": {
         "region_id": "12",
         "region_name": "Blogs Region",
         "description": "Blogs Region",
         "keyword_class": "blogs",
-        "last_region_section": 1
+        "last_region_section": 0
     },
     "WORK_HOMEPAGE": {
         "region_id": "13",
         "region_name": "Work Region",
         "description": "Work Region",
         "keyword_class": "work",
-        "last_region_section": 1
+        "last_region_section": 0
     },
     "MAP_HOMEPAGE": {
         "region_id": "14",
         "region_name": "Map Region",
         "description": "Map Region",
         "keyword_class": "maps",
-        "last_region_section": 1
+        "last_region_section": 0
     },
     "MEDIA_HOMEPAGE": {
         "region_id": "15",
         "region_name": "Media Region",
         "description": "Media Region",
         "keyword_class": "media",
-        "last_region_section": 1
+        "last_region_section": 0
     },
     "SOCIAL_HOMEPAGE": {
         "region_id": "15",
         "region_name": "Social Region",
         "description": "Social Region",
         "keyword_class": "social",
-        "last_region_section": 1
+        "last_region_section": 0
     }
 }

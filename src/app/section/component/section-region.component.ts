@@ -28,6 +28,7 @@ export class SectionRegionComponent {
             this.selectedRegionKey = selectedRegion;
             this.RegionsService.getCustomRegions().subscribe(customRegion => {
                 this.customRegion = customRegion;
+                this.selectedRegion = customRegion[this.selectedRegionKey];
                 if (customRegion) {
                     this.config = this.RegionsService.converObjectToArray(customRegion[this.selectedRegionKey]['config']);
                 }
@@ -40,6 +41,9 @@ export class SectionRegionComponent {
         this.RegionsService.setCustomRegions(this.customRegion);
     }
 
-
+    getOption(option) {
+        console.log(this.RegionsService.converObjectToArray(option[1]['grid_settings']));
+        return this.RegionsService.converObjectToArray(option[1]['grid_settings']);
+    }
 
 }

@@ -1,39 +1,5 @@
 <?php get_header(); ?>
 <!-- your home html -->
-<!-- <div *ngFor="let region of customRegions; let i = index">
-  {{ createOpenTagBuilder("section", region[1]["keyword_class"], "hp-") }}
-  <br />
-  {{
-    createOpenTagBuilder(
-      "div",
-      region[1]["keyword_class"],
-      "region-",
-      "-container"
-    )
-  }}
-  <br />
-  <div
-    *ngFor="
-      let regionChild of RegionsService.converObjectToArray(
-        region[1]['region_sections']
-      );
-      let childIndex = index
-    "
-  >
-    {{
-      createOpenTagBuilder(
-        "div",
-        regionChild[1]["section_class_name"],
-        prefixHashConverted(region[1]["keyword_class"]),
-        ""
-      )
-    }}
-    <br />
-    {{ createCloseTagBuilder("div") }} <br />
-  </div>
-  {{ createCloseTagBuilder("div") }} <br />
-  {{ createCloseTagBuilder("section") }} <br />
-</div> -->
 
 <div *ngFor="let region of customRegions; let i = index">
   &lt;section class="hp-{{ region[1]["keyword_class"] }}"&gt; &lt;div

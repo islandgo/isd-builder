@@ -1,21 +1,35 @@
 <div class="region-setting-container">
-    <label for="options">Region Settings:</label>
-    <div *ngFor="let option of config; let i = index">
-        <div class="form-group">
-            <label class="checkbox-container">
-                {{option[0]}}
-                <input 
-                    type="checkbox" 
-                    name="options"
-                    value="{{option[1]['name']}}"
-                    [(ngModel)]="option[1]['enable']"
-                 />
-                <span class="checkmark"></span>
-            </label>
-        </div>
-        <div class="custom-input-container" *ngIf="option[1]['enable']">
-            <custom-input-type [customInputs]="RegionsService.converObjectToArray(option[1]['settings'])"></custom-input-type>
-        </div>
-    </div>
+        <fieldset>
+            <legend >Grid Settings:</legend>
+            <h5>Parent Section</h5>
+            <custom-input-type [customInputs]="RegionsService.converObjectToArray(selectedRegion['grid_setting'])"></custom-input-type>
+            <div *ngFor="let option of RegionsService.converObjectToArray(selectedRegion['region_sections']); trackBy: PageService.indexTracker">
+                <h5>{{ option[0] }}</h5>
+                <custom-input-type [customInputs]="getOption(option)"></custom-input-type>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend >Widget Settings:</legend>
+            <div *ngFor="let option of config; let i = index">
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        {{option[0]}}
+                        <input 
+                            type="checkbox" 
+                            name="options"
+                            value="{{option[1]['name']}}"
+                            [(ngModel)]="option[1]['enable']"
+                         />
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="custom-input-container" *ngIf="option[1]['enable']">
+                    <custom-input-type [customInputs]="RegionsService.converObjectToArray(option[1]['settings'])"></custom-input-type>
+                </div>
+            </div>
+    
+        </fieldset>
+
     <button class="btn btn-primary" (click)="saveRegionSetting()">save settings</button>
 </div>
