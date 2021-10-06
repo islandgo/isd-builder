@@ -63,8 +63,6 @@ export class RegionsComponent {
                     data[1]["background_setting"] = _this.RegionSectionModel.getBackGroundSettings(data[1]['keyword_class']);
                     data[1]["widgets"] = regionWidgets;
                 });
-                console.log(data);
-               
             });
 
             this.addCheckboxes();
