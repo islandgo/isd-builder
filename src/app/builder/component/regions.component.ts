@@ -56,7 +56,6 @@ export class RegionsComponent {
             this.RegionsService.getRegionSetting().subscribe(region => {
                 this.defaultRegionsObject.forEach(function (data) {
                     console.log(data[1]['keyword_class']);
-                    
                     // console.log(region[1]['background']['settings']['imageFileName']['value']);
                     data[1]["region_sections"] = {};
                     data[1]["grid_setting"] = region[0];
