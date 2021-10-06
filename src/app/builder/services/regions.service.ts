@@ -15,9 +15,11 @@ export class RegionsService {
 
     getDefaultRegions() {
         let regionResponse = this.httpClient.get("assets/model/regions.json");
-        let regionConfigResponse = this.httpClient.get("assets/model/widget-config.json");
-        return forkJoin([regionResponse, regionConfigResponse]);
+        return forkJoin([regionResponse]);
+    }
 
+    getWidgets() {
+        return this.httpClient.get("assets/model/widget-config.json");
     }
 
     getRegionSetting() {

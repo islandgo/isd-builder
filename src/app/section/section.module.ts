@@ -9,7 +9,7 @@ import { SectionRegionComponent } from './component/section-region.component';
 import { SectionWidgetComponent } from './component/section-widget.component';
 import { AppCommonModule } from '../common/common.module';
 import { CustomInputTypeComponent } from '../common/component/custom-input-type.component';
-
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { CustomInputTypeComponent } from '../common/component/custom-input-type.
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+    BsDropdownModule.forRoot(),
     SectionRoutes
   ],
   providers: [

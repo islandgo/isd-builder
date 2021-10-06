@@ -182,7 +182,12 @@ legend {
     padding: 0 30px;
 }
 
+.fieldset-secondary {
+    padding: 0 16px 16px 16px;
+}
+
 .legend-secondary {
+    position: relative;
     font-size: 18px;
     font-weight: bold;
     .fa-plus {
@@ -190,6 +195,38 @@ legend {
         font-size: 18px;
     }
 }
+
+.nav-primary {
+    position: absolute;
+    background: #ffffff;
+    width: 100%;
+    font-weight: normal;
+    padding: 20px;
+    z-index: 2;
+    label {
+        color: #000000;
+        cursor: pointer;
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
+.nav-item {
+    cursor: pointer;
+}
 .fa-plus {
+    cursor: pointer;
+}
+
+.widget-item {
+    border: solid 1px @brandPrimaryColor;
+    padding: 8px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 12px;
+}
+.fa-remove {
     cursor: pointer;
 }

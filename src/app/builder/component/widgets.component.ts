@@ -52,6 +52,7 @@ export class WidgetsComponent {
     }
 
     removeSection(regionData,deleteRegion) {
+        
         let regionName = regionData[0];
         let filteredRegions = this.cloneCustomRegions[regionName]['region_sections'];
         delete filteredRegions[deleteRegion];

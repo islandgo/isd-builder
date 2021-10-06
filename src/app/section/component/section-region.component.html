@@ -32,9 +32,24 @@
         <fieldset>
             <legend >Region Section Settings:</legend>
 
-            <fieldset *ngFor="let option of RegionsService.converObjectToArray(selectedRegion.region_sections); let i = index">
-                <legend class="legend-secondary">{{ selectedRegion.keyword_class }}-{{ option[1]['section_class_name'] }} <i class="fa fa-plus" aria-hidden="true"> </i>    
+
+            <fieldset class="fieldset-secondary" *ngFor="let section of RegionsService.converObjectToArray(selectedRegion.region_sections); let i = index">
+               
+                <legend class="legend-secondary">
+                    {{ selectedRegion.keyword_class }}-{{ section[1]['section_class_name'] }} <i class="fa fa-plus" (click)="showNav(section[0], $event)" aria-hidden="true"> </i>    
+                    <div class="nav-primary" *ngIf="section[1]['showNav']">
+                        <div class="nav-item"  *ngFor="let option of widgetList">
+                            <label for="" (click)="addWidget(option[0], section[0])"> {{ option[0] }}</label>
+                        </div>
+                    </div>
                 </legend>
+                <div class="widget-container" *ngIf="section[1]['widgets']">
+                    <div *ngFor="let widget of RegionsService.converObjectToArray(section[1]['widgets']); let i = index" class="widget-item">
+                        <div class="widget-name"> <i class="fa fa-sort" aria-hidden="true"> </i> {{ widget[1]['name']}}</div> 
+                        <i (click)="deleteWidget(section[0], widget[0])" class="fa fa-remove" aria-hidden="true"> </i>
+
+                    </div>
+                </div>
             </fieldset>
         </fieldset>
 
