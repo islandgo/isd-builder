@@ -112,5 +112,20 @@
         "description": "Social Region",
         "keyword_class": "social",
         "last_region_section": 0
+    },
+    "COMMUNITIES_HOMEPAGE": {
+        "region_id": "16",
+        "region_name": "Communities Region",
+        "description": "Communities Region",
+        "keyword_class": "communities",
+        "last_region_section": 0
+    }
+    ,
+    "PARTNERS_HOMEPAGE": {
+        "region_id": "17",
+        "region_name": "Partners Region",
+        "description": "Partners Region",
+        "keyword_class": "Partners",
+        "last_region_section": 0
     }
 }
