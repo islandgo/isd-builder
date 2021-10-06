@@ -15,8 +15,8 @@ export class SectionRegionComponent {
     widgets;
     backgroundSettings;
     constructor(
-        protected RegionsService: RegionsService,
-        protected PageService: PageService
+        public RegionsService: RegionsService,
+        public PageService: PageService
     ) {
     }
 
