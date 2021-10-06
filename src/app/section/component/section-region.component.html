@@ -30,25 +30,12 @@
         </fieldset>
 
         <fieldset>
-            <legend >Widget Settings:</legend>
-            <div *ngFor="let option of widgets; let i = index">
-                <div class="form-group">
-                    <label class="checkbox-container">
-                        {{option[0]}}
-                        <input 
-                            type="checkbox" 
-                            name="options"
-                            value="{{option[1]['name']}}"
-                            [(ngModel)]="option[1]['enable']"
-                         />
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-                <div class="custom-input-container" *ngIf="option[1]['enable']">
-                    <custom-input-type [customInputs]="RegionsService.converObjectToArray(option[1]['settings'])"></custom-input-type>
-                </div>
-            </div>
-    
+            <legend >Region Section Settings:</legend>
+
+            <fieldset *ngFor="let option of RegionsService.converObjectToArray(selectedRegion.region_sections); let i = index">
+                <legend class="legend-secondary">{{ selectedRegion.keyword_class }}-{{ option[1]['section_class_name'] }} <i class="fa fa-plus" aria-hidden="true"> </i>    
+                </legend>
+            </fieldset>
         </fieldset>
 
     <button class="btn btn-primary" (click)="saveRegionSetting()">save settings</button>

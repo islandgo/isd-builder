@@ -51,7 +51,6 @@ export class RegionsComponent {
    
         this.RegionsService.getDefaultRegions().subscribe(data => {
             this.defaultRegions = data[0];
-            let regionWidgets = data[1];
             this.defaultRegionsObject = Object.entries(this.defaultRegions);
 
 
@@ -61,7 +60,6 @@ export class RegionsComponent {
                     data[1]["region_sections"] = {};
                     data[1]["grid_setting"] = region[0];
                     data[1]["background_setting"] = _this.RegionSectionModel.getBackGroundSettings(data[1]['keyword_class']);
-                    data[1]["widgets"] = regionWidgets;
                 });
             });
 

@@ -12,7 +12,6 @@ export class SectionRegionComponent {
     selectedRegion;
     customRegion;
     selectedRegionKey;
-    widgets;
     backgroundSettings;
     constructor(
         public RegionsService: RegionsService,
@@ -30,8 +29,8 @@ export class SectionRegionComponent {
             this.RegionsService.getCustomRegions().subscribe(customRegion => {
                 this.customRegion = customRegion;
                 this.selectedRegion = customRegion[this.selectedRegionKey];
+                console.log(this.selectedRegion);
                 if (customRegion) {
-                    this.widgets = this.RegionsService.converObjectToArray(customRegion[this.selectedRegionKey]['widgets']);
                     this.backgroundSettings = this.RegionsService.converObjectToArray(customRegion[this.selectedRegionKey]['background_setting']);
                 }
             });
@@ -39,7 +38,6 @@ export class SectionRegionComponent {
     }
 
     saveRegionSetting() {
-        this.customRegion[this.selectedRegionKey]['config'] = this.PageService.jsonFormatter(this.widgets);
         this.customRegion[this.selectedRegionKey]['background_setting'] = this.PageService.jsonFormatter(this.backgroundSettings);
         this.RegionsService.setCustomRegions(this.customRegion);
     }
