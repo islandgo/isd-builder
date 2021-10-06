@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { PageService } from './../../builder/services/page.service';
 import { RegionsService } from './../../builder/services/regions.service';
 import { Component, HostListener, ViewEncapsulation } from '@angular/core';
@@ -18,7 +19,8 @@ export class SectionRegionComponent {
 
     constructor(
         public RegionsService: RegionsService,
-        public PageService: PageService
+        public PageService: PageService,
+        private Router: Router
     ) {
     }
 
@@ -69,6 +71,12 @@ export class SectionRegionComponent {
         delete this.customRegion[this.selectedRegionKey]['region_sections'][section]["widgets"][deleteWidget];
         // delete filteredRegions[deleteRegion];
     }
+
+    editWidget() {
+        this.Router.navigate(['/section/widget']);
+    }
+
+
 
     addShowNavProperty(showNav) {
         Object.entries(this.selectedRegion['region_sections']).forEach(function (section) {

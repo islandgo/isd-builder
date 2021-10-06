@@ -46,7 +46,10 @@
                 <div class="widget-container" *ngIf="section[1]['widgets']">
                     <div *ngFor="let widget of RegionsService.converObjectToArray(section[1]['widgets']); let i = index" class="widget-item">
                         <div class="widget-name"> <i class="fa fa-sort" aria-hidden="true"> </i> {{ widget[1]['name']}}</div> 
-                        <i (click)="deleteWidget(section[0], widget[0])" class="fa fa-remove" aria-hidden="true"> </i>
+                        <div class="btn-actions">
+                            <span (click)="editWidget(section[0], widget[0])"> <i  class="fa fa-edit" aria-hidden="true"> </i> Edit </span>
+                            <span (click)="deleteWidget(section[0], widget[0])"> <i  class="fa fa-remove" aria-hidden="true"> </i> Delete </span>
+                        </div>
 
                     </div>
                 </div>
