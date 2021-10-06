@@ -1,3 +1,4 @@
+import { RegionSectionModel } from './../model/payment.model';
 import { PageService } from './../services/page.service';
 import { RegionsService } from './../services/regions.service';
 import { Component } from '@angular/core';
@@ -30,6 +31,7 @@ export class RegionsComponent {
 
     constructor(
         public RegionsService: RegionsService,
+        public RegionSectionModel: RegionSectionModel,
         public PageService: PageService,
         private formBuilder: FormBuilder
     ) {
@@ -54,14 +56,14 @@ export class RegionsComponent {
 
 
             this.RegionsService.getRegionSetting().subscribe(region => {
-                this.defaultRegionsObject.forEach(function (data) {
-                    console.log(data[1]['keyword_class']);
-                    // console.log(region[1]['background']['settings']['imageFileName']['value']);
+                var _this = this;
+                this.defaultRegionsObject.forEach(function (data, i) {
                     data[1]["region_sections"] = {};
                     data[1]["grid_setting"] = region[0];
-                    data[1]["background_setting"] = region[1];
+                    data[1]["background_setting"] = _this.RegionSectionModel.getBackGroundSettings(data[1]['keyword_class']);
                     data[1]["widgets"] = regionWidgets;
                 });
+                console.log(data);
                
             });
 

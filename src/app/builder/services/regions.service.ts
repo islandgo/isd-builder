@@ -22,9 +22,7 @@ export class RegionsService {
 
     getRegionSetting() {
         let gridSetting =  this.httpClient.get("assets/model/grid-settings.json");
-        let backgroundSetting =  this.httpClient.get("assets/model/background-settings.json");
-        return forkJoin([gridSetting, backgroundSetting]);
-
+        return forkJoin([gridSetting]);
     }
 
     setCustomRegions(jsonData) {
