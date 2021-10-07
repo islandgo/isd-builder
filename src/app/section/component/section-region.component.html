@@ -1,60 +1,84 @@
 <div class="region-setting-container">
-        <fieldset>
-            <legend >Background Settings:</legend>
-            <div *ngFor="let option of backgroundSettings; let i = index">
-                <div class="form-group">
-                    <label class="checkbox-container">
-                        {{option[0]}}
-                        <input 
-                            type="checkbox" 
-                            name="options"
-                            value="{{option[1]['name']}}"
-                            [(ngModel)]="option[1]['enable']"
-                         />
-                        <span class="checkmark"></span>
-                    </label>
+    <fieldset>
+        <legend>Background Settings:</legend>
+        <div *ngFor="let option of backgroundSettings; let i = index">
+            <div class="form-group">
+                <label class="checkbox-container">
+                    {{option[0]}}
+                    <input type="checkbox" name="options" value="{{option[1]['name']}}"
+                        [(ngModel)]="option[1]['enable']" />
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="custom-input-container" *ngIf="option[1]['enable']">
+                <custom-input-type [customInputs]="RegionsService.converObjectToArray(option[1]['settings'])">
+                </custom-input-type>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Grid Settings:</legend>
+        <h5>Parent Section</h5>
+        <custom-input-type [customInputs]="RegionsService.converObjectToArray(selectedRegion['grid_setting'])">
+        </custom-input-type>
+        <div
+            *ngFor="let option of RegionsService.converObjectToArray(selectedRegion['region_sections']); trackBy: PageService.indexTracker">
+            <h5>{{ option[0] }}</h5>
+            <custom-input-type [customInputs]="getOption(option)"></custom-input-type>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend class="legend-section">Region Section Settings:
+            <i class="fa fa-plus btn-add-icon" (click)="showWidgetSection($event)" aria-hidden="true"> </i>
+            <div class="nav-primary" *ngIf="showParentWidgetSection">
+                <div class="nav-item" *ngFor="let option of widgetList">
+                    <label for="" (click)="addWidgetSection(option[0])"> {{ option[0] }}</label>
                 </div>
-                <div class="custom-input-container" *ngIf="option[1]['enable']">
-                    <custom-input-type [customInputs]="RegionsService.converObjectToArray(option[1]['settings'])"></custom-input-type>
+            </div>
+        </legend>
+
+        <div class="widget-parent-section">
+            <div class="widget-item"
+                *ngFor="let widget of RegionsService.converObjectToArray(selectedRegion.region_widgets); let i = index">
+                <div class="widget-name"> <i class="fa fa-sort" aria-hidden="true"> </i> {{ widget[1]['name']}}</div>
+                <div class="btn-actions">
+                    <span (click)="editWidget()"> <i class="fa fa-edit" aria-hidden="true"> </i>
+                        Edit </span>
+                    <span (click)="deleteWidgetSection(widget[0])"> <i class="fa fa-remove" aria-hidden="true">
+                        </i> Delete </span>
+                </div>
+            </div>
+        </div>
+
+        <fieldset class="fieldset-secondary"
+            *ngFor="let section of RegionsService.converObjectToArray(selectedRegion.region_sections); let i = index">
+
+            <legend class="legend-secondary">
+                {{ selectedRegion.keyword_class }}-{{ section[1]['section_class_name'] }} <i
+                    class="fa fa-plus btn-add-icon" (click)="showNav(section[0], $event)" aria-hidden="true"> </i>
+                <div class="nav-primary" *ngIf="section[1]['showNav']">
+                    <div class="nav-item" *ngFor="let option of widgetList">
+                        <label for="" (click)="addWidget(option[0], section[0])"> {{ option[0] }}</label>
+                    </div>
+                </div>
+            </legend>
+            <div class="widget-container" *ngIf="section[1]['widgets']">
+                <div *ngFor="let widget of RegionsService.converObjectToArray(section[1]['widgets']); let i = index"
+                    class="widget-item">
+                    <div class="widget-name"> <i class="fa fa-sort" aria-hidden="true"> </i> {{ widget[1]['name']}}
+                    </div>
+                    <div class="btn-actions">
+                        <span (click)="editWidget()"> <i class="fa fa-edit" aria-hidden="true">
+                            </i> Edit </span>
+                        <span (click)="deleteWidget(section[0], widget[0])"> <i class="fa fa-remove" aria-hidden="true">
+                            </i> Delete </span>
+                    </div>
+
                 </div>
             </div>
         </fieldset>
-        <fieldset>
-            <legend >Grid Settings:</legend>
-            <h5>Parent Section</h5>
-            <custom-input-type [customInputs]="RegionsService.converObjectToArray(selectedRegion['grid_setting'])"></custom-input-type>
-            <div *ngFor="let option of RegionsService.converObjectToArray(selectedRegion['region_sections']); trackBy: PageService.indexTracker">
-                <h5>{{ option[0] }}</h5>
-                <custom-input-type [customInputs]="getOption(option)"></custom-input-type>
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <legend >Region Section Settings:</legend>
-
-
-            <fieldset class="fieldset-secondary" *ngFor="let section of RegionsService.converObjectToArray(selectedRegion.region_sections); let i = index">
-               
-                <legend class="legend-secondary">
-                    {{ selectedRegion.keyword_class }}-{{ section[1]['section_class_name'] }} <i class="fa fa-plus" (click)="showNav(section[0], $event)" aria-hidden="true"> </i>    
-                    <div class="nav-primary" *ngIf="section[1]['showNav']">
-                        <div class="nav-item"  *ngFor="let option of widgetList">
-                            <label for="" (click)="addWidget(option[0], section[0])"> {{ option[0] }}</label>
-                        </div>
-                    </div>
-                </legend>
-                <div class="widget-container" *ngIf="section[1]['widgets']">
-                    <div *ngFor="let widget of RegionsService.converObjectToArray(section[1]['widgets']); let i = index" class="widget-item">
-                        <div class="widget-name"> <i class="fa fa-sort" aria-hidden="true"> </i> {{ widget[1]['name']}}</div> 
-                        <div class="btn-actions">
-                            <span (click)="editWidget(section[0], widget[0])"> <i  class="fa fa-edit" aria-hidden="true"> </i> Edit </span>
-                            <span (click)="deleteWidget(section[0], widget[0])"> <i  class="fa fa-remove" aria-hidden="true"> </i> Delete </span>
-                        </div>
-
-                    </div>
-                </div>
-            </fieldset>
-        </fieldset>
+    </fieldset>
 
     <button class="btn btn-primary" (click)="saveRegionSetting()">save settings</button>
 </div>

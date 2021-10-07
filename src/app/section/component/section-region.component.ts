@@ -16,6 +16,7 @@ export class SectionRegionComponent {
     backgroundSettings;
     widgetList;
     widgetListJson;
+    showParentWidgetSection = false;
 
     constructor(
         public RegionsService: RegionsService,
@@ -26,6 +27,7 @@ export class SectionRegionComponent {
 
     @HostListener("click")
     clicked() {
+        this.showParentWidgetSection = false;
         this.addShowNavProperty(false);
     }
 
@@ -48,6 +50,11 @@ export class SectionRegionComponent {
         });
     }
 
+    showWidgetSection(event) {
+        this.showParentWidgetSection = !this.showParentWidgetSection; 
+        event.stopPropagation();
+    }
+
     addWidget(widget, section) {
         
         let sectionWidget = this.customRegion[this.selectedRegionKey]['region_sections'][section]["widgets"];
@@ -67,9 +74,32 @@ export class SectionRegionComponent {
         }
     }
 
+    addWidgetSection(widget) {
+        let sectionWidget = this.customRegion[this.selectedRegionKey]['region_widgets'];
+        var json = { };
+        if (!sectionWidget) {
+            json[0] = this.widgetListJson[widget];
+            this.customRegion[this.selectedRegionKey]['region_widgets'] = json;
+        } else {
+            let index = Object.entries(sectionWidget).length;
+            json[index] = this.widgetListJson[widget];
+            let widgets = {
+                ...this.customRegion[this.selectedRegionKey]['region_widgets'],
+                ...json
+            };
+
+            this.customRegion[this.selectedRegionKey]['region_widgets'] = widgets;
+        }
+
+        console.log(this.customRegion[this.selectedRegionKey]);
+    }
+
     deleteWidget(section, deleteWidget) {
         delete this.customRegion[this.selectedRegionKey]['region_sections'][section]["widgets"][deleteWidget];
-        // delete filteredRegions[deleteRegion];
+    }
+
+    deleteWidgetSection(deleteWidget) {
+        delete this.customRegion[this.selectedRegionKey]['region_widgets'][deleteWidget];
     }
 
     editWidget() {

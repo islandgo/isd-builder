@@ -2,18 +2,6 @@
     "slick": {
         "name": "slick",
         "settings": {
-            "selected_section": {
-                "inpuType": "select",
-                "selectValue": [
-                    "parent-section",
-                    "primary-section",
-                    "secondary-section",
-                    "tertiary-section",
-                    "fourth-section"
-                ],
-                "value": "primary-section",
-                "name": "selected-section"
-            },
             "asNaV": {
                 "inpuType": "text",
                 "selectValue": [
@@ -33,18 +21,6 @@
     "elementPeek": {
         "name": "elementPeek",
         "settings": {
-            "selected_section": {
-                "inpuType": "select",
-                "selectValue": [
-                    "parent-section",
-                    "primary-section",
-                    "secondary-section",
-                    "tertiary-section",
-                    "fourth-section"
-                ],
-                "value": "primary-section",
-                "name": "selected-section"
-            },
             "hasRgba": {
                 "inpuType": "text",
                 "selectValue": [
@@ -64,52 +40,17 @@
     "gallery_image": {
         "name": "gallery-image",
         "settings": {
-            "selected_section": {
-                "inpuType": "select",
-                "selectValue": [
-                    "parent-section",
-                    "primary-section",
-                    "secondary-section",
-                    "tertiary-section",
-                    "fourth-section"
-                ],
-                "value": "primary-section",
-                "name": "selected-section"
-            }
         }
     },
-    "custom_title": {
-        "name": "custom-title",
-        "settings": {
-            "selected_section": {
-                "inpuType": "select",
-                "selectValue": [
-                    "parent-section",
-                    "primary-section",
-                    "secondary-section",
-                    "tertiary-section",
-                    "fourth-section"
-                ],
-                "value": "primary-section",
-                "name": "selected-section"
-            }
-        }
+    "site_title": {
+        "name": "site-title"
+    },
+    "site_button": {
+        "name": "site-button"
     },
     "text_image": {
         "name": "custom-title",
         "settings": {
-            "selected_section": {
-                "inpuType": "select",
-                "selectValue": [
-                    "parent-section",
-                    "primary-section",
-                    "secondary-section",
-                    "tertiary-section",
-                    "fourth-section"
-                ],
-                "value": "primary-section",
-                "name": "selected-section"
-            }
         }
     }
 }
