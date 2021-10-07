@@ -38,7 +38,7 @@
             </div>
         </legend>
 
-        <div class="widget-parent-section">
+        <div class="widget-parent-section" *ngIf="selectedRegion.region_widgets">
             <div class="widget-item"
                 *ngFor="let widget of RegionsService.converObjectToArray(selectedRegion.region_widgets); let i = index">
                 <div class="widget-name"> <i class="fa fa-sort" aria-hidden="true"> </i> {{ widget[1]['name']}}</div>
