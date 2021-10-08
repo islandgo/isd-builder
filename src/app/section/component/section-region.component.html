@@ -43,9 +43,9 @@
                 *ngFor="let widget of RegionsService.converObjectToArray(selectedRegion.region_widgets); let i = index">
                 <div class="widget-name"> <i class="fa fa-sort" aria-hidden="true"> </i> {{ widget[1]['name']}}</div>
                 <div class="btn-actions">
-                    <span (click)="editWidget()"> <i class="fa fa-edit" aria-hidden="true"> </i>
+                    <span (click)="editWidget('region_widgets', widget[0])"> <i class="fa fa-edit" aria-hidden="true"> </i>
                         Edit </span>
-                    <span (click)="deleteWidgetSection(widget[0])"> <i class="fa fa-remove" aria-hidden="true">
+                    <span (click)="deleteWidgetSection(widget[0], widget[1]['name'])"> <i class="fa fa-remove" aria-hidden="true">
                         </i> Delete </span>
                 </div>
             </div>
@@ -69,7 +69,7 @@
                     <div class="widget-name"> <i class="fa fa-sort" aria-hidden="true"> </i> {{ widget[1]['name']}}
                     </div>
                     <div class="btn-actions">
-                        <span (click)="editWidget()"> <i class="fa fa-edit" aria-hidden="true">
+                        <span (click)="editWidget('region_sections', widget[0], section[0])"> <i class="fa fa-edit" aria-hidden="true">
                             </i> Edit </span>
                         <span (click)="deleteWidget(section[0], widget[0])"> <i class="fa fa-remove" aria-hidden="true">
                             </i> Delete </span>

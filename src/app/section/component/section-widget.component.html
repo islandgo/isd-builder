@@ -1,1 +1,12 @@
-<h4>WIDGET SECTION</h4>
+<div class="widget-setting-container">
+    <button class="btn btn-primary" (click)="backToRegion()">Back to Region</button>
+    <fieldset class="widget-fieldset">
+        <legend class="legend-section">{{ widgetSettings['name'] }} Settings:
+        </legend>
+        <div class="form-setting">
+            <custom-input-type [customInputs]="RegionsService.converObjectToArray(widgetSettings['settings'])">
+            </custom-input-type>
+        </div>
+    </fieldset>
+    <button class="btn btn-primary" (click)="saveRegionSetting()">save settings</button>
+</div>

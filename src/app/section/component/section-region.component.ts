@@ -34,6 +34,9 @@ export class SectionRegionComponent {
     ngOnInit() {
         this.getSelectedRegion();
         this.getWidget();
+
+        const navTitle = document.getElementsByClassName('reset-regions')[0];
+        navTitle.classList.remove('hide');
     }
 
     getSelectedRegion() {
@@ -72,6 +75,8 @@ export class SectionRegionComponent {
 
             this.customRegion[this.selectedRegionKey]['region_sections'][section]["widgets"] = widgets;
         }
+       this.saveRegionSetting();
+
     }
 
     addWidgetSection(widget) {
@@ -91,19 +96,27 @@ export class SectionRegionComponent {
             this.customRegion[this.selectedRegionKey]['region_widgets'] = widgets;
         }
 
-        console.log(this.customRegion[this.selectedRegionKey]);
+       this.saveRegionSetting();
     }
 
     deleteWidget(section, deleteWidget) {
         delete this.customRegion[this.selectedRegionKey]['region_sections'][section]["widgets"][deleteWidget];
+        this.saveRegionSetting();
+
     }
 
     deleteWidgetSection(deleteWidget) {
         delete this.customRegion[this.selectedRegionKey]['region_widgets'][deleteWidget];
+        this.saveRegionSetting();
+
     }
 
-    editWidget() {
-        this.Router.navigate(['/section/widget']);
+    editWidget(widgetData, widgetType, section = '') {
+        this.Router.navigate(['/section/widget'],{ queryParams: {
+            widgetKey:  widgetData,
+            widgetType: widgetType,
+            section: section
+        }});
     }
 
 

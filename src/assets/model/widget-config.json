@@ -3,7 +3,7 @@
         "name": "slick",
         "settings": {
             "asNaV": {
-                "inpuType": "text",
+                "inpuType": "select",
                 "selectValue": [
                     true,
                     false
@@ -43,10 +43,14 @@
         }
     },
     "site_title": {
-        "name": "site-title"
+        "name": "site-title",
+        "settings": {
+        }
     },
     "site_button": {
-        "name": "site-button"
+        "name": "site-button",
+        "settings": {
+        }
     },
     "text_image": {
         "name": "custom-title",
