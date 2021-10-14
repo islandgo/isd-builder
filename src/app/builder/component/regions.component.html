@@ -21,7 +21,7 @@
             <div class="comp-custom-regions-container" *ngFor="let customRegion of customRegions;" cdkDrag>
                 <div class="custom-region-item">
                     <i class="fa fa-sort" aria-hidden="true"> </i>
-                    {{customRegion[0]}}
+                    {{customRegion[0]}} ({{customRegion[1]['keyword_class']}})
                 </div>
             </div>
         </div>

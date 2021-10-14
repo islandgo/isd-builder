@@ -17,6 +17,7 @@ import { WidgetConverterComponent } from './component/widget-converter.component
 import { PageSetUpComponent } from './component/page-setup.component';
 import { HeaderGeneratorComponent } from './component/header-generator.component';
 import { AppCommonModule } from '../common/common.module';
+import { SectionBackgroundComponent } from './component/css-component/section-background/section-background.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AppCommonModule } from '../common/common.module';
     HtmlGeneratorComponent,
     JsGeneratorComponent,
     CssMobileGeneratorComponent,
-    HeaderGeneratorComponent
+    HeaderGeneratorComponent,
+    SectionBackgroundComponent
   ],
   imports: [
     BuilderRoutes,

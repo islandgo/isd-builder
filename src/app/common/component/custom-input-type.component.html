@@ -1,40 +1,39 @@
 <div *ngFor="let setting of customInputs; trackBy: PageService.indexTracker">
-  <div class="custom-input">
-    <label>{{ setting[1]["name"] }}</label>
-    <div [ngSwitch]="setting[1]['inpuType']">
-      <div *ngSwitchCase="'text'">
-        <input [(ngModel)]="setting[1]['value']" type="text" name="" id="" />
-      </div>
-      <div *ngSwitchCase="'select'">
-        <select [(ngModel)]="setting[1]['value']">
-          <option *ngFor="let obj of setting[1]['selectValue']" [value]="obj">
-            {{ obj }}
-          </option>
-        </select>
-      </div>
-      <div *ngSwitchCase="'checkbox'">
-        <div
-          *ngFor="
+    <div class="custom-input">
+        <label>{{ setting[1]["name"] }}</label>
+        <div [ngSwitch]="setting[1]['inpuType']">
+            <div *ngSwitchCase="'text'">
+                <input [(ngModel)]="setting[1]['value']" type="text" name="" id="" />
+            </div>
+            <div *ngSwitchCase="'select'">
+                <select [(ngModel)]="setting[1]['value']">
+                    <option *ngFor="let obj of setting[1]['selectValue']" [value]="obj">
+                        {{ obj }}
+                    </option>
+                </select>
+                <div class="select-text-value" *ngIf="setting[1]['value'] == 'true' && setting[1]['selectTextValues']">
+                    <div class="select-text-item" *ngFor="let textSetting of RegionsService.converObjectToArray(setting[1]['selectTextValues']); trackBy: PageService.indexTracker">
+                        <label for="">{{ textSetting[0] }}</label> <input [(ngModel)]="setting[1]['selectTextValues'][textSetting[0]]" type="text"  />
+                    </div>
+                </div>
+            </div>
+            <div *ngSwitchCase="'checkbox'">
+                <div *ngFor="
             let option of RegionsService.converObjectToArray(
               setting[1]['checkListSetting']
             );
             trackBy: PageService.indexTracker
-          "
-        >
-          <div class="form-group">
-            <label class="checkbox-container">
-              {{ option[0] }}
-              <input
-                type="checkbox"
-                name="options"
-                value="{{ option[1]['name'] }}"
-                [(ngModel)]="option[1]['enable']"
-              />
-              <span class="checkmark"></span>
-            </label>
-          </div>
+          ">
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            {{ option[0] }}
+                            <input type="checkbox" name="options" value="{{ option[1]['name'] }}"
+                                [(ngModel)]="option[1]['enable']" />
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

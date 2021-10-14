@@ -44,8 +44,6 @@ export class SectionWidgetComponent {
                 } else {
                     this.widgetSettings = this.selectedRegion[this.widgetKey][this.section]['widgets'][this.widgetType];
                 }
-
-                console.log(this.widgetSettings);
             });
         });
     }

@@ -23,18 +23,30 @@ export class RegionSectionModel {
                 name: "section background",
                 settings: {
                     imageFileName: {
-                        value: bgName+"-bg",
+                        value: bgName+"-bg.jpg",
                         inpuType: "text",
                         name: "Image File Name"
                     },
                     hasRbga: {
-                        value: "false",
+                        value: false,
                         inpuType: "select",
                         selectValue: [
-                            "true",
-                            "false"
+                            true,
+                            false
                         ],
+                        selectTextValues: {
+                            rbga: 'rgba(0,0,0,.5)'
+                        },
                         name: "Enable Rbga"
+                    },
+                    isParallax: {
+                        value: false,
+                        inpuType: "select",
+                        selectValue: [
+                            true,
+                            false
+                        ],
+                        name: "Enable Parallax"
                     }
                 }
             }
