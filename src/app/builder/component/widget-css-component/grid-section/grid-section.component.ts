@@ -1,5 +1,5 @@
-import { RegionsService } from './../../../services/regions.service';
-import { PageService } from './../../../services/page.service';
+import { RegionsService } from '../../../services/regions.service';
+import { PageService } from '../../../services/page.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({

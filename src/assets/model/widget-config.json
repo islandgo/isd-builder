@@ -40,6 +40,35 @@
     "gallery_image": {
         "name": "gallery-image",
         "settings": {
+            "grid_parent": {
+                "inpuType": "select",
+                "selectValue": [
+                    "grid",
+                    "block"
+                ],
+                "value": "grid",
+                "name": "display"
+            },
+            "grid_max_width": {
+                "inpuType": "text",
+                "value": "1250px",
+                "name": "max-width"
+            },
+            "grid_row_gap": {
+                "inpuType": "text",
+                "value": "0",
+                "name": "grid-row-gap"
+            },
+            "grid_column_gap": {
+                "inpuType": "text",
+                "value": "0",
+                "name": "grid-column-gap"
+            },
+            "number_of_item": {
+                "inpuType": "text",
+                "value": "6",
+                "name": "number-of-item"
+            }
         }
     },
     "site_title": {

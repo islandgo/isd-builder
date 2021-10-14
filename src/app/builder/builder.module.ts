@@ -17,8 +17,9 @@ import { WidgetConverterComponent } from './component/widget-converter.component
 import { PageSetUpComponent } from './component/page-setup.component';
 import { HeaderGeneratorComponent } from './component/header-generator.component';
 import { AppCommonModule } from '../common/common.module';
-import { SectionBackgroundComponent } from './component/css-component/section-background/section-background.component';
-import { GridSectionComponent } from './component/css-component/grid-section/grid-section.component';
+import { SectionBackgroundComponent } from './component/widget-css-component/section-background/section-background.component';
+import { GridSectionComponent } from './component/widget-css-component/grid-section/grid-section.component';
+import { GalleryImageComponent } from './component/widget-html-component/gallery-image/gallery-image.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { GridSectionComponent } from './component/css-component/grid-section/gri
     CssMobileGeneratorComponent,
     HeaderGeneratorComponent,
     SectionBackgroundComponent,
-    GridSectionComponent
+    GridSectionComponent,
+    GalleryImageComponent
   ],
   imports: [
     BuilderRoutes,

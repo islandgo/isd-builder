@@ -16,9 +16,7 @@
       regionChild[1]["section_class_name"]
     }}"&gt;
     &lt;h2&gt;
-    {{ region[1]["keyword_class"] }}-{{
-      regionChild[1]["section_class_name"]
-    }}
+      <app-gallery-image [regionClassName]="region[1]['keyword_class']"  [regionChild]="regionChild"></app-gallery-image>
     &lt;/h2&gt;
     &lt;/div&gt;
   </div>
