@@ -26,6 +26,7 @@ export class BuilderComponent {
 
     resetRegions() {
         this.RegionsService.resetCustomRegions();
+        this.RegionsService.resetDefaultRegions();
         this.PageService.resetPageSetUp();
         window.location.reload();
         this.modalRef.hide();

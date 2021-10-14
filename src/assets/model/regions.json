@@ -1,7 +1,7 @@
 {
     "SLIDESHOW_HOMEPAGE": {
         "region_id": "1",
-        "region_name": "Banner Region",
+        "region_name": "Slideshow Region",
         "description": "Slideshow Region",
         "keyword_class": "slideshow",
         "has_background": "true",

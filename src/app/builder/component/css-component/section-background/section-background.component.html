@@ -1,9 +1,9 @@
 <div class="background-setting-container">
     <div *ngIf="this.regionData[1]['background_setting']['background']['enable']">
-        .hp-cta::before {{' {'}}
+        .hp-{{this.regionData[1]['keyword_class']}}::before {{' {'}}
             content: "";
             position: absolute;
-            background: url(/wp-content/themes/cgonsalves_pending.com/images/{{ this.regionData[1]['background_setting']['background']['settings']['imageFileName']['value'] }}) center/cover no-repeat;
+            background: url(images/{{ this.regionData[1]['background_setting']['background']['settings']['imageFileName']['value'] }}) center/cover no-repeat;
             <div *ngIf="this.regionData[1]['background_setting']['background']['settings']['isParallax']['value']">
                 background-attachment: fixed;
             </div>
@@ -16,7 +16,7 @@
         }
 
         <div *ngIf="this.regionData[1]['background_setting']['background']['settings']['hasRbga']['value']">
-            .hp-work::after {{' {'}}
+            .hp-{{this.regionData[1]['keyword_class']}}::after {{' {'}}
                 content: "";
                 position: absolute;
                 background: {{ this.regionData[1]['background_setting']['background']['settings']['hasRbga']['selectTextValues']['rbga'] }};

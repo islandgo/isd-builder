@@ -2,11 +2,15 @@
     <div class="default-regions">
         <h4>Default Regions</h4>
         <form [formGroup]="form" (ngSubmit)="moveToCustomRegions()" class="form-regions">
-            <label class="checkbox-container" formArrayName="defaultRegions" *ngFor="let region of defaultRegionsObject; let i = index">
-                {{region[0] }}
-                <input type="checkbox" [formControlName]="i">
-                <span class="checkmark"></span>
-            </label>
+            <div *ngFor="let region of defaultRegionsObject; let i = index" class="item-region">
+                <label class="checkbox-container" formArrayName="defaultRegions" >
+                    {{region[0] }}
+                    <input type="checkbox" [formControlName]="i">
+                    <span class="checkmark"></span>
+                </label>
+                <span class="fa fa-edit" (click)="openRegionModal(templateRegionModal, region)"></span>
+
+            </div>
 
             <div *ngIf="!form.valid" class="alert alert-danger" role="alert">
                 At least one region must be selected
@@ -27,3 +31,24 @@
         </div>
     </div>
 </div>
+
+<ng-template #templateRegionModal>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Edit Region</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <form action="" class="edit-region-form">
+            <div class="form-group">
+                <label for="newRegion">New Region Name</label>
+                <input type="text" [(ngModel)]="newRegionName" placeholder="{{ selectedRegionClassName }}" name="newRegion" id="">
+            </div>
+        </form>
+        <div class="modal-cta-container">
+            <button class="btn btn-primary" (click)="editRegion()" >Save</button>
+            <button class="btn btn-primary" (click)="modalRef.hide()" >Cancel</button>
+        </div>
+    </div>
+  </ng-template>
