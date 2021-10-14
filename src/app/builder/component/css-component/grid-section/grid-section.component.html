@@ -1,0 +1,17 @@
+<div class="grid-css-setting" *ngIf="region[1]['region_sections']['primary_section']">
+    .region-{{ region[1]['keyword_class'] }}-container {{' {'}}
+        <div class="css-properties"  *ngFor="let cssProperties of RegionsService.converObjectToArray(region[1]['grid_setting']); trackBy: PageService.indexTracker">
+            {{ cssProperties[1]['name'] }}: {{ cssProperties[1]['value'] }};
+        </div>
+        margin: 0 auto;
+    }
+
+    <div  *ngFor="let cssProperties of RegionsService.converObjectToArray(region[1]['region_sections']); trackBy: PageService.indexTracker">
+        .{{ region[1]['keyword_class'] }}-{{ cssProperties[1]['section_class_name'] }} {{' {'}}
+            <div  *ngFor="let css of RegionsService.converObjectToArray(cssProperties[1]['grid_settings']); trackBy: PageService.indexTracker">
+                {{ css[1]['name'] }}: {{ css[1]['value'] }};
+            </div>
+        }
+
+    </div>
+</div>

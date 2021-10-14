@@ -18,6 +18,7 @@ import { PageSetUpComponent } from './component/page-setup.component';
 import { HeaderGeneratorComponent } from './component/header-generator.component';
 import { AppCommonModule } from '../common/common.module';
 import { SectionBackgroundComponent } from './component/css-component/section-background/section-background.component';
+import { GridSectionComponent } from './component/css-component/grid-section/grid-section.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SectionBackgroundComponent } from './component/css-component/section-ba
     JsGeneratorComponent,
     CssMobileGeneratorComponent,
     HeaderGeneratorComponent,
-    SectionBackgroundComponent
+    SectionBackgroundComponent,
+    GridSectionComponent
   ],
   imports: [
     BuilderRoutes,
