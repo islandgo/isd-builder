@@ -1,4 +1,14 @@
 <div *ngIf="widgetType == 'gallery-image'" class="gallery-image-widget">
-boommmm
+    <div class="{{regionClassName}}-{{ widgetType}}{{ widget[1]['suffix']}}">
+        <div class="month" *ngFor="let item of [].constructor(galleryItem); let i = index">
+            &lt;a href="[blogurl]" aria-label="{{regionClassName}}-image" class="gallery-item"&gt;
+                &lt;canvas width="370" height="456"&gt;&lt;/canvas&gt;
+                &lt;img alt="communities" class="site-img" src="{{regionClassName}}-{{ i + 1 }}.jpg"&gt;
+                    &lt;h3 class="cta-content"&gt;Buyers&lt;/h3&gt;
+                &lt;div class="blog-item-primary"&gt;
+                    &lt;h3&gt;Sellers&lt;/h3&gt;
+                &lt;/div&gt;
+            &lt;/a&gt;
+        </div>
+    </div>
 </div>
-

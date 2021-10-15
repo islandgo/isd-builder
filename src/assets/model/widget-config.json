@@ -39,6 +39,7 @@
     },
     "gallery_image": {
         "name": "gallery-image",
+        "suffix": "-container",
         "settings": {
             "grid_parent": {
                 "inpuType": "select",

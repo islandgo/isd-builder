@@ -236,6 +236,10 @@ body #pojo-a11y-toolbar.pojo-a11y-toolbar-left .pojo-a11y-toolbar-toggle{{' {'}}
     bottom: 0 !important;
 {{'}'}}
 
+section {{' {'}}
+    position: reletive;
+}
+
 /*#endregion Global */
 
 /*******************************************************
@@ -1108,7 +1112,7 @@ aside menu{{' {'}}
 
 <div *ngFor="let region of customRegions; let i = index">
     /*#region {{region[1]['region_name'] }} */ <br>
-    <app-section-background [regionData]="region"></app-section-background>
+        <app-section-background [regionData]="region"></app-section-background>
     /*#endregion {{region[1]['region_name'] }} */<br>&nbsp;
 </div>
 
