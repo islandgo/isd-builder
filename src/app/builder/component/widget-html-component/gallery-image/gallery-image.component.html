@@ -1,5 +1,5 @@
 <div *ngIf="widgetType == 'gallery-image'" class="gallery-image-widget">
-    <div class="{{regionClassName}}-{{ widgetType}}{{ widget[1]['suffix']}}">
+    &lt;div class="{{regionClassName}}-{{ widgetType}}{{ widget[1]['suffix']}}"&gt;
         <div class="month" *ngFor="let item of [].constructor(galleryItem); let i = index">
             &lt;a href="[blogurl]" aria-label="{{regionClassName}}-image" class="gallery-item"&gt;
                 &lt;canvas width="370" height="456"&gt;&lt;/canvas&gt;
@@ -10,5 +10,5 @@
                 &lt;/div&gt;
             &lt;/a&gt;
         </div>
-    </div>
+    &lt;/div&gt;
 </div>
