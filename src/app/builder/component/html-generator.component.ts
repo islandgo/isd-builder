@@ -1,6 +1,6 @@
 import { PageService } from './../services/page.service';
 import { RegionsService } from '../services/regions.service';
-import { Component, Input } from '@angular/core';
+import { Component, ContentChild, Input } from '@angular/core';
 
 @Component({
     selector: 'html-generator',
@@ -9,6 +9,7 @@ import { Component, Input } from '@angular/core';
 })
 export class HtmlGeneratorComponent {
    @Input() public customRegions;
+   @ContentChild('temp') testEl: any;
 
     constructor(
         public RegionsService: RegionsService,

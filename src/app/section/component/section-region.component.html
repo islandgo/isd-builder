@@ -30,7 +30,7 @@
 
     <fieldset>
         <legend class="legend-section">Region Section Settings:
-            <i class="fa fa-plus btn-add-icon" (click)="showWidgetSection($event)" aria-hidden="true"> </i>
+            <i *ngIf="!selectedRegion.region_sections['primary_section']" class="fa fa-plus btn-add-icon" (click)="showWidgetSection($event)" aria-hidden="true"> </i>
             <div class="nav-primary" *ngIf="showParentWidgetSection">
                 <div class="nav-item" *ngFor="let option of widgetList">
                     <label for="" (click)="addWidgetSection(option[0])"> {{ option[0] }}</label>

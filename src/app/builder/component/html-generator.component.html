@@ -2,73 +2,76 @@
 <!-- your home html -->
 
 <div *ngFor="let region of customRegions; let i = index">
-  &lt;section class="hp-{{ region[1]["keyword_class"] }}"&gt; &lt;div
-  class="region-{{ region[1]["keyword_class"] }}-container"&gt;
-  <div
-    *ngFor="
-      let regionChild of RegionsService.converObjectToArray(
-        region[1]['region_sections']
-      );
-      let childIndex = index
-    "
-  >
-    &lt;div class="{{ region[1]["keyword_class"] }}-{{
-      regionChild[1]["section_class_name"]
-    }}"&gt;
-    <div *ngIf="regionChild[1]['widgets']">
-      <div
-        *ngFor="
-          let widget of RegionsService.converObjectToArray(
-            regionChild[1]['widgets']
-          );
-          let childIndex = index
-        "
-      >
-        <app-gallery-image
-          [regionClassName]="region[1]['keyword_class']"
-          [widget]="widget"
-        >
-        </app-gallery-image>
-      </div>
-    </div>
-    &lt;/div&gt;
-  </div>
-  &lt;/div&gt; &lt;/section&gt;
+    &lt;section class="hp-{{ region[1]["keyword_class"] }}"&gt; &lt;div
+    class="region-{{ region[1]["keyword_class"] }}-container"&gt;
+        <div *ngIf="!region[1]['region_sections']['primary_section']">
+            <div *ngIf="region[1]['region_widgets']">
+                <div *ngFor="
+            let widget of RegionsService.converObjectToArray(
+                region[1]['region_widgets']
+            );
+            let childIndex = index
+            ">
+                <app-widget-list [regionClassName]="region[1]['keyword_class']" [widget]="widget"></app-widget-list>
+                </div>
+            </div>
+        </div>
+        <div *ngFor="
+        let regionChild of RegionsService.converObjectToArray(
+            region[1]['region_sections']
+        );
+        let childIndex = index
+        ">
+            &lt;div class="{{ region[1]["keyword_class"] }}-{{
+            regionChild[1]["section_class_name"]
+            }}"&gt;
+
+            <div *ngIf="regionChild[1]['widgets']">
+                <div *ngFor="
+            let widget of RegionsService.converObjectToArray(
+                regionChild[1]['widgets']
+            );
+            let childIndex = index
+            ">
+                    <app-widget-list [regionClassName]="region[1]['keyword_class']" [widget]="widget"></app-widget-list>
+                </div>
+            </div>
+            &lt;/div&gt;
+        </div>
+    &lt;/div&gt; &lt;/section&gt;
 </div>
 
 <div *ngIf="PageService.enablePagePopUpModal">
-  &lt;!-- Intro Popup --&gt; &lt;div class="intro-popup"&gt; &lt;a
-  href="#introPopupHolder" class="aios-content-popup introPopupTrigger"
-  &gt;Intro Popup Form&lt;/a &gt; &lt;div class="aiosp-hide"
-  id="introPopupHolder"&gt; &lt;div class="introPopupHolder-content"&gt; &lt;div
-  class="intro-popup-form"&gt; Lorem ipsum dolor sit amet consectetur
-  adipisicing elit. Officiis, nulla qui magni praesentium quia impedit quae
-  ipsam, recusandae, eum sequi ex eligendi vel doloribus accusantium? Laborum
-  corporis nesciunt quam deserunt. &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;
-  &lt;/div&gt; &lt;!-- Intro Popup end --&gt;
+    &lt;!-- Intro Popup --&gt; &lt;div class="intro-popup"&gt; &lt;a
+    href="#introPopupHolder" class="aios-content-popup introPopupTrigger"
+    &gt;Intro Popup Form&lt;/a &gt; &lt;div class="aiosp-hide"
+    id="introPopupHolder"&gt; &lt;div class="introPopupHolder-content"&gt; &lt;div
+    class="intro-popup-form"&gt; Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Officiis, nulla qui magni praesentium quia impedit quae
+    ipsam, recusandae, eum sequi ex eligendi vel doloribus accusantium? Laborum
+    corporis nesciunt quam deserunt. &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;
+    &lt;/div&gt; &lt;!-- Intro Popup end --&gt;
 </div>
 
 <div *ngIf="PageService.enablePageSocialFiXNav">
-  &lt;div id="scroll-down"&gt; &lt;ul class="aios-section-nav"&gt;&lt;/ul&gt;
-  &lt;span class="scroll-down-text"&gt;Scroll Down&lt;/span&gt; &lt;ul
-  class="comp-social-sidebar"&gt;
-  <div
-    *ngFor="
+    &lt;div id="scroll-down"&gt; &lt;ul class="aios-section-nav"&gt;&lt;/ul&gt;
+    &lt;span class="scroll-down-text"&gt;Scroll Down&lt;/span&gt; &lt;ul
+    class="comp-social-sidebar"&gt;
+    <div *ngFor="
       let icon of RegionsService.converObjectToArray(
         PageService.socialFixNavList
       );
       let i = index
-    "
-  >
-    <div *ngIf="icon[1]['enable']">
-      &lt;li class="side-smi"&gt; &lt;a href="[ai_client_{{ icon[1]["name"] }}]"
-      target="_blank" aria-label="{{ icon[1]["name"] }}" rel="noopener"
-      class="aios-initial-setup-dead-link" &gt; &lt;span class="ai-font-{{
-        icon[1]["name"]
-      }}"&gt;&lt;/span&gt; &lt;/a&gt; &lt;/li&gt;
+    ">
+        <div *ngIf="icon[1]['enable']">
+            &lt;li class="side-smi"&gt; &lt;a href="[ai_client_{{ icon[1]["name"] }}]"
+            target="_blank" aria-label="{{ icon[1]["name"] }}" rel="noopener"
+            class="aios-initial-setup-dead-link" &gt; &lt;span class="ai-font-{{
+            icon[1]["name"]
+            }}"&gt;&lt;/span&gt; &lt;/a&gt; &lt;/li&gt;
+        </div>
     </div>
-  </div>
-  &lt;li class="smi-title"&gt;Follow Us&lt;/li&gt; &lt;/ul&gt; &lt;/div&gt;
+    &lt;li class="smi-title"&gt;Follow Us&lt;/li&gt; &lt;/ul&gt; &lt;/div&gt;
 </div>
 
 <!-- your home html -->

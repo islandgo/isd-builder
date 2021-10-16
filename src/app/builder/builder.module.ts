@@ -21,6 +21,8 @@ import { SectionBackgroundComponent } from './component/widget-css-component/sec
 import { GridSectionComponent } from './component/widget-css-component/grid-section/grid-section.component';
 import { GalleryImageComponent } from './component/widget-html-component/gallery-image/gallery-image.component';
 import { GalleryImageCssComponent } from './component/widget-css-component/gallery-image-css/gallery-image-css.component';
+import { SlickGalleryComponent } from './component/widget-html-component/slick-gallery/slick-gallery.component';
+import { WidgetListComponent } from './component/widget-list.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { GalleryImageCssComponent } from './component/widget-css-component/galle
     SectionBackgroundComponent,
     GridSectionComponent,
     GalleryImageComponent,
-    GalleryImageCssComponent
+    GalleryImageCssComponent,
+    SlickGalleryComponent,
+    WidgetListComponent
   ],
   imports: [
     BuilderRoutes,

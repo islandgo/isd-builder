@@ -15,7 +15,6 @@ export class GalleryImageCssComponent implements OnInit {
     public PageService: PageService) { }
 
   ngOnInit() {
-    console.log(this.widget[1]['name']);
   }
 
 }
