@@ -1,14 +1,20 @@
 <div *ngIf="widgetType == 'gallery-image'" class="gallery-image-widget">
-    &lt;div class="{{regionClassName}}-{{ widgetType}}{{ widget[1]['suffix']}}"&gt;
-        <div class="month" *ngFor="let item of [].constructor(galleryItem); let i = index">
-            &lt;a href="[blogurl]" aria-label="{{regionClassName}}-image" class="gallery-item"&gt;
-                &lt;canvas width="370" height="456"&gt;&lt;/canvas&gt;
-                &lt;img alt="communities" class="site-img" src="{{regionClassName}}-{{ i + 1 }}.jpg"&gt;
-                    &lt;h3 class="cta-content"&gt;Buyers&lt;/h3&gt;
-                &lt;div class="blog-item-primary"&gt;
-                    &lt;h3&gt;Sellers&lt;/h3&gt;
-                &lt;/div&gt;
-            &lt;/a&gt;
-        </div>
-    &lt;/div&gt;
+  &lt;div class="{{ regionClassName }}-{{ widgetType
+  }}{{ widget[1]["suffix"] }}"&gt;
+  <div
+    class="month"
+    *ngFor="let item of [].constructor(galleryItem); let i = index"
+  >
+    &lt;a href="[blogurl]" aria-label="{{ regionClassName }}-image"
+    class="gallery-item"&gt; &lt;canvas width="{{
+      widget[1]["settings"]["image_width"]["value"]
+    }}" height="{{
+      widget[1]["settings"]["image_height"]["value"]
+    }}"&gt;&lt;/canvas&gt; &lt;img alt="communities" class="site-img" src="{{
+      regionClassName
+    }}-{{ i + 1 }}.jpg"&gt; &lt;h3 class="cta-content"&gt;Buyers&lt;/h3&gt;
+    &lt;div class="blog-item-primary"&gt; &lt;h3&gt;Sellers&lt;/h3&gt;
+    &lt;/div&gt; &lt;/a&gt;
+  </div>
+  &lt;/div&gt;
 </div>

@@ -1113,6 +1113,30 @@ aside menu{{' {'}}
 <div *ngFor="let region of customRegions; let i = index">
     /*#region {{region[1]['region_name'] }} */ <br>
         <app-section-background [regionData]="region"></app-section-background>
+        <div
+    *ngFor="
+      let regionChild of RegionsService.converObjectToArray(
+        region[1]['region_sections']
+      );
+      let childIndex = index
+    "
+  >
+  <div *ngIf="regionChild[1]['widgets']">
+    <div
+    *ngFor="
+    let widget of RegionsService.converObjectToArray(
+        regionChild[1]['widgets']
+    );
+    let childIndex = index
+    "
+    >
+    <app-gallery-image-css [regionData]="region" [widget]="widget" ></app-gallery-image-css>
+    </div>
+  </div>
+  
+</div>
+
+        
     /*#endregion {{region[1]['region_name'] }} */<br>&nbsp;
 </div>
 

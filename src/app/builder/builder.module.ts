@@ -20,6 +20,7 @@ import { AppCommonModule } from '../common/common.module';
 import { SectionBackgroundComponent } from './component/widget-css-component/section-background/section-background.component';
 import { GridSectionComponent } from './component/widget-css-component/grid-section/grid-section.component';
 import { GalleryImageComponent } from './component/widget-html-component/gallery-image/gallery-image.component';
+import { GalleryImageCssComponent } from './component/widget-css-component/gallery-image-css/gallery-image-css.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { GalleryImageComponent } from './component/widget-html-component/gallery
     HeaderGeneratorComponent,
     SectionBackgroundComponent,
     GridSectionComponent,
-    GalleryImageComponent
+    GalleryImageComponent,
+    GalleryImageCssComponent
   ],
   imports: [
     BuilderRoutes,

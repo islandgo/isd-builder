@@ -1,0 +1,19 @@
+<div
+  *ngIf="this.widget[1]['name'] == 'gallery-image'"
+  class="gallery-image-container"
+>
+  .hp-{{ this.regionData[1]["keyword_class"] }} .{{ this.widget[1]["name"] }}
+
+  {{ " {" }}
+  <div
+    *ngFor="
+      let css of RegionsService.converObjectToArray(widget[1]['settings']);
+      trackBy: PageService.indexTracker
+    "
+  >
+    <div *ngIf="css[1]['cssOnly'] == true">
+      {{ css[1]["name"] }}: {{ css[1]["value"] }};
+    </div>
+  </div>
+  }
+</div>

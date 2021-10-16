@@ -48,43 +48,60 @@
                     "block"
                 ],
                 "value": "grid",
-                "name": "display"
+                "name": "display",
+                "cssOnly": true
+            },
+            "grid_template_columns": {
+                "inpuType": "text",
+                "value": "repeat(100,1fr)",
+                "name": "grid-template-columns",
+                "cssOnly": true
             },
             "grid_max_width": {
                 "inpuType": "text",
                 "value": "1250px",
-                "name": "max-width"
+                "name": "max-width",
+                "cssOnly": true
             },
             "grid_row_gap": {
                 "inpuType": "text",
                 "value": "0",
-                "name": "grid-row-gap"
+                "name": "grid-row-gap",
+                "cssOnly": true
             },
             "grid_column_gap": {
                 "inpuType": "text",
                 "value": "0",
-                "name": "grid-column-gap"
+                "name": "grid-column-gap",
+                "cssOnly": true
             },
             "number_of_item": {
                 "inpuType": "text",
                 "value": "6",
                 "name": "number-of-item"
+            },
+            "image_width": {
+                "inpuType": "text",
+                "value": "370",
+                "name": "image width"
+            },
+            "image_height": {
+                "inpuType": "text",
+                "value": "370",
+                "name": "image height"
             }
         }
     },
     "site_title": {
         "name": "site-title",
-        "settings": {
-        }
+        "settings": {}
     },
     "site_button": {
         "name": "site-button",
-        "settings": {
-        }
+        "settings": {}
     },
     "text_image": {
         "name": "custom-title",
-        "settings": {
-        }
+        "settings": {}
     }
 }
