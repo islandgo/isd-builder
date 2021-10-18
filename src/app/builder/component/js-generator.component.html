@@ -117,13 +117,48 @@ jQuery("header.header").removeClass("show-fixed");
 
 <div *ngFor="let region of customRegions; let i = index">
     init{{convertToCamelCase(region[1]['keyword_class'])}}: function (){{' {'}}
-    //code here
+        //code here
+        <div *ngIf="!region[1]['region_sections']['primary_section']">
+            <div *ngIf="region[1]['region_widgets']">
+                <div *ngFor="
+            let widget of RegionsService.converObjectToArray(
+                region[1]['region_widgets']
+            );
+            let childIndex = index
+            ">
+                <widget-list-js [region]="region" [widget]="widget"></widget-list-js>
+
+                </div>
+            </div>
+        </div>
+        <div
+            *ngFor="
+            let regionChild of RegionsService.converObjectToArray(
+                region[1]['region_sections']
+            );
+            let childIndex = index
+            "
+        >
+        <div *ngIf="regionChild[1]['widgets']">
+            <div
+                *ngFor="
+                let widget of RegionsService.converObjectToArray(
+                    regionChild[1]['widgets']
+                );
+                let childIndex = index
+                "
+            >
+                <widget-list-js [region]="region" [widget]="widget"></widget-list-js>
+            </div>
+          </div>
+        </div>
     {{'},'}}
 </div>
 
 {{'}'}};
 
 jQuery(document).ready(function (){{' {'}}
+app.initAos();
 app.initNavigation();
 <div *ngIf="PageService.enablePageSocialFiXNav">
     jQuery("#scroll-down").sideNavigation();

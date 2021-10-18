@@ -1,107 +1,148 @@
 {
-    "slick": {
-        "name": "slick",
-        "settings": {
-            "asNaV": {
-                "inpuType": "select",
-                "selectValue": [
-                    true,
-                    false
-                ],
-                "value": true,
-                "name": "asNaV"
-            },
-            "file_name": {
-                "inpuType": "text",
-                "value": "fileName.png",
-                "name": "fileName"
-            }
-        }
-    },
-    "elementPeek": {
-        "name": "elementPeek",
-        "settings": {
-            "hasRgba": {
-                "inpuType": "text",
-                "selectValue": [
-                    true,
-                    false
-                ],
-                "value": true,
-                "name": "has rbga"
-            },
-            "file_name": {
-                "inpuType": "text",
-                "value": "fileName.png",
-                "name": "fileName"
-            }
-        }
-    },
-    "gallery_image": {
-        "name": "gallery-image",
-        "suffix": "-container",
-        "settings": {
-            "grid_parent": {
-                "inpuType": "select",
-                "selectValue": [
-                    "grid",
-                    "block"
-                ],
-                "value": "grid",
-                "name": "display",
-                "cssOnly": true
-            },
-            "grid_template_columns": {
-                "inpuType": "text",
-                "value": "repeat(100,1fr)",
-                "name": "grid-template-columns",
-                "cssOnly": true
-            },
-            "grid_max_width": {
-                "inpuType": "text",
-                "value": "1250px",
-                "name": "max-width",
-                "cssOnly": true
-            },
-            "grid_row_gap": {
-                "inpuType": "text",
-                "value": "0",
-                "name": "grid-row-gap",
-                "cssOnly": true
-            },
-            "grid_column_gap": {
-                "inpuType": "text",
-                "value": "0",
-                "name": "grid-column-gap",
-                "cssOnly": true
-            },
-            "number_of_item": {
-                "inpuType": "text",
-                "value": "6",
-                "name": "number-of-item"
-            },
-            "image_width": {
-                "inpuType": "text",
-                "value": "370",
-                "name": "image width"
-            },
-            "image_height": {
-                "inpuType": "text",
-                "value": "370",
-                "name": "image height"
-            }
-        }
-    },
-    "site_title": {
-        "name": "site-title",
-        "settings": {}
-    },
-    "site_button": {
-        "name": "site-button",
-        "settings": {}
-    },
-    "text_image": {
-        "name": "custom-title",
-        "settings": {}
+  "simpleSlick": {
+    "name": "simple-slick",
+    "suffixClass": "-slick",
+    "settings": {
+      "slidesToShow": {
+        "inpuType": "text",
+        "value": "6",
+        "name": "slide-to-show"
+      },
+      "slidesToShowTablet": {
+        "inpuType": "text",
+        "value": "2",
+        "name": "slide-to-show-tablet"
+      },
+      "slidesToShowMobile": {
+        "inpuType": "text",
+        "value": "1",
+        "name": "slide-to-show-mobile"
+      },
+      "dots": {
+        "inpuType": "select",
+        "selectValue": [true, false],
+        "value": true,
+        "name": "dots"
+      },
+      "autoplay": {
+        "inpuType": "select",
+        "selectValue": [true, false],
+        "value": true,
+        "name": "autoplay"
+      },
+      "arrows": {
+        "inpuType": "select",
+        "selectValue": [true, false],
+        "value": true,
+        "name": "arrows"
+      },
+      "asNaV": {
+        "inpuType": "select",
+        "selectValue": [true, false],
+        "value": true,
+        "name": "asNaV"
+      },
+      "number_of_item": {
+        "inpuType": "text",
+        "value": "6",
+        "name": "number-of-item"
+      },
+      "image_width": {
+        "inpuType": "text",
+        "value": "370",
+        "name": "image width"
+      },
+      "image_height": {
+        "inpuType": "text",
+        "value": "370",
+        "name": "image height"
+      },
+      "slick_max_width": {
+        "inpuType": "text",
+        "value": "1250px",
+        "name": "max-width",
+        "cssOnly": true
+      }
     }
+  },
+  "elementPeek": {
+    "name": "elementPeek",
+    "settings": {
+      "hasRgba": {
+        "inpuType": "text",
+        "selectValue": [true, false],
+        "value": true,
+        "name": "has rbga"
+      },
+      "file_name": {
+        "inpuType": "text",
+        "value": "fileName.png",
+        "name": "fileName"
+      }
+    }
+  },
+  "gallery_image": {
+    "name": "gallery-image",
+    "suffix": "-container",
+    "settings": {
+      "grid_parent": {
+        "inpuType": "select",
+        "selectValue": ["grid", "block"],
+        "value": "grid",
+        "name": "display",
+        "cssOnly": true
+      },
+      "grid_template_columns": {
+        "inpuType": "text",
+        "value": "repeat(100,1fr)",
+        "name": "grid-template-columns",
+        "cssOnly": true
+      },
+      "grid_max_width": {
+        "inpuType": "text",
+        "value": "1250px",
+        "name": "max-width",
+        "cssOnly": true
+      },
+      "grid_row_gap": {
+        "inpuType": "text",
+        "value": "0",
+        "name": "grid-row-gap",
+        "cssOnly": true
+      },
+      "grid_column_gap": {
+        "inpuType": "text",
+        "value": "0",
+        "name": "grid-column-gap",
+        "cssOnly": true
+      },
+      "number_of_item": {
+        "inpuType": "text",
+        "value": "6",
+        "name": "number-of-item"
+      },
+      "image_width": {
+        "inpuType": "text",
+        "value": "370",
+        "name": "image width"
+      },
+      "image_height": {
+        "inpuType": "text",
+        "value": "370",
+        "name": "image height"
+      }
+    }
+  },
+  "site_title": {
+    "name": "site-title",
+    "settings": {}
+  },
+  "site_button": {
+    "name": "site-button",
+    "settings": {}
+  },
+  "text_image": {
+    "name": "custom-title",
+    "settings": {}
+  }
 }

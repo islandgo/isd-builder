@@ -202,7 +202,8 @@ select{{' {'}}
 {{'}'}}
 
 section{{' {'}}
-    min-height: 500px;
+    min-height: 300px;
+    position: relative;
 {{'}'}}
 
 .canvas-wrapper{{' {'}}
@@ -1113,6 +1114,18 @@ aside menu{{' {'}}
 <div *ngFor="let region of customRegions; let i = index">
     /*#region {{region[1]['region_name'] }} */ <br>
         <app-section-background [regionData]="region"></app-section-background>
+        <div *ngIf="!region[1]['region_sections']['primary_section']">
+            <div *ngIf="region[1]['region_widgets']">
+                <div *ngFor="
+            let widget of RegionsService.converObjectToArray(
+                region[1]['region_widgets']
+            );
+            let childIndex = index
+            ">
+                    <widget-list-css [region]="region" [widget]="widget" ></widget-list-css>
+                </div>
+            </div>
+        </div>
         <div
     *ngFor="
       let regionChild of RegionsService.converObjectToArray(
@@ -1130,7 +1143,7 @@ aside menu{{' {'}}
     let childIndex = index
     "
     >
-    <app-gallery-image-css [regionData]="region" [widget]="widget" ></app-gallery-image-css>
+        <widget-list-css [region]="region" [widget]="widget" ></widget-list-css>
     </div>
   </div>
   
