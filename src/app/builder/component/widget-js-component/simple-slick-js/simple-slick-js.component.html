@@ -1,10 +1,10 @@
 <div class="slick-js-widget" *ngIf="widget[1]['name'] == 'simple-slick'">
-    var teamSlick = '{{ region[1]['keyword_class'] }}{{ widget[1]['suffixClass'] }}';
-    $(teamSlick).slick({{' {'}}
-        slidesToShow: {{ this.widget[1]['settings']['slidesToShow']['value'] }},
-        dots: {{ this.widget[1]['settings']['dots']['value'] }},
-        autoplay: {{ this.widget[1]['settings']['autoplay']['value'] }},
-        arrows: {{ this.widget[1]['settings']['arrows']['value'] }},
+    var sectionSlick = '{{ region[1]['keyword_class'] }}{{ widget[1]['suffixClass'] }}';
+    $(sectionSlick).slick({{' {'}}
+        slidesToShow: {{ widget[1]['settings']['slidesToShow']['value'] }},
+        dots: {{ widget[1]['settings']['dots']['value'] }},
+        autoplay: {{ widget[1]['settings']['autoplay']['value'] }},
+        arrows: {{ widget[1]['settings']['arrows']['value'] }},
         prevArrow: '&lt;span class="ai-font-arrow-g-p slick-prev"&gt;&lt;/span&gt;',
         nextArrow: '&lt;span class="ai-font-arrow-g-n slick-next"&gt;&lt;/span&gt;',
         focusOnSelect: true,
@@ -12,13 +12,13 @@
             {{' {'}}
                 breakpoint: 992,
                 settings: {{' {'}}
-                    slidesToShow: {{ this.widget[1]['settings']['slidesToShowTablet']['value'] }},
+                    slidesToShow: {{ widget[1]['settings']['slidesToShowTablet']['value'] }},
                 },
             },
             {{' {'}}
                 breakpoint: 768,
                 settings: {{' {'}}
-                    slidesToShow: {{ this.widget[1]['settings']['slidesToShowMobile']['value'] }},
+                    slidesToShow: {{ widget[1]['settings']['slidesToShowMobile']['value'] }},
                 },
             },
         ],

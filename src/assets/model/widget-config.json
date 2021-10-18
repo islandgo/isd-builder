@@ -8,6 +8,16 @@
         "value": "6",
         "name": "slide-to-show"
       },
+      "slickRowGap": {
+        "inpuType": "text",
+        "value": "0",
+        "name": "slick-row-gap"
+      },
+      "slickColumnGap": {
+        "inpuType": "text",
+        "value": "0",
+        "name": "slick-column-gap"
+      },
       "slidesToShowTablet": {
         "inpuType": "text",
         "value": "2",
@@ -24,11 +34,47 @@
         "value": true,
         "name": "dots"
       },
+      "hoverWithBorder": {
+        "inpuType": "select",
+        "selectValue": [true, false],
+        "value": true,
+        "name": "hover-with-border"
+      },
+      "hoverWithRgba": {
+        "inpuType": "select",
+        "selectValue": [true, false],
+        "value": false,
+        "name": "hover-with-rgba"
+      },
+      "hoverWithImg": {
+        "inpuType": "select",
+        "selectValue": [true, false],
+        "value": false,
+        "name": "hover-with-img"
+      },
+      "grayScaleOnImage": {
+        "inpuType": "select",
+        "selectValue": [true, false],
+        "value": false,
+        "name": "gray-scale-img"
+      },
+      "contentPosition": {
+        "inpuType": "select",
+        "selectValue": ["bottom-left","bottom-right", "center","bottom-center","top-left","top-right"],
+        "value": "bottom-right",
+        "name": "content-position"
+      },
       "autoplay": {
         "inpuType": "select",
         "selectValue": [true, false],
         "value": true,
         "name": "autoplay"
+      },
+      "customArrow": {
+        "inpuType": "select",
+        "selectValue": [true, false],
+        "value": true,
+        "name": "custom-arrow"
       },
       "arrows": {
         "inpuType": "select",
