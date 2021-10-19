@@ -1,0 +1,28 @@
+<div *ngIf="this.widget[1]['name'] == 'elementPeek'" class="elementPeek-js-widget">
+  var performanceEl = $(".{{this.region[1]["keyword_class"]}}-content");
+  var speed = 0;
+  performanceEl.elementPeek({{' {'}}
+  onViewportIn: function (object) {{' {'}}
+  if (!performanceEl.hasClass("done-calculation")) {{' {'}}
+  object.addClass("done-calculation");
+
+  performanceEl
+  .find(".{{this.region[1]["keyword_class"]}}-item h3 i")
+  .each(function (index, value) {{' {'}}
+  speed = 1000;
+
+  var _this = $(this),
+  value = _this.text();
+
+  _this.animateNumber(
+  {{' {'}}
+  number: value,
+  },
+  speed
+  );
+  });
+  }
+  },
+  peekAmountToTrigger: 0.1,
+  });
+</div>

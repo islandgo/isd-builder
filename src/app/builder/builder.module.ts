@@ -27,6 +27,9 @@ import { SimpleSlickJsComponent } from './component/widget-js-component/simple-s
 import { SimpleSlickCssComponent } from './component/widget-css-component/simple-slick-css/simple-slick-css.component';
 import { WidgetListJsComponent } from './component/widget-list-js.component';
 import { WidgetListCssComponent } from './component/widget-list-css.component';
+import { ElementPeekCssComponent } from './component/widget-css-component/element-peek-css/element-peek-css.component';
+import { ElementPeekJsComponent } from './component/widget-js-component/element-peek-js/element-peek-js.component';
+import { ElementPeekHtmlComponent } from './component/widget-html-component/element-peek-html/element-peek-html.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,9 @@ import { WidgetListCssComponent } from './component/widget-list-css.component';
     SimpleSlickCssComponent,
     WidgetListJsComponent,
     WidgetListCssComponent,
+    ElementPeekCssComponent,
+    ElementPeekJsComponent,
+    ElementPeekHtmlComponent,
   ],
   imports: [
     BuilderRoutes,

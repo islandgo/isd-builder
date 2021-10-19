@@ -15,6 +15,7 @@ export class SimpleSlickComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    
   }
 
 }

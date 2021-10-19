@@ -10,12 +10,12 @@
       },
       "slickRowGap": {
         "inpuType": "text",
-        "value": "0",
+        "value": "0px",
         "name": "slick-row-gap"
       },
       "slickColumnGap": {
         "inpuType": "text",
-        "value": "0",
+        "value": "0px",
         "name": "slick-column-gap"
       },
       "slidesToShowTablet": {
@@ -30,61 +30,95 @@
       },
       "dots": {
         "inpuType": "select",
-        "selectValue": [true, false],
+        "selectValue": [
+          true,
+          false
+        ],
         "value": true,
         "name": "dots"
       },
       "hoverWithBorder": {
         "inpuType": "select",
-        "selectValue": [true, false],
+        "selectValue": [
+          true,
+          false
+        ],
         "value": true,
         "name": "hover-with-border"
       },
       "hoverWithRgba": {
         "inpuType": "select",
-        "selectValue": [true, false],
+        "selectValue": [
+          true,
+          false
+        ],
         "value": false,
         "name": "hover-with-rgba"
       },
       "hoverWithImg": {
         "inpuType": "select",
-        "selectValue": [true, false],
+        "selectValue": [
+          true,
+          false
+        ],
         "value": false,
         "name": "hover-with-img"
       },
       "grayScaleOnImage": {
         "inpuType": "select",
-        "selectValue": [true, false],
+        "selectValue": [
+          true,
+          false
+        ],
         "value": false,
         "name": "gray-scale-img"
       },
       "contentPosition": {
         "inpuType": "select",
-        "selectValue": ["bottom-left","bottom-right", "center","bottom-center","top-left","top-right"],
+        "selectValue": [
+          "bottom-left",
+          "bottom-right",
+          "center",
+          "bottom-center",
+          "top-left",
+          "top-right"
+        ],
         "value": "bottom-right",
         "name": "content-position"
       },
       "autoplay": {
         "inpuType": "select",
-        "selectValue": [true, false],
+        "selectValue": [
+          true,
+          false
+        ],
         "value": true,
         "name": "autoplay"
       },
       "customArrow": {
         "inpuType": "select",
-        "selectValue": [true, false],
+        "selectValue": [
+          true,
+          false
+        ],
         "value": true,
         "name": "custom-arrow"
       },
       "arrows": {
         "inpuType": "select",
-        "selectValue": [true, false],
+        "selectValue": [
+          true,
+          false
+        ],
         "value": true,
         "name": "arrows"
       },
       "asNaV": {
         "inpuType": "select",
-        "selectValue": [true, false],
+        "selectValue": [
+          true,
+          false
+        ],
         "value": true,
         "name": "asNaV"
       },
@@ -116,7 +150,10 @@
     "settings": {
       "hasRgba": {
         "inpuType": "text",
-        "selectValue": [true, false],
+        "selectValue": [
+          true,
+          false
+        ],
         "value": true,
         "name": "has rbga"
       },
@@ -133,7 +170,10 @@
     "settings": {
       "grid_parent": {
         "inpuType": "select",
-        "selectValue": ["grid", "block"],
+        "selectValue": [
+          "grid",
+          "block"
+        ],
         "value": "grid",
         "name": "display",
         "cssOnly": true
