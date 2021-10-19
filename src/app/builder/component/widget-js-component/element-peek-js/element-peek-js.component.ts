@@ -11,9 +11,7 @@ export class ElementPeekJsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if (this.widget[1]['name'] == 'elementPeek') {
-    console.log(this.region[1]["keyword_class"])
-    }
+    
   }
 
 }

@@ -13,10 +13,15 @@
         "value": "0px",
         "name": "slick-row-gap"
       },
+      "slickRow": {
+        "inpuType": "text",
+        "value": "1",
+        "name": "slick-row"
+      },
       "slickColumnGap": {
         "inpuType": "text",
         "value": "0px",
-        "name": "slick-column-gap"
+        "name": "slick-column"
       },
       "slidesToShowTablet": {
         "inpuType": "text",
