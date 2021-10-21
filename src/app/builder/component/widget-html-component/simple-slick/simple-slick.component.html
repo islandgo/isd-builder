@@ -1,8 +1,27 @@
-<div *ngIf="this.widget[1]['name'] == 'simple-slick'" class="slick-html-widget">
+<div *ngIf="widget[1]['name'] == 'simple-slick'" class="slick-html-widget">
     &lt;div class="{{ regionClassName }}{{widget[1]['suffixClass']}}"&gt;
-    &lt;div&gt;
-    &lt;p&gt;Hello&lt;/p&gt;
-    &lt;!-- Lagyan ng laman --&gt;
-    &lt;/div&gt;
-    &lt;/div&gt;
+    <div class="month" *ngFor="let item of [].constructor(slickItem); let i = index">
+        &lt;a href="[blogurl]" aria-label="{{ regionClassName }}" class="{{ regionClassName }}-item"&gt;
+        &lt;div class="{{ regionClassName }}-img canvas-wrapper"&gt;
+        &lt;canvas width="{{widget[1]["settings"]["image_width"]["value"]}}"
+        height="{{widget[1]["settings"]["image_height"]["value"]}}"&gt;&lt;/canvas&gt;
+        &lt;img alt="{{ regionClassName }}" class="img-{{ regionClassName }} canvas-img" src="
+        &lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/{{ regionClassName }}-{{ i + 1 }}.jpg" /&gt;
+        &lt;/div&gt;
+        &lt;div class="{{ regionClassName }}-content"&gt;
+        &lt;div *ngIf="widget[1][" settings"]['contentPosition']['value']=='center'"&gt;
+        &lt;h3&gt;Sample&lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div *ngIf=" widget[1]["settings"]['contentPosition']['value']=='split'"&gt;
+        &lt;p class=" {{ regionClassName }}-price"&gt;$450,000&lt;/p&gt;
+        &lt;p class="{{ regionClassName }}-address"&gt;34221 FINNIGAN TER, FREMONT&lt;/p&gt;
+        &lt;div class="site-btn"&gt;
+        &lt;a href="[blogurl]" aria-label="View Details"&gt;
+        View Details
+        &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/a&gt;
+    </div>
 </div>

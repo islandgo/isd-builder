@@ -21,7 +21,7 @@
       "slickColumnGap": {
         "inpuType": "text",
         "value": "0px",
-        "name": "slick-column"
+        "name": "slick-column-gap"
       },
       "slidesToShowTablet": {
         "inpuType": "text",
@@ -86,7 +86,9 @@
           "center",
           "bottom-center",
           "top-left",
-          "top-right"
+          "top-right",
+          "split",
+          "below-image"
         ],
         "value": "bottom-right",
         "name": "content-position"

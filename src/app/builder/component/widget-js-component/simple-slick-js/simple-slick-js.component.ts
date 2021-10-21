@@ -11,7 +11,7 @@ export class SimpleSlickJsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.widget[1]['settings']['slickRow']['value'])
+    // console.log(this.widget[1]['settings']['slickRow']['value'])
   }
 
 }
