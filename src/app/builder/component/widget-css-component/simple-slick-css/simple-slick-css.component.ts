@@ -15,7 +15,7 @@ export class SimpleSlickCssComponent implements OnInit {
   constructor(public RegionsService: RegionsService) { }
 
   ngOnInit() {
- 
+    console.log(this.widget[1]['settings']);
   }
 
 }

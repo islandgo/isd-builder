@@ -3,15 +3,15 @@
     "name": "simple-slick",
     "suffixClass": "-slick",
     "settings": {
+      "number_of_item": {
+        "inpuType": "text",
+        "value": "6",
+        "name": "number-of-item"
+      },
       "slidesToShow": {
         "inpuType": "text",
         "value": "6",
         "name": "slide-to-show"
-      },
-      "slickRowGap": {
-        "inpuType": "text",
-        "value": "0px",
-        "name": "slick-row-gap"
       },
       "slickRow": {
         "inpuType": "text",
@@ -23,6 +23,11 @@
         "value": "0px",
         "name": "slick-column-gap"
       },
+      "slickRowGap": {
+        "inpuType": "text",
+        "value": "0px",
+        "name": "slick-row-gap"
+      },
       "slidesToShowTablet": {
         "inpuType": "text",
         "value": "2",
@@ -33,22 +38,16 @@
         "value": "1",
         "name": "slide-to-show-mobile"
       },
-      "dots": {
-        "inpuType": "select",
-        "selectValue": [
-          true,
-          false
-        ],
-        "value": true,
-        "name": "dots"
-      },
       "hoverWithBorder": {
         "inpuType": "select",
         "selectValue": [
           true,
           false
         ],
-        "value": true,
+        "value": false,
+        "selectTextValues": {
+          "border": "5px solid #ffc000"
+        },
         "name": "hover-with-border"
       },
       "hoverWithRgba": {
@@ -57,8 +56,11 @@
           true,
           false
         ],
-        "value": false,
-        "name": "hover-with-rgba"
+        "value": true,
+        "selectTextValues": {
+          "rbga": "rgba(0,0,0,.5)"
+        },
+        "name": "rgba default not in hover"
       },
       "hoverWithImg": {
         "inpuType": "select",
@@ -90,7 +92,7 @@
           "split",
           "below-image"
         ],
-        "value": "bottom-right",
+        "value": "bottom-left",
         "name": "content-position"
       },
       "autoplay": {
@@ -111,6 +113,15 @@
         "value": true,
         "name": "custom-arrow"
       },
+      "dots": {
+        "inpuType": "select",
+        "selectValue": [
+          true,
+          false
+        ],
+        "value": false,
+        "name": "dots"
+      },
       "arrows": {
         "inpuType": "select",
         "selectValue": [
@@ -128,11 +139,6 @@
         ],
         "value": true,
         "name": "asNaV"
-      },
-      "number_of_item": {
-        "inpuType": "text",
-        "value": "6",
-        "name": "number-of-item"
       },
       "image_width": {
         "inpuType": "text",

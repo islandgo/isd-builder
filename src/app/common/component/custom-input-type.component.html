@@ -11,7 +11,7 @@
                         {{ obj }}
                     </option>
                 </select>
-                <div class="select-text-value" *ngIf="setting[1]['value'] == 'true' && setting[1]['selectTextValues']">
+                <div class="select-text-value" *ngIf="setting[1]['selectTextValues']">
                     <div class="select-text-item" *ngFor="let textSetting of RegionsService.converObjectToArray(setting[1]['selectTextValues']); trackBy: PageService.indexTracker">
                         <label for="">{{ textSetting[0] }}</label> <input [(ngModel)]="setting[1]['selectTextValues'][textSetting[0]]" type="text"  />
                     </div>

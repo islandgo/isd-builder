@@ -6,9 +6,16 @@
         &lt;canvas width="{{widget[1]["settings"]["image_width"]["value"]}}"
         height="{{widget[1]["settings"]["image_height"]["value"]}}"&gt;&lt;/canvas&gt;
         &lt;img alt="{{ regionClassName }}" class="img-{{ regionClassName }} canvas-img" src="
-        &lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/{{ regionClassName }}-{{ i + 1 }}.jpg" /&gt;
+        &lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/{{ regionClassName }}-img-{{ i + 1 }}.jpg" /&gt;
         &lt;/div&gt;
         &lt;div class="{{ regionClassName }}-content"&gt;
+            &lt;h3&gt;Howard County&lt;/h3&gt;
+            &lt;p&gt;
+                4932 LANSDOWNE ROAD, &lt;br /&gt;
+                FREDERICKSBURG, VA 22408
+            &lt;/p&gt;
+            &lt;span class="site-btn-secondary"&gt;Button&lt;/span&gt;
+        &lt;/div&gt;
         <div *ngIf="widget[1]['settings']['contentPosition']['value']=='center'">
             &lt;h3&gt;Sample&lt;/h3&gt;
         </div>

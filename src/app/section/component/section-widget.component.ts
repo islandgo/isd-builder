@@ -56,4 +56,8 @@ export class SectionWidgetComponent {
         this.Router.navigate(['/section/region']);
     }
 
+    goToCodeGenerator() {
+        this.saveRegionSetting();
+        this.Router.navigate(['/builder/code-generator']);
+    }
 }
