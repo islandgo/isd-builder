@@ -30,6 +30,9 @@ import { WidgetListCssComponent } from './component/widget-list-css.component';
 import { ElementPeekCssComponent } from './component/widget-css-component/element-peek-css/element-peek-css.component';
 import { ElementPeekJsComponent } from './component/widget-js-component/element-peek-js/element-peek-js.component';
 import { ElementPeekHtmlComponent } from './component/widget-html-component/element-peek-html/element-peek-html.component';
+import { ContactFormComponent } from './component/widget-html-component/contact-form/contact-form.component';
+import { ContactFormCssComponent } from './component/widget-css-component/contact-form-css/contact-form-css.component';
+import { SiteTitleComponent } from './component/widget-html-component/site-title/site-title.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +60,9 @@ import { ElementPeekHtmlComponent } from './component/widget-html-component/elem
     ElementPeekCssComponent,
     ElementPeekJsComponent,
     ElementPeekHtmlComponent,
+    ContactFormComponent,
+    ContactFormCssComponent,
+    SiteTitleComponent,
   ],
   imports: [
     BuilderRoutes,

@@ -234,7 +234,18 @@
   },
   "site_title": {
     "name": "site-title",
-    "settings": {}
+    "settings": {
+      "secondary_text": {
+        "inpuType": "text",
+        "value": "secondary text",
+        "name": "secondary text"
+      },
+      "primary_text": {
+        "inpuType": "text",
+        "value": "primary text",
+        "name": "primary text"
+      }
+    }
   },
   "site_button": {
     "name": "site-button",
@@ -243,5 +254,53 @@
   "text_image": {
     "name": "custom-title",
     "settings": {}
+  },
+  "contact_form": {
+    "name": "contact-form",
+    "settings": {
+      "templateType": {
+        "inpuType": "select",
+        "selectValue": [
+          "33-hp template form 1",
+          "34-hp template form 2",
+          "35-hp template form 3",
+          "36-hp template form 4",
+          "37-hp template form 5",
+          "38-hp template form 6"
+        ],
+        "value": "35-hp template form 1",
+        "name": "template type"
+      },
+      "max-width": {
+        "inpuType": "text",
+        "value": "800px",
+        "name": "max width"
+      },
+      "row_gap": {
+        "inpuType": "text",
+        "value": "10px",
+        "name": "row-gap"
+      },
+      "column_gap": {
+        "inpuType": "text",
+        "value": "5px",
+        "name": "column-gap"
+      },
+      "text_area_height": {
+        "inpuType": "text",
+        "value": "50px",
+        "name": "text-area-height"
+      },
+      "input_style": {
+        "inpuType": "select",
+        "selectValue": [
+          "border-bottom",
+          "border-bg",
+          "full-border"
+        ],
+        "value": "full-border",
+        "name": "input style"
+      }
+    }
   }
 }

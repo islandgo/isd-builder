@@ -36,11 +36,11 @@
         "keyword_class": "cta",
         "last_region_section": 0
     },
-    "ABOUT_HOMEPAGE": {
+    "WELCOME_HOMEPAGE": {
         "region_id": "6",
-        "region_name": "About Region",
-        "description": "About Region",
-        "keyword_class": "about",
+        "region_name": "Welcome Region",
+        "description": "Welcome Region",
+        "keyword_class": "welcome",
         "last_region_section": 0
     },
     "TEAM_HOMEPAGE": {
@@ -64,11 +64,11 @@
         "keyword_class": "testimonials",
         "last_region_section": 0
     },
-    "CONTACTUS_HOMEPAGE": {
+    "CONTACT_HOMEPAGE": {
         "region_id": "10",
-        "region_name": "Contact us Region",
-        "description": "Contact us Region",
-        "keyword_class": "contact-us",
+        "region_name": "Contact Region",
+        "description": "Contact Region",
+        "keyword_class": "contact",
         "last_region_section": 0
     },
     "STATIC_HOMEPAGE": {
@@ -119,8 +119,7 @@
         "description": "Communities Region",
         "keyword_class": "communities",
         "last_region_section": 0
-    }
-    ,
+    },
     "PARTNERS_HOMEPAGE": {
         "region_id": "17",
         "region_name": "Partners Region",
