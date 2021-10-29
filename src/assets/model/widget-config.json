@@ -346,6 +346,16 @@
           "placeholder": "Property Type"
         }
       },
+      "qs_range_field": {
+        "inpuType": "select",
+        "html_only": true,
+        "name": "qs range field",
+        "selectValue": [
+          true,
+          false
+        ],
+        "value": false
+      },
       "city_zip": {
         "inpuType": "select",
         "html_only": true,

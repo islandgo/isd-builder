@@ -156,3 +156,210 @@
   color: #ffffff !important;
   }
 </div>
+<div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 2"'>
+  .hp-quick-search {{ " {" }}
+  width: 100%;
+  padding: 0 24px;
+  max-width: 1290px;
+  margin: 0 auto;
+  margin-bottom: 92px;
+  font-size: 0;
+  z-index: 5;
+  }
+
+  .hp-quick-search .region-quick-search-container {{ " {" }}
+  background: #ffc000;
+  padding: 42px 0 50px;
+  }
+
+  .hp-quick-search .site-title-primary h3 {{ " {" }}
+  font-size: 35px;
+  margin-bottom: 6px;
+  }
+
+  .hp-quick-search .site-title-primary h2 {{ " {" }}
+  font-size: 32px;
+  letter-spacing: 0.05em;
+  }
+
+  .quick-search-form {{ " {" }}
+  padding: 0 24px;
+  }
+
+  .qs-field-wrapper {{ " {" }}
+  display: grid;
+  grid-template-columns: repeat(100, 1fr);
+  grid-template-rows: repeat(2, auto);
+  width: 100%;
+  row-gap: 18px;
+  }
+
+  .primary-qs-item {{ " {" }}
+  grid-column: 1/50;
+  grid-row: 1/2;
+  }
+
+  .secondary-qs-item {{ " {" }}
+  grid-column: 53/-1;
+  grid-row: 1/2;
+  }
+
+  .tertiary-qs-item {{ " {" }}
+  grid-column: 1/25;
+  grid-row: 2/3;
+  }
+
+  .fourth-qs-item {{ " {" }}
+  grid-column: 26/50;
+  grid-row: 2/3;
+  }
+
+  .fifth-qs-item {{ " {" }}
+  grid-column: 53/77;
+  grid-row: 2/3;
+  }
+
+  .sixth-qs-item {{ " {" }}
+  grid-column: 78/-1;
+  grid-row: 2/3;
+  }
+
+  .quick-search-form select {{ " {" }}
+  background: transparent url(images/arrow-down.png) no-repeat scroll right
+  12px center;
+  }
+
+  .quick-search-form input {{ " {" }}
+  background: transparent;
+  }
+
+  .quick-search-form select,
+  .quick-search-form input {{ " {" }}
+  width: 100%;
+  height: 44px;
+  border: 1px solid #d0cece;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  font-size: 11px;
+  font-weight: 300;
+  color: #777777;
+  cursor: pointer;
+  padding-left: 14px;
+  }
+
+  .quick-search-form select option {{ " {" }}
+  color: #ffffff;
+  background: #000;
+  }
+
+  .quick-search-form .qs-range-price-wrap {{ " {" }}
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  }
+
+  .quick-search-form .selected-price {{ " {" }}
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 14px;
+  }
+
+  .quick-search-form .irs--flat .irs-bar,
+  .quick-search-form .irs--flat .irs-line {{ " {" }}
+  height: 1px !important;
+  background: #fff !important;
+  top: 22px !important;
+  }
+
+  .quick-search-form .irs--flat .irs-handle {{ " {" }}
+  width: 14px !important;
+  height: 14px !important;
+  top: 15px !important;
+  }
+
+  .quick-search-form .irs--flat .irs-handle > i:first-child {{ " {" }}
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50%;
+  left: 0 !important;
+  background: #fff !important;
+  }
+
+  .qs-search {{ " {" }}
+  position: relative;
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 00.2em;
+  font-size: 11px;
+  background: #1092b2;
+  border: 1px solid #1092b2;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  }
+
+  .qs-search input {{ " {" }}
+  color: #ffffff;
+  }
+
+  .qs-advanced {{ " {" }}
+  position: relative;
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 00.2em;
+  font-size: 11px;
+  color: #ffffff;
+  background: #50c4cb;
+  border: 1px solid #50c4cb;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  }
+
+  .qs-search:hover {{ " {" }}
+  background: #50c4cb;
+  border: 1px solid #50c4cb;
+  }
+
+  .qs-advanced:hover {{ " {" }}
+  background: #1092b2;
+  border: 1px solid #1092b2;
+  }
+
+  .qs-search input {{ " {" }}
+  background: transparent;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 00.2em;
+  }
+
+  .qs-search input,
+  .qs-advanced a {{ " {" }}
+  letter-spacing: 00.2em;
+  }
+
+  .qs-search input:hover,
+  .qs-advanced a:hover {{ " {" }}
+  color: #ffffff !important;
+  }
+</div>
