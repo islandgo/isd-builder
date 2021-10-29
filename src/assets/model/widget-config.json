@@ -397,7 +397,7 @@
         ],
         "value": true,
         "selectTextValues": {
-          "input_type": "select`",
+          "input_type": "select",
           "column": "44/52",
           "placeholder": "Beds"
         }
