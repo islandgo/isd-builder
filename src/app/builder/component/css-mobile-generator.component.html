@@ -102,6 +102,43 @@ width: 100%;
 /*#endregion Global */
 <div *ngFor="let region of customRegions; let i = index">
     /*#region {{region[1]['region_name'] }} */ <br>
+        <app-section-background [regionData]="region"></app-section-background>
+        <div *ngIf="!region[1]['region_sections']['primary_section']">
+            <div *ngIf="region[1]['region_widgets']">
+                <div *ngFor="
+            let widget of RegionsService.converObjectToArray(
+                region[1]['region_widgets']
+            );
+            let childIndex = index
+            ">
+                    <widget-list-mobile-css [region]="region" [widget]="widget" ></widget-list-mobile-css>
+                </div>
+            </div>
+        </div>
+        <div
+    *ngFor="
+      let regionChild of RegionsService.converObjectToArray(
+        region[1]['region_sections']
+      );
+      let childIndex = index
+    "
+  >
+  <div *ngIf="regionChild[1]['widgets']">
+    <div
+    *ngFor="
+    let widget of RegionsService.converObjectToArray(
+        regionChild[1]['widgets']
+    );
+    let childIndex = index
+    "
+    >
+        <widget-list-mobile-css [region]="region" [widget]="widget" ></widget-list-mobile-css>
+    </div>
+  </div>
+  
+</div>
+
+        
     /*#endregion {{region[1]['region_name'] }} */<br>&nbsp;
 </div>
 /*#region Footer */

@@ -35,6 +35,8 @@ import { ContactFormCssComponent } from './component/widget-css-component/contac
 import { SiteTitleComponent } from './component/widget-html-component/site-title/site-title.component';
 import { QuickSearchComponent } from './component/widget-html-component/quick-search/quick-search.component';
 import { QuickSearchCssComponent } from './component/widget-css-component/quick-search-css/quick-search-css.component';
+import { WidgetListMobileCssComponent } from './component/widget-list-mobile-css.component';
+import { QuickSearchMobileCssComponent } from './component/widget-css-mobile-component/quick-search-css/quick-search-mobile-css.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,7 @@ import { QuickSearchCssComponent } from './component/widget-css-component/quick-
     SimpleSlickCssComponent,
     WidgetListJsComponent,
     WidgetListCssComponent,
+    WidgetListMobileCssComponent,
     ElementPeekCssComponent,
     ElementPeekJsComponent,
     ElementPeekHtmlComponent,
@@ -67,6 +70,7 @@ import { QuickSearchCssComponent } from './component/widget-css-component/quick-
     SiteTitleComponent,
     QuickSearchComponent,
     QuickSearchCssComponent,
+    QuickSearchMobileCssComponent
   ],
   imports: [
     BuilderRoutes,
