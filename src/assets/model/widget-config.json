@@ -341,7 +341,7 @@
         ],
         "value": false,
         "selectTextValues": {
-          "column": "15/30"
+          "column": "1/14"
         }
       },
       "property_type": {
@@ -397,7 +397,7 @@
         ],
         "value": true,
         "selectTextValues": {
-          "input_type": "text",
+          "input_type": "select`",
           "column": "44/52",
           "placeholder": "Beds"
         }
@@ -427,7 +427,7 @@
         ],
         "value": true,
         "selectTextValues": {
-          "input_type": "select",
+          "input_type": "text",
           "column": "60/68",
           "placeholder": "Min. Price"
         }
@@ -455,7 +455,7 @@
           true,
           false
         ],
-        "value": false,
+        "value": true,
         "selectTextValues": {
           "input_type": "text",
           "column": "77/89",
@@ -485,7 +485,7 @@
           true,
           false
         ],
-        "value": false,
+        "value": true,
         "selectTextValues": {
           "input_type": "text",
           "column": "89/-1",

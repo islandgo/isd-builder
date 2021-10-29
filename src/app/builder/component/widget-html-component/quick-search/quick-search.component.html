@@ -18,6 +18,10 @@
         <div *ngIf="setting[1]['html_only'] && setting[1]['value']">
             &lt;div class="{{ resetCounter(i)}}-qs-item" &gt;
             <div
+                *ngIf="setting[1]['name'] == 'qs range field' && widget[1]['settings']['templateType']['value'] == 'Quick Search template 2'">
+                &lt;div class="qs-range-field {{ resetCounter(i)}}-qs-item" &gt;
+            </div>
+            <div
                 *ngIf="widget[1]['settings']['templateType']['value'] == 'Quick Search template 1' && setting[1]['name'] == 'site title'">
                 &lt;div class="site-title-primary primary-qs-item"&gt;
                 &lt;h3&gt;Quick&lt;/h3&gt;
@@ -46,13 +50,11 @@
             </div>
             <div
                 *ngIf="setting[1]['name'] == 'qs range field' && widget[1]['settings']['templateType']['value'] == 'Quick Search template 2'">
-                &lt;div class="qs-range-field secondary-qs-item"&gt;
                 &lt;div class="qs-range-price-wrap"&gt;
                 &lt;span class="selected-price selected-min-price"&gt;$1M&lt;/span&gt;
                 &lt;span class="selected-price selected-max-price"&gt;$10M&lt;/span&gt;
                 &lt;/div&gt;
                 &lt;input type="text" name="qs-range" id="qs-range" aria-label="qs-range" /&gt;
-                &lt;/div&gt;
             </div>
             <div
                 *ngIf="setting[1]['selectTextValues']['input_type'] == 'select' && (setting[1]['name'] == 'min_price' || setting[1]['name'] == 'max_price')">

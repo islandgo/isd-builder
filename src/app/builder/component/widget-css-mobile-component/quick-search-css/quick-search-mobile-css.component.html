@@ -1,46 +1,44 @@
 <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 1"'>
-  .quick-search-form {{ " {" }}
-  display: grid;
-  grid-template-columns: repeat(100, 1fr);
-  max-width: 1180px;
-  margin: 0 auto;
-  grid-gap: 2px;
-  }
+    .quick-search-form {{ " {" }}
+    display: grid;
+    grid-template-columns: repeat(100, 1fr);
+    max-width: {{widget[1]["settings"]["qs_max_width"]["value"]}};
+    margin: 0 auto;
+    grid-gap: 2px;
+    }
+    <div *ngFor="
+  let setting of RegionsService.converObjectToArray(
+      widget[1]['settings']
+  );
+  let i = index
+  ">
+        <div *ngIf="setting[1]['html_only'] &&  setting[1]['value']">
+            .{{ resetCounter(i)}}-qs-item {{ " {" }}
+            grid-column: {{ setting[1]['selectTextValues']['column'] }};
 
-  .primary-qs-item {{ " {" }}
-  grid-column: 1/14;
-  }
+            }
 
-  .secondary-qs-item {{ " {" }}
-  grid-column: 15/30;
-  }
+        </div>
 
-  .tertiary-qs-item {{ " {" }}
-  grid-column: 30/44;
-  }
+    </div>
 
-  .fourth-qs-item {{ " {" }}
-  grid-column: 44/52;
-  }
 
-  .fifth-qs-item {{ " {" }}
-  grid-column: 52/60;
-  }
+</div>
 
-  .sixth-qs-item {{ " {" }}
-  grid-column: 60/68;
-  }
+<div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 2"'>
+    .quick-search-form {{ " {" }}
+    display: grid;
+    grid-template-columns: repeat(100, 1fr);
+    max-width: 1180px;
+    margin: 0 auto;
+    grid-gap: 2px;
+    }
 
-  .seventh-qs-item {{ " {" }}
-  grid-column: 68/76;
-  }
+    .quick-search-form .site-title-primary {{ " {" }}
+    grid-column: {{widget[1]["settings"]["site_title"]["selectTextValues"]["column"]}};
+    }
 
-  .eight-qs-item {{ " {" }}
-  grid-column: 77/89;
-  }
-
-  .ninth-qs-item {{ " {" }}
-  grid-column: 89/-1;
-  }
-
+    .quick-search-form .qs-field-wrapper {{ " {" }}
+    grid-column: 32/-1;
+    }
 </div>

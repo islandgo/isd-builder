@@ -2,7 +2,7 @@
   .hp-quick-search {{ " {" }}
   width: 100%;
   padding: 0 24px;
-  max-width: 1290px;
+  max-width: {{widget[1]["settings"]["qs_max_width"]["value"]}};
   margin: 0 auto;
   margin-bottom: 92px;
   font-size: 0;
@@ -67,7 +67,15 @@
   .quick-search-form input {{ " {" }}
   width: 100%;
   height: 44px;
-  border: 1px solid #d0cece;
+  <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "full-border"'>
+    border: 1px solid #d0cece;
+  </div>
+  <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "border-bottom"'>
+    border-bottom: 1px solid #d0cece;
+  </div>
+  <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "border-bg"'>
+    background: yellow;
+  </div>
   outline: none;
   -webkit-appearance: none;
   appearance: none;
@@ -160,7 +168,7 @@
   .hp-quick-search {{ " {" }}
   width: 100%;
   padding: 0 24px;
-  max-width: 1290px;
+  max-width: {{widget[1]["settings"]["qs_max_width"]["value"]}};
   margin: 0 auto;
   margin-bottom: 92px;
   font-size: 0;
@@ -194,35 +202,21 @@
   row-gap: 18px;
   }
 
-  .primary-qs-item {{ " {" }}
-  grid-column: 1/50;
-  grid-row: 1/2;
-  }
+  <div *ngFor="
+  let setting of RegionsService.converObjectToArray(
+      widget[1]['settings']
+  );
+  let i = index
+  ">
+    <div *ngIf="setting[1]['html_only'] &&  setting[1]['value']">
+      .{{ resetCounter(i)}}-qs-item {{ " {" }}
+      grid-column: {{ setting[1]['selectTextValues']['column'] }};
 
-  .secondary-qs-item {{ " {" }}
-  grid-column: 53/-1;
-  grid-row: 1/2;
-  }
+      }
 
-  .tertiary-qs-item {{ " {" }}
-  grid-column: 1/25;
-  grid-row: 2/3;
-  }
+    </div>
 
-  .fourth-qs-item {{ " {" }}
-  grid-column: 26/50;
-  grid-row: 2/3;
-  }
-
-  .fifth-qs-item {{ " {" }}
-  grid-column: 53/77;
-  grid-row: 2/3;
-  }
-
-  .sixth-qs-item {{ " {" }}
-  grid-column: 78/-1;
-  grid-row: 2/3;
-  }
+  </div>
 
   .quick-search-form select {{ " {" }}
   background: transparent url(images/arrow-down.png) no-repeat scroll right
@@ -237,7 +231,15 @@
   .quick-search-form input {{ " {" }}
   width: 100%;
   height: 44px;
-  border: 1px solid #d0cece;
+  <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "full-border"'>
+    border: 1px solid #d0cece;
+  </div>
+  <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "border-bottom"'>
+    border-bottom: 1px solid #d0cece;
+  </div>
+  <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "border-bg"'>
+    background: #fff;
+  </div>
   outline: none;
   -webkit-appearance: none;
   appearance: none;

@@ -17,11 +17,7 @@ export class QuickSearchComponent implements OnInit {
   counter = 1;
   constructor(public RegionsService: RegionsService) {}
 
-  ngOnInit() {
-    if (this.widget[1]["name"] == "quick-search") {
-      console.log(this.widget[1]["settings"]);
-    }
-  }
+  ngOnInit() {}
 
   resetCounter() {
     return this.RegionsService.convertNumberToWord(this.counter++);
