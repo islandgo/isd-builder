@@ -1,5 +1,14 @@
 <div *ngIf="widget[1]['name'] == 'quick-search'">
     &lt;div class="quick-search-form"&gt;
+    <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 2"'>
+        &lt;div class="site-title-primary"&gt;
+        &lt;h3&gt;Quick&lt;/h3&gt;
+        &lt;h2&gt;Search&lt;/h2&gt;
+        &lt;/div&gt;
+    </div>
+    <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 2"'>
+        &lt;div class="qs-field-wrapper"&gt;
+    </div>
     <div *ngFor="
                 let setting of RegionsService.converObjectToArray(
                     widget[1]['settings']
@@ -51,11 +60,29 @@
             <div *ngIf="setting[1]['name'] == 'search' && setting[1]['value'] == 'true'">
                 &lt;input class="qs-search" type="submit" value="{{setting[1]['selectTextValues']['placeholder']}}"&gt;
             </div>
+            <div
+                *ngIf="setting[1]['name'] == 'search' && setting[1]['value'] == 'true' && ['templateType']['value'] == 'Quick Search template 2'">
+                &lt;div class="qs-search"&gt;
+                &lt;input type="submit" value="{{setting[1]['selectTextValues']['placeholder']}}" aria-label="qs-submit"
+                /&gt;
+                &lt;/div&gt;
+            </div>
             <div *ngIf="setting[1]['name'] == 'advance' && setting[1]['value'] == 'true'">
                 &lt;a href="[blogurl]" class="qs-advanced" aria-label="advanced"&gt;Advanced&lt;/a&gt;
             </div>
+            <div
+                *ngIf="setting[1]['name'] == 'advance' && setting[1]['value'] == 'true' && ['templateType']['value'] == 'Quick Search template 2'">
+                &lt;div class="qs-advanced"&gt;
+                &lt;a href="[blogurl]" aria-label="qs-btn"&gt;
+                &lt;span&gt;Advanced&lt;/span&gt;
+                &lt;/a&gt;
+                &lt;/div&gt;
+            </div>
             &lt;/div&gt;
         </div>
+    </div>
+    <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 2"'>
+        &lt;/div&gt;
     </div>
     &lt;/div&gt;
 </div>
