@@ -1,44 +1,46 @@
-<div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 1"'>
-    .quick-search-form {{ " {" }}
-    display: grid;
-    grid-template-columns: repeat(100, 1fr);
-    max-width: {{widget[1]["settings"]["qs_max_width"]["value"]}};
-    margin: 0 auto;
-    grid-gap: 2px;
-    }
-    <div *ngFor="
+<div *ngIf="widget[1]['name'] == 'quick-search'">
+    <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 1"'>
+        .quick-search-form {{ " {" }}
+        display: grid;
+        grid-template-columns: repeat(100, 1fr);
+        max-width: {{widget[1]["settings"]["qs_max_width"]["value"]}};
+        margin: 0 auto;
+        grid-gap: 2px;
+        }
+        <div *ngFor="
   let setting of RegionsService.converObjectToArray(
       widget[1]['settings']
   );
   let i = index
   ">
-        <div *ngIf="setting[1]['html_only'] &&  setting[1]['value']">
-            .{{ resetCounter(i)}}-qs-item {{ " {" }}
-            grid-column: {{ setting[1]['selectTextValues']['column'] }};
+            <div *ngIf="setting[1]['html_only'] &&  setting[1]['value']">
+                .{{ resetCounter(i)}}-qs-item {{ " {" }}
+                grid-column: {{ setting[1]['selectTextValues']['column'] }};
 
-            }
+                }
+
+            </div>
 
         </div>
 
+
     </div>
 
+    <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 2"'>
+        .quick-search-form {{ " {" }}
+        display: grid;
+        grid-template-columns: repeat(100, 1fr);
+        max-width: 1180px;
+        margin: 0 auto;
+        grid-gap: 2px;
+        }
 
-</div>
+        .quick-search-form .site-title-primary {{ " {" }}
+        grid-column: {{widget[1]["settings"]["site_title"]["selectTextValues"]["column"]}};
+        }
 
-<div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 2"'>
-    .quick-search-form {{ " {" }}
-    display: grid;
-    grid-template-columns: repeat(100, 1fr);
-    max-width: 1180px;
-    margin: 0 auto;
-    grid-gap: 2px;
-    }
-
-    .quick-search-form .site-title-primary {{ " {" }}
-    grid-column: {{widget[1]["settings"]["site_title"]["selectTextValues"]["column"]}};
-    }
-
-    .quick-search-form .qs-field-wrapper {{ " {" }}
-    grid-column: 32/-1;
-    }
+        .quick-search-form .qs-field-wrapper {{ " {" }}
+        grid-column: 32/-1;
+        }
+    </div>
 </div>
