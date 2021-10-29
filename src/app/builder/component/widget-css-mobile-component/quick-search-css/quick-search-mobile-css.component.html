@@ -1,7 +1,46 @@
 <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 1"'>
-  .hp-quick-search {{ " {" }}
-  width: 100%;
+  .quick-search-form {{ " {" }}
+  display: grid;
+  grid-template-columns: repeat(100, 1fr);
+  max-width: 1180px;
+  margin: 0 auto;
+  grid-gap: 2px;
+  }
 
+  .primary-qs-item {{ " {" }}
+  grid-column: 1/14;
+  }
+
+  .secondary-qs-item {{ " {" }}
+  grid-column: 15/30;
+  }
+
+  .tertiary-qs-item {{ " {" }}
+  grid-column: 30/44;
+  }
+
+  .fourth-qs-item {{ " {" }}
+  grid-column: 44/52;
+  }
+
+  .fifth-qs-item {{ " {" }}
+  grid-column: 52/60;
+  }
+
+  .sixth-qs-item {{ " {" }}
+  grid-column: 60/68;
+  }
+
+  .seventh-qs-item {{ " {" }}
+  grid-column: 68/76;
+  }
+
+  .eight-qs-item {{ " {" }}
+  grid-column: 77/89;
+  }
+
+  .ninth-qs-item {{ " {" }}
+  grid-column: 89/-1;
   }
 
 </div>

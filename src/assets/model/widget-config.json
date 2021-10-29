@@ -331,6 +331,19 @@
         "value": "1250px",
         "name": "max-width"
       },
+      "site_title": {
+        "inpuType": "select",
+        "html_only": true,
+        "name": "site title",
+        "selectValue": [
+          true,
+          false
+        ],
+        "value": false,
+        "selectTextValues": {
+          "column": "15/30"
+        }
+      },
       "property_type": {
         "inpuType": "select",
         "html_only": true,
@@ -354,7 +367,10 @@
           true,
           false
         ],
-        "value": false
+        "value": false,
+        "selectTextValues": {
+          "column": "15/30"
+        }
       },
       "city_zip": {
         "inpuType": "select",
