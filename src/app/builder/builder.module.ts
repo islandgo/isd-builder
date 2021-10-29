@@ -33,6 +33,8 @@ import { ElementPeekHtmlComponent } from './component/widget-html-component/elem
 import { ContactFormComponent } from './component/widget-html-component/contact-form/contact-form.component';
 import { ContactFormCssComponent } from './component/widget-css-component/contact-form-css/contact-form-css.component';
 import { SiteTitleComponent } from './component/widget-html-component/site-title/site-title.component';
+import { QuickSearchComponent } from './component/widget-html-component/quick-search/quick-search.component';
+import { QuickSearchCssComponent } from './component/widget-css-component/quick-search-css/quick-search-css.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,8 @@ import { SiteTitleComponent } from './component/widget-html-component/site-title
     ContactFormComponent,
     ContactFormCssComponent,
     SiteTitleComponent,
+    QuickSearchComponent,
+    QuickSearchCssComponent,
   ],
   imports: [
     BuilderRoutes,

@@ -302,5 +302,170 @@
         "name": "input style"
       }
     }
+  },
+  "quick_search": {
+    "name": "quick-search",
+    "settings": {
+      "templateType": {
+        "inpuType": "select",
+        "selectValue": [
+          "Quick Search template 1",
+          "Quick Search template 2",
+          "Quick Search template 3 (floating)"
+        ],
+        "value": "Quick Search template 1",
+        "name": "template type"
+      },
+      "input_style": {
+        "inpuType": "select",
+        "selectValue": [
+          "border-bottom",
+          "border-bg",
+          "full-border"
+        ],
+        "value": "full-border",
+        "name": "input style"
+      },
+      "qs_max_width": {
+        "inpuType": "text",
+        "value": "1250px",
+        "name": "max-width"
+      },
+      "property_type": {
+        "inpuType": "select",
+        "html_only": true,
+        "name": "property type",
+        "selectValue": [
+          true,
+          false
+        ],
+        "value": true,
+        "selectTextValues": {
+          "input_type": "select",
+          "column": "15/30",
+          "placeholder": "Property Type"
+        }
+      },
+      "city_zip": {
+        "inpuType": "select",
+        "html_only": true,
+        "name": "city or zip",
+        "selectValue": [
+          true,
+          false
+        ],
+        "value": true,
+        "selectTextValues": {
+          "input_type": "text",
+          "column": "30/44",
+          "placeholder": "City or Zip"
+        }
+      },
+      "beds": {
+        "inpuType": "select",
+        "html_only": true,
+        "name": "beds",
+        "selectValue": [
+          true,
+          false
+        ],
+        "value": true,
+        "selectTextValues": {
+          "input_type": "text",
+          "column": "44/52",
+          "placeholder": "Beds"
+        }
+      },
+      "baths": {
+        "inpuType": "select",
+        "html_only": true,
+        "name": "baths",
+        "selectValue": [
+          true,
+          false
+        ],
+        "value": true,
+        "selectTextValues": {
+          "input_type": "select",
+          "column": "52/60",
+          "placeholder": "Baths"
+        }
+      },
+      "min_price": {
+        "inpuType": "select",
+        "html_only": true,
+        "name": "min_price",
+        "selectValue": [
+          true,
+          false
+        ],
+        "value": true,
+        "selectTextValues": {
+          "input_type": "select",
+          "column": "60/68",
+          "placeholder": "Min. Price"
+        }
+      },
+      "max_price": {
+        "inpuType": "select",
+        "name": "max_price",
+        "html_only": true,
+        "selectValue": [
+          true,
+          false
+        ],
+        "value": true,
+        "selectTextValues": {
+          "input_type": "text",
+          "column": "68/76",
+          "placeholder": "Max. Price"
+        }
+      },
+      "search": {
+        "inpuType": "select",
+        "name": "search",
+        "html_only": true,
+        "selectValue": [
+          true,
+          false
+        ],
+        "value": false,
+        "selectTextValues": {
+          "input_type": "text",
+          "column": "77/89",
+          "placeholder": "Search"
+        }
+      },
+      "search_with_icon": {
+        "inpuType": "select",
+        "name": "search icon",
+        "html_only": true,
+        "selectValue": [
+          true,
+          false
+        ],
+        "value": false,
+        "selectTextValues": {
+          "input_type": "text",
+          "column": "77/89",
+          "placeholder": "ai-font-magnifying-glass-h"
+        }
+      },
+      "advance": {
+        "inpuType": "select",
+        "name": "advance",
+        "html_only": true,
+        "selectValue": [
+          true,
+          false
+        ],
+        "value": false,
+        "selectTextValues": {
+          "input_type": "text",
+          "column": "89/-1",
+          "placeholder": "Advance"
+        }
+      }
+    }
   }
 }
