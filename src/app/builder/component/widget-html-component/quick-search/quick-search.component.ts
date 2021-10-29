@@ -20,6 +20,7 @@ export class QuickSearchComponent implements OnInit {
   ngOnInit() {}
 
   resetCounter() {
+    console.log(this.widget[1]["settings"]);
     return this.RegionsService.convertNumberToWord(this.counter++);
   }
 }

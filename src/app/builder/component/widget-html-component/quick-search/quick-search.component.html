@@ -15,6 +15,7 @@
                 );
                 let i = index
                 ">
+        <!-- {{(setting[1]['name'] != 'advance' && setting[1]['name'] != 'search')}} -->
         <div *ngIf="setting[1]['html_only'] && setting[1]['value']">
             &lt;div class="{{ resetCounter(i)}}-qs-item" &gt;
             <div
@@ -28,7 +29,8 @@
                 &lt;h2&gt;Search&lt;/h2&gt;
                 &lt;/div&gt;
             </div>
-            <div *ngIf="setting[1]['selectTextValues']['input_type'] == 'text' && setting[1]['name'] != 'advance'">
+            <div
+                *ngIf="setting[1]['selectTextValues']['input_type'] == 'text' && (setting[1]['name'] != 'advance' && setting[1]['name'] != 'search')">
                 &lt;input type="text"
                 placeholder="{{setting[1]['selectTextValues']['placeholder']}}"
                 aria-label="qs-fields" /&gt;
@@ -76,18 +78,19 @@
                 &lt;option value="5"&gt;5+&lt;/option&gt;
                 &lt;/select&gt;
             </div>
-            <div *ngIf="setting[1]['name'] == 'search' && setting[1]['value'] == 'true'">
+            <div *ngIf="setting[1]['name'] == 'search' && setting[1]['value'] == true">
                 &lt;div class="qs-search"&gt;
                 &lt;input type="submit" value="{{setting[1]['selectTextValues']['placeholder']}}" aria-label="qs-submit"
                 /&gt;
                 &lt;/div&gt;
             </div>
-            <div *ngIf="setting[1]['name'] == 'advance' && setting[1]['value'] == 'true'">
+            <div *ngIf="setting[1]['name'] == 'advance' && setting[1]['value'] == true">
                 &lt;div class="qs-advanced"&gt;
                 &lt;a href="[blogurl]" aria-label="qs-btn"&gt;
                 &lt;span&gt;Advanced&lt;/span&gt;
                 &lt;/a&gt;
                 &lt;/div&gt;
+
             </div>
             &lt;/div&gt;
         </div>

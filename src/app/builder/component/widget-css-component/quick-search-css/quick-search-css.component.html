@@ -208,7 +208,7 @@
   );
   let i = index
   ">
-    <div *ngIf="setting[1]['html_only'] &&  setting[1]['value']">
+    <div *ngIf="setting[1]['html_only'] &&  setting[1]['value'] == 'true'">
       .{{ resetCounter(i)}}-qs-item {{ " {" }}
       grid-column: {{ setting[1]['selectTextValues']['column'] }};
 
