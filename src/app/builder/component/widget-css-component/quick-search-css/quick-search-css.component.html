@@ -1,4 +1,17 @@
 <div *ngIf="widget[1]['name'] == 'quick-search'">
+  .quick-search-form select,
+  .quick-search-form input {{ " {" }}
+  <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "full-border"'>
+    border: 1px solid #d0cece;
+  </div>
+  <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "border-bottom"'>
+    border-bottom: 1px solid #d0cece;
+  </div>
+  <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "border-bg"'>
+    background: #fff;
+  </div>
+  }
+
   <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 1"'>
     .hp-quick-search {{ " {" }}
     width: 100%;
@@ -39,44 +52,15 @@
     margin-bottom: 20px;
     }
 
-    .quick-search-form input {{ " {" }}
-    width: 100%;
-    height: 44px;
-    border: 1px solid #d0cece;
-    outline: none;
-    -webkit-appearance: none;
-    appearance: none;
-    -moz-appearance: none;
-    font-size: 11px;
-    font-weight: 300;
-    color: #777777;
-    background: transparent;
-    cursor: pointer;
-    padding-left: 14px;
-    }
-
     .quick-search-form select {{ " {" }}
     background: transparent url(images/arrow-down.png) no-repeat scroll right 12px
     center;
-    }
-
-    .quick-search-form input {{ " {" }}
-    background: transparent;
     }
 
     .quick-search-form select,
     .quick-search-form input {{ " {" }}
     width: 100%;
     height: 44px;
-    <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "full-border"'>
-      border: 1px solid #d0cece;
-    </div>
-    <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "border-bottom"'>
-      border-bottom: 1px solid #d0cece;
-    </div>
-    <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "border-bg"'>
-      background: yellow;
-    </div>
     outline: none;
     -webkit-appearance: none;
     appearance: none;
@@ -94,6 +78,8 @@
     }
 
     .qs-search {{ " {" }}
+    background: transparent;
+    border: 1px solid #ffc000;
     position: relative;
     width: 100%;
     min-height: 44px;
@@ -104,8 +90,6 @@
     text-transform: uppercase;
     letter-spacing: 00.2em;
     font-size: 11px;
-    background: #1092b2;
-    border: 1px solid #1092b2;
     -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
@@ -118,6 +102,8 @@
     }
 
     .qs-advanced {{ " {" }}
+    background: transparent;
+    border: 1px solid #ffc000;
     position: relative;
     width: 100%;
     min-height: 44px;
@@ -129,8 +115,6 @@
     letter-spacing: 00.2em;
     font-size: 11px;
     color: #ffffff;
-    background: #50c4cb;
-    border: 1px solid #50c4cb;
     -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
@@ -149,8 +133,8 @@
     }
 
     .qs-search input {{ " {" }}
-    background: transparent;
-    border: none;
+    /* background: transparent;
+    border: none; */
     text-transform: uppercase;
     letter-spacing: 00.2em;
     }
@@ -209,7 +193,7 @@
   );
   let i = index
   ">
-      <div *ngIf="setting[1]['html_only'] &&  setting[1]['value'] == 'true'">
+      <div *ngIf="setting[1]['html_only'] &&  setting[1]['value'] == true">
         .{{ resetCounter(i)}}-qs-item {{ " {" }}
         grid-column: {{ setting[1]['selectTextValues']['column'] }};
 
@@ -224,23 +208,10 @@
     12px center;
     }
 
-    .quick-search-form input {{ " {" }}
-    background: transparent;
-    }
-
     .quick-search-form select,
     .quick-search-form input {{ " {" }}
     width: 100%;
     height: 44px;
-    <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "full-border"'>
-      border: 1px solid #d0cece;
-    </div>
-    <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "border-bottom"'>
-      border-bottom: 1px solid #d0cece;
-    </div>
-    <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "border-bg"'>
-      background: #fff;
-    </div>
     outline: none;
     -webkit-appearance: none;
     appearance: none;
@@ -319,6 +290,8 @@
     }
 
     .qs-advanced {{ " {" }}
+    background: transparent;
+    border: 1px solid #ffc000;
     position: relative;
     width: 100%;
     min-height: 44px;
@@ -330,8 +303,6 @@
     letter-spacing: 00.2em;
     font-size: 11px;
     color: #ffffff;
-    background: #50c4cb;
-    border: 1px solid #50c4cb;
     -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
