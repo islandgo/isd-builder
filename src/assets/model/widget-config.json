@@ -191,6 +191,15 @@
         "name": "display",
         "cssOnly": true
       },
+      "hasImage": {
+        "inpuType": "select",
+        "selectValue": [
+          "yup",
+          "nope"
+        ],
+        "value": "yup",
+        "name": "has-image"
+      },
       "contentPosition": {
         "inpuType": "select",
         "selectValue": [
@@ -204,6 +213,16 @@
         ],
         "value": "bottom-left",
         "name": "content-position"
+      },
+      "contentType": {
+        "inpuType": "select",
+        "selectValue": [
+          "title",
+          "title-content",
+          "icon"
+        ],
+        "value": "icon",
+        "name": "content-type"
       },
       "grid_template_columns": {
         "inpuType": "text",

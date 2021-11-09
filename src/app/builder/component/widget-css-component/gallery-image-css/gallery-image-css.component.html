@@ -41,34 +41,141 @@
   .{{ regionData[1]["keyword_class"] }}-item:hover::before {{ " {" }}
   opacity: 1;
   }
+  <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
+    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item span {{ " {" }}
+    color: #fff;
+    position: absolute;
+    font-size: 23px;
+    z-index: 1;
+    }
+  </div>
+
+
+  <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
+    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item h3 {{ " {" }}
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 25px;
+    position: absolute;
+    letter-spacing: 0.01em;
+    z-index: 1;
+    }
+  </div>
 
 
 
   <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-left'">
-    {{ "/*bottom-left*/" }}
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item span {{ " {" }}
+    </div>
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item h3 {{ " {" }}
+    </div>
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
+      regionData[1]["keyword_class"] }}-details {{ " {" }}
+    </div>
+    left: 15px;
+    bottom: 15px;
+    }
   </div>
 
   <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-right'">
-    {{ "/*bottom-right*/" }}
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item span {{ " {" }}
+    </div>
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item h3 {{ " {" }}
+    </div>
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
+      regionData[1]["keyword_class"] }}-details {{ " {" }}
+    </div>
+    right: 15px;
+    bottom: 15px;
+    }
   </div>
 
   <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-center'">
-    {{ "/*bottom-center*/" }}
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item span {{ " {" }}
+    </div>
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item h3 {{ " {" }}
+    </div>
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
+      regionData[1]["keyword_class"] }}-details {{ " {" }}
+    </div>
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15px;
+    }
   </div>
 
   <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'center'">
-    {{ "/*center*/" }}
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item span {{ " {" }}
+    </div>
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item h3 {{ " {" }}
+    </div>
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
+      regionData[1]["keyword_class"] }}-details {{ " {" }}
+    </div>
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    }
   </div>
 
   <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'top-left'">
-    {{ "/*top-left*/" }}
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item span {{ " {" }}
+    </div>
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item h3 {{ " {" }}
+    </div>
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
+      regionData[1]["keyword_class"] }}-details {{ " {" }}
+    </div>
+    left: 15px;
+    top: 15px;
+    }
   </div>
 
   <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'top-right'">
-    {{ "/*top right*/" }}
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item span {{ " {" }}
+    </div>
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item h3 {{ " {" }}
+    </div>
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
+      regionData[1]["keyword_class"] }}-details {{ " {" }}
+    </div>
+    right: 15px;
+    top: 15px;
+    }
   </div>
 
   <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'below-image'">
-    {{ "/*below image*/" }}
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item span {{ " {" }}
+    </div>
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item h3 {{ " {" }}
+    </div>
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
+      regionData[1]["keyword_class"] }}-details {{ " {" }}
+    </div>
+    position: relative;
+    right: 15px;
+    top: 15px;
+    }
   </div>
 </div>

@@ -16,6 +16,6 @@ export class GalleryImageCssComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // console.log(this.widget[1]["settings"]["contentPosition"]["value"]);
+    console.log(this.widget[1]["settings"]["contentType"]["value"]);
   }
 }
