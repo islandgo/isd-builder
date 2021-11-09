@@ -191,6 +191,20 @@
         "name": "display",
         "cssOnly": true
       },
+      "contentPosition": {
+        "inpuType": "select",
+        "selectValue": [
+          "bottom-left",
+          "bottom-right",
+          "bottom-center",
+          "center",
+          "top-left",
+          "top-right",
+          "below-image"
+        ],
+        "value": "bottom-left",
+        "name": "content-position"
+      },
       "grid_template_columns": {
         "inpuType": "text",
         "value": "repeat(100,1fr)",
@@ -205,13 +219,13 @@
       },
       "grid_row_gap": {
         "inpuType": "text",
-        "value": "0",
+        "value": "0px",
         "name": "grid-row-gap",
         "cssOnly": true
       },
       "grid_column_gap": {
         "inpuType": "text",
-        "value": "0",
+        "value": "0px",
         "name": "grid-column-gap",
         "cssOnly": true
       },

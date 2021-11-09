@@ -58,9 +58,18 @@
                 &lt;/div&gt;
                 &lt;input type="text" name="qs-range" id="qs-range" aria-label="qs-range" /&gt;
             </div>
-            <div
-                *ngIf="setting[1]['selectTextValues']['input_type'] == 'select' && (setting[1]['name'] == 'min_price' || setting[1]['name'] == 'max_price')">
+            <div *ngIf="setting[1]['selectTextValues']['input_type'] == 'select' && setting[1]['name'] == 'min_price'">
                 &lt;select aria-label="qs-fields"&gt;
+                &lt;option&gt;{{widget[1]["settings"]["min_price"]["selectTextValues"]["placeholder"]}}&lt;/option&gt;
+                &lt;option&gt;$1,000,000&lt;/option&gt;
+                &lt;option&gt;$2,000,000&lt;/option&gt;
+                &lt;option&gt;$3,000,000&lt;/option&gt;
+                &lt;option&gt;$4,000,000&lt;/option&gt;
+                &lt;/select&gt;
+            </div>
+            <div *ngIf="setting[1]['selectTextValues']['input_type'] == 'select' && setting[1]['name'] == 'max_price'">
+                &lt;select aria-label="qs-fields"&gt;
+                &lt;option&gt;{{widget[1]["settings"]["max_price"]["selectTextValues"]["placeholder"]}}&lt;/option&gt;
                 &lt;option&gt;$1,000,000&lt;/option&gt;
                 &lt;option&gt;$2,000,000&lt;/option&gt;
                 &lt;option&gt;$3,000,000&lt;/option&gt;

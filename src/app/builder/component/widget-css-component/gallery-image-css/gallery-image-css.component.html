@@ -1,5 +1,5 @@
 <div *ngIf="widget[1]['name'] == 'gallery-image'" class="gallery-image-container">
-  .hp-{{ regionData[1]["keyword_class"] }} .{{ this.widget[1]["name"] }}
+  .{{ regionData[1]["keyword_class"] }}-gallery-image-container
 
   {{ " {" }}
   <div *ngFor="
@@ -11,4 +11,64 @@
     </div>
   </div>
   }
+
+  .{{ regionData[1]["keyword_class"] }}-item {{ " {" }}
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  }
+
+
+  .{{ regionData[1]["keyword_class"] }}-item::before {{ " {" }}
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background: rgba(0, 0, 0, 0.6);
+  }
+
+  .{{ regionData[1]["keyword_class"] }}-item:hover::before {{ " {" }}
+  opacity: 1;
+  }
+
+
+
+  <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-left'">
+    {{ "/*bottom-left*/" }}
+  </div>
+
+  <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-right'">
+    {{ "/*bottom-right*/" }}
+  </div>
+
+  <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-center'">
+    {{ "/*bottom-center*/" }}
+  </div>
+
+  <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'center'">
+    {{ "/*center*/" }}
+  </div>
+
+  <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'top-left'">
+    {{ "/*top-left*/" }}
+  </div>
+
+  <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'top-right'">
+    {{ "/*top right*/" }}
+  </div>
+
+  <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'below-image'">
+    {{ "/*below image*/" }}
+  </div>
 </div>
