@@ -2,9 +2,13 @@
   &lt;div class="{{ regionClassName }}-{{ widgetType
   }}{{ widget[1]["suffix"] }}"&gt;
   <div *ngFor="let item of [].constructor(galleryItem); let i = index">
+    <div
+      *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content' && widget[1]['settings']['contentPosition']['value'] == 'below-image'">
+      &lt;div class="{{ regionClassName }}-item"&gt;
+    </div>
     <div *ngIf="widget[1]['settings']['hasImage']['value'] == 'yup'">
       &lt;a href="[blogurl]" aria-label="{{ regionClassName }}-image"
-      class="{{regionClassName}}-item canvas-wrapper"&gt; &lt;canvas width="{{
+      class="{{ regionClassName }}-image"&gt; &lt;canvas width="{{
       widget[1]["settings"]["image_width"]["value"]}}"
       height="{{widget[1]["settings"]["image_height"]["value"]}}"&gt;&lt;/canvas&gt; &lt;img
       alt="{{regionClassName}}-image" class="canvas-img" src="
@@ -18,26 +22,28 @@
         &lt;h3&gt;EzekSayson&lt;/h3&gt;
       </div>
       &lt;/a&gt;
-      <!-- Title + Content -->
-      <div
-        *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content' && widget[1]['settings']['contentPosition']['value'] != 'below-image'">
-        {{"title content"}}
-        &lt;div class="below-image" &gt;
-        &lt;h3&gt;{{ regionClassName }}&lt;/h3&gt;
-        &lt;p&gt;{{ regionClassName }}_paraghrap&lt;/p&gt;
-        &lt;/div&gt;
-      </div>
     </div>
-    <!-- Below Image -->
+    <!-- Title + Content -->
     <div
-      *ngIf="widget[1]['settings']['contentPosition']['value'] == 'below-image' && widget[1]['settings']['hasImage']['value'] == 'nope'">
-      &lt;div class="below-image" &gt;
+      *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content' && widget[1]['settings']['contentPosition']['value'] == 'below-image'">
+      &lt;div class="{{ regionClassName }}-details" &gt;
+      &lt;h3&gt;{{ regionClassName }}&lt;/h3&gt;
+      &lt;p&gt;{{ regionClassName }}_paraghrap&lt;/p&gt;
+      &lt;a href="[blogurl]" aria-label="Read More" class="site-btn-primary"&gt;Read More&lt;/a&gt;
+      &lt;/div&gt;
+    </div>
+    <!-- Content Only -->
+    <div
+      *ngIf="widget[1]['settings']['hasImage']['value'] == 'nope' && widget[1]['settings']['contentPosition']['value'] == 'below-image'">
+      &lt;div class="{{ regionClassName }}-details" &gt;
       &lt;h3&gt;{{ regionClassName }}&lt;/h3&gt;
       &lt;p&gt;{{ regionClassName }}_paraghrap&lt;/p&gt;
       &lt;/div&gt;
     </div>
-
+    <div
+      *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content' && widget[1]['settings']['contentPosition']['value'] == 'below-image'">
+      &lt;/div&gt;
+    </div>
   </div>
   &lt;/div&gt;
-
 </div>

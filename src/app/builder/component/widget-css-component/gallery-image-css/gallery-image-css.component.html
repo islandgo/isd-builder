@@ -12,7 +12,7 @@
   </div>
   }
 
-  .{{ regionData[1]["keyword_class"] }}-item {{ " {" }}
+  .{{ regionData[1]["keyword_class"] }}-image {{ " {" }}
   position: relative;
   z-index: 1;
   display: block;
@@ -21,7 +21,7 @@
   }
 
 
-  .{{ regionData[1]["keyword_class"] }}-item::before {{ " {" }}
+  .{{ regionData[1]["keyword_class"] }}-image::before {{ " {" }}
   content: "";
   position: absolute;
   pointer-events: none;
@@ -38,11 +38,11 @@
   background: rgba(0, 0, 0, 0.6);
   }
 
-  .{{ regionData[1]["keyword_class"] }}-item:hover::before {{ " {" }}
+  .{{ regionData[1]["keyword_class"] }}-image:hover::before {{ " {" }}
   opacity: 1;
   }
   <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item span {{ " {" }}
+    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image span {{ " {" }}
     color: #fff;
     position: absolute;
     font-size: 23px;
@@ -52,7 +52,7 @@
 
 
   <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item h3 {{ " {" }}
+    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image h3 {{ " {" }}
     color: #fff;
     text-transform: uppercase;
     font-size: 25px;
@@ -62,50 +62,62 @@
     }
   </div>
 
+  <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'">
+    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
+    regionData[1]["keyword_class"] }}-details {{ " {" }}
+    position: relative;
+    z-index: 1;
+    }
 
+    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
+    regionData[1]["keyword_class"] }}-details h3 {{ " {" }}
+    color: #ffbE19;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 16px;
+    }
 
-  <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-left'">
+    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
+    regionData[1]["keyword_class"] }}-details p {{ " {" }}
+    color: #ffbE19;
+    font-size: 16px;
+    margin-bottom: 32px;
+    }
+  </div>
+
+  <div
+    *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-left' && widget[1]['settings']['contentType']['value'] != 'title-content'">
     <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item span {{ " {" }}
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image span {{ " {" }}
     </div>
     <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item h3 {{ " {" }}
-    </div>
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
-      regionData[1]["keyword_class"] }}-details {{ " {" }}
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image h3 {{ " {" }}
     </div>
     left: 15px;
     bottom: 15px;
     }
   </div>
 
-  <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-right'">
+  <div
+    *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-right' && widget[1]['settings']['contentType']['value'] != 'title-content'">
     <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item span {{ " {" }}
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image span {{ " {" }}
     </div>
     <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item h3 {{ " {" }}
-    </div>
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
-      regionData[1]["keyword_class"] }}-details {{ " {" }}
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image h3 {{ " {" }}
     </div>
     right: 15px;
     bottom: 15px;
     }
   </div>
 
-  <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-center'">
+  <div
+    *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-center' && widget[1]['settings']['contentType']['value'] != 'title-content'">
     <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item span {{ " {" }}
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image span {{ " {" }}
     </div>
     <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item h3 {{ " {" }}
-    </div>
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
-      regionData[1]["keyword_class"] }}-details {{ " {" }}
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image h3 {{ " {" }}
     </div>
     left: 50%;
     transform: translateX(-50%);
@@ -113,16 +125,13 @@
     }
   </div>
 
-  <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'center'">
+  <div
+    *ngIf="widget[1]['settings']['contentPosition']['value'] == 'center' && widget[1]['settings']['contentType']['value'] != 'title-content'">
     <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item span {{ " {" }}
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image span {{ " {" }}
     </div>
     <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item h3 {{ " {" }}
-    </div>
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
-      regionData[1]["keyword_class"] }}-details {{ " {" }}
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image h3 {{ " {" }}
     </div>
     left: 50%;
     top:50%;
@@ -130,48 +139,39 @@
     }
   </div>
 
-  <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'top-left'">
+  <div
+    *ngIf="widget[1]['settings']['contentPosition']['value'] == 'top-left' && widget[1]['settings']['contentType']['value'] != 'title-content'">
     <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item span {{ " {" }}
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image span {{ " {" }}
     </div>
     <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item h3 {{ " {" }}
-    </div>
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
-      regionData[1]["keyword_class"] }}-details {{ " {" }}
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image h3 {{ " {" }}
     </div>
     left: 15px;
     top: 15px;
     }
   </div>
 
-  <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'top-right'">
+  <div
+    *ngIf="widget[1]['settings']['contentPosition']['value'] == 'top-right' && widget[1]['settings']['contentType']['value'] != 'title-content'">
     <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item span {{ " {" }}
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image span {{ " {" }}
     </div>
     <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item h3 {{ " {" }}
-    </div>
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
-      regionData[1]["keyword_class"] }}-details {{ " {" }}
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image h3 {{ " {" }}
     </div>
     right: 15px;
     top: 15px;
     }
   </div>
 
-  <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'below-image'">
+  <div
+    *ngIf="widget[1]['settings']['contentPosition']['value'] == 'below-image' && widget[1]['settings']['contentType']['value'] != 'title-content'">
     <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item span {{ " {" }}
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image span {{ " {" }}
     </div>
     <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item h3 {{ " {" }}
-    </div>
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
-      regionData[1]["keyword_class"] }}-details {{ " {" }}
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image h3 {{ " {" }}
     </div>
     position: relative;
     right: 15px;
