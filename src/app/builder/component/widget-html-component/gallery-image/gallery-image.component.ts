@@ -16,13 +16,13 @@ export class GalleryImageComponent implements OnInit {
   constructor(public RegionsService: RegionsService) {}
 
   ngOnInit() {
-    // console.log(this.widget[1]["settings"]["contentPosition"]["value"]);
-    console.log(this.widget[1]["settings"]["hasImage"]["value"]);
-    console.log(this.widget[1]["settings"]["contentType"]["value"] == "icon");
     this.widgetType = this.widget[1]["name"];
     if (this.widgetType == "gallery-image") {
       this.widgetSettings = this.widget[1]["settings"];
       this.galleryItem = +this.widget[1]["settings"]["number_of_item"]["value"];
+      console.log(this.widget[1]["settings"]["contentPosition"]["value"]);
+      console.log(this.widget[1]["settings"]["hasImage"]["value"]);
+      console.log(this.widget[1]["settings"]["contentType"]["value"] == "icon");
     }
   }
 }

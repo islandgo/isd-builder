@@ -16,6 +16,9 @@ export class GalleryImageCssComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log(this.widget[1]["settings"]["contentType"]["value"]);
+    if (this.widget["name"] == "gallery-image") {
+      // console.log(this.widget[1]["settings"]["contentType"]["value"]);
+      console.log(this.widget[1]["settings"]["grid_max_width"]["value"]);
+    }
   }
 }

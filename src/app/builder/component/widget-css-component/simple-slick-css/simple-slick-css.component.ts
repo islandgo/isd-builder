@@ -13,7 +13,10 @@ export class SimpleSlickCssComponent implements OnInit {
   constructor(public RegionsService: RegionsService) {}
 
   ngOnInit() {
-    // console.log(this.widget[1]["settings"]["max-width"]["value"]);
-    console.log(this.widget[1]["settings"]["qs_max_width"]);
+    if (this.widget[1]["name"] == "simple-slick") {
+      // console.log(this.widget[1]["settings"]["max-width"]["value"]);
+      // console.log(this.widget[1]["settings"]["qs_max_width"]);
+      console.log(this.widget[1]["suffixClass"]);
+    }
   }
 }
