@@ -14,22 +14,22 @@ function register_ai_child_starter_theme_sidebars() {{' {'}}
     ));
 
 	register_sidebar(array( 
-		'name' => 'Hp Slideshow',
-		'id'=>'hp-slideshow',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '',
-		'after_title' => ''
+	   'name' => 'Hp Slideshow',
+	   'id'=>'hp-slideshow',
+	   'before_widget' => '',
+	   'after_widget' => '',
+	   'before_title' => '',
+	   'after_title' => ''
 	 ));
 
    <div *ngFor="let region of customRegions; let i = index">
     register_sidebar(array( 
-      'name' => '{{'Hp ' + convertToCamelCase(region[1]['keyword_class']) }},'
-      'id'=>'{{'hp-' + region[1]['keyword_class'] }},'
-      'before_widget' => '',
-	  'after_widget' => '',
-	  'before_title' => '',
-	  'after_title' => ''
+       'name' => '{{'Hp ' + convertToCamelCase(region[1]['keyword_class']) }},'
+       'id'=>'{{'hp-' + region[1]['keyword_class'] }},'
+       'before_widget' => '',
+	   'after_widget' => '',
+	   'before_title' => '',
+	   'after_title' => ''
 	 ));
 </div>
 
