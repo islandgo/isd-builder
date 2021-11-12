@@ -1,11 +1,11 @@
 <div class="code-generator-contaier">
     <h4 class="primary-builder-title">HTML Builder</h4>
     <div contenteditable="true" class="html-text-input" rows="25" cols="100">
-        <html-generator [customRegions] = "customRegions"></html-generator>
+        <html-generator [customRegions]="customRegions"></html-generator>
     </div>
     <h4 class="primary-builder-title">Header Builder</h4>
     <div contenteditable="true" class="html-text-input" rows="25" cols="100">
-        <header-generator [customRegions] = "customRegions" [pageSettings] = "pageSettings"></header-generator>
+        <header-generator [customRegions]="customRegions" [pageSettings]="pageSettings"></header-generator>
     </div>
     <div class="css-builder-container">
         <div class="desktop-builder">
@@ -13,7 +13,7 @@
                 Desktop Css
             </h4>
             <div contenteditable="true" class="html-text-input" rows="25" cols="100">
-                <css-generator [customRegions] = "customRegions" [pageSettings] = "pageSettings"></css-generator>
+                <css-generator [customRegions]="customRegions" [pageSettings]="pageSettings"></css-generator>
             </div>
         </div>
         <div class="mobile-builder">
@@ -27,6 +27,11 @@
     </div>
     <h4 class="primary-builder-title">JS Builder</h4>
     <div contenteditable="true" class="html-text-input" rows="25" cols="100">
-        <js-generator [customRegions] = "customRegions" [pageSettings] = "pageSettings"></js-generator>
+        <js-generator [customRegions]="customRegions" [pageSettings]="pageSettings"></js-generator>
     </div>
+    <h4 class="primary-builder-title">Function Builder</h4>
+    <div contenteditable="true" class="html-text-input" rows="25" cols="100">
+        <function-generator [customRegions]="customRegions" [pageSettings]="pageSettings"></function-generator>
+    </div>
+
 </div>
