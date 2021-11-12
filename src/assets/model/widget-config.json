@@ -191,6 +191,12 @@
         "name": "display",
         "cssOnly": true
       },
+      "grid_template_columns": {
+        "inpuType": "text",
+        "value": "repeat(3,1fr)",
+        "name": "grid-template-columns",
+        "cssOnly": true
+      },
       "hasImage": {
         "inpuType": "select",
         "selectValue": [
@@ -224,11 +230,17 @@
         "value": "icon",
         "name": "content-type"
       },
-      "grid_template_columns": {
-        "inpuType": "text",
-        "value": "repeat(100,1fr)",
-        "name": "grid-template-columns",
-        "cssOnly": true
+      "hoverWithRgba": {
+        "inpuType": "select",
+        "selectValue": [
+          true,
+          false
+        ],
+        "value": true,
+        "selectTextValues": {
+          "rbga": "rgba(0,0,0,.3)"
+        },
+        "name": "rgba default not in hover"
       },
       "grid_max_width": {
         "inpuType": "text",
@@ -359,20 +371,25 @@
         "value": "full-border",
         "name": "input style"
       },
-      "qs_max_width": {
+      "qs_parent_max_width": {
         "inpuType": "text",
-        "value": "1250px",
-        "name": "max-width"
+        "value": "1290px",
+        "name": "Parent Max Width"
+      },
+      "qs_form_max_width": {
+        "inpuType": "text",
+        "value": "1180px",
+        "name": "Form Max Width"
       },
       "site_title": {
         "inpuType": "select",
         "html_only": true,
         "name": "site title",
         "selectValue": [
-          true,
-          false
+          "true",
+          "false"
         ],
-        "value": false,
+        "value": "false",
         "selectTextValues": {
           "column": "1/14"
         }
@@ -382,27 +399,14 @@
         "html_only": true,
         "name": "property type",
         "selectValue": [
-          true,
-          false
+          "true",
+          "false"
         ],
-        "value": true,
+        "value": "true",
         "selectTextValues": {
           "input_type": "select",
           "column": "15/30",
           "placeholder": "Property Type"
-        }
-      },
-      "qs_range_field": {
-        "inpuType": "select",
-        "html_only": true,
-        "name": "qs range field",
-        "selectValue": [
-          true,
-          false
-        ],
-        "value": false,
-        "selectTextValues": {
-          "column": "15/30"
         }
       },
       "city_zip": {
@@ -410,14 +414,27 @@
         "html_only": true,
         "name": "city or zip",
         "selectValue": [
-          true,
-          false
+          "true",
+          "false"
         ],
-        "value": true,
+        "value": "true",
         "selectTextValues": {
           "input_type": "text",
           "column": "30/44",
           "placeholder": "City or Zip"
+        }
+      },
+      "qs_range_field": {
+        "inpuType": "select",
+        "html_only": true,
+        "name": "qs range field",
+        "selectValue": [
+          "true",
+          "false"
+        ],
+        "value": "true",
+        "selectTextValues": {
+          "column": "15/30"
         }
       },
       "beds": {
@@ -425,10 +442,10 @@
         "html_only": true,
         "name": "beds",
         "selectValue": [
-          true,
-          false
+          "true",
+          "false"
         ],
-        "value": true,
+        "value": "true",
         "selectTextValues": {
           "input_type": "select",
           "column": "44/52",
@@ -440,10 +457,10 @@
         "html_only": true,
         "name": "baths",
         "selectValue": [
-          true,
-          false
+          "true",
+          "false"
         ],
-        "value": true,
+        "value": "true",
         "selectTextValues": {
           "input_type": "select",
           "column": "52/60",
@@ -455,10 +472,10 @@
         "html_only": true,
         "name": "min_price",
         "selectValue": [
-          true,
-          false
+          "true",
+          "false"
         ],
-        "value": true,
+        "value": "true",
         "selectTextValues": {
           "input_type": "text",
           "column": "60/68",
@@ -470,10 +487,10 @@
         "name": "max_price",
         "html_only": true,
         "selectValue": [
-          true,
-          false
+          "true",
+          "false"
         ],
-        "value": true,
+        "value": "true",
         "selectTextValues": {
           "input_type": "text",
           "column": "68/76",
@@ -485,10 +502,10 @@
         "name": "search",
         "html_only": true,
         "selectValue": [
-          true,
-          false
+          "true",
+          "false"
         ],
-        "value": true,
+        "value": "true",
         "selectTextValues": {
           "input_type": "text",
           "column": "77/89",
@@ -500,14 +517,14 @@
         "name": "search icon",
         "html_only": true,
         "selectValue": [
-          true,
-          false
+          "true",
+          "false"
         ],
-        "value": false,
+        "value": "false",
         "selectTextValues": {
           "input_type": "text",
           "column": "77/89",
-          "placeholder": "ai-font-magnifying-glass-h"
+          "placeholder": "ai-font-magnifying-glass-b"
         }
       },
       "advance": {
@@ -515,10 +532,10 @@
         "name": "advance",
         "html_only": true,
         "selectValue": [
-          true,
-          false
+          "true",
+          "false"
         ],
-        "value": true,
+        "value": "true",
         "selectTextValues": {
           "input_type": "text",
           "column": "89/-1",

@@ -15,17 +15,19 @@ import { RegionsService } from "src/app/builder/services/regions.service";
 export class QuickSearchComponent implements OnInit {
   @Input() public widget;
   counter = 1;
+  siteTitle = "";
+
   constructor(public RegionsService: RegionsService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.widget[1]["name"] == "quick-search") {
+      console.log(this.widget[1]["settings"]["beds"]);
+    }
+  }
 
   resetCounter() {
-    console.log(
-      this.widget[1]["settings"]["max_price"]["selectTextValues"]["placeholder"]
-    );
-    console.log(
-      this.widget[1]["settings"]["min_price"]["selectTextValues"]["placeholder"]
-    );
-    return this.RegionsService.convertNumberToWord(this.counter++);
+    if (this.widget[1]["name"] == "quick-search") {
+      return this.RegionsService.convertNumberToWord(this.counter++);
+    }
   }
 }

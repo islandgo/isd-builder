@@ -90,6 +90,34 @@ jQuery("header.header").removeClass("show-fixed");
   {{' {'}}{{' {'}}'}'}},
 </div>
 
+<div *ngIf="PageService.enablePageIntroVideo">
+    initIntroAnimation: function () {{' {'}}
+    if (
+        !jQuery("body").hasClass(
+            "user-navigated-from-a-page-on-the-site"
+        )
+    ) {{' {'}}
+        jQuery(".intro-video video").on("ended", function () {{' {'}}
+            setTimeout(function () {{' {'}}
+                jQuery("body").addClass("intro-ended");
+            }, 1000);
+        });
+    } else {{' {'}}
+        jQuery(".intro-video").hide();
+        setTimeout(function () {{' {'}}
+            jQuery("body").addClass("intro-ended");
+        }, 1000);
+    }
+
+    jQuery(".intro-video-close-wrap a").click(function () {{' {'}}
+        jQuery(".intro-video").fadeOut();
+        setTimeout(function () {{' {'}}
+            jQuery("body").addClass("intro-ended");
+        }, 1000);
+    });
+},
+</div>
+
 <div *ngIf="PageService.enablePageGoogleTranslator">
     initFlagTrans: function () {{' {'}}
     jQuery(".google-translator-flag").googleTranslator({{' {'}}
@@ -165,11 +193,15 @@ app.initNavigation();
 <div *ngIf="PageService.enablePageGoogleTranslator">
     app.initFlagTrans();
 </div>
+
 <div *ngIf="PageService.enablePageDoubleTap">
     app.init{{regionName}}DoubleTap();
 </div>
 <div *ngIf="PageService.enablePageBurgerMenu">
     app.initBurgerMenu();
+</div>
+<div *ngIf="PageService.enablePageIntroVideo">
+    app.initIntroAnimation();
 </div>
 <div *ngIf="PageService.enablePageFloatingMenu">
     app.initFloatingForm();

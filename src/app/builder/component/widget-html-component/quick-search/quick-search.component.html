@@ -15,16 +15,19 @@
                 );
                 let i = index
                 ">
-        <!-- {{(setting[1]['name'] != 'advance' && setting[1]['name'] != 'search')}} -->
-        <div *ngIf="setting[1]['html_only'] && setting[1]['value']">
-            &lt;div class="{{ resetCounter(i)}}-qs-item" &gt;
-            <div
-                *ngIf="setting[1]['name'] == 'qs range field' && widget[1]['settings']['templateType']['value'] == 'Quick Search template 2'">
-                &lt;div class="qs-range-field {{ resetCounter(i)}}-qs-item" &gt;
+        <div *ngIf="setting[1]['html_only'] && setting[1]['value'] == 'true'">
+            <div *ngIf="setting[1]['name'] == 'qs range field';else default">
+                &lt;div class="{{ resetCounter(i)}}-qs-item qs-range-field" &gt;
             </div>
+
+            <ng-template #default>
+                &lt;div class="{{ resetCounter(i)}}-qs-item" &gt;
+
+            </ng-template>
+
             <div
                 *ngIf="widget[1]['settings']['templateType']['value'] == 'Quick Search template 1' && setting[1]['name'] == 'site title'">
-                &lt;div class="site-title-primary primary-qs-item"&gt;
+                &lt;div class="site-title-primary"&gt;
                 &lt;h3&gt;Quick&lt;/h3&gt;
                 &lt;h2&gt;Search&lt;/h2&gt;
                 &lt;/div&gt;
@@ -36,7 +39,7 @@
                 aria-label="qs-fields" /&gt;
             </div>
             <div
-                *ngIf="setting[1]['selectTextValues']['input_type'] == 'select' && setting[1]['name'] == 'property type'">
+                *ngIf="setting[1]['selectTextValues']['input_type'] == 'select' && setting[1]['name'] == 'property type' && widget[1]['settings']['property_type']['value'] == 'true'">
                 &lt;select aria-label="qs-fields"&gt;
                 &lt;option value="SFR,CND"&gt;House / Condo&lt;/option&gt;
                 &lt;option value="SFR"&gt;House Only&lt;/option&gt;
@@ -50,6 +53,7 @@
                 &lt;option value="FRM"&gt;Farms&lt;/option&gt;
                 &lt;/select&gt;
             </div>
+
             <div
                 *ngIf="setting[1]['name'] == 'qs range field' && widget[1]['settings']['templateType']['value'] == 'Quick Search template 2'">
                 &lt;div class="qs-range-price-wrap"&gt;
@@ -87,13 +91,13 @@
                 &lt;option value="5"&gt;5+&lt;/option&gt;
                 &lt;/select&gt;
             </div>
-            <div *ngIf="setting[1]['name'] == 'search' && setting[1]['value'] == true">
+            <div *ngIf="setting[1]['name'] == 'search' && setting[1]['value'] == 'true'">
                 &lt;div class="qs-search"&gt;
                 &lt;input type="submit" value="{{setting[1]['selectTextValues']['placeholder']}}" aria-label="qs-submit"
                 /&gt;
                 &lt;/div&gt;
             </div>
-            <div *ngIf="setting[1]['name'] == 'advance' && setting[1]['value'] == true">
+            <div *ngIf="setting[1]['name'] == 'advance' && setting[1]['value'] == 'true'">
                 &lt;div class="qs-advanced"&gt;
                 &lt;a href="[blogurl]" aria-label="qs-btn"&gt;
                 &lt;span&gt;Advanced&lt;/span&gt;
@@ -103,9 +107,6 @@
             </div>
             &lt;/div&gt;
         </div>
-    </div>
-    <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 2"'>
-        &lt;/div&gt;
     </div>
     &lt;/div&gt;
 </div>

@@ -18,6 +18,8 @@ export class QuickSearchCssComponent implements OnInit {
   counter = 1;
   ngOnInit() {}
   resetCounter() {
-    return this.RegionsService.convertNumberToWord(this.counter++);
+    if (this.widget[1]["name"] == "quick-search") {
+      return this.RegionsService.convertNumberToWord(this.counter++);
+    }
   }
 }

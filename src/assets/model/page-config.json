@@ -82,6 +82,21 @@
             }
         }
     },
+    "intro_video": {
+        "enable": false,
+        "name": "intro-video",
+        "settings": {
+            "skipButton": {
+                "value": true,
+                "inpuType": "select",
+                "selectValue": [
+                    true,
+                    false
+                ],
+                "name": "skip-button"
+            }
+        }
+    },
     "floating_menu": {
         "enable": false,
         "name": "floating-menu",

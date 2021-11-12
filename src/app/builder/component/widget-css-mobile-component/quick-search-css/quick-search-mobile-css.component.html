@@ -3,9 +3,10 @@
         .quick-search-form {{ " {" }}
         display: grid;
         grid-template-columns: repeat(100, 1fr);
-        max-width: {{widget[1]["settings"]["qs_max_width"]["value"]}};
+        max-width: {{widget[1]["settings"]["qs_form_max_width"]["value"]}};
         margin: 0 auto;
         grid-gap: 2px;
+        align-items: end;
         }
         <div *ngFor="
   let setting of RegionsService.converObjectToArray(
@@ -13,14 +14,13 @@
   );
   let i = index
   ">
-            <div *ngIf="setting[1]['html_only'] &&  setting[1]['value']">
+            <div *ngIf="setting[1]['html_only'] && setting[1]['value']  == 'true'">
                 .{{ resetCounter(i)}}-qs-item {{ " {" }}
                 grid-column: {{ setting[1]['selectTextValues']['column'] }};
 
                 }
 
             </div>
-
         </div>
 
 
@@ -30,7 +30,7 @@
         .quick-search-form {{ " {" }}
         display: grid;
         grid-template-columns: repeat(100, 1fr);
-        max-width: 1180px;
+        max-width: {{widget[1]["settings"]["qs_form_max_width"]["value"]}};
         margin: 0 auto;
         grid-gap: 2px;
         }

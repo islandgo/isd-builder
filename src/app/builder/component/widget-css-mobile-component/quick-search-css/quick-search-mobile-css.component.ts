@@ -17,10 +17,12 @@ export class QuickSearchMobileCssComponent implements OnInit {
   constructor(public RegionsService: RegionsService) {}
   counter = 1;
   ngOnInit() {
-    // console.log(this.widget[1]["settings"]["qs_max_width"]["value"]);
+    // console.log(this.widget[1]["settings"]);
   }
 
   resetCounter() {
-    return this.RegionsService.convertNumberToWord(this.counter++);
+    if (this.widget[1]["name"] == "quick-search") {
+      return this.RegionsService.convertNumberToWord(this.counter++);
+    }
   }
 }

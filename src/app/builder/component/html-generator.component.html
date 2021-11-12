@@ -5,50 +5,64 @@
     &lt;!-- {{ region[1]["keyword_class"] }} --&gt;
     &lt;section class="hp-{{ region[1]["keyword_class"] }}"&gt; &lt;div
     class="region-{{ region[1]["keyword_class"] }}-container"&gt;
-        <div *ngIf="region[1]['keyword_class'] == 'slideshow'">
-            &lt;h2 class="hidden"&gt;hidden h2&lt;/h2&gt;
-            &lt;?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Hp Slideshow") ) : ?&gt;
-            &lt;?php endif ?&gt;
-        </div>
-        <div *ngIf="!region[1]['region_sections']['primary_section']">
-            <div *ngIf="region[1]['region_widgets']">
-                <div *ngFor="
+    <div *ngIf="region[1]['keyword_class'] == 'slideshow'">
+        &lt;h2 class="hidden"&gt;hidden h2&lt;/h2&gt;
+        &lt;?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Hp Slideshow") ) : ?&gt;
+        &lt;?php endif ?&gt;
+    </div>
+    <div *ngIf="!region[1]['region_sections']['primary_section']">
+        <div *ngIf="region[1]['region_widgets']">
+            <div *ngFor="
             let widget of RegionsService.converObjectToArray(
                 region[1]['region_widgets']
             );
             let childIndex = index
             ">
                 <app-widget-list [regionClassName]="region[1]['keyword_class']" [widget]="widget"></app-widget-list>
-                </div>
             </div>
         </div>
-        <div *ngFor="
+    </div>
+    <div *ngFor="
         let regionChild of RegionsService.converObjectToArray(
             region[1]['region_sections']
         );
         let childIndex = index
         ">
-            &lt;div class="{{ region[1]["keyword_class"] }}-{{
-            regionChild[1]["section_class_name"]
-            }}"&gt;
+        &lt;div class="{{ region[1]["keyword_class"] }}-{{
+        regionChild[1]["section_class_name"]
+        }}"&gt;
 
-            <div *ngIf="regionChild[1]['widgets']">
-                <div *ngFor="
+        <div *ngIf="regionChild[1]['widgets']">
+            <div *ngFor="
             let widget of RegionsService.converObjectToArray(
                 regionChild[1]['widgets']
             );
             let childIndex = index
             ">
-                    <app-widget-list [regionClassName]="region[1]['keyword_class']" [widget]="widget"></app-widget-list>
-                </div>
+                <app-widget-list [regionClassName]="region[1]['keyword_class']" [widget]="widget"></app-widget-list>
             </div>
-            &lt;/div&gt;
         </div>
+        &lt;/div&gt;
+    </div>
     &lt;/div&gt; &lt;/section&gt;
     <br>
     &lt;!-- {{ region[1]["keyword_class"] }} end --&gt;
 
 </div>
+
+<div *ngIf="PageService.enablePageIntroVideo">
+    &lt;div class="intro-video"&gt;
+    &lt;video src="&lt;?php echo get_stylesheet_directory_uri() ?&gt;/video/Final-Intro-Video.mp4" muted="" autoplay=""
+    playsinline=""&gt;&lt;/video&gt;
+    <div *ngIf="PageService.skipButton == 'true'">
+        &lt;div class="intro-video-close-wrap"&gt;
+        &lt;a href="#" aria-label="skip" class="aios-initial-setup-dead-link"&gt;&lt;img alt="skip" class="img-skip"
+        src="&lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/skip.jpg" /&gt;&lt;/a&gt;
+        &lt;/div&gt;
+    </div>
+    &lt;/div&gt;
+</div>
+
 
 <div *ngIf="PageService.enablePagePopUpModal">
     &lt;!-- Intro Popup --&gt; &lt;div class="intro-popup"&gt; &lt;a

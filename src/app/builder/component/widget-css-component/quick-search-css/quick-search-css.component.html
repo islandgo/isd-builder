@@ -1,22 +1,32 @@
 <div *ngIf="widget[1]['name'] == 'quick-search'">
   .quick-search-form select,
   .quick-search-form input {{ " {" }}
+  border: 0;
   <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "full-border"'>
     border: 1px solid #d0cece;
   </div>
   <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "border-bottom"'>
     border-bottom: 1px solid #d0cece;
   </div>
-  <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "border-bg"'>
-    background: #fff;
-  </div>
   }
+
+  <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "border-bg"'>
+    .hp-quick-search .quick-search-form select {{ " {" }}
+    background: dodgerblue url(images/arrow-down.png) no-repeat scroll right 12px
+    center;
+    }
+
+    .hp-quick-search .quick-search-form input {{ " {" }}
+    background: dodgerblue;
+    }
+  </div>
+
 
   <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 1"'>
     .hp-quick-search {{ " {" }}
     width: 100%;
     padding: 0 24px;
-    max-width: {{widget[1]["settings"]["qs_max_width"]["value"]}};
+    max-width: {{widget[1]["settings"]["qs_parent_max_width"]["value"]}};
     margin: 0 auto;
     margin-bottom: 92px;
     font-size: 0;
@@ -52,11 +62,6 @@
     margin-bottom: 20px;
     }
 
-    .quick-search-form select {{ " {" }}
-    background: transparent url(images/arrow-down.png) no-repeat scroll right 12px
-    center;
-    }
-
     .quick-search-form select,
     .quick-search-form input {{ " {" }}
     width: 100%;
@@ -68,9 +73,11 @@
     font-size: 11px;
     font-weight: 300;
     color: #777777;
+    background: transparent;
     cursor: pointer;
     padding-left: 14px;
     }
+
 
     .quick-search-form select option {{ " {" }}
     color: #ffffff;
@@ -78,8 +85,7 @@
     }
 
     .qs-search {{ " {" }}
-    background: transparent;
-    border: 1px solid #ffc000;
+    background: #1092b2;
     position: relative;
     width: 100%;
     min-height: 44px;
@@ -99,11 +105,11 @@
 
     .qs-search input {{ " {" }}
     color: #ffffff;
+    padding: 0;
     }
 
     .qs-advanced {{ " {" }}
-    background: transparent;
-    border: 1px solid #ffc000;
+    background: #50c4cb;
     position: relative;
     width: 100%;
     min-height: 44px;
@@ -124,17 +130,15 @@
 
     .qs-search:hover {{ " {" }}
     background: #50c4cb;
-    border: 1px solid #50c4cb;
     }
 
     .qs-advanced:hover {{ " {" }}
     background: #1092b2;
-    border: 1px solid #1092b2;
     }
 
     .qs-search input {{ " {" }}
-    /* background: transparent;
-    border: none; */
+    background: transparent;
+    border: none;
     text-transform: uppercase;
     letter-spacing: 00.2em;
     }
@@ -153,7 +157,7 @@
     .hp-quick-search {{ " {" }}
     width: 100%;
     padding: 0 24px;
-    max-width: {{widget[1]["settings"]["qs_max_width"]["value"]}};
+    max-width: {{widget[1]["settings"]["qs_parent_max_width"]["value"]}};
     margin: 0 auto;
     margin-bottom: 92px;
     font-size: 0;
@@ -193,11 +197,17 @@
   );
   let i = index
   ">
-      <div *ngIf="setting[1]['html_only'] &&  setting[1]['value'] == true">
+      <div *ngIf="setting[1]['html_only'] &&  setting[1]['value'] == 'true'">
         .{{ resetCounter(i)}}-qs-item {{ " {" }}
         grid-column: {{ setting[1]['selectTextValues']['column'] }};
+        <div
+          *ngIf="setting[1]['name'] == 'beds' || setting[1]['name'] == 'baths' || setting[1]['name'] == 'search' || setting[1]['name'] == 'advanced'">
+          grid-row: 2/3;
+        </div>
+
 
         }
+
 
       </div>
 
@@ -206,6 +216,10 @@
     .quick-search-form select {{ " {" }}
     background: transparent url(images/arrow-down.png) no-repeat scroll right
     12px center;
+    }
+
+    .quick-search-form input {{ " {" }}
+    background: transparent;
     }
 
     .quick-search-form select,
@@ -277,7 +291,6 @@
     letter-spacing: 00.2em;
     font-size: 11px;
     background: #1092b2;
-    border: 1px solid #1092b2;
     -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
@@ -287,11 +300,11 @@
 
     .qs-search input {{ " {" }}
     color: #ffffff;
+    padding: 0;
     }
 
     .qs-advanced {{ " {" }}
-    background: transparent;
-    border: 1px solid #ffc000;
+    background: #50c4cb;
     position: relative;
     width: 100%;
     min-height: 44px;
@@ -312,12 +325,10 @@
 
     .qs-search:hover {{ " {" }}
     background: #50c4cb;
-    border: 1px solid #50c4cb;
     }
 
     .qs-advanced:hover {{ " {" }}
     background: #1092b2;
-    border: 1px solid #1092b2;
     }
 
     .qs-search input {{ " {" }}

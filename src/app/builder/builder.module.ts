@@ -37,6 +37,8 @@ import { QuickSearchComponent } from './component/widget-html-component/quick-se
 import { QuickSearchCssComponent } from './component/widget-css-component/quick-search-css/quick-search-css.component';
 import { WidgetListMobileCssComponent } from './component/widget-list-mobile-css.component';
 import { QuickSearchMobileCssComponent } from './component/widget-css-mobile-component/quick-search-css/quick-search-mobile-css.component';
+import { IntroVideoComponent } from './component/widget-html-component/intro-video/intro-video.component';
+import { QuickSearchJsComponent } from './component/widget-js-component/quick-search-js/quick-search-js.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +72,9 @@ import { QuickSearchMobileCssComponent } from './component/widget-css-mobile-com
     SiteTitleComponent,
     QuickSearchComponent,
     QuickSearchCssComponent,
-    QuickSearchMobileCssComponent
+    QuickSearchMobileCssComponent,
+    IntroVideoComponent,
+    QuickSearchJsComponent
   ],
   imports: [
     BuilderRoutes,
