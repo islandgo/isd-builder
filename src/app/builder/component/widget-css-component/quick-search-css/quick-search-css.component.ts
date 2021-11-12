@@ -16,7 +16,11 @@ export class QuickSearchCssComponent implements OnInit {
   @Input() public widget;
   constructor(public RegionsService: RegionsService) {}
   counter = 1;
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(
+      this.widget[1]["settings"]["city_zip"]["selectTextValues"]["placeholder"]
+    );
+  }
   resetCounter() {
     if (this.widget[1]["name"] == "quick-search") {
       return this.RegionsService.convertNumberToWord(this.counter++);

@@ -1,34 +1,36 @@
 <div *ngIf="widget[1]['name'] == 'quick-search'">
-  .quick-search-form select,
-  .quick-search-form input {{ " {" }}
-  border: 0;
-  <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "full-border"'>
-    border: 1px solid #d0cece;
-  </div>
-  <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "border-bottom"'>
-    border-bottom: 1px solid #d0cece;
-  </div>
-  }
+  <div *ngIf="widget[1]['settings']['templateType']['value'] != 'Quick Search template 3 (floating)' ">
+    .quick-search-form select,
+    .quick-search-form input {{ " {" }}{{ " {" }} " {{ " {" }}" }}
+    border: 0;
+    <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "full-border"'>
+      border: 1px solid #d0cece;
+    </div>
+    <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "border-bottom"'>
+      border-bottom: 1px solid #d0cece;
+    </div>
+    }
 
-  .hp-quick-search .quick-search-form select {{ " {" }}
-  background: transparent url(images/arrow-down.png) no-repeat scroll right 12px
-  center;
-  }
+    .hp-quick-search .quick-search-form select {{ " {" }}{{ " {" }} " {{ " {" }}" }}
+    background: transparent url(images/arrow-down.png) no-repeat scroll right 12px
+    center;
+    }
+  </div>
 
 
 
   <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 1"'>
-    .hp-quick-search {{ " {" }}
+    .hp-quick-search {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     width: 100%;
     padding: 0 24px;
-    max-width: {{widget[1]["settings"]["qs_parent_max_width"]["value"]}};
+    max-width: {{ " {" }}{{ " {" }}widget[1]["settings"]["qs_parent_max_width"]["value"]}};
     margin: 0 auto;
     margin-bottom: 92px;
     font-size: 0;
     z-index: 5;
     }
 
-    .hp-quick-search p {{ " {" }}
+    .hp-quick-search p {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     text-align: right;
     font-size: 11px;
     color: #666666;
@@ -38,27 +40,27 @@
     margin: 0 auto;
     }
 
-    .hp-quick-search .region-quick-search-container {{ " {" }}
+    .hp-quick-search .region-quick-search-container {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     background: #ffc000;
     padding: 42px 0 50px;
     }
 
-    .hp-quick-search .site-title-primary h3 {{ " {" }}
+    .hp-quick-search .site-title-primary h3 {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     font-size: 35px;
     margin-bottom: 6px;
     }
 
-    .hp-quick-search .site-title-primary h2 {{ " {" }}
+    .hp-quick-search .site-title-primary h2 {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     font-size: 32px;
     letter-spacing: 0.05em;
     }
 
-    .hp-quick-search .quick-search-form {{ " {" }}
+    .hp-quick-search .quick-search-form {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     margin-bottom: 20px;
     }
 
     .quick-search-form select,
-    .quick-search-form input {{ " {" }}
+    .quick-search-form input {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     width: 100%;
     height: 44px;
     outline: none;
@@ -74,12 +76,12 @@
     }
 
 
-    .quick-search-form select option {{ " {" }}
+    .quick-search-form select option {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     color: #ffffff;
     background: #000;
     }
 
-    .qs-search {{ " {" }}
+    .qs-search {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     background: #1092b2;
     position: relative;
     width: 100%;
@@ -98,12 +100,12 @@
     cursor: pointer;
     }
 
-    .qs-search input {{ " {" }}
+    .qs-search input {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     color: #ffffff;
     padding: 0;
     }
 
-    .qs-advanced {{ " {" }}
+    .qs-advanced {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     background: #50c4cb;
     position: relative;
     width: 100%;
@@ -123,15 +125,15 @@
     cursor: pointer;
     }
 
-    .qs-search:hover {{ " {" }}
+    .qs-search:hover {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     background: #50c4cb;
     }
 
-    .qs-advanced:hover {{ " {" }}
+    .qs-advanced:hover {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     background: #1092b2;
     }
 
-    .qs-search input {{ " {" }}
+    .qs-search input {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     background: transparent;
     border: none;
     text-transform: uppercase;
@@ -139,46 +141,46 @@
     }
 
     .qs-search input,
-    .qs-advanced a {{ " {" }}
+    .qs-advanced a {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     letter-spacing: 00.2em;
     }
 
     .qs-search input:hover,
-    .qs-advanced a:hover {{ " {" }}
+    .qs-advanced a:hover {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     color: #ffffff !important;
     }
   </div>
   <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 2"'>
-    .hp-quick-search {{ " {" }}
+    .hp-quick-search {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     width: 100%;
     padding: 0 24px;
-    max-width: {{widget[1]["settings"]["qs_parent_max_width"]["value"]}};
+    max-width: {{ " {" }}{{ " {" }}widget[1]["settings"]["qs_parent_max_width"]["value"]}};
     margin: 0 auto;
     margin-bottom: 92px;
     font-size: 0;
     z-index: 5;
     }
 
-    .hp-quick-search .region-quick-search-container {{ " {" }}
+    .hp-quick-search .region-quick-search-container {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     background: #ffc000;
     padding: 42px 0 50px;
     }
 
-    .hp-quick-search .site-title-primary h3 {{ " {" }}
+    .hp-quick-search .site-title-primary h3 {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     font-size: 35px;
     margin-bottom: 6px;
     }
 
-    .hp-quick-search .site-title-primary h2 {{ " {" }}
+    .hp-quick-search .site-title-primary h2 {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     font-size: 32px;
     letter-spacing: 0.05em;
     }
 
-    .quick-search-form {{ " {" }}
+    .quick-search-form {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     padding: 0 24px;
     }
 
-    .qs-field-wrapper {{ " {" }}
+    .qs-field-wrapper {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     display: grid;
     grid-template-columns: repeat(100, 1fr);
     grid-template-rows: repeat(2, auto);
@@ -193,8 +195,8 @@
   let i = index
   ">
       <div *ngIf="setting[1]['html_only'] &&  setting[1]['value'] == 'true'">
-        .{{ resetCounter(i)}}-qs-item {{ " {" }}
-        grid-column: {{ setting[1]['selectTextValues']['column'] }};
+        .{{ " {" }}{{ " {" }} resetCounter(i)}}-qs-item {{ " {" }}{{ " {" }} " {{ " {" }}" }}
+        grid-column: {{ " {" }}{{ " {" }} setting[1]['selectTextValues']['column'] }};
         <div
           *ngIf="setting[1]['name'] == 'beds' || setting[1]['name'] == 'baths' || setting[1]['name'] == 'search' || setting[1]['name'] == 'advanced'">
           grid-row: 2/3;
@@ -208,17 +210,17 @@
 
     </div>
 
-    .quick-search-form select {{ " {" }}
+    .quick-search-form select {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     background: transparent url(images/arrow-down.png) no-repeat scroll right
     12px center;
     }
 
-    .quick-search-form input {{ " {" }}
+    .quick-search-form input {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     background: transparent;
     }
 
     .quick-search-form select,
-    .quick-search-form input {{ " {" }}
+    .quick-search-form input {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     width: 100%;
     height: 44px;
     outline: none;
@@ -232,12 +234,12 @@
     padding-left: 14px;
     }
 
-    .quick-search-form select option {{ " {" }}
+    .quick-search-form select option {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     color: #ffffff;
     background: #000;
     }
 
-    .quick-search-form .qs-range-price-wrap {{ " {" }}
+    .quick-search-form .qs-range-price-wrap {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -246,7 +248,7 @@
     justify-content: space-between;
     }
 
-    .quick-search-form .selected-price {{ " {" }}
+    .quick-search-form .selected-price {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #fff;
@@ -254,19 +256,19 @@
     }
 
     .quick-search-form .irs--flat .irs-bar,
-    .quick-search-form .irs--flat .irs-line {{ " {" }}
+    .quick-search-form .irs--flat .irs-line {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     height: 1px !important;
     background: #fff !important;
     top: 22px !important;
     }
 
-    .quick-search-form .irs--flat .irs-handle {{ " {" }}
+    .quick-search-form .irs--flat .irs-handle {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     width: 14px !important;
     height: 14px !important;
     top: 15px !important;
     }
 
-    .quick-search-form .irs--flat .irs-handle > i:first-child {{ " {" }}
+    .quick-search-form .irs--flat .irs-handle > i:first-child {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     width: 100% !important;
     height: 100% !important;
     border-radius: 50%;
@@ -274,7 +276,7 @@
     background: #fff !important;
     }
 
-    .qs-search {{ " {" }}
+    .qs-search {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     position: relative;
     width: 100%;
     min-height: 44px;
@@ -293,12 +295,12 @@
     cursor: pointer;
     }
 
-    .qs-search input {{ " {" }}
+    .qs-search input {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     color: #ffffff;
     padding: 0;
     }
 
-    .qs-advanced {{ " {" }}
+    .qs-advanced {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     background: #50c4cb;
     position: relative;
     width: 100%;
@@ -318,15 +320,15 @@
     cursor: pointer;
     }
 
-    .qs-search:hover {{ " {" }}
+    .qs-search:hover {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     background: #50c4cb;
     }
 
-    .qs-advanced:hover {{ " {" }}
+    .qs-advanced:hover {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     background: #1092b2;
     }
 
-    .qs-search input {{ " {" }}
+    .qs-search input {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     background: transparent;
     border: none;
     text-transform: uppercase;
@@ -334,13 +336,100 @@
     }
 
     .qs-search input,
-    .qs-advanced a {{ " {" }}
+    .qs-advanced a {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     letter-spacing: 00.2em;
     }
 
     .qs-search input:hover,
-    .qs-advanced a:hover {{ " {" }}
+    .qs-advanced a:hover {{ " {" }}{{ " {" }} " {{ " {" }}" }}
     color: #ffffff !important;
     }
+  </div>
+
+  <div *ngIf="widget[1]['settings']['templateType']['value'] == 'Quick Search template 3 (floating)' ">
+    .region-slideshow-container .slide-content {{ " {" }}
+    position: absolute;
+    width: 100%;
+    bottom: 148px;
+    left: 0;
+    z-index: 3;
+    }
+
+    .region-slideshow-container .slide-form-wrapper {{ " {" }}
+    position: relative;
+    padding: 0 24px;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    }
+
+    .region-slideshow-container .slide-form-wrapper .slide-form {{ " {" }}
+    position: relative;
+    }
+
+    .region-slideshow-container .slide-form-wrapper .form-md.floating-pad-top {{ " {" }}
+    position: relative;
+    padding-bottom: 14px;
+    }
+
+    .region-slideshow-container .slide-form-wrapper .form-md input {{ " {" }}
+    border: none;
+    font-size: 12px;
+    padding-left: 22px;
+    color: #ffffff;
+    letter-spacing: 00.08em;
+    padding-right: 74px;
+    background: rgba(0, 0, 0, 0.28);
+    height: 70px;
+    width: 100%;
+    }
+
+    .region-slideshow-container .slide-form-wrapper p {{ " {" }}
+    text-align: right;
+    color: #ffffff;
+    }
+
+    .region-slideshow-container .slide-form-btn {{ " {" }}
+    background: #ffc000;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 70px;
+    width: 100%;
+    max-width: 78px;
+    }
+
+    .region-slideshow-container .slide-form-btn input {{ " {" }}
+    font-size: 0;
+    position: relative;
+    border: none;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    max-width: 72px;
+    min-height: 58px;
+    z-index: 1;
+    background: transparent;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    }
+
+    .region-slideshow-container .slide-form-btn span {{ " {" }}
+    color: #ffffff;
+    font-size: 28px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    }
+
+    .region-slideshow-container .slide-form-btn:hover span {{ " {" }}
+    color: #1092b2;
+    }
+
   </div>
 </div>
