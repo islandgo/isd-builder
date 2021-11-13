@@ -2,14 +2,12 @@
     <div class="widget-form-container">
         <div class="form-widget">
             <h4>HTML</h4>
-            <div contenteditable="true" class="html-text-input" rows="25" cols="100">
-            </div>
+            <textarea name="" [(ngModel)]="htmlInput" class="html-text-input" id="" rows="25" cols="100"></textarea>
         </div>
         <div class="form-widget">
             <h4>Converted Widget</h4>
-            <div contenteditable="true" class="html-text-input" rows="25" cols="100">
-            </div>
+            <textarea name="" [(ngModel)]="htmlWidget" class="html-text-input" id="" rows="25" cols="100"></textarea>
         </div>
     </div>
-    <button class="btn btn-primary">Convert To Widget</button>
+    <button class="btn btn-primary" (click)="convertToWidget()">Convert To Widget</button>
 </div>

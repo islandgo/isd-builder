@@ -7,11 +7,8 @@ import { Component } from '@angular/core';
     styleUrls: ['./widget-converter.component.less']
 })
 export class WidgetConverterComponent {
-    title = 'isd-builder';
-    customRegions;
-    cloneCustomRegions;
-    sectionTagOpen = '<section>';
-    sectionTagClose = '</section>';
+    htmlInput;
+    htmlWidget;
 
     constructor(
         public RegionsService: RegionsService,
@@ -22,5 +19,26 @@ export class WidgetConverterComponent {
     ngOnInit() {
     }
 
+    convertToWidget() {
+        const convertedText = this.convertHtmlToWidgetCode();
+        this.htmlWidget = convertedText; 
+    }
+
+    convertHtmlToWidgetCode() {
+        var escapedFind="<?php echo get_stylesheet_directory_uri() ?>".replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+        let newString = this.htmlInput.replace(new RegExp(escapedFind, 'g'), "[stylesheet_directory]");
+        escapedFind="<?php echo do_shortcode(".replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+        newString = newString.replace(new RegExp(escapedFind, 'g'), "");
+        escapedFind="')?>".replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+        newString = newString.replace(new RegExp(escapedFind, 'g'), "");
+        escapedFind="<?php echo get_stylesheet_directory_uri()?>".replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+        newString = newString.replace(new RegExp(escapedFind, 'g'), "");
+        
+        
+
+        return newString;
+
+
+    }
   
 }
