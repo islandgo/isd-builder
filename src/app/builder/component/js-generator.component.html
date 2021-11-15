@@ -185,14 +185,15 @@ jQuery("header.header").removeClass("show-fixed");
 {{'}'}};
 
 jQuery(document).ready(function (){{' {'}}
+<div *ngIf="PageService.enablePageGoogleTranslator">
+    app.initFlagTrans();
+</div>
 app.initAos();
 app.initNavigation();
 <div *ngIf="PageService.enablePageSocialFiXNav">
     jQuery("#scroll-down").sideNavigation();
 </div>
-<div *ngIf="PageService.enablePageGoogleTranslator">
-    app.initFlagTrans();
-</div>
+
 
 <div *ngIf="PageService.enablePageDoubleTap">
     app.init{{regionName}}DoubleTap();
