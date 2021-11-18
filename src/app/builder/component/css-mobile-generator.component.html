@@ -43,7 +43,6 @@
 <div *ngFor="let region of customRegions; let i = index">
     /*#region {{region[1]['region_name'] }} */ <br>
         <app-grid-section [region]="region"></app-grid-section>
-        <app-section-background [regionData]="region"></app-section-background>
         <div *ngIf="!region[1]['region_sections']['primary_section']">
             <div *ngIf="region[1]['region_widgets']">
                 <div *ngFor="
@@ -106,6 +105,11 @@
 /* iPad(portrait) | Galaxy Tab 4(portrait) */
 
 @media only screen and (max-width: 991px){{' {'}}
+
+.pojo-ally-toolbar-toggle {{' {'}}
+	display:none;
+}
+
 /* The following are used on inner pages. Please edit carefully. */
 .aios-mobile-header-wrapper {{' {'}}
     z-index: 1020 !important;

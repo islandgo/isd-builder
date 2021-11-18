@@ -1,18 +1,5 @@
 <div *ngIf="widget[1]['name'] == 'gallery-image'" class="gallery-image-container">
-  .{{ regionData[1]["keyword_class"] }}-gallery-image-container
 
-  {{ " {" }}
-  <div *ngFor="
-      let css of RegionsService.converObjectToArray(widget[1]['settings']);
-      trackBy: PageService.indexTracker
-    ">
-    <div *ngIf="css[1]['cssOnly'] == true">
-      {{ css[1]["name"] }}: {{ css[1]["value"] }};
-    </div>
-
-  </div>
-  margin: 0 auto;
-  }
 
 
   .{{ regionData[1]["keyword_class"] }}-image {{ " {" }}

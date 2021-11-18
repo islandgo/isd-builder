@@ -20,13 +20,19 @@
                 let i = index
                 ">
             <div *ngIf="setting[1]['html_only'] && setting[1]['value'] == 'true'">
-                <div *ngIf="setting[1]['name'] == 'qs range field';else default">
+
+                <ng-template [ngIf]="setting[1]['name'] == 'qs range field'">
                     &lt;div class="{{ resetCounter(i)}}-qs-item qs-range-field" &gt;
-                </div>
+                    if block
+                </ng-template>
+
+                <ng-template [ngIf]="setting[1]['name'] == 'site title'" [ngIfElse]="default">
+                    &lt;div class="{{ resetCounter(i)}}-qs-item site-title-primary" &gt;
+                </ng-template>
+
 
                 <ng-template #default>
                     &lt;div class="{{ resetCounter(i)}}-qs-item" &gt;
-
                 </ng-template>
 
                 <div
@@ -57,9 +63,20 @@
                     &lt;option value="FRM"&gt;Farms&lt;/option&gt;
                     &lt;/select&gt;
                 </div>
-
                 <div
-                    *ngIf="setting[1]['name'] == 'qs range field' && widget[1]['settings']['templateType']['value'] == 'Quick Search template 2'">
+                    *ngIf="setting[1]['selectTextValues']['input_type'] == 'select' && setting[1]['name'] == 'city or zip' ">
+                    &lt;select aria-label="qs-fields"&gt;
+                    &lt;option value="Zip"&gt;Select City. Zip&lt;/option&gt;
+                    &lt;option value="Zip"&gt;Select City. Zip&lt;/option&gt;
+                    &lt;option value="Zip"&gt;Select City. Zip&lt;/option&gt;
+                    &lt;option value="Zip"&gt;Select City. Zip&lt;/option&gt;
+                    &lt;option value="Zip"&gt;Select City. Zip&lt;/option&gt;
+                    &lt;option value="Zip"&gt;Select City. Zip&lt;/option&gt;
+                    &lt;/select&gt;
+                </div>
+
+
+                <div *ngIf="setting[1]['name'] == 'qs range field'">
                     &lt;div class="qs-range-price-wrap"&gt;
                     &lt;span class="selected-price selected-min-price"&gt;$1M&lt;/span&gt;
                     &lt;span class="selected-price selected-max-price"&gt;$10M&lt;/span&gt;

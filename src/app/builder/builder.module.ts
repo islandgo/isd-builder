@@ -40,6 +40,7 @@ import { QuickSearchMobileCssComponent } from "./component/widget-css-mobile-com
 import { IntroVideoComponent } from "./component/widget-html-component/intro-video/intro-video.component";
 import { QuickSearchJsComponent } from "./component/widget-js-component/quick-search-js/quick-search-js.component";
 import { FunctionGeneratorComponent } from "./component/function-generator.component";
+import { GalleryImageMobileComponent } from './component/widget-css-mobile-component/gallery-image-mobile/gallery-image-mobile.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { FunctionGeneratorComponent } from "./component/function-generator.compo
     IntroVideoComponent,
     QuickSearchJsComponent,
     FunctionGeneratorComponent,
+    GalleryImageMobileComponent,
   ],
   imports: [
     BuilderRoutes,

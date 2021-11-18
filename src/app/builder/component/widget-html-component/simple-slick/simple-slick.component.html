@@ -1,6 +1,6 @@
 <div *ngIf="widget[1]['name'] == 'simple-slick'" class="slick-html-widget">
     &lt;div class="{{ regionClassName }}{{widget[1]['suffixClass']}}"&gt;
-    <div class="month" *ngFor="let item of [].constructor(slickItem); let i = index">
+    <div *ngFor="let item of [].constructor(slickItem); let i = index">
         &lt;a href="[blogurl]" aria-label="{{ regionClassName }}" class="{{ regionClassName }}-item"&gt;
         &lt;div class="{{ regionClassName }}-img canvas-wrapper"&gt;
         &lt;canvas width="{{widget[1]["settings"]["image_width"]["value"]}}"
@@ -25,4 +25,5 @@
             aria-label="View Details" &gt; View Details &lt;/a&gt; &lt;/div&gt; &lt;/div&gt; </div>
         &lt;/a&gt;
     </div>
+    &lt;/div&gt;
 </div>
