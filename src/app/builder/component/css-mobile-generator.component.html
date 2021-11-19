@@ -7,36 +7,6 @@
 
 /* iPad(landscape) | iPad(landscape) | Galaxy Tab 4 (landscape) | Galaxy Tab 3 (landscape) */
 
-@media only screen and (max-width: 1450px){{' {'}}
-/* 1367 */
-/*#region Global */
-/*#endregion Global */
-<div *ngFor="let region of customRegions; let i = index">
-    /*#region {{region[1]['region_name'] }} */ <br>
-    /*#endregion {{region[1]['region_name'] }} */<br>&nbsp;
-</div>
-.hp-quick-search .region-quick-search-container {{' {'}}
-    padding: 42px 24px 50px;
-}
-/*#region Footer */
-/*#endregion Footer */
-/*#region Fixed smi */
-/*#endregion Fixed smi */
-{{'}'}}
-
-@media only screen and (max-width: 1366px){{' {'}}
-/*#region Global */
-/*#endregion Global */
-<div *ngFor="let region of customRegions; let i = index">
-    /*#region {{region[1]['region_name'] }} */ <br>
-    /*#endregion {{region[1]['region_name'] }} */<br>&nbsp;
-</div>
-/*#region Footer */
-/*#endregion Footer */
-/*#region Fixed smi */
-/*#endregion Fixed smi */
-{{'}'}}
-
 @media only screen and (min-width: 992px){{' {'}}
 /*#region Global */
 /*#endregion Global */
@@ -87,6 +57,38 @@
 /*#endregion Fixed smi */
 {{'}'}}
 
+@media only screen and (max-width: 1450px){{' {'}}
+/* 1367 */
+/*#region Global */
+/*#endregion Global */
+<div *ngFor="let region of customRegions; let i = index">
+    /*#region {{region[1]['region_name'] }} */ <br>
+    /*#endregion {{region[1]['region_name'] }} */<br>&nbsp;
+</div>
+.hp-quick-search .region-quick-search-container {{' {'}}
+    padding: 42px 24px 50px;
+}
+/*#region Footer */
+/*#endregion Footer */
+/*#region Fixed smi */
+/*#endregion Fixed smi */
+{{'}'}}
+
+@media only screen and (max-width: 1366px){{' {'}}
+/*#region Global */
+/*#endregion Global */
+<div *ngFor="let region of customRegions; let i = index">
+    /*#region {{region[1]['region_name'] }} */ <br>
+    /*#endregion {{region[1]['region_name'] }} */<br>&nbsp;
+</div>
+/*#region Footer */
+/*#endregion Footer */
+/*#region Fixed smi */
+/*#endregion Fixed smi */
+{{'}'}}
+
+
+
 @media only screen and (max-width: 1199px){{' {'}}
 /*#region Global */
 /*#endregion Global */
@@ -100,8 +102,6 @@
 /*#endregion Fixed smi */
 {{'}'}}
 
-@media only screen and (min-width: 1130px) and (max-width: 1199px){{' {'}}{{'}'}}
-
 /* iPad(portrait) | Galaxy Tab 4(portrait) */
 
 @media only screen and (max-width: 991px){{' {'}}
@@ -110,6 +110,22 @@
 	display:none;
 }
 
+.section-title  {{' {'}}
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+<!-- Header -->
+.header {{' {'}}
+    position: relative;
+    margin-top: 53px;
+    background: #111;
+    padding: 25px 15px;
+  }
+
+  .header .header-logo img {{' {'}}
+    margin: 0 auto;
+  }
 /* The following are used on inner pages. Please edit carefully. */
 .aios-mobile-header-wrapper {{' {'}}
     z-index: 1020 !important;
