@@ -20,30 +20,24 @@
                 let i = index
                 ">
             <div *ngIf="setting[1]['html_only'] && setting[1]['value'] == 'true'">
-
-                <ng-template [ngIf]="setting[1]['name'] == 'qs range field'">
+                <ng-container *ngIf="setting[1]['name'] == 'qs range field'; else default">
                     &lt;div class="{{ resetCounter(i)}}-qs-item qs-range-field" &gt;
-                    if block
-                </ng-template>
-
-                <ng-template [ngIf]="setting[1]['name'] == 'site title'" [ngIfElse]="default">
-                    &lt;div class="{{ resetCounter(i)}}-qs-item site-title-primary" &gt;
-                </ng-template>
-
-
+                </ng-container>
                 <ng-template #default>
+                    <ng-container *ngIf="setting[1]['name'] == 'site title'; else defaults">
+                        &lt;div class="{{ resetCounter(i)}}-qs-item site-title-primary" &gt;
+                    </ng-container>
+                </ng-template>
+                <ng-template #defaults>
                     &lt;div class="{{ resetCounter(i)}}-qs-item" &gt;
                 </ng-template>
 
-                <div
-                    *ngIf="widget[1]['settings']['templateType']['value'] == 'Quick Search template 1' && setting[1]['name'] == 'site title'">
-                    &lt;div class="site-title-primary"&gt;
+                <div *ngIf="setting[1]['name'] == 'site title'">
                     &lt;h3&gt;Quick&lt;/h3&gt;
                     &lt;h2&gt;Search&lt;/h2&gt;
-                    &lt;/div&gt;
                 </div>
                 <div
-                    *ngIf="setting[1]['selectTextValues']['input_type'] == 'text' && (setting[1]['name'] != 'advance' && setting[1]['name'] != 'search')">
+                    *ngIf="setting[1]['selectTextValues']['input_type'] == 'text' && (setting[1]['name'] != 'search' && setting[1]['name'] != 'advance')">
                     &lt;input type="text"
                     placeholder="{{setting[1]['selectTextValues']['placeholder']}}"
                     aria-label="qs-fields" /&gt;
@@ -74,7 +68,6 @@
                     &lt;option value="Zip"&gt;Select City. Zip&lt;/option&gt;
                     &lt;/select&gt;
                 </div>
-
 
                 <div *ngIf="setting[1]['name'] == 'qs range field'">
                     &lt;div class="qs-range-price-wrap"&gt;

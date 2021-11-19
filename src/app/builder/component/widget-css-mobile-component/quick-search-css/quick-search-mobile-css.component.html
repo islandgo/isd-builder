@@ -1,11 +1,13 @@
 <div *ngIf="widget[1]['name'] == 'quick-search'">
+    .quick-search-form {{ " {" }}
+    display: grid;
+    grid-template-columns: repeat(100, 1fr);
+    max-width: {{widget[1]["settings"]["qs_form_max_width"]["value"]}};
+    margin: 0 auto;
+    grid-gap: 2px;
+    }
     <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 1"'>
         .quick-search-form {{ " {" }}
-        display: grid;
-        grid-template-columns: repeat(100, 1fr);
-        max-width: {{widget[1]["settings"]["qs_form_max_width"]["value"]}};
-        margin: 0 auto;
-        grid-gap: 2px;
         align-items: end;
         }
         <div *ngFor="
@@ -17,7 +19,7 @@
             <div *ngIf="setting[1]['html_only'] && setting[1]['value']  == 'true'">
                 .{{ resetCounter(i)}}-qs-item {{ " {" }}
                 grid-column: {{ setting[1]['selectTextValues']['column'] }};
-
+                grid-row: {{setting[1]['selectTextValues']['row']}};
                 }
 
             </div>
@@ -28,11 +30,7 @@
 
     <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 2"'>
         .quick-search-form {{ " {" }}
-        display: grid;
-        grid-template-columns: repeat(100, 1fr);
-        max-width: {{widget[1]["settings"]["qs_form_max_width"]["value"]}};
-        margin: 0 auto;
-        grid-gap: 2px;
+        align-items: center;
         }
 
         .quick-search-form .site-title-primary {{ " {" }}
@@ -41,6 +39,14 @@
 
         .quick-search-form .qs-field-wrapper {{ " {" }}
         grid-column: 32/-1;
+        }
+
+        .qs-field-wrapper {{ " {" }}
+        display: grid;
+        grid-template-columns: repeat(100, 1fr);
+        grid-template-rows: repeat(2, auto);
+        width: 100%;
+        row-gap: 18px;
         }
     </div>
 </div>

@@ -17,7 +17,9 @@ export class QuickSearchMobileCssComponent implements OnInit {
   constructor(public RegionsService: RegionsService) {}
   counter = 1;
   ngOnInit() {
-    // console.log(this.widget[1]["settings"]);
+    if (this.widget[1]["name"] == "quick-search") {
+      // console.log(this.widget[1]["settings"]);
+    }
   }
 
   resetCounter() {

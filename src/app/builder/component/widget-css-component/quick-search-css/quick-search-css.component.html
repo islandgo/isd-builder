@@ -19,174 +19,138 @@
 
 
 
-  <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 1"'>
-    .hp-quick-search {{ " {" }}
-    width: 100%;
-    padding: 0 24px;
-    max-width: {{widget[1]["settings"]["qs_parent_max_width"]["value"]}};
-    margin: 0 auto;
-    margin-bottom: 92px;
-    font-size: 0;
-    z-index: 5;
-    }
+  .hp-quick-search {{ " {" }}
+  width: 100%;
+  padding: 0 24px;
+  max-width: {{widget[1]["settings"]["qs_parent_max_width"]["value"]}};
+  margin: 0 auto;
+  margin-bottom: 92px;
+  font-size: 0;
+  z-index: 5;
+  }
 
-    .hp-quick-search p {{ " {" }}
-    text-align: right;
-    font-size: 11px;
-    color: #666666;
-    letter-spacing: 0.075em;
-    font-weight: 300;
-    max-width: 1180px;
-    margin: 0 auto;
-    }
+  .hp-quick-search p {{ " {" }}
+  text-align: right;
+  font-size: 11px;
+  color: #666666;
+  letter-spacing: 0.075em;
+  font-weight: 300;
+  max-width: 1180px;
+  margin: 0 auto;
+  }
 
-    .hp-quick-search .region-quick-search-container {{ " {" }}
-    background: #ffc000;
-    padding: 42px 0 50px;
-    }
+  .hp-quick-search .region-quick-search-container {{ " {" }}
+  background: #ffc000;
+  padding: 42px 0 50px;
+  }
 
-    .hp-quick-search .site-title-primary h3 {{ " {" }}
-    font-size: 35px;
-    margin-bottom: 6px;
-    }
+  .hp-quick-search .site-title-primary h3 {{ " {" }}
+  font-size: 35px;
+  margin-bottom: 6px;
+  }
 
-    .hp-quick-search .site-title-primary h2 {{ " {" }}
-    font-size: 32px;
-    letter-spacing: 0.05em;
-    }
+  .hp-quick-search .site-title-primary h2 {{ " {" }}
+  font-size: 32px;
+  letter-spacing: 0.05em;
+  }
 
-    .hp-quick-search .quick-search-form {{ " {" }}
-    margin-bottom: 20px;
-    }
+  .hp-quick-search .quick-search-form {{ " {" }}
+  margin-bottom: 20px;
+  padding: 0 24px;
+  }
 
-    .quick-search-form select,
-    .quick-search-form input {{ " {" }}
-    width: 100%;
-    height: 44px;
-    outline: none;
-    -webkit-appearance: none;
-    appearance: none;
-    -moz-appearance: none;
-    font-size: 11px;
-    font-weight: 300;
-    color: #777777;
-    background: transparent;
-    cursor: pointer;
-    padding-left: 14px;
-    }
+  .quick-search-form select,
+  .quick-search-form input {{ " {" }}
+  width: 100%;
+  height: 44px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  font-size: 11px;
+  font-weight: 300;
+  color: #777777;
+  background: transparent;
+  cursor: pointer;
+  padding-left: 14px;
+  }
 
 
-    .quick-search-form select option {{ " {" }}
-    color: #ffffff;
-    background: #000;
-    }
+  .quick-search-form select option {{ " {" }}
+  color: #ffffff;
+  background: #000;
+  }
 
-    .qs-search {{ " {" }}
-    background: #1092b2;
-    position: relative;
-    width: 100%;
-    min-height: 44px;
-    display: flex;
-    font-weight: 700;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    letter-spacing: 00.2em;
-    font-size: 11px;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-    }
+  .qs-search {{ " {" }}
+  background: #1092b2;
+  position: relative;
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 00.2em;
+  font-size: 11px;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  }
 
-    .qs-search input {{ " {" }}
-    color: #ffffff;
-    padding: 0;
-    }
+  .qs-search input {{ " {" }}
+  color: #ffffff;
+  padding: 0;
+  }
 
-    .qs-advanced {{ " {" }}
-    background: #50c4cb;
-    position: relative;
-    width: 100%;
-    min-height: 44px;
-    display: flex;
-    font-weight: 700;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    letter-spacing: 00.2em;
-    font-size: 11px;
-    color: #ffffff;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-    }
+  .qs-advanced {{ " {" }}
+  background: #50c4cb;
+  position: relative;
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 00.2em;
+  font-size: 11px;
+  color: #ffffff;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  }
 
-    .qs-search:hover {{ " {" }}
-    background: #50c4cb;
-    }
+  .qs-search:hover {{ " {" }}
+  background: #50c4cb;
+  }
 
-    .qs-advanced:hover {{ " {" }}
-    background: #1092b2;
-    }
+  .qs-advanced:hover {{ " {" }}
+  background: #1092b2;
+  }
 
-    .qs-search input {{ " {" }}
-    background: transparent;
-    border: none;
-    text-transform: uppercase;
-    letter-spacing: 00.2em;
-    }
+  .qs-search input {{ " {" }}
+  background: transparent;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 00.2em;
+  }
 
-    .qs-search input,
-    .qs-advanced a {{ " {" }}
-    letter-spacing: 00.2em;
-    }
+  .qs-search input,
+  .qs-advanced a {{ " {" }}
+  letter-spacing: 00.2em;
+  }
 
-    .qs-search input:hover,
-    .qs-advanced a:hover {{ " {" }}
-    color: #ffffff !important;
-    }
-  </div>
+  .qs-search input:hover,
+  .qs-advanced a:hover {{ " {" }}
+  color: #ffffff !important;
+  }
+
   <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 2"'>
-    .hp-quick-search {{ " {" }}
-    width: 100%;
-    padding: 0 24px;
-    max-width: {{widget[1]["settings"]["qs_parent_max_width"]["value"]}};
-    margin: 0 auto;
-    margin-bottom: 92px;
-    font-size: 0;
-    z-index: 5;
-    }
-
-    .hp-quick-search .region-quick-search-container {{ " {" }}
-    background: #ffc000;
-    padding: 42px 0 50px;
-    }
-
-    .hp-quick-search .site-title-primary h3 {{ " {" }}
-    font-size: 35px;
-    margin-bottom: 6px;
-    }
-
-    .hp-quick-search .site-title-primary h2 {{ " {" }}
-    font-size: 32px;
-    letter-spacing: 0.05em;
-    }
-
-    .quick-search-form {{ " {" }}
-    padding: 0 24px;
-    }
-
-    .qs-field-wrapper {{ " {" }}
-    display: grid;
-    grid-template-columns: repeat(100, 1fr);
-    grid-template-rows: repeat(2, auto);
-    width: 100%;
-    row-gap: 18px;
-    }
 
     <div *ngFor="
   let setting of RegionsService.converObjectToArray(
@@ -197,47 +161,13 @@
       <div *ngIf="setting[1]['html_only'] &&  setting[1]['value'] == 'true'">
         .{{ resetCounter(i)}}-qs-item {{ " {" }}
         grid-column: {{ setting[1]['selectTextValues']['column'] }};
-        <div
-          *ngIf="setting[1]['name'] == 'beds' || setting[1]['name'] == 'baths' || setting[1]['name'] == 'search' || setting[1]['name'] == 'advanced'">
-          grid-row: 2/3;
-        </div>
-
-
+        grid-row: {{setting[1]['selectTextValues']['row']}};
         }
 
 
       </div>
 
     </div>
-
-    .quick-search-form select {{ " {" }}
-    background: transparent url(images/arrow-down.png) no-repeat scroll right
-    12px center;
-    }
-
-    .quick-search-form input {{ " {" }}
-    background: transparent;
-    }
-
-    .quick-search-form select,
-    .quick-search-form input {{ " {" }}
-    width: 100%;
-    height: 44px;
-    outline: none;
-    -webkit-appearance: none;
-    appearance: none;
-    -moz-appearance: none;
-    font-size: 11px;
-    font-weight: 300;
-    color: #777777;
-    cursor: pointer;
-    padding-left: 14px;
-    }
-
-    .quick-search-form select option {{ " {" }}
-    color: #ffffff;
-    background: #000;
-    }
 
     .quick-search-form .qs-range-price-wrap {{ " {" }}
     display: -webkit-box;
@@ -274,75 +204,6 @@
     border-radius: 50%;
     left: 0 !important;
     background: #fff !important;
-    }
-
-    .qs-search {{ " {" }}
-    position: relative;
-    width: 100%;
-    min-height: 44px;
-    display: flex;
-    font-weight: 700;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    letter-spacing: 00.2em;
-    font-size: 11px;
-    background: #1092b2;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-    }
-
-    .qs-search input {{ " {" }}
-    color: #ffffff;
-    padding: 0;
-    }
-
-    .qs-advanced {{ " {" }}
-    background: #50c4cb;
-    position: relative;
-    width: 100%;
-    min-height: 44px;
-    display: flex;
-    font-weight: 700;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    letter-spacing: 00.2em;
-    font-size: 11px;
-    color: #ffffff;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-    }
-
-    .qs-search:hover {{ " {" }}
-    background: #50c4cb;
-    }
-
-    .qs-advanced:hover {{ " {" }}
-    background: #1092b2;
-    }
-
-    .qs-search input {{ " {" }}
-    background: transparent;
-    border: none;
-    text-transform: uppercase;
-    letter-spacing: 00.2em;
-    }
-
-    .qs-search input,
-    .qs-advanced a {{ " {" }}
-    letter-spacing: 00.2em;
-    }
-
-    .qs-search input:hover,
-    .qs-advanced a:hover {{ " {" }}
-    color: #ffffff !important;
     }
   </div>
 
