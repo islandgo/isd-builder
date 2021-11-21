@@ -5,8 +5,8 @@
         &lt;div class="{{ regionClassName }}-img canvas-wrapper"&gt;
         &lt;canvas width="{{widget[1]["settings"]["image_width"]["value"]}}"
         height="{{widget[1]["settings"]["image_height"]["value"]}}"&gt;&lt;/canvas&gt;
-        &lt;img alt="{{ regionClassName }}" class="img-{{ regionClassName }} canvas-img" src="
-        &lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/{{ regionClassName }}-{{ i + 1 }}.jpg" /&gt;
+        &lt;img alt="{{ regionClassName }}" class="img-{{ regionClassName }} canvas-img"
+        src="&lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/{{ regionClassName }}-{{ i + 1 }}.jpg" /&gt;
         &lt;/div&gt;
         &lt;div class="{{ regionClassName }}-content"&gt;
         <!-- Icon -->
@@ -30,9 +30,12 @@
         regionClassName }}-prev.png"&gt;
         &lt;span&gt;Prev&lt;/span&gt;
         &lt;/div&gt;
-        &lt;div class="site-btn"&gt;
-        &lt;a href="[blogurl]" aria-label="VIEW ALL {{ regionClassName }}"&gt;VIEW ALL {{ regionClassName }} +&lt;/a&gt;
-        &lt;/div&gt;
+        <div *ngIf="widget[1]['settings']['customArrowWithButton']['value'] == 'true'">
+            &lt;div class="site-btn"&gt;
+            &lt;a href="[blogurl]" aria-label="VIEW ALL {{ regionClassName }}"&gt;VIEW ALL {{ regionClassName }}
+            &lt;/a&gt;
+            &lt;/div&gt;
+        </div>
         &lt;div class="next"&gt;
         &lt;span&gt;Next&lt;/span&gt;
         &lt;img alt="arrow" class="img-responsive" src="&lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/{{
@@ -44,6 +47,12 @@
     <div *ngIf="widget[1]['settings']['arrows']['value'] == 'true'">
         &lt;div class="{{ regionClassName }}-arrow"&gt;
         &lt;span class="ai-font-arrow-h-p prev"&gt;&lt;/span&gt;
+        <div *ngIf="widget[1]['settings']['arrowsWithButton']['value'] == 'true'">
+            &lt;div class="site-btn"&gt;
+            &lt;a href="[blogurl]" aria-label="VIEW ALL {{ regionClassName }}"&gt;VIEW ALL {{ regionClassName }}
+            &lt;/a&gt;
+            &lt;/div&gt;
+        </div>
         &lt;span class="ai-font-arrow-h-n next"&gt;&lt;/span&gt;
         &lt;/div&gt;
     </div>

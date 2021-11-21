@@ -119,15 +119,6 @@
         "value": "7000",
         "name": "auto play speed"
       },
-      "customArrow": {
-        "inpuType": "select",
-        "selectValue": [
-          "true",
-          "false"
-        ],
-        "value": "true",
-        "name": "custom-arrow"
-      },
       "dots": {
         "inpuType": "select",
         "selectValue": [
@@ -145,6 +136,33 @@
         ],
         "value": "true",
         "name": "arrows"
+      },
+      "arrowsWithButton": {
+        "inpuType": "select",
+        "selectValue": [
+          "true",
+          "false"
+        ],
+        "value": "true",
+        "name": "arrows with button"
+      },
+      "customArrow": {
+        "inpuType": "select",
+        "selectValue": [
+          "true",
+          "false"
+        ],
+        "value": "true",
+        "name": "custom-arrow"
+      },
+      "customArrowWithButton": {
+        "inpuType": "select",
+        "selectValue": [
+          "true",
+          "false"
+        ],
+        "value": "true",
+        "name": "custom-arrow"
       },
       "asNaV": {
         "inpuType": "select",
