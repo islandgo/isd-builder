@@ -1,26 +1,26 @@
-<div *ngIf="this.widget[1]['name'] == 'simple-slick'" class="slick-css-widget">
+<div *ngIf="widget[1]['name'] == 'simple-slick'" class="slick-css-widget">
     .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-{{widget[1]["suffixClass"]}} {{ " {"
     }}
     max-width: {{widget[1]["settings"]["slick_max_width"]["value"]}};
     }
 
-    .hp-{{ this.regionData[1]["keyword_class"] }} .slick-list {{ " {" }}
-    margin: 0 -{{this.widget[1]['settings']['slickColumnGap']['value']}};
+    .hp-{{ regionData[1]["keyword_class"] }} .slick-list {{ " {" }}
+    margin: 0 -{{widget[1]['settings']['slickColumnGap']['value']}};
     }
 
-    .hp-{{ this.regionData[1]["keyword_class"] }} .slick-slide {{ " {" }}
-    margin: 0 {{this.widget[1]['settings']['slickColumnGap']['value']}};
+    .hp-{{ regionData[1]["keyword_class"] }} .slick-slide {{ " {" }}
+    margin: 0 {{widget[1]['settings']['slickColumnGap']['value']}};
     }
 
-    .hp-{{ this.regionData[1]["keyword_class"] }} .{{ this.regionData[1]["keyword_class"] }}-item {{ " {" }}
+    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item {{ " {" }}
     position: relative;
     }
 
-    .hp-{{ this.regionData[1]["keyword_class"] }} .slick-slide > div:not(:last-child) {{ " {" }}
-    margin-bottom: {{this.widget[1]['settings']['slickRowGap']['value']}};
+    .hp-{{ regionData[1]["keyword_class"] }} .slick-slide > div:not(:last-child) {{ " {" }}
+    margin-bottom: {{widget[1]['settings']['slickRowGap']['value']}};
     }
 
-    .hp-{{ this.regionData[1]["keyword_class"] }} .{{ this.regionData[1]["keyword_class"] }}-img::before {{ " {" }}
+    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::before {{ " {" }}
     content: "";
     position: absolute;
     background: {{ widget[1]['settings']['hoverWithRgba']['selectTextValues']['rbga'] }};
@@ -42,20 +42,20 @@
     </div>
     }
     <div *ngIf="widget[1]['settings']['hoverWithRgba']['value'] == 'true'">
-        .hp-{{ this.regionData[1]["keyword_class"] }} .{{ this.regionData[1]["keyword_class"] }}-item:hover .{{
-        this.regionData[1]["keyword_class"] }}-img::before {{ " {" }}
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item:hover .{{
+        regionData[1]["keyword_class"] }}-img::before {{ " {" }}
         opacity: 0;
         }
     </div>
     <div *ngIf="widget[1]['settings']['hoverWithRgba']['value'] == 'false'">
-        .hp-{{ this.regionData[1]["keyword_class"] }} .{{ this.regionData[1]["keyword_class"] }}-item:hover .{{
-        this.regionData[1]["keyword_class"] }}-img::before {{ " {" }}
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item:hover .{{
+        regionData[1]["keyword_class"] }}-img::before {{ " {" }}
         opacity: 1;
         }
     </div>
 
     <div *ngIf="widget[1]['settings']['hoverWithBorder']['value'] == 'true'">
-        .hp-{{ this.regionData[1]["keyword_class"] }} .{{ this.regionData[1]["keyword_class"] }}-item::before {{ " {" }}
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item::before {{ " {" }}
         border: {{widget[1]['settings']['hoverWithBorder']['selectTextValues']['border']}};
         position: absolute;
         content: "";
@@ -72,7 +72,7 @@
         opacity: 0;
         }
 
-        .hp-{{ this.regionData[1]["keyword_class"] }} .{{ this.regionData[1]["keyword_class"] }}-item:hover::before {{ "
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item:hover::before {{ "
         {" }}
         opacity: 1;
         }
@@ -80,8 +80,8 @@
 
 
 
-    <div *ngIf="widget[1]['settings']['hoverWithImg']['value']">
-        .hp-{{ this.regionData[1]["keyword_class"] }} .{{ this.regionData[1]["keyword_class"] }}-img::after {{ " {" }}
+    <div *ngIf="widget[1]['settings']['hoverWithImg']['value'] == 'true'">
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::after {{ " {" }}
         content: "";
         position: absolute;
         background: url(images/communities-logo.png) center no-repeat;
@@ -100,14 +100,27 @@
         transition: all 0.4s ease-in-out;
         }
 
-        .hp-{{ this.regionData[1]["keyword_class"] }} .{{ this.regionData[1]["keyword_class"] }}-item:hover .{{
-        this.regionData[1]["keyword_class"] }}-img::after {{ " {" }}
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item:hover .{{
+        regionData[1]["keyword_class"] }}-img::after {{ " {" }}
         opacity: 1;
         }
     </div>
 
+    <div *ngIf="widget[1]['settings']['grayScaleOnImage']['value'] == 'true'">
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item img {{ " {" }}
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+        }
+
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item:hover img {{ " {" }}
+        filter: grayscale(1);
+        }
+    </div>
+
     <div *ngIf="widget[1]['settings']['contentPosition']['value'] != 'below-image'">
-        .hp-{{ this.regionData[1]["keyword_class"] }} .{{ this.regionData[1]["keyword_class"] }}-content {{ " {" }}
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content {{ " {" }}
         position: absolute;
         width: auto;
         z-index: 4;
@@ -145,12 +158,12 @@
     </div>
 
     <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'below-image'">
-        .hp-{{ this.regionData[1]["keyword_class"] }} .{{ this.regionData[1]["keyword_class"] }}-content {{ " {" }}
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content {{ " {" }}
         margin-top: 18px;
         }
     </div>
 
-    .hp-{{ this.regionData[1]["keyword_class"] }} .{{ this.regionData[1]["keyword_class"] }}-content h3 {{ " {" }}
+    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content h3 {{ " {" }}
     font-size: 26px;
     letter-spacing: 0.025em;
     font-weight: 700;
@@ -159,7 +172,7 @@
     margin-bottom: 10px;
     }
 
-    .hp-{{ this.regionData[1]["keyword_class"] }} .{{ this.regionData[1]["keyword_class"] }}-content p {{ " {" }}
+    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content p {{ " {" }}
     font-size: 15px;
     color: #ffc000;
     letter-spacing: 00.025em;

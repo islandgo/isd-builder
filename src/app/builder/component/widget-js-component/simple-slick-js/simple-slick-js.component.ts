@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { RegionsService } from "src/app/builder/services/regions.service";
 
 @Component({
   selector: "simple-slick-js",
@@ -8,7 +9,10 @@ import { Component, Input, OnInit } from "@angular/core";
 export class SimpleSlickJsComponent implements OnInit {
   @Input() region;
   @Input() widget;
-  constructor() {}
+  @Input() public regionData;
+  constructor(public RegionsService: RegionsService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    // console.log(this.widget[1]["settings"]["customArrow"]["value"] == "true");
+  }
 }

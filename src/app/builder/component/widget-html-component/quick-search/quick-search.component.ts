@@ -21,10 +21,6 @@ export class QuickSearchComponent implements OnInit {
 
   ngOnInit() {
     if (this.widget[1]["name"] == "quick-search") {
-      console.log(
-        this.widget[1]["settings"]["templateType"]["value"] ==
-          "Quick Search template 2"
-      );
     }
   }
 

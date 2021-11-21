@@ -38,47 +38,15 @@
         "value": "1",
         "name": "slide-to-show-mobile"
       },
-      "hoverWithBorder": {
+      "contentType": {
         "inpuType": "select",
         "selectValue": [
-          true,
-          false
+          "title",
+          "title-content",
+          "icon"
         ],
-        "value": false,
-        "selectTextValues": {
-          "border": "5px solid #ffc000"
-        },
-        "name": "hover-with-border"
-      },
-      "hoverWithRgba": {
-        "inpuType": "select",
-        "selectValue": [
-          true,
-          false
-        ],
-        "value": true,
-        "selectTextValues": {
-          "rbga": "rgba(0,0,0,.5)"
-        },
-        "name": "rgba default not in hover"
-      },
-      "hoverWithImg": {
-        "inpuType": "select",
-        "selectValue": [
-          true,
-          false
-        ],
-        "value": false,
-        "name": "hover-with-img"
-      },
-      "grayScaleOnImage": {
-        "inpuType": "select",
-        "selectValue": [
-          true,
-          false
-        ],
-        "value": false,
-        "name": "gray-scale-img"
+        "value": "icon",
+        "name": "content-type"
       },
       "contentPosition": {
         "inpuType": "select",
@@ -95,49 +63,96 @@
         "value": "bottom-left",
         "name": "content-position"
       },
+      "hoverWithBorder": {
+        "inpuType": "select",
+        "selectValue": [
+          "true",
+          "false"
+        ],
+        "value": "false",
+        "selectTextValues": {
+          "border": "5px solid #ffc000"
+        },
+        "name": "hover-with-border"
+      },
+      "hoverWithRgba": {
+        "inpuType": "select",
+        "selectValue": [
+          "true",
+          "false"
+        ],
+        "value": "true",
+        "selectTextValues": {
+          "rbga": "rgba(0,0,0,.5)"
+        },
+        "name": "rgba default not in hover"
+      },
+      "hoverWithImg": {
+        "inpuType": "select",
+        "selectValue": [
+          "true",
+          "false"
+        ],
+        "value": "false",
+        "name": "hover-with-img"
+      },
+      "grayScaleOnImage": {
+        "inpuType": "select",
+        "selectValue": [
+          "true",
+          "false"
+        ],
+        "value": "false",
+        "name": "gray-scale-img"
+      },
       "autoplay": {
         "inpuType": "select",
         "selectValue": [
-          true,
-          false
+          "true",
+          "false"
         ],
-        "value": true,
+        "value": "true",
         "name": "autoplay"
+      },
+      "autoplaySpeed": {
+        "inpuType": "text",
+        "value": "7000",
+        "name": "auto play speed"
       },
       "customArrow": {
         "inpuType": "select",
         "selectValue": [
-          true,
-          false
+          "true",
+          "false"
         ],
-        "value": true,
+        "value": "true",
         "name": "custom-arrow"
       },
       "dots": {
         "inpuType": "select",
         "selectValue": [
-          true,
-          false
+          "true",
+          "false"
         ],
-        "value": false,
+        "value": "false",
         "name": "dots"
       },
       "arrows": {
         "inpuType": "select",
         "selectValue": [
-          true,
-          false
+          "true",
+          "false"
         ],
-        "value": true,
+        "value": "true",
         "name": "arrows"
       },
       "asNaV": {
         "inpuType": "select",
         "selectValue": [
-          true,
-          false
+          "true",
+          "false"
         ],
-        "value": true,
+        "value": "true",
         "name": "asNaV"
       },
       "image_width": {

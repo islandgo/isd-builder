@@ -10,6 +10,7 @@ import { Component, Input } from "@angular/core";
 export class FunctionGeneratorComponent {
   @Input() public customRegions;
   @Input() public pageSettings;
+
   constructor(RegionsService: RegionsService, PageService: PageService) {}
 
   ngOnInit() {}

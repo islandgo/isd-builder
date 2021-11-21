@@ -9,21 +9,42 @@
         &lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/{{ regionClassName }}-{{ i + 1 }}.jpg" /&gt;
         &lt;/div&gt;
         &lt;div class="{{ regionClassName }}-content"&gt;
-        &lt;h3&gt;Howard County&lt;/h3&gt;
-        &lt;p&gt;
-        4932 LANSDOWNE ROAD, &lt;br /&gt;
-        FREDERICKSBURG, VA 22408
-        &lt;/p&gt;
-        &lt;span class="site-btn-secondary"&gt;Button&lt;/span&gt;
-        &lt;/div&gt;
-        <div *ngIf="widget[1]['settings']['contentPosition']['value']=='center'">
-            &lt;h3&gt;Sample&lt;/h3&gt;
+        <!-- Icon -->
+        <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
+            &lt;span class="ai-font-instagram"&gt;&lt;/span&gt;
         </div>
-        <div *ngIf="widget[1]['settings']['contentPosition']['value']=='split'">
-            &lt;p class=" {{ regionClassName }}-price"&gt;$450,000&lt;/p&gt; &lt;p class="{{ regionClassName }}-address"
-            &gt;34221 FINNIGAN TER, FREMONT&lt;/p&gt; &lt;div class="site-btn" &gt; &lt;a href="[blogurl]"
-            aria-label="View Details" &gt; View Details &lt;/a&gt; &lt;/div&gt; &lt;/div&gt; </div>
+        <!-- Title -->
+        <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
+            &lt;h3&gt;EzekSayson&lt;/h3&gt;
+        </div>
+
+        &lt;/div&gt;
         &lt;/a&gt;
     </div>
     &lt;/div&gt;
+    <!-- Custom Arrow -->
+    <div *ngIf="widget[1]['settings']['customArrow']['value'] == 'true'">
+        &lt;div class="{{ regionClassName }}-arrow"&gt;
+        &lt;div class="prev"&gt;
+        &lt;img alt="arrow" class="img-responsive" src="&lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/{{
+        regionClassName }}-prev.png"&gt;
+        &lt;span&gt;Prev&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="site-btn"&gt;
+        &lt;a href="[blogurl]" aria-label="VIEW ALL {{ regionClassName }}"&gt;VIEW ALL {{ regionClassName }} +&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="next"&gt;
+        &lt;span&gt;Next&lt;/span&gt;
+        &lt;img alt="arrow" class="img-responsive" src="&lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/{{
+        regionClassName }}-next.png"&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    </div>
+    <!-- Arrow -->
+    <div *ngIf="widget[1]['settings']['arrows']['value'] == 'true'">
+        &lt;div class="{{ regionClassName }}-arrow"&gt;
+        &lt;span class="ai-font-arrow-h-p prev"&gt;&lt;/span&gt;
+        &lt;span class="ai-font-arrow-h-n next"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    </div>
 </div>
