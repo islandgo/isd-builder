@@ -43,6 +43,8 @@
         "selectValue": [
           "title",
           "title-content",
+          "listings",
+          "testimonial",
           "icon"
         ],
         "value": "icon",
@@ -134,7 +136,7 @@
           "true",
           "false"
         ],
-        "value": "true",
+        "value": "false",
         "name": "arrows"
       },
       "arrowsWithButton": {
@@ -143,7 +145,7 @@
           "true",
           "false"
         ],
-        "value": "true",
+        "value": "false",
         "name": "arrows with button"
       },
       "customArrow": {
@@ -152,7 +154,7 @@
           "true",
           "false"
         ],
-        "value": "true",
+        "value": "false",
         "name": "custom-arrow"
       },
       "customArrowWithButton": {
@@ -161,7 +163,7 @@
           "true",
           "false"
         ],
-        "value": "true",
+        "value": "false",
         "name": "custom-arrow"
       },
       "asNaV": {
@@ -170,7 +172,7 @@
           "true",
           "false"
         ],
-        "value": "true",
+        "value": "false",
         "name": "asNaV"
       },
       "image_width": {
