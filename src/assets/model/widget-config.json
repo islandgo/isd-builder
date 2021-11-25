@@ -21,7 +21,7 @@
       "slickColumnGap": {
         "inpuType": "text",
         "value": "0px",
-        "name": "slick-column-gap"
+        "name": "slick column gap half the size"
       },
       "slickRowGap": {
         "inpuType": "text",
@@ -45,7 +45,8 @@
           "title-content",
           "listings",
           "testimonial",
-          "icon"
+          "icon",
+          "none"
         ],
         "value": "icon",
         "name": "content-type"
@@ -60,7 +61,8 @@
           "top-left",
           "top-right",
           "split",
-          "below-image"
+          "below-image",
+          "none"
         ],
         "value": "bottom-left",
         "name": "content-position"
@@ -77,17 +79,47 @@
         },
         "name": "hover-with-border"
       },
-      "hoverWithRgba": {
+      "overlay": {
         "inpuType": "select",
         "selectValue": [
           "true",
           "false"
         ],
-        "value": "true",
+        "value": "false",
         "selectTextValues": {
           "rbga": "rgba(0,0,0,.5)"
         },
-        "name": "rgba default not in hover"
+        "name": "overlay not in hover"
+      },
+      "overlayHover": {
+        "inpuType": "select",
+        "selectValue": [
+          "true",
+          "false"
+        ],
+        "value": "false",
+        "selectTextValues": {
+          "rbga": "rgba(0, 35, 71, 0.6)"
+        },
+        "name": "overlay on hover"
+      },
+      "gradientBottomOverlay": {
+        "inpuType": "select",
+        "selectValue": [
+          "true",
+          "false"
+        ],
+        "value": "false",
+        "name": "bottom gradient overlay"
+      },
+      "hoverWithImgLogo": {
+        "inpuType": "select",
+        "selectValue": [
+          "true",
+          "false"
+        ],
+        "value": "false",
+        "name": "hover-with-image-logo"
       },
       "hoverWithImg": {
         "inpuType": "select",
@@ -96,7 +128,7 @@
           "false"
         ],
         "value": "false",
-        "name": "hover-with-img"
+        "name": "hover-replace-image"
       },
       "grayScaleOnImage": {
         "inpuType": "select",
@@ -113,7 +145,7 @@
           "true",
           "false"
         ],
-        "value": "true",
+        "value": "false",
         "name": "autoplay"
       },
       "autoplaySpeed": {
@@ -250,7 +282,8 @@
           "center",
           "top-left",
           "top-right",
-          "below-image"
+          "below-image",
+          "none"
         ],
         "value": "bottom-left",
         "name": "content-position"
@@ -260,12 +293,13 @@
         "selectValue": [
           "title",
           "title-content",
-          "icon"
+          "icon",
+          "none"
         ],
         "value": "icon",
         "name": "content-type"
       },
-      "hoverWithRgba": {
+      "imageOverlay": {
         "inpuType": "select",
         "selectValue": [
           true,
@@ -275,7 +309,7 @@
         "selectTextValues": {
           "rbga": "rgba(0,0,0,.3)"
         },
-        "name": "rgba default not in hover"
+        "name": "overlay not in hover"
       },
       "grid_max_width": {
         "inpuType": "text",

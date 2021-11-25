@@ -15,11 +15,25 @@
         "keyword_class": "quick-search",
         "last_region_section": 0
     },
+    "WELCOME_HOMEPAGE": {
+        "region_id": "6",
+        "region_name": "Welcome Region",
+        "description": "Welcome Region",
+        "keyword_class": "welcome",
+        "last_region_section": 0
+    },
     "PROPERTIES_HOMEPAGE": {
         "region_id": "3",
         "region_name": "Properties Region",
         "description": "Properties Region",
         "keyword_class": "properties",
+        "last_region_section": 0
+    },
+    "COMMUNITIES_HOMEPAGE": {
+        "region_id": "16",
+        "region_name": "Communities Region",
+        "description": "Communities Region",
+        "keyword_class": "communities",
         "last_region_section": 0
     },
     "AREAS_HOMEPAGE": {
@@ -34,13 +48,6 @@
         "region_name": "Cta Region",
         "description": "Cta Region",
         "keyword_class": "cta",
-        "last_region_section": 0
-    },
-    "WELCOME_HOMEPAGE": {
-        "region_id": "6",
-        "region_name": "Welcome Region",
-        "description": "Welcome Region",
-        "keyword_class": "welcome",
         "last_region_section": 0
     },
     "TEAM_HOMEPAGE": {
@@ -71,13 +78,6 @@
         "keyword_class": "contact",
         "last_region_section": 0
     },
-    "STATIC_HOMEPAGE": {
-        "region_id": "11",
-        "region_name": "Static Region",
-        "description": "Static Region",
-        "keyword_class": "static",
-        "last_region_section": 0
-    },
     "BLOGS_HOMEPAGE": {
         "region_id": "12",
         "region_name": "Blogs Region",
@@ -90,6 +90,13 @@
         "region_name": "Work Region",
         "description": "Work Region",
         "keyword_class": "work",
+        "last_region_section": 0
+    },
+    "SOCIAL_HOMEPAGE": {
+        "region_id": "15",
+        "region_name": "Social Region",
+        "description": "Social Region",
+        "keyword_class": "social",
         "last_region_section": 0
     },
     "MAP_HOMEPAGE": {
@@ -106,18 +113,11 @@
         "keyword_class": "media",
         "last_region_section": 0
     },
-    "SOCIAL_HOMEPAGE": {
-        "region_id": "15",
-        "region_name": "Social Region",
-        "description": "Social Region",
-        "keyword_class": "social",
-        "last_region_section": 0
-    },
-    "COMMUNITIES_HOMEPAGE": {
-        "region_id": "16",
-        "region_name": "Communities Region",
-        "description": "Communities Region",
-        "keyword_class": "communities",
+    "STATIC_HOMEPAGE": {
+        "region_id": "11",
+        "region_name": "Static Region",
+        "description": "Static Region",
+        "keyword_class": "static",
         "last_region_section": 0
     },
     "PARTNERS_HOMEPAGE": {

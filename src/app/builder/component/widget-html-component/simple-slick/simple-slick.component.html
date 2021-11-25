@@ -8,6 +8,11 @@
             height="{{widget[1]["settings"]["image_height"]["value"]}}"&gt;&lt;/canvas&gt;
             &lt;img alt="{{ regionClassName }}" class="img-{{ regionClassName }} canvas-img"
             src="&lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/{{ regionClassName }}-{{ i + 1 }}.jpg" /&gt;
+            <div *ngIf="widget[1]['settings']['hoverWithImg']['value'] == 'true'">
+                &lt;img alt="{{ regionClassName }}-image-hover" class="canvas-img {{ regionClassName }}-image-hover"
+                src="&lt;?php echo
+                get_stylesheet_directory_uri() ?&gt;/images/{{regionClassName }}-img-hover.jpg"&gt;
+            </div>
             &lt;/div&gt;
             &lt;div class="{{ regionClassName }}-content"&gt;
             <!-- Icon -->
@@ -29,6 +34,11 @@
             <div *ngIf="widget[1]['settings']['contentType']['value'] == 'listings'">
                 &lt;h3&gt;$62,000,000&lt;/h3&gt;
                 &lt;p&gt;1700 East Walnut Avenue &lt;br&gt; El Segundo, CA 90245&lt;/p&gt;
+                &lt;div class="bbs"&gt;
+                &lt;span&gt;4 Beds&lt;/span&gt;
+                &lt;span&gt;4 Baths&lt;/span&gt;
+                &lt;span&gt;2,730 SqFt.&lt;/span&gt;
+                &lt;/div&gt;
                 &lt;span class="site-btn"&gt;View More&lt;/span&gt;
             </div>
             <!-- Listings -->

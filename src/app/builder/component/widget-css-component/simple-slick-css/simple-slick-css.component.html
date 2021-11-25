@@ -1,7 +1,8 @@
 <div *ngIf="widget[1]['name'] == 'simple-slick'" class="slick-css-widget">
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-{{widget[1]["suffixClass"]}} {{ " {"
+    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}{{widget[1]["suffixClass"]}} {{ " {"
     }}
     max-width: {{widget[1]["settings"]["slick_max_width"]["value"]}};
+    margin: 0 auto;
     }
 
     .hp-{{ regionData[1]["keyword_class"] }} .slick-list {{ " {" }}
@@ -14,46 +15,89 @@
 
     .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item {{ " {" }}
     position: relative;
+    display: block !important;
     }
 
     .hp-{{ regionData[1]["keyword_class"] }} .slick-slide > div:not(:last-child) {{ " {" }}
     margin-bottom: {{widget[1]['settings']['slickRowGap']['value']}};
     }
 
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::before {{ " {" }}
-    content: "";
-    position: absolute;
-    background: {{ widget[1]['settings']['hoverWithRgba']['selectTextValues']['rbga'] }};
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 1;
-    pointer-events: none;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-    <div *ngIf="widget[1]['settings']['hoverWithRgba']['value'] == 'true'">
-        opacity: 1;
-    </div>
-    <div *ngIf="widget[1]['settings']['hoverWithRgba']['value'] == 'false'">
-        opacity: 0;
-    </div>
-    }
-    <div *ngIf="widget[1]['settings']['hoverWithRgba']['value'] == 'true'">
-        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item:hover .{{
-        regionData[1]["keyword_class"] }}-img::before {{ " {" }}
-        opacity: 0;
+    <!-- Bottom Gradient overlay  -->
+    <div *ngIf="widget[1]['settings']['gradientBottomOverlay']['value'] == 'true'">
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::before {{ " {" }}
+        content: "";
+        position: absolute;
+        pointer-events: none;
+
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+
+        /* Permalink - use to edit and share this gradient:
+        https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+56,0.65+100 */
+        background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 56%, rgba(0,0,0,0.65) 100%); /* FF3.6-15
+        */
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 56%,rgba(0,0,0,0.65) 100%); /*
+        Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 56%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+,
+        FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000',
+        endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+
         }
     </div>
-    <div *ngIf="widget[1]['settings']['hoverWithRgba']['value'] == 'false'">
+    <!-- Overlay Not In Hover -->
+    <div *ngIf="widget[1]['settings']['overlay']['value'] == 'true'">
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::before {{ " {" }}
+        content: "";
+        position: absolute;
+        background: {{ widget[1]['settings']['overlay']['selectTextValues']['rbga'] }};
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        pointer-events: none;
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+        }
+
         .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item:hover .{{
         regionData[1]["keyword_class"] }}-img::before {{ " {" }}
-        opacity: 1;
+        opacity: 0;
         }
     </div>
 
+    <!-- Overlay On Hover -->
+    <div *ngIf="widget[1]['settings']['overlayHover']['value'] == 'true'">
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::after {{ " {" }}
+        content: "";
+        position: absolute;
+        background: {{ widget[1]['settings']['overlayHover']['selectTextValues']['rbga'] }};
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        opacity: 0;
+        pointer-events: none;
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+        }
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item:hover .{{
+        regionData[1]["keyword_class"] }}-img::after {{ " {" }}
+        opacity: 1;
+        }
+
+    </div>
+
+    <!-- Hover Border -->
     <div *ngIf="widget[1]['settings']['hoverWithBorder']['value'] == 'true'">
         .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item::before {{ " {" }}
         border: {{widget[1]['settings']['hoverWithBorder']['selectTextValues']['border']}};
@@ -79,8 +123,8 @@
     </div>
 
 
-
-    <div *ngIf="widget[1]['settings']['hoverWithImg']['value'] == 'true'">
+    <!-- Hover Image Logo -->
+    <div *ngIf="widget[1]['settings']['hoverWithImgLogo']['value'] == 'true'">
         .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::after {{ " {" }}
         content: "";
         position: absolute;
@@ -106,6 +150,23 @@
         }
     </div>
 
+    <!-- Replacing Image -->
+    <div *ngIf="widget[1]['settings']['hoverWithImg']['value'] == 'true'">
+        .{{ regionData[1]["keyword_class"] }}-item .{{ regionData[1]["keyword_class"] }}-image-hover {{ " {" }}
+        filter: grayscale(1);
+        opacity: 0;
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+        }
+
+        .{{ regionData[1]["keyword_class"] }}-item:hover .{{ regionData[1]["keyword_class"] }}-image-hover {{ " {" }}
+        opacity: 1;
+        }
+    </div>
+
+    <!-- Gray Scale -->
     <div *ngIf="widget[1]['settings']['grayScaleOnImage']['value'] == 'true'">
         .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item img {{ " {" }}
         -webkit-transition: all 0.4s ease-in-out;
@@ -118,7 +179,7 @@
         filter: grayscale(1);
         }
     </div>
-
+    <!-- Content Position -->
     <div *ngIf="widget[1]['settings']['contentPosition']['value'] != 'below-image'">
         .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content {{ " {" }}
         position: absolute;
@@ -162,10 +223,10 @@
         margin-top: 18px;
         }
     </div>
-
+    <!-- Content Style -->
     .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content h3 {{ " {" }}
     font-size: 26px;
-    letter-spacing: 0.025em;
+    letter-spacing: 0.1em;
     font-weight: 700;
     color: #ffc000;
     text-transform: uppercase;
@@ -175,7 +236,7 @@
     .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content p {{ " {" }}
     font-size: 15px;
     color: #ffc000;
-    letter-spacing: 00.025em;
+    letter-spacing: 0.1em;
     margin-bottom: 10px;
     }
 </div>
