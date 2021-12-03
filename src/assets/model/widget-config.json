@@ -414,6 +414,15 @@
         ],
         "value": "full-border",
         "name": "input style"
+      },
+      "sendAirplane": {
+        "inpuType": "select",
+        "selectValue": [
+          "true",
+          "false"
+        ],
+        "value": "false",
+        "name": "airplane send"
       }
     }
   },

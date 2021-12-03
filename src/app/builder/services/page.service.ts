@@ -21,6 +21,7 @@ export class PageService {
   enablePageDoubleTap: boolean;
   enablePageIntroVideo: boolean;
   skipButton: any;
+  circleBackground: any;
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit() {}
@@ -89,6 +90,8 @@ export class PageService {
               this.socialFixNavType = obj[1]["settings"]["position"]["value"];
               this.socialFixNavList =
                 obj[1]["settings"]["socialIcons"]["checkListSetting"];
+              this.circleBackground =
+                obj[1]["settings"]["circle_background"]["value"];
             }
             if (obj[0] == "intro_video") {
               this.enablePageIntroVideo = true;

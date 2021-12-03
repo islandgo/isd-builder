@@ -46,6 +46,15 @@
                 ],
                 "name": "scroll down"
             },
+            "circle_background": {
+                "value": "false",
+                "inpuType": "select",
+                "selectValue": [
+                    "true",
+                    "false"
+                ],
+                "name": "circle background"
+            },
             "socialIcons": {
                 "inpuType": "checkbox",
                 "checkListSetting": {
@@ -76,6 +85,16 @@
                     "zillow": {
                         "enable": false,
                         "name": "zillow"
+                    },
+                    "phone": {
+                        "enable": false,
+                        "name": "phone",
+                        "contactInfo": true
+                    },
+                    "email": {
+                        "enable": false,
+                        "name": "email",
+                        "contactInfo": true
                     }
                 },
                 "name": "social icons"
