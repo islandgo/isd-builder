@@ -83,7 +83,7 @@ TABLE OF CONTENTS
     left: -150%;
     right: -150%;
     margin: auto;
-    padding-top: 28px;
+    padding-top: 48px;
 {{'}'}}
 
 .menu .sub-menu .sub-menu #fnav .sub-menu .sub-menu{{' {'}}
@@ -413,32 +413,137 @@ aside menu{{' {'}}
     background: transparent;
     -webkit-transition: all 0.8s ease;
     transition: all 0.8s ease;
-    padding: 24px;
+    padding: 24px 0;
 }
 
+/* header Grid */
 
-.header-container{{' {'}}
-    display: flex;
+.header-container {{' {'}}
+    display: grid;
+    grid-template-columns: repeat(100, 1fr);
     align-items: center;
-    justify-content: space-between;
-    max-width: 1510px;
-    margin: 0 auto;
     -webkit-transition: all 0.8s ease;
     transition: all 0.8s ease;
 }
 
-.header .navigation .menu {{' {'}}
-font-size: 14px;
-letter-spacing: 0.07em;
-color: #ffffff;
-text-transform: uppercase;
-display: flex;
-gap: 18px;
+.header-logo {{' {'}}
+    grid-column: {{ PageService.headerDataMenu['logoGridColumn']['value'] }};
 }
 
+.navigation {{' {'}}
+    grid-column: {{ PageService.headerDataMenu['navGridColumn']['value'] }};
+}
+
+.header-logo img {{' {'}}
+    width: 100%;
+}
+
+.header .navigation .menu {{' {'}}
+    font-size: 14px;
+    letter-spacing: 0.07em;
+    color: #ffffff;
+    text-transform: uppercase;
+    display: flex;
+    gap: {{ PageService.headerDataMenu['navGap']['value'] }};
+    justify-content: flex-end;
+}
+<div *ngIf="PageService.navHover == 'bottom line' || PageService.navHover == 'bottom line with arrow'">
+    /* Menu Before */
+    
+    .menu > li::before {{' {'}}
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        background: #05616b;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none;
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+    }
+    
+    .menu > li:hover::before {{' {'}}
+        opacity: 1;
+        width: 100%;
+    }
+
+</div>
+<div *ngIf="PageService.navHover == 'arrow' ">
+    /* Menu After */
+    
+    .menu > li::after {{' {'}}
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none;
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+        width: 0;
+        height: 0;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 7px solid #05616b;
+        opacity: 0;
+    }
+    
+    .menu > li:hover::after {{' {'}}
+        opacity: 1;
+        bottom: -36px;
+    }
+
+</div>
 .header .navigation .menu > li > a:hover {{' {'}}
     color: #fff;
 }
+
+<div *ngIf="PageService.enableSeparatorNav">
+    /* Text Line */
+    .header .navigation .menu > li:not(:last-child) > a::before {{' {'}}
+        content: "";
+        position: absolute;
+        background: rgba(190, 190, 190, 1);
+        width: 2px;
+        height: 12px;
+        top: 50%;
+        right: -10px;
+        transform: translateY(-50%);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+</div>
+
+<div *ngIf="PageService.enableHeaderContact">
+
+    /* Header Contact */
+    .header-contact {{' {'}}
+        display: flex;
+        justify-content: flex-end;
+        color: #ffffff;
+        gap:  {{ PageService.headerDataMenu['navGap']['value'] }};
+        margin-bottom: 20px;
+    }
+    
+    .header-contact span {{' {'}}
+        padding-right: 10px;
+    }
+</div>
+<div *ngIf="PageService.enableCombineContactAndNav">
+    nav.navigation {{' {'}}
+        display: flex;
+        flex-direction: row-reverse;
+        gap: {{ PageService.headerDataMenu['navGap']['value'] }};
+    }
+</div>
+
 
 
 /* Fixed header */
@@ -458,6 +563,7 @@ gap: 18px;
 .header.show-fixed #nav .sub-menu {{' {'}}
     padding-top: 44px;
 }
+
 </div>
 
 <div *ngIf="PageService.headerType == 'split-nav' ">
@@ -501,9 +607,9 @@ gap: 18px;
         position: relative;
         width: 44px;
         cursor: pointer;
-        margin: 0 28px;
+        grid-column: {{ PageService.headerData['burgerGridColumn']['value'] }};
     }
-    
+
     .bm-drop {{' {'}}
         position: fixed;
         z-index: 2000; 

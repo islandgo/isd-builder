@@ -11,17 +11,76 @@
                     "split-nav"
                 ],
                 "name": "header type"
+            },
+            "contactUs": {
+                "value": "true",
+                "inpuType": "select",
+                "selectValue": [
+                    "true",
+                    "false"
+                ],
+                "name": "enable contact us"
+            },
+            "separatorNav": {
+                "value": "true",
+                "inpuType": "select",
+                "selectValue": [
+                    "true",
+                    "false"
+                ],
+                "name": "enable separator nav"
+            },
+            "navHover": {
+                "value": "none",
+                "inpuType": "select",
+                "selectValue": [
+                    "none",
+                    "bottom line",
+                    "bottom line with arrow",
+                    "arrow"
+                ],
+                "name": "nav hover"
+            },
+            "navGap": {
+                "value": "20px",
+                "inpuType": "text",
+                "name": "nav gap"
+            },
+            "logoGridColumn": {
+                "value": "3/10",
+                "inpuType": "text",
+                "name": "logo grid column"
+            },
+            "navGridColumn": {
+                "value": "10/-11",
+                "inpuType": "text",
+                "name": "nav grid column"
+            },
+            "combineContactUsAndNav": {
+                "value": "true",
+                "inpuType": "select",
+                "selectValue": [
+                    "true",
+                    "false"
+                ],
+                "name": "Combine contact us and nav"
+            }
+        }
+    },
+    "burger_menu": {
+        "enable": false,
+        "name": "burger-menu",
+        "settings": {
+            "burgerGridColumn": {
+                "value": "95/-3",
+                "inpuType": "text",
+                "name": "burger menu grid column"
             }
         }
     },
     "popup_modal": {
         "enable": false,
         "name": "popup-modal",
-        "settings": {}
-    },
-    "burger_menu": {
-        "enable": false,
-        "name": "burger-menu",
         "settings": {}
     },
     "social_fix_nav": {

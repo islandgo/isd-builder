@@ -34,6 +34,18 @@
 				&lt;/a&gt;
 			&lt;/div&gt;
 			&lt;nav class="navigation"&gt;
+			<div *ngIf="PageService.enableHeaderContact">
+				&lt;div class="header-contact"&gt;
+					&lt;div class="header-phone"&gt;
+						&lt;span class="ai-font-phone-o"&gt;&lt;/span&gt;
+						&lt;?php echo do_shortcode('[ai_phone href="+1.240.475.1357"]240.475.1357[/ai_phone]')?&gt;
+					&lt;/div&gt;
+					&lt;div class="header-email"&gt;
+						&lt;span class="ai-font-envelope-a"&gt;&lt;/span&gt;
+						&lt;?php echo do_shortcode('[mail_to email="isdtemplate.com"]isdtemplate.com[/mail_to]')?&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			</div>
 				&lt;?php wp_nav_menu( array( 'sort_column' =&gt; 'menu_order', 'menu_id' =&gt; 'nav', 'theme_location' =&gt; 'primary-menu' ) ); ?&gt;
 				<div *ngIf="PageService.enablePageGoogleTranslator">
 					&lt;div class="translate-wrapper"&gt;
