@@ -13,6 +13,5 @@ export class SimpleSlickJsComponent implements OnInit {
   constructor(public RegionsService: RegionsService) {}
 
   ngOnInit() {
-    // console.log(this.widget[1]["settings"]["customArrow"]["value"] == "true");
   }
 }

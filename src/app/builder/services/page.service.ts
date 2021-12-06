@@ -119,7 +119,6 @@ export class PageService {
                                 obj[1]["settings"]["headerType"]["value"] == "normal-header"
                             ) {
                                 this.headerDataMenu = obj[1]["settings"];
-                                console.log(this.headerDataMenu);
                                 this.enablePageNormalHeader = true;
                             }
                             if (obj[1]["settings"]["contactUs"]["value"] == "true") {
@@ -131,8 +130,6 @@ export class PageService {
                             if (obj[1]["settings"]["combineContactUsAndNav"]["value"] == "true") {
                                 this.enableCombineContactAndNav = true;
                             }
-                            console.log("this.enableSeparatorNav");
-                            console.log(this.enableSeparatorNav);
                         }
                       
                     }

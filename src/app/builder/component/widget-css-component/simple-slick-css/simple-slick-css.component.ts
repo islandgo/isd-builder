@@ -14,7 +14,6 @@ export class SimpleSlickCssComponent implements OnInit {
 
   ngOnInit() {
     if (this.widget[1]["name"] == "simple-slick") {
-      console.log(this.widget[1]["settings"]["overlay"]["value"]);
     }
   }
 }
