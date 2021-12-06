@@ -107,6 +107,7 @@ export class RegionsComponent {
     );
   }
 
+  
   moveToCustomRegions() {
     let jsonCustomRegions = {};
     const defaultRegions = this.form.value.defaultRegions
