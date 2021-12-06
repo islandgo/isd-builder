@@ -17,6 +17,26 @@
         "inpuType": "text",
         "value": "repeat(100,1fr)",
         "name": "grid-template-columns"
+    },
+    "paddingTop": {
+        "inpuType": "text",
+        "value": "30px",
+        "name": "padding-top"
+    },
+    "paddingRight": {
+        "inpuType": "text",
+        "value": "24px",
+        "name": "padding-right"
+    },
+    "paddingBottom": {
+        "inpuType": "text",
+        "value": "30px",
+        "name": "padding-bottom"
+    },
+    "paddingLeft": {
+        "inpuType": "text",
+        "value": "24px",
+        "name": "padding-left"
     }
 
 }

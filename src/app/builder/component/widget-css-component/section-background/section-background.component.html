@@ -1,4 +1,7 @@
 <div class="background-setting-container">
+    .hp-{{this.regionData[1]['keyword_class']}} {{' {'}}
+        padding: {{ regionData[1]['grid_setting']['paddingTop']['value'] }} {{ regionData[1]['grid_setting']['paddingRight']['value'] }} {{ regionData[1]['grid_setting']['paddingBottom']['value'] }} {{ regionData[1]['grid_setting']['paddingLeft']['value'] }};
+    }
     <div *ngIf="this.regionData[1]['background_setting']['background']['enable']">
         .hp-{{this.regionData[1]['keyword_class']}}::before {{' {'}}
             content: "";

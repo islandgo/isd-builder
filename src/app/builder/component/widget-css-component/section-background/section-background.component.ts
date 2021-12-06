@@ -10,6 +10,7 @@ export class SectionBackgroundComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
+        console.log(this.regionData[1]['grid_setting']['paddingTop']['value']);
     }
 
 }
