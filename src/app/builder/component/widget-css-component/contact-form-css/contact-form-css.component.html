@@ -11,25 +11,39 @@
     background: #ffffff;
   </div>
   }
-  <div *ngIf="template[0] == '33'">
-    .contact-form {{' {'}}
-    position: relative;
-    width: 100%;
-    max-width: {{ widget[1]["settings"]["max-width"]["value"] }};
-    margin: 0 auto;
-    font-size: 0;
-    background: #2b2c2e;
-    padding: 46px 100px 60px;
-    z-index: 2;
-    }
 
+  <!-- Global -->
+  .contact-form {{' {'}}
+  position: relative;
+  width: 100%;
+  max-width: {{ widget[1]["settings"]["max-width"]["value"] }};
+  margin: 0 auto;
+  font-size: 0;
+  background: #2b2c2e;
+  padding: 46px 100px 60px;
+  z-index: 2;
+  }
+
+  <div *ngIf="template[0] != '37'">
     .contact-form .form-md {{' {'}}
-    display: inline-block;
-    vertical-align: middle;
-    width: 50%;
-    margin-bottom: {{widget[1]["settings"]["row_gap"]["value"]}};
+    <div *ngIf="template[0] == '33' || template[0] == '34' || template[0] == '35' ">
+      display: inline-block;
+      vertical-align: middle;
+      margin-bottom: {{widget[1]["settings"]["row_gap"]["value"]}};
+    </div>
+    <div *ngIf="template[0] == '33' || template[0] == '34'">
+      width: 50%;
+    </div>
+    <div *ngIf="template[0] == '35'">
+      width: 33%;
+    </div>
+    <div *ngIf="template[0] == '36'">
+      padding-bottom: 12px;
+    </div>
     }
+  </div>
 
+  <div *ngIf="template[0] == '33' || template[0] == '34' || template[0] == '35'">
     .contact-form .form-md input {{' {'}}
     width: 100%;
     min-height: 38px;
@@ -37,10 +51,23 @@
     text-transform: uppercase;
     background: transparent;
 
-    font-size: 11px;
-    letter-spacing: 00.05em;
-    color: #d1d1d1;
-    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    }
+
+    .contact-form .form-lg textarea {{' {'}}
+    width: 100%;
+    min-height: {{widget[1]["settings"]["text_area_height"]["value"]}};
+    background: transparent;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    resize: none;
+    }
+
+    .contact-form .form-lg {{' {'}}
+    position: relative;
+    padding-bottom: 56px;
     }
 
     .contact-form .pad-left,
@@ -51,149 +78,10 @@
     .contact-form .pad-right,
     .contact-form .middle-pad-right {{' {'}}
     padding-left: {{widget[1]["settings"]["column_gap"]["value"]}};
-    }
-
-    .contact-form .form-lg {{' {'}}
-    position: relative;
-    padding-bottom: 56px;
-    }
-
-    .contact-form .form-lg textarea {{' {'}}
-    width: 100%;
-    min-height: {{widget[1]["settings"]["text_area_height"]["value"]}};
-    background: transparent;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 00.05em;
-    color: #d1d1d1;
-    font-weight: 300;
-    resize: none;
-    }
-  </div>
-  <div *ngIf="template[0] == '34'">
-    .contact-form {{' {'}}
-    position: relative;
-    font-size: 0;
-    background: #2b2c2e;
-    width: 100%;
-    max-width: {{ widget[1]["settings"]["max-width"]["value"] }};
-    margin: 0 auto;
-    padding: 46px 100px 60px;
-    z-index: 2;
-    }
-
-    .contact-form .form-md {{' {'}}
-    display: inline-block;
-    vertical-align: middle;
-    width: 50%;
-    margin-bottom: {{widget[1]["settings"]["row_gap"]["value"]}};
-    }
-
-    .contact-form .form-md input {{' {'}}
-    width: 100%;
-    min-height: 38px;
-
-    text-transform: uppercase;
-    background: transparent;
-
-    font-size: 11px;
-    letter-spacing: 00.05em;
-    color: #d1d1d1;
-    font-weight: 300;
-    }
-
-    .contact-form .pad-left,
-    .contact-form .middle-pad-left {{' {'}}
-    padding-right: {{widget[1]["settings"]["column_gap"]["value"]}};
-    }
-
-    .contact-form .pad-right,
-    .contact-form .middle-pad-right {{' {'}}
-    padding-left: {{widget[1]["settings"]["column_gap"]["value"]}};
-    }
-
-    .contact-form .form-lg {{' {'}}
-    position: relative;
-    padding-bottom: 56px;
-    }
-
-    .contact-form .form-lg textarea {{' {'}}
-    width: 100%;
-    min-height: {{widget[1]["settings"]["text_area_height"]["value"]}};
-    background: transparent;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 00.05em;
-    color: #d1d1d1;
-    font-weight: 300;
-    resize: none;
-    }
-  </div>
-  <div *ngIf="template[0] == '35'">
-    .contact-form {{' {'}}
-    position: relative;
-    width: 100%;
-    max-width: {{ widget[1]["settings"]["max-width"]["value"] }};
-    margin: 0 auto;
-    z-index: 2;
-    font-size: 0;
-    }
-
-    .contact-form .form-md {{' {'}}
-    display: inline-block;
-    vertical-align: middle;
-    width: 33.33%;
-    margin-bottom: {{widget[1]["settings"]["row_gap"]["value"]}};
-    }
-
-    .contact-form .form-md input {{' {'}}
-    width: 100%;
-    min-height: 46px;
-    background: transparent;
-    text-transform: uppercase;
-    letter-spacing: 00.1em;
-    font-size: 13.21px;
-    letter-spacing: 00.1em;
-    color: #ffffff;
-
-    }
-
-    .contact-form .pad-left {{' {'}}
-    padding-right: {{widget[1]["settings"]["column_gap"]["value"]}};
-    }
-
-    .contact-form .pad-right {{' {'}}
-    padding-left: {{widget[1]["settings"]["column_gap"]["value"]}};
-    }
-
-    .contact-form .form-lg {{' {'}}
-    position: relative;
-    }
-
-
-    .contact-form .form-lg textarea {{' {'}}
-    width: 100%;
-    min-height: {{widget[1]["settings"]["text_area_height"]["value"]}};
-    background: transparent;
-    text-transform: uppercase;
-    letter-spacing: 00.1em;
-    font-size: 13.21px;
-    color: #ffffff;
-    resize: none;
     }
   </div>
   <div *ngIf="template[0] == '36'">
-    .contact-form {{' {'}}
-    position: relative;
-    font-size: 0;
-    width: 100%;
-    max-width: {{ widget[1]["settings"]["max-width"]["value"] }};
-    margin: 0 auto;
-    }
 
-    .contact-form .form-md {{' {'}}
-    padding-bottom: 12px;
-    }
 
     .contact-form .form-md.pad-left {{' {'}}
     display: inline-block;
@@ -242,13 +130,6 @@
     }
   </div>
   <div *ngIf="template[0] == '37'">
-    .contact-form {{' {'}}
-    color: #ffffff;
-    position: relative;
-    font-size: 0;
-    max-width: {{ widget[1]["settings"]["max-width"]["value"] }};
-    margin: 0 auto;
-    }
 
     .contact-form label {{' {'}}
     display: block;
@@ -352,14 +233,6 @@
     }
   </div>
   <div *ngIf="template[0] == '38'">
-    .contact-form {{' {'}}
-    display: block;
-    position: relative;
-    font-size: 0;
-    width: 100%;
-    max-width: {{ widget[1]["settings"]["max-width"]["value"] }};
-    margin: 0 auto;
-    }
 
     .cform-row
     .cform-field:last-child
