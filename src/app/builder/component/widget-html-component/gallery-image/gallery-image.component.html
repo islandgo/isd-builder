@@ -8,7 +8,9 @@
     </div>
     <div *ngIf="widget[1]['settings']['hasImage']['value'] == 'yup'">
       &lt;a href="[blogurl]" aria-label="{{ regionClassName }}-image"
-      class="{{ regionClassName }}-image"&gt; &lt;canvas width="{{
+      class="{{ regionClassName }}-image"&gt;
+      &lt;div class="{{regionClassName}}-img canvas-wrapper"&gt;
+      &lt;canvas width="{{
       widget[1]["settings"]["image_width"]["value"]}}"
       height="{{widget[1]["settings"]["image_height"]["value"]}}"&gt;&lt;/canvas&gt; &lt;img
       alt="{{regionClassName}}-image" class="canvas-img" src="
@@ -21,6 +23,7 @@
       <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
         &lt;h3&gt;EzekSayson&lt;/h3&gt;
       </div>
+      &lt;/div&gt;
       &lt;/a&gt;
     </div>
     <!-- Title + Content -->

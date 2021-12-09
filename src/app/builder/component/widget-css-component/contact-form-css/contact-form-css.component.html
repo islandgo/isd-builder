@@ -1,5 +1,6 @@
 <div *ngIf="widget[1]['name'] == 'contact-form'" class="contact-form-css-widget">
-  .contact-form .form-md input {{' {'}}
+  .contact-form .form-md input,
+  .contact-form .form-lg textarea{{' {'}}
   <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "full-border"'>
     border: solid 1px #ffffff;
   </div>
@@ -57,16 +58,10 @@
     padding-bottom: 56px;
     }
 
-    .contact-form input,
-    .contact-form textarea {{' {'}}
-    border: none;
-    }
-
     .contact-form .form-lg textarea {{' {'}}
     width: 100%;
     min-height: {{widget[1]["settings"]["text_area_height"]["value"]}};
     background: transparent;
-    border-bottom: solid 1px #f7f7f7;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 00.05em;
@@ -122,16 +117,10 @@
     padding-bottom: 56px;
     }
 
-    .contact-form input,
-    .contact-form textarea {{' {'}}
-    border: none;
-    }
-
     .contact-form .form-lg textarea {{' {'}}
     width: 100%;
     min-height: {{widget[1]["settings"]["text_area_height"]["value"]}};
     background: transparent;
-    border-bottom: solid 1px #f7f7f7;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 00.05em;
@@ -181,10 +170,6 @@
     position: relative;
     }
 
-    .contact-form input,
-    .contact-form textarea {{' {'}}
-    border: none;
-    }
 
     .contact-form .form-lg textarea {{' {'}}
     width: 100%;
@@ -192,7 +177,6 @@
     background: transparent;
     text-transform: uppercase;
     letter-spacing: 00.1em;
-    border-bottom: solid 1px #ffffff;
     font-size: 13.21px;
     color: #ffffff;
     resize: none;
