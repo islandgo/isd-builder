@@ -40,8 +40,9 @@ import { QuickSearchMobileCssComponent } from "./component/widget-css-mobile-com
 import { IntroVideoComponent } from "./component/widget-html-component/intro-video/intro-video.component";
 import { QuickSearchJsComponent } from "./component/widget-js-component/quick-search-js/quick-search-js.component";
 import { FunctionGeneratorComponent } from "./component/function-generator.component";
-import { GalleryImageMobileComponent } from './component/widget-css-mobile-component/gallery-image-mobile/gallery-image-mobile.component';
-import { SimpleSlickMobileComponent } from './component/widget-css-mobile-component/simple-slick-mobile/simple-slick-mobile.component';
+import { GalleryImageMobileComponent } from "./component/widget-css-mobile-component/gallery-image-mobile/gallery-image-mobile.component";
+import { SimpleSlickMobileComponent } from "./component/widget-css-mobile-component/simple-slick-mobile/simple-slick-mobile.component";
+import { HtmlWidgetGeneratorComponent } from "./component/html-widget-generator.component";
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { SimpleSlickMobileComponent } from './component/widget-css-mobile-compon
     FunctionGeneratorComponent,
     GalleryImageMobileComponent,
     SimpleSlickMobileComponent,
+    HtmlWidgetGeneratorComponent,
   ],
   imports: [
     BuilderRoutes,
