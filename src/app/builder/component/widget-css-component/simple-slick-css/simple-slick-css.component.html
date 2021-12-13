@@ -1,17 +1,23 @@
 <div *ngIf="widget[1]['name'] == 'simple-slick'" class="slick-css-widget">
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}{{widget[1]["suffixClass"]}} {{ " {"
-    }}
-    max-width: {{widget[1]["settings"]["slick_max_width"]["value"]}};
-    margin: 0 auto;
-    }
+    <div *ngIf="widget[1]['settings']['asNaV']['value'] != 'true'">
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}{{widget[1]["suffixClass"]}} {{ "
+        {"
+        }}
+        max-width: {{widget[1]["settings"]["slick_max_width"]["value"]}};
+        margin: 0 auto;
+        }
 
-    .hp-{{ regionData[1]["keyword_class"] }} .slick-list {{ " {" }}
-    margin: 0 -{{widget[1]['settings']['slickColumnGap']['value']}};
-    }
 
-    .hp-{{ regionData[1]["keyword_class"] }} .slick-slide {{ " {" }}
-    margin: 0 {{widget[1]['settings']['slickColumnGap']['value']}};
-    }
+
+        .hp-{{ regionData[1]["keyword_class"] }} .slick-list {{ " {" }}
+        margin: 0 -{{widget[1]['settings']['slickColumnGap']['value']}};
+        }
+
+        .hp-{{ regionData[1]["keyword_class"] }} .slick-slide {{ " {" }}
+        margin: 0 {{widget[1]['settings']['slickColumnGap']['value']}};
+        }
+
+    </div>
 
     .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item {{ " {" }}
     position: relative;
@@ -208,6 +214,7 @@
         margin-top: 18px;
         }
     </div>
+
     <!-- Content Style -->
     .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content h3 {{ " {" }}
     font-size: 26px;
