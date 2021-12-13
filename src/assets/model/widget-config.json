@@ -154,38 +154,12 @@
       "arrows": {
         "inpuType": "select",
         "selectValue": [
-          "true",
-          "false"
+          "arrows",
+          "arrowsWithButton",
+          "none"
         ],
-        "value": "false",
+        "value": "none",
         "name": "arrows"
-      },
-      "arrowsWithButton": {
-        "inpuType": "select",
-        "selectValue": [
-          "true",
-          "false"
-        ],
-        "value": "false",
-        "name": "arrows with button"
-      },
-      "customArrow": {
-        "inpuType": "select",
-        "selectValue": [
-          "true",
-          "false"
-        ],
-        "value": "false",
-        "name": "custom-arrow"
-      },
-      "customArrowWithButton": {
-        "inpuType": "select",
-        "selectValue": [
-          "true",
-          "false"
-        ],
-        "value": "false",
-        "name": "custom-arrow"
       },
       "asNaV": {
         "inpuType": "select",

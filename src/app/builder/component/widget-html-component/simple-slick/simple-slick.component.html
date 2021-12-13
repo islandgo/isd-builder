@@ -59,32 +59,11 @@
     </div>
 
     &lt;/div&gt;
-    <!-- Custom Arrow -->
-    <div *ngIf="widget[1]['settings']['customArrow']['value'] == 'true'">
-        &lt;div class="{{ regionClassName }}-arrow"&gt;
-        &lt;div class="prev"&gt;
-        &lt;img alt="arrow" class="img-responsive" src="&lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/{{
-        regionClassName }}-prev.png"&gt;
-        &lt;span&gt;Prev&lt;/span&gt;
-        &lt;/div&gt;
-        <div *ngIf="widget[1]['settings']['customArrowWithButton']['value'] == 'true'">
-            &lt;div class="site-btn"&gt;
-            &lt;a href="[blogurl]" aria-label="VIEW ALL {{ regionClassName }}"&gt;VIEW ALL {{ regionClassName }}
-            &lt;/a&gt;
-            &lt;/div&gt;
-        </div>
-        &lt;div class="next"&gt;
-        &lt;span&gt;Next&lt;/span&gt;
-        &lt;img alt="arrow" class="img-responsive" src="&lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/{{
-        regionClassName }}-next.png"&gt;
-        &lt;/div&gt;
-        &lt;/div&gt;
-    </div>
     <!-- Arrow -->
-    <div *ngIf="widget[1]['settings']['arrows']['value'] == 'true'">
+    <div *ngIf="widget[1]['settings']['arrows']['value'] == 'arrows'">
         &lt;div class="{{ regionClassName }}-arrow"&gt;
         &lt;span class="ai-font-arrow-h-p prev"&gt;&lt;/span&gt;
-        <div *ngIf="widget[1]['settings']['arrowsWithButton']['value'] == 'true'">
+        <div *ngIf="widget[1]['settings']['arrows']['value'] == 'arrowsWithButton'">
             &lt;div class="site-btn"&gt;
             &lt;a href="[blogurl]" aria-label="VIEW ALL {{ regionClassName }}"&gt;VIEW ALL {{ regionClassName }}
             &lt;/a&gt;
