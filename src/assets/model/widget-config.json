@@ -82,26 +82,15 @@
       "overlay": {
         "inpuType": "select",
         "selectValue": [
-          "true",
-          "false"
+          "on-hover",
+          "not-in-hover",
+          "none"
         ],
-        "value": "false",
+        "value": "on-hover",
         "selectTextValues": {
           "rbga": "rgba(0,0,0,.5)"
         },
-        "name": "overlay not in hover"
-      },
-      "overlayHover": {
-        "inpuType": "select",
-        "selectValue": [
-          "true",
-          "false"
-        ],
-        "value": "false",
-        "selectTextValues": {
-          "rbga": "rgba(0, 35, 71, 0.6)"
-        },
-        "name": "overlay on hover"
+        "name": "overlay"
       },
       "gradientBottomOverlay": {
         "inpuType": "select",

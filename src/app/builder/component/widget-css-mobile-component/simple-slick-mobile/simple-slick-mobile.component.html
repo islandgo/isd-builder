@@ -1,0 +1,18 @@
+<div *ngIf="widget[1]['settings']['asNaV']['value'] == 'true'">
+
+  .region-{{ regionData[1]["keyword_class"] }}-container {{ " {" }}
+
+  display: grid;
+  grid-template-columns: repeat(100, minmax(0, 1fr));
+
+
+  }
+
+  .{{ regionData[1]["keyword_class"] }}{{widget[1]['suffixClass']}}-body {{ " {" }}
+  grid-column: 50 / -1;
+  }
+
+  .{{ regionData[1]["keyword_class"] }}{{widget[1]['suffixClass']}} {{ " {" }}
+  grid-column: 1 / 37;
+  }
+</div>
