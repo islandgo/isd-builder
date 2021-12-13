@@ -1,0 +1,10 @@
+<div *ngFor="let region of customRegions; let i = index">
+  <pre>
+    &lt;!-- {{ region[1]["keyword_class"] }} --&gt;
+    &lt;section class="hp-{{ region[1]["keyword_class"] }}"&gt;
+    &lt;?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Hp {{ region[1]["keyword_class"] }}") ) : ?&gt;
+    &lt;?php endif ?&gt;
+    &lt;/section&gt;
+    &lt;!-- {{ region[1]["keyword_class"] }} end --&gt;
+  </pre>
+</div>
