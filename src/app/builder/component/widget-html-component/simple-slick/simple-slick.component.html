@@ -6,10 +6,11 @@
             &lt;div class="{{ regionClassName }}-img canvas-wrapper"&gt;
             &lt;canvas width="{{widget[1]["settings"]["image_width"]["value"]}}"
             height="{{widget[1]["settings"]["image_height"]["value"]}}"&gt;&lt;/canvas&gt;
-            &lt;img alt="{{ regionClassName }}" class="img-{{ regionClassName }} canvas-img"
+            &lt;img alt="{{ regionClassName }}" class="img-{{ regionClassName }} canvas-img img-responsive"
             src="&lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/{{ regionClassName }}-{{ i + 1 }}.jpg" /&gt;
             <div *ngIf="widget[1]['settings']['hoverWithImg']['value'] == 'true'">
-                &lt;img alt="{{ regionClassName }}-image-hover" class="canvas-img {{ regionClassName }}-image-hover"
+                &lt;img alt="{{ regionClassName }}-image-hover" class="canvas-img {{ regionClassName }}-image-hover
+                img-responsive"
                 src="&lt;?php echo
                 get_stylesheet_directory_uri() ?&gt;/images/{{regionClassName }}-img-hover.jpg"&gt;
             </div>
@@ -46,7 +47,6 @@
             &lt;/div&gt;
             &lt;/a&gt;
         </div>
-
 
         <!-- Testimonial -->
         <div *ngIf="widget[1]['settings']['contentType']['value'] == 'testimonial'">
@@ -91,6 +91,22 @@
             &lt;/div&gt;
         </div>
         &lt;span class="ai-font-arrow-h-n next"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    </div>
+
+    <!-- AsNav -->
+    <div *ngIf="widget[1]['settings']['asNaV']['value'] == 'true'">
+        &lt;div class="{{ regionClassName }}{{widget[1]['suffixClass']}}-body"&gt;
+        <div *ngFor="let item of [].constructor(slickItem); let i = index">
+            &lt;div&gt;
+            &lt;p&gt;Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ipsa amet velit recusandae
+            eos
+            rem nobis natus tempora adipisci dolor vitae quasi numquam dolorum nam corporis rerum dicta quidem
+            suscipit, doloremque quia dignissimos. Amet quisquam a atque praesentium recusandae, repellendus nisi
+            accusamus quis culpa corrupti quidem enim vitae dolorum fugiat!&lt;/p&gt;
+            &lt;button&gt;HTML&lt;/button&gt;
+            &lt;/div&gt;
+        </div>
         &lt;/div&gt;
     </div>
 </div>
