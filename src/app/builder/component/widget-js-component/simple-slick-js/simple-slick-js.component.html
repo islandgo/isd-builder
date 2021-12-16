@@ -10,6 +10,7 @@
     dots: {{ widget[1]['settings']['dots']['value'] }},
     autoplay: {{ widget[1]['settings']['autoplay']['value'] }},
     autoplaySpeed: {{ widget[1]['settings']['autoplaySpeed']['value'] }},
+    speed: 1000,
     <div
         *ngIf="widget[1]['settings']['arrows']['value'] == 'arrows' || widget[1]['settings']['arrows']['value'] == 'arrowsWithButton'; else noArrow">
         arrows: true,
@@ -18,7 +19,7 @@
         arrows: false,
     </ng-template>
     <div
-        *ngIf="widget[1]['settings']['arrows']['value'] == 'arrows' || widget[1]['settings']['arrows']['value'] == 'arrowsWithButton'; else noArrow">
+        *ngIf="widget[1]['settings']['arrows']['value'] == 'arrows' || widget[1]['settings']['arrows']['value'] == 'arrowsWithButton'">
         prevArrow: '.hp-{{ regionData[1]["keyword_class"] }} .prev',
         nextArrow: '.hp-{{ regionData[1]["keyword_class"] }} .next',
     </div>

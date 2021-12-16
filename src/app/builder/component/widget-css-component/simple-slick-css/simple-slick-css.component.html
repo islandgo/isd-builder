@@ -215,41 +215,53 @@
         }
     </div>
     <!-- Content Position -->
-    <div *ngIf="widget[1]['settings']['contentPosition']['value'] != 'below-image'">
-        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content {{ " {" }}
-        position: absolute;
-        width: auto;
-        z-index: 4;
-        <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-left'">
-            left: 30px;
-            bottom: 20px;
+    <div *ngIf="widget[1]['settings']['contentType']['value'] != 'testimonial'">
+        <div *ngIf="widget[1]['settings']['contentPosition']['value'] != 'below-image'">
+            .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content {{ " {" }}
+            position: absolute;
+            width: auto;
+            z-index: 4;
+            <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-left'">
+                left: 30px;
+                bottom: 20px;
+            </div>
+            <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-right'">
+                right: 30px;
+                bottom: 20px;
+            </div>
+            <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-center'">
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 20px;
+            </div>
+            <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'top-left'">
+                left: 30px;
+                top: 20px;
+            </div>
+            <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'top-right'">
+                right: 30px;
+                top: 20px;
+            </div>
+            <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'center'">
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            </div>
+            }
+            <!-- TODO: fix this -->
+            <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'split'">
+                right: 30px;
+                top: 20px;
+            </div>
         </div>
-        <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-right'">
-            right: 30px;
-            bottom: 20px;
-        </div>
-        <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-center'">
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 20px;
-        </div>
-        <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'top-left'">
-            left: 30px;
-            top: 20px;
-        </div>
-        <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'top-right'">
-            right: 30px;
-            top: 20px;
-        </div>
-        <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'center'">
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        </div>
-        <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-left'">
-            left: 30px;
-            bottom: 20px;
-        </div>
+    </div>
+
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'testimonial'">
+        .hp-testimonials .testimonials-content {{ " {" }}
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         }
     </div>
 
