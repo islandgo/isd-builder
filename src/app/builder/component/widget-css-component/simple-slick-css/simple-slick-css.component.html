@@ -28,6 +28,50 @@
     margin-bottom: {{widget[1]['settings']['slickRowGap']['value']}};
     }
 
+    <!-- Arrows -->
+    <div
+        *ngIf="widget[1]['settings']['arrows']['value'] == 'arrows' || widget[1]['settings']['arrows']['value'] == 'arrowsWithButton'; else noArrow">
+        .{{ regionData[1]["keyword_class"] }}-slick-arrow {{' {'}}
+        cursor: pointer;
+        color: #05234b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .{{ regionData[1]["keyword_class"] }}-slick-arrow .site-btn {{' {'}}
+        margin: 0 34px;
+        background: #fff;
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+        }
+
+        .{{ regionData[1]["keyword_class"] }}-slick-arrow .site-btn:hover {{' {'}}
+        background: #fcef21;
+        border-color: #fcef21;
+        }
+
+        .{{ regionData[1]["keyword_class"] }}-slick-arrow span {{' {'}}
+        font-size: 22px;
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+        }
+
+        .{{ regionData[1]["keyword_class"] }}-slick-arrow span:hover {{' {'}}
+        opacity: 0.6;
+        }
+
+        .{{ regionData[1]["keyword_class"] }}-slick-arrow .site-btn {{' {'}}
+        height: 50px;
+        width: 190px;
+        font-size: 12px;
+        }
+    </div>
+
     <!-- Bottom Gradient overlay  -->
     <div *ngIf="widget[1]['settings']['gradientBottomOverlay']['value'] == 'true'">
         .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::before {{ " {" }}

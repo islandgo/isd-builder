@@ -17,7 +17,8 @@
     <ng-template #noArrow>
         arrows: false,
     </ng-template>
-    <div *ngIf="widget[1]['settings']['arrows']['value'] == 'true'">
+    <div
+        *ngIf="widget[1]['settings']['arrows']['value'] == 'arrows' || widget[1]['settings']['arrows']['value'] == 'arrowsWithButton'; else noArrow">
         prevArrow: '.hp-{{ regionData[1]["keyword_class"] }} .prev',
         nextArrow: '.hp-{{ regionData[1]["keyword_class"] }} .next',
     </div>
