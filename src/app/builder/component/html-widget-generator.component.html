@@ -1,10 +1,50 @@
 <div *ngFor="let region of customRegions; let i = index">
-  <pre>
-    &lt;!-- {{ region[1]["keyword_class"] }} --&gt;
-    &lt;section class="hp-{{ region[1]["keyword_class"] }}"&gt;
+  &lt;!-- {{ region[1]["keyword_class"] }} --&gt;
+  <div *ngIf="PageService.behavior == 'true'; else normalnormalin">
+    <pre>&lt;section class="hp-{{ region[1]["keyword_class"] }} aios-scroll-section" id="content-{{
+      region[1]["keyword_class"] }}" data-aios-scroll-title="{{ region[1]["keyword_class"] }}"&gt;
+      &lt;?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Hp {{ region[1]["keyword_class"] }}") ) : ?&gt;
+      &lt;?php endif ?&gt;
+      &lt;/section&gt;</pre>
+  </div>
+  <ng-template #normalnormalin>
+    <pre>&lt;section class="hp-{{ region[1]["keyword_class"] }}"&gt;
     &lt;?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Hp {{ region[1]["keyword_class"] }}") ) : ?&gt;
     &lt;?php endif ?&gt;
-    &lt;/section&gt;
-    &lt;!-- {{ region[1]["keyword_class"] }} end --&gt;
-  </pre>
+    &lt;/section&gt;</pre>
+  </ng-template>
+  &lt;!-- {{ region[1]["keyword_class"] }} end --&gt;
+</div>
+
+<div *ngIf="PageService.enablePageSocialFiXNav">
+  &lt;div class="hp-sidebar"&gt;
+  &lt;div id="scroll-down"&gt;
+  &lt;ul class="aios-section-nav"&gt;&lt;/ul&gt;
+  &lt;ul
+  class="comp-social-sidebar"&gt;
+  <div *ngFor="
+    let icon of RegionsService.converObjectToArray(
+      PageService.socialFixNavList
+    );
+    let i = index
+  ">
+    <div *ngIf="icon[1]['enable']">
+      &lt;li class="side-smi"&gt; &lt;a href="[ai_client_{{ icon[1]["name"] }}]"
+      target="_blank" aria-label="{{ icon[1]["name"] }}" &gt; &lt;span class="ai-font-{{
+      icon[1]["name"]
+      }}"&gt;&lt;/span&gt; &lt;/a&gt; &lt;/li&gt;
+    </div>
+  </div>
+  &lt;/ul&gt;
+  <div *ngIf="PageService.behavior == 'change-color-with-scrolldown'">
+    &lt;div class="slide-arrow"&gt;
+    &lt;p class="side-text"&gt;Scroll Down&lt;/p&gt;
+    &lt;div class="side-chevron"&gt;
+    &lt;span class="ai-font-arrow-g-d s-chevron"&gt;&lt;/span&gt;
+    &lt;span class="ai-font-arrow-g-d s-chevron"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+  </div>
+  &lt;/div&gt;
+  &lt;/div&gt;
 </div>

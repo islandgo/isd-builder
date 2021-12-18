@@ -191,7 +191,20 @@ jQuery(document).ready(function (){{' {'}}
 app.initAos();
 app.initNavigation();
 <div *ngIf="PageService.enablePageSocialFiXNav">
-    jQuery("#scroll-down").sideNavigation();
+    <div *ngIf="PageService.behavior == 'change-color-with-scrolldown'">
+        jQuery('#scroll-down').sideNavigation({{' {'}}
+            headerFixElement: '.header.main-header',
+            navArrow: true,
+        });
+
+        jQuery('#scroll-down .slide-arrow').on('click', function () {{' {'}}
+            jQuery('span.aios-scroll-arrow.aios-scroll-next').trigger('click');
+        });
+
+    </div>
+    <div *ngIf="PageService.behavior == 'change-color'">
+            jQuery("#scroll-down").sideNavigation();
+    </div>
 </div>
 
 

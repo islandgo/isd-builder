@@ -230,10 +230,10 @@
       "hasImage": {
         "inpuType": "select",
         "selectValue": [
-          "yup",
-          "nope"
+          "true",
+          "false"
         ],
-        "value": "yup",
+        "value": "true",
         "name": "has-image"
       },
       "contentPosition": {
@@ -262,17 +262,66 @@
         "value": "icon",
         "name": "content-type"
       },
-      "imageOverlay": {
+      "hoverWithBorder": {
         "inpuType": "select",
         "selectValue": [
-          true,
-          false
+          "true",
+          "false"
         ],
-        "value": true,
+        "value": "false",
         "selectTextValues": {
-          "rbga": "rgba(0,0,0,.3)"
+          "border": "5px solid #ffc000"
         },
-        "name": "overlay not in hover"
+        "name": "hover-with-border"
+      },
+      "overlay": {
+        "inpuType": "select",
+        "selectValue": [
+          "on-hover",
+          "not-in-hover",
+          "none"
+        ],
+        "value": "on-hover",
+        "selectTextValues": {
+          "rbga": "rgba(0,0,0,.5)"
+        },
+        "name": "overlay"
+      },
+      "gradientBottomOverlay": {
+        "inpuType": "select",
+        "selectValue": [
+          "true",
+          "false"
+        ],
+        "value": "false",
+        "name": "bottom gradient overlay"
+      },
+      "hoverWithImgLogo": {
+        "inpuType": "select",
+        "selectValue": [
+          "true",
+          "false"
+        ],
+        "value": "false",
+        "name": "hover-with-image-logo"
+      },
+      "hoverWithImg": {
+        "inpuType": "select",
+        "selectValue": [
+          "true",
+          "false"
+        ],
+        "value": "false",
+        "name": "hover-replace-image"
+      },
+      "grayScaleOnImage": {
+        "inpuType": "select",
+        "selectValue": [
+          "true",
+          "false"
+        ],
+        "value": "false",
+        "name": "gray-scale-img"
       },
       "grid_max_width": {
         "inpuType": "text",

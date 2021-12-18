@@ -96,14 +96,15 @@
                 ],
                 "name": "position"
             },
-            "scroll_down": {
-                "value": "false",
+            "behavior": {
+                "value": "none",
                 "inpuType": "select",
                 "selectValue": [
-                    "true",
-                    "false"
+                    "change-color",
+                    "change-color-with-scrolldown",
+                    "none"
                 ],
-                "name": "scroll down"
+                "name": "behavior"
             },
             "circle_background": {
                 "value": "false",

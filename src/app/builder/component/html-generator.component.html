@@ -3,8 +3,17 @@
 
 <div *ngFor="let region of customRegions; let i = index">
     &lt;!-- {{ region[1]["keyword_class"] }} --&gt;
-    &lt;section class="hp-{{ region[1]["keyword_class"] }}"&gt; &lt;div
-    class="region-{{ region[1]["keyword_class"] }}-container"&gt;
+    <div
+        *ngIf="PageService.behavior == 'change-color' || PageService.behavior == 'change-color-with-scrolldown' ; else normalnormalin">
+        &lt;section class="hp-{{ region[1]["keyword_class"] }} aios-scroll-section" id="content-{{
+        region[1]["keyword_class"] }}" data-aios-scroll-title="{{ region[1]["keyword_class"] }}"&gt; &lt;div
+        class="region-{{ region[1]["keyword_class"] }}-container"&gt;
+    </div>
+    <ng-template #normalnormalin>
+        &lt;section class="hp-{{ region[1]["keyword_class"] }}"&gt; &lt;div
+        class="region-{{ region[1]["keyword_class"] }}-container"&gt;
+    </ng-template>
+    <!--  -->
     <div *ngIf="region[1]['keyword_class'] == 'slideshow'">
         &lt;h2 class="hidden"&gt;hidden h2&lt;/h2&gt;
         &lt;?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Hp Slideshow") ) : ?&gt;
@@ -97,6 +106,17 @@
         </div>
     </div>
     &lt;/ul&gt;
+    <div *ngIf="PageService.behavior == 'change-color-with-scrolldown'">
+        &lt;div class="slide-arrow"&gt;
+        &lt;p class="side-text"&gt;Scroll Down&lt;/p&gt;
+        &lt;div class="side-chevron"&gt;
+        &lt;span class="ai-font-arrow-g-d s-chevron"&gt;&lt;/span&gt;
+        &lt;span class="ai-font-arrow-g-d s-chevron"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    </div>
+
+
     &lt;/div&gt;
     &lt;/div&gt;
 </div>

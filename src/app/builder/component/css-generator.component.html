@@ -1108,10 +1108,7 @@ aside menu{{' {'}}
 
     .hp-sidebar {{' {'}}
     font-size: 0;
-}
-
-    .comp-social-sidebar {{' {'}}
-        position: fixed;
+    position: fixed;
         top: 50%;
         <div *ngIf="PageService.socialFixNavType=='left'">
             left: 0;
@@ -1121,9 +1118,14 @@ aside menu{{' {'}}
             right: 0;
             padding-right: 20px;
         </div>
-        color: #000000;
-        transform: translateY(-50%);
         z-index: 111;
+        transform: translateY(-50%);
+        color: #000000;
+}
+
+    .comp-social-sidebar {{' {'}}
+        
+ 
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1163,6 +1165,67 @@ aside menu{{' {'}}
     .side-smi.phone span {{' {'}}
     font-size: 12px;
     }
+
+    <div *ngIf="PageService.behavior == 'change-color-with-scrolldown'">
+        .slide-arrow {{' {'}}
+            cursor: pointer;
+          
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+          }
+          
+          .slide-arrow:hover {{' {'}}
+            opacity: 0.7;
+          }
+          
+          .side-text {{' {'}}
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 12px;
+            color: #ffffff;
+            letter-spacing: 0.15em;
+            writing-mode: vertical-lr;
+            margin: 0 auto;
+          
+            position: relative;
+            top: -5px;
+          }
+          
+          .s-chevron {{' {'}}
+            font-size: 12px;
+            color: #fff;
+          }
+          
+          .side-chevron {{' {'}}
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 14px;
+          }
+    </div>
+
+    <div *ngIf="PageService.behavior == 'change-color' || PageService.behavior == 'change-color-with-scrolldown'">
+        <div *ngFor="let region of customRegions; let i = index">
+            <div *ngIf="region[1]['keyword_class'] == 'slideshow'; else default">
+                .nav-active-section-content-{{ region[1]["keyword_class"] }} .comp-social-sidebar .side-smi a {{' {'}}
+            color: #fff;
+        }
+          </div>
+            <ng-template #default>
+        .nav-active-section-content-{{ region[1]["keyword_class"] }} .comp-social-sidebar .side-smi a 
+{{' {'}}
+            color: red;
+        }
+    </ng-template>
+        </div>
+    </div>
 
 
 
