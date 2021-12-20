@@ -98,11 +98,38 @@
       );
       let i = index
     ">
+
         <div *ngIf="icon[1]['enable']">
-            &lt;li class="side-smi"&gt; &lt;a href="[ai_client_{{ icon[1]["name"] }}]"
-            target="_blank" aria-label="{{ icon[1]["name"] }}" &gt; &lt;span class="ai-font-{{
-            icon[1]["name"]
-            }}"&gt;&lt;/span&gt; &lt;/a&gt; &lt;/li&gt;
+            <ng-container *ngIf="icon[1]['name'] == 'email'; else default">
+                <pre>&lt;li class="side-smi"&gt;
+                    &lt;div class="email"&gt;
+                        <?php echo do_shortcode('[mail_to email="sellingwithstacy@gmail.com"]
+                        &lt;span class="ai-font-envelope-o"&gt;
+                            &lt;span class="font-zero"&gt;email&lt;/span&gt;
+                        &lt;/span&gt;
+                        [/mail_to]')?>
+                    &lt;/div&gt;
+                &lt;/li&gt;</pre>
+            </ng-container>
+            <ng-template #default>
+                <ng-container *ngIf="icon[1]['name'] == 'phone'; else defaults">
+                    <pre>&lt;li class="side-smi"&gt;
+                        &lt;div class="phone"&gt;
+                            <?php echo do_shortcode('[ai_phone href="+1.407.415.9484"]
+                            &lt;span class="ai-font-phone"&gt;
+                                &lt;span class="font-zero"&gt;phone&lt;/span&gt;
+                            &lt;/span&gt;
+                            [/ai_phone]')?>
+                        &lt;/div&gt;
+                    &lt;/li&gt;</pre>
+                </ng-container>
+            </ng-template>
+            <ng-template #defaults>
+                &lt;li class="side-smi"&gt; &lt;a href="[ai_client_{{ icon[1]["name"] }}]"
+                target="_blank" aria-label="{{ icon[1]["name"] }}" &gt; &lt;span class="ai-font-{{
+                icon[1]["name"]
+                }}"&gt;&lt;/span&gt; &lt;/a&gt; &lt;/li&gt;
+            </ng-template>
         </div>
     </div>
     &lt;/ul&gt;

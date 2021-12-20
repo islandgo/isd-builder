@@ -29,6 +29,8 @@ export class PageService {
   headerData: any;
   headerDataMenu: any;
   behavior: any;
+  contactEmail: any;
+  contactPhone: any;
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit() {}
