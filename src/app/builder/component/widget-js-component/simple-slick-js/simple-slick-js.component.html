@@ -45,6 +45,7 @@
 
 
     </div>
+
     });
     <!-- As Nav -->
     <div *ngIf="widget[1]['settings']['asNaV']['value'] == 'true'">
@@ -78,6 +79,22 @@
         </div>
         });
     </div>
+
+    var isSliding = false;
+    jQuery(sectionSlick).on('beforeChange', function () {{' {'}}
+    isSliding = true;
+    });
+    jQuery(sectionSlick).on('afterChange', function () {{' {'}}
+    isSliding = false;
+    });
+    jQuery('.{{ region[1]['keyword_class'] }}-image img').click(function (e) {{' {'}}
+    if (isSliding) {{' {'}}
+    e.stopImmediatePropagation();
+    e.stopPropagation();
+    e.preventDefault();
+    return;
+    }
+    });
 
 
 </div>

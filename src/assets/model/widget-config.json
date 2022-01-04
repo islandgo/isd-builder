@@ -461,11 +461,6 @@
         "value": "full-border",
         "name": "input style"
       },
-      "qs_parent_max_width": {
-        "inpuType": "text",
-        "value": "1290px",
-        "name": "Parent Max Width"
-      },
       "qs_form_max_width": {
         "inpuType": "text",
         "value": "1180px",
