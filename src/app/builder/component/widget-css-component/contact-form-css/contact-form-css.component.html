@@ -11,10 +11,11 @@
   <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "border-bg"'>
     background: #ffffff;
   </div>
+  color: #fff;
   }
 
   <div *ngIf='widget[1]["settings"]["sendAirplane"]["value"] == "true"'>
-    .contact-form .send-airplane {{' {'}}
+    .form-btn-wrapper input {{' {'}}
     border: 0;
     position: absolute;
     right: 15px;
@@ -29,7 +30,7 @@
     transition: all 0.4s ease-in-out;
     }
 
-    .contact-form .send-airplane:hover {{' {'}}
+    .form-btn-wrapper input:hover {{' {'}}
     opacity: 0.65;
     }
   </div>
