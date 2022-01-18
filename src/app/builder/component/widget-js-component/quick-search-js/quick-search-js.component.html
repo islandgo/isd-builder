@@ -1,4 +1,6 @@
+<pre>
 <div *ngIf="widget[1]['name'] == 'quick-search'">
+  <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 2"'>
   var $rangeslider = jQuery('.qs-range-field #qs-range'),
   $minPrice = jQuery('.qs-range-field .selected-min-price'),
   $maxPrice = jQuery('.qs-range-field .selected-max-price');
@@ -33,4 +35,6 @@
     ? Math.abs(Number(price)) / 1.0e+3 + "K"
     : Math.abs(Number(price));
     }
+  </div>
 </div>
+</pre>

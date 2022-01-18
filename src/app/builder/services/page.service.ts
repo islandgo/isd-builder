@@ -31,6 +31,8 @@ export class PageService {
   behavior: any;
   contactEmail: any;
   contactPhone: any;
+  enablePageElementPeek: boolean;
+  enablePageIonRangeSlider: boolean;
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit() {}
@@ -75,6 +77,8 @@ export class PageService {
     this.enablePageDoubleTap = false;
     this.enablePageIntroVideo = false;
     this.enableHeaderContact = false;
+    this.enablePageElementPeek = false;
+    this.enablePageIonRangeSlider = false;
     this.enableCombineContactAndNav = false;
     this.getPage().subscribe((data) => {
       if (data) {
@@ -87,6 +91,12 @@ export class PageService {
             }
             if (obj[0] == "split_nav") {
               this.enablePageSplitNav = true;
+            }
+            if (obj[0] == "element_peek") {
+              this.enablePageElementPeek = true;
+            }
+            if (obj[0] == "ion_range_slider") {
+              this.enablePageIonRangeSlider = true;
             }
             if (obj[0] == "burger_menu") {
               this.enablePageBurgerMenu = true;

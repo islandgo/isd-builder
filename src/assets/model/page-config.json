@@ -191,9 +191,19 @@
             }
         }
     },
+    "ion_range_slider": {
+        "enable": false,
+        "name": "ion-range-slider",
+        "settings": {}
+    },
     "google_translator": {
         "enable": false,
         "name": "google-translator",
+        "settings": {}
+    },
+    "element_peek": {
+        "enable": false,
+        "name": "elemen-peek",
         "settings": {}
     },
     "footer_bg": {

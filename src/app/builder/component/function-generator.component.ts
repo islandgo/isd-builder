@@ -1,6 +1,6 @@
-import { PageService } from "./../services/page.service";
-import { RegionsService } from "../services/regions.service";
 import { Component, Input } from "@angular/core";
+import { RegionsService } from "../services/regions.service";
+import { PageService } from "./../services/page.service";
 
 @Component({
   selector: "function-generator",
@@ -11,7 +11,10 @@ export class FunctionGeneratorComponent {
   @Input() public customRegions;
   @Input() public pageSettings;
 
-  constructor(RegionsService: RegionsService, PageService: PageService) {}
+  constructor(
+    public RegionsService: RegionsService,
+    public PageService: PageService
+  ) {}
 
   ngOnInit() {}
 
