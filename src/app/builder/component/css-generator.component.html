@@ -1123,6 +1123,48 @@ aside menu{{' {'}}
         color: #000000;
 }
 
+<div *ngIf="PageService.appearance == 'circle-dots'">
+    #scroll-down ul {{' {'}}
+      display: inline-block;
+    }
+    #scroll-down ul li {{' {'}}
+      display: block;
+      position: relative;
+      margin-bottom: 10px;
+    }
+    #scroll-down ul li a {{' {'}}
+      position: relative;
+      border: solid 1px transparent;
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      transition: all 0.3s ease-in-out, top 0.3s;
+      cursor: pointer;
+    }
+    #scroll-down ul li.nav-active-section a,
+    #scroll-down ul li a:hover{{' {'}}
+      border: solid 1px #f05989;
+      background: #f05989;
+    }
+    #scroll-down ul li a::before {{' {'}}
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 7px;
+      height: 7px;
+      background: #fff;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+    #scroll-down ul li.nav-active-section a::before {{' {'}}
+      background: #fff;
+    }
+</div>
+
+<!-- hey -->
+<div *ngIf="PageService.appearance != 'circle-dots'">
     .comp-social-sidebar {{' {'}}
         
  
@@ -1134,7 +1176,18 @@ aside menu{{' {'}}
 
     }
 
-    .comp-social-sidebar .side-smi a {{' {'}}
+    
+    <div *ngFor="
+    let icon of RegionsService.converObjectToArray(
+      PageService.socialFixNavList
+    );
+    let i = index
+  ">
+    .comp-social-sidebar .side-smi a 
+    <div *ngIf="icon[1]['name'] == 'email' || icon[1]['name'] == 'phone'">
+        , .comp-social-sidebar .side-smi a > span
+    </div>
+    {{' {'}}
 
         background: transparent;
         display: flex;
@@ -1155,6 +1208,14 @@ aside menu{{' {'}}
 
     }
 
+    <div *ngIf="icon[1]['name'] == 'email' || icon[1]['name'] == 'phone'">
+        .comp-social-sidebar .side-smi .phone a > span,
+        .comp-social-sidebar .side-smi .email a > span  {{' {'}}
+        font-size: 12px;
+    }
+    </div>
+</div>
+
     .comp-social-sidebar .side-smi a:hover {{' {'}}
         <div *ngIf='PageService.circleBackground == "true"'>
         background: #002068;
@@ -1166,7 +1227,7 @@ aside menu{{' {'}}
     font-size: 12px;
     }
 
-    <div *ngIf="PageService.behavior == 'change-color-with-scrolldown'">
+    <div *ngIf="PageService.appearance == 'change-color-with-scrolldown'">
         .slide-arrow {{' {'}}
             cursor: pointer;
           
@@ -1210,8 +1271,9 @@ aside menu{{' {'}}
             margin-top: 14px;
           }
     </div>
-
-    <div *ngIf="PageService.behavior == 'change-color' || PageService.behavior == 'change-color-with-scrolldown'">
+</div>
+    <!-- hey -->
+    <div *ngIf="PageService.appearance == 'change-color' || PageService.appearance == 'change-color-with-scrolldown' || PageService.appearance == 'circle-dots'">
         <div *ngFor="let region of customRegions; let i = index">
             <div *ngIf="region[1]['keyword_class'] == 'slideshow'; else default">
                 .nav-active-section-content-{{ region[1]["keyword_class"] }} .comp-social-sidebar .side-smi a {{' {'}}
@@ -1227,8 +1289,7 @@ aside menu{{' {'}}
         </div>
     </div>
 
-
-
+  
     /*#endregion Fixed smi */
 </div>
 

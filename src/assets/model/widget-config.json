@@ -358,27 +358,8 @@
       }
     }
   },
-  "site_title": {
-    "name": "site-title",
-    "settings": {
-      "secondary_text": {
-        "inpuType": "text",
-        "value": "secondary text",
-        "name": "secondary text"
-      },
-      "primary_text": {
-        "inpuType": "text",
-        "value": "primary text",
-        "name": "primary text"
-      }
-    }
-  },
-  "site_button": {
-    "name": "site-button",
-    "settings": {}
-  },
-  "text_image": {
-    "name": "custom-title",
+  "welcome_content": {
+    "name": "welcome-content",
     "settings": {}
   },
   "contact_form": {

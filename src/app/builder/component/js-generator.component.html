@@ -191,7 +191,7 @@ jQuery(document).ready(function (){{' {'}}
 app.initAos();
 app.initNavigation();
 <div *ngIf="PageService.enablePageSocialFiXNav">
-    <div *ngIf="PageService.behavior == 'change-color-with-scrolldown'">
+    <div *ngIf="PageService.appearance == 'change-color-with-scrolldown'">
         jQuery('#scroll-down').sideNavigation({{' {'}}
             headerFixElement: '.header.main-header',
             navArrow: true,
@@ -202,7 +202,7 @@ app.initNavigation();
         });
 
     </div>
-    <div *ngIf="PageService.behavior == 'change-color'">
+    <div *ngIf="PageService.appearance == 'change-color' || PageService.appearance == 'circle-dots'">
             jQuery("#scroll-down").sideNavigation();
     </div>
 </div>

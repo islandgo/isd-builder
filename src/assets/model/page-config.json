@@ -96,15 +96,16 @@
                 ],
                 "name": "position"
             },
-            "behavior": {
+            "appearance": {
                 "value": "none",
                 "inpuType": "select",
                 "selectValue": [
                     "change-color",
                     "change-color-with-scrolldown",
+                    "circle-dots",
                     "none"
                 ],
-                "name": "behavior"
+                "name": "appearance"
             },
             "circle_background": {
                 "value": "false",
@@ -205,16 +206,5 @@
         "enable": false,
         "name": "elemen-peek",
         "settings": {}
-    },
-    "footer_bg": {
-        "enable": false,
-        "name": "footer-background",
-        "settings": {
-            "position": {
-                "value": "footer-bg.png",
-                "inpuType": "text",
-                "name": "Image File Name"
-            }
-        }
     }
 }

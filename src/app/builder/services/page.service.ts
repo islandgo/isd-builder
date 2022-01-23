@@ -28,7 +28,7 @@ export class PageService {
   circleBackground: any;
   headerData: any;
   headerDataMenu: any;
-  behavior: any;
+  appearance: any;
   contactEmail: any;
   contactPhone: any;
   enablePageElementPeek: boolean;
@@ -115,7 +115,7 @@ export class PageService {
                 obj[1]["settings"]["socialIcons"]["checkListSetting"];
               this.circleBackground =
                 obj[1]["settings"]["circle_background"]["value"];
-              this.behavior = obj[1]["settings"]["behavior"]["value"];
+              this.appearance = obj[1]["settings"]["appearance"]["value"];
             }
             if (obj[0] == "intro_video") {
               this.enablePageIntroVideo = true;
