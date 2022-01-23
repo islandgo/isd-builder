@@ -457,8 +457,7 @@
         ],
         "value": "true",
         "selectTextValues": {
-          "column": "1/14",
-          "row": "1/-1"
+          "column": "1/14"
         }
       },
       "property_type": {
@@ -473,7 +472,6 @@
         "selectTextValues": {
           "input_type": "select",
           "column": "15/30",
-          "row": "1",
           "placeholder": "Property Type"
         }
       },
@@ -489,7 +487,6 @@
         "selectTextValues": {
           "input_type": "text",
           "column": "30/44",
-          "row": "1",
           "placeholder": "City or Zip"
         }
       },
@@ -503,8 +500,7 @@
         ],
         "value": "false",
         "selectTextValues": {
-          "column": "15/30",
-          "row": "1"
+          "column": "15/30"
         }
       },
       "beds": {
@@ -519,7 +515,6 @@
         "selectTextValues": {
           "input_type": "select",
           "column": "44/52",
-          "row": "1",
           "placeholder": "Beds"
         }
       },
@@ -535,7 +530,6 @@
         "selectTextValues": {
           "input_type": "select",
           "column": "52/60",
-          "row": "1",
           "placeholder": "Baths"
         }
       },
@@ -551,7 +545,6 @@
         "selectTextValues": {
           "input_type": "text",
           "column": "60/68",
-          "row": "1",
           "placeholder": "Min. Price"
         }
       },
@@ -567,7 +560,6 @@
         "selectTextValues": {
           "input_type": "text",
           "column": "68/76",
-          "row": "1",
           "placeholder": "Max. Price"
         }
       },
@@ -583,7 +575,6 @@
         "selectTextValues": {
           "input_type": "text",
           "column": "77/89",
-          "row": "1",
           "placeholder": "Search"
         }
       },
@@ -599,7 +590,6 @@
         "selectTextValues": {
           "input_type": "text",
           "column": "77/89",
-          "row": "1",
           "placeholder": "ai-font-magnifying-glass-b"
         }
       },
@@ -615,7 +605,6 @@
         "selectTextValues": {
           "input_type": "text",
           "column": "89/-1",
-          "row": "1",
           "placeholder": "Advance"
         }
       }

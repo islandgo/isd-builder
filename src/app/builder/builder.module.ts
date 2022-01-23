@@ -44,6 +44,7 @@ import { GalleryImageMobileComponent } from "./component/widget-css-mobile-compo
 import { SimpleSlickMobileComponent } from "./component/widget-css-mobile-component/simple-slick-mobile/simple-slick-mobile.component";
 import { HtmlWidgetGeneratorComponent } from "./component/html-widget-generator.component";
 import { WelcomeContentComponent } from './component/widget-html-component/welcome-content/welcome-content.component';
+import { WelcomContentMobileComponent } from './component/widget-css-mobile-component/welcom-content-mobile/welcom-content-mobile.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { WelcomeContentComponent } from './component/widget-html-component/welco
     SimpleSlickMobileComponent,
     HtmlWidgetGeneratorComponent,
     WelcomeContentComponent,
+    WelcomContentMobileComponent,
   ],
   imports: [
     BuilderRoutes,

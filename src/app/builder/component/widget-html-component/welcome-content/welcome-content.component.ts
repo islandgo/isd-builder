@@ -9,7 +9,5 @@ export class WelcomeContentComponent implements OnInit {
   @Input() public widget;
   constructor() {}
 
-  ngOnInit() {
-    console.log(this.widget[1]["name"]);
-  }
+  ngOnInit() {}
 }
