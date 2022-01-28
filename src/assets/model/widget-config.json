@@ -375,7 +375,7 @@
           "37-hp template form 5",
           "38-hp template form 6"
         ],
-        "value": "35-hp template form 1",
+        "value": "34-hp template form 2",
         "name": "template type"
       },
       "max-width": {
@@ -391,7 +391,7 @@
       "column_gap": {
         "inpuType": "text",
         "value": "5px",
-        "name": "column-gap"
+        "name": "column-gap (half-size)"
       },
       "text_area_height": {
         "inpuType": "text",
@@ -402,7 +402,6 @@
         "inpuType": "select",
         "selectValue": [
           "border-bottom",
-          "border-bg",
           "full-border"
         ],
         "value": "full-border",
@@ -436,7 +435,6 @@
         "inpuType": "select",
         "selectValue": [
           "border-bottom",
-          "border-bg",
           "full-border"
         ],
         "value": "full-border",

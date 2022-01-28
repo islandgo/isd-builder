@@ -65,8 +65,6 @@ TABLE OF CONTENTS
     letter-spacing: 0.035em;
     visibility: hidden;
     pointer-events: none;
-    -webkit-transform: translateY(20px);
-    transform: translateY(20px);
     -webkit-transition: all 0.35s ease-in-out;
     transition: all 0.35s ease-in-out;
 {{'}'}}
@@ -75,14 +73,13 @@ TABLE OF CONTENTS
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
+    transform: translate(-50%, 0);
+    
 {{'}'}}
 
 .menu > li > .sub-menu{{' {'}}
-    left: -150%;
-    right: -150%;
-    margin: auto;
+    left: 50%;
+    transform: translate(-50%, 20px);
     padding-top: 48px;
 {{'}'}}
 
