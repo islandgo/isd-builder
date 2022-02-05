@@ -497,6 +497,57 @@ aside menu{{' {'}}
     }
 
 </div>
+
+<div *ngIf="PageService.navHover == 'bottom line with arrow'">
+    /* Menu After */
+
+    /* Menu Before */
+    
+    .menu > li::before {{' {'}}
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        background: #05616b;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none;
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+    }
+    
+    .menu > li:hover::before {{' {'}}
+        opacity: 1;
+        width: 100%;
+    }
+    
+    .menu > li::after {{' {'}}
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none;
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+        width: 0;
+        height: 0;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 7px solid #05616b;
+        opacity: 0;
+    }
+    
+    .menu > li:hover::after {{' {'}}
+        opacity: 1;
+        bottom: -36px;
+    }
+</div>
 .header .navigation .menu > li > a:hover {{' {'}}
     color: #fff;
 }

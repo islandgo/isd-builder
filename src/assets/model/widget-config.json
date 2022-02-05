@@ -448,7 +448,7 @@
       "site_title": {
         "inpuType": "select",
         "html_only": true,
-        "name": "site title",
+        "name": "site title false pag template 2",
         "selectValue": [
           "true",
           "false"
