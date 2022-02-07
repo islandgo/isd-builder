@@ -66,9 +66,8 @@
         <pre>&lt;div class="{{ regionClassName }}-slick-arrow"&gt;
         &lt;span class="ai-font-arrow-h-p prev"&gt;&lt;/span&gt;</pre>
         <div *ngIf="widget[1]['settings']['arrows']['value'] == 'arrowsWithButton'">
-            <pre>&lt;div class="site-btn"&gt;
-            &lt;a href="[blogurl]" aria-label="VIEW ALL {{ regionClassName }}"&gt;VIEW ALL {{ regionClassName }}&lt;/a&gt;
-            &lt;/div&gt;</pre>
+            &lt;a href="[blogurl]" class="site-btn" aria-label="VIEW ALL {{ regionClassName }}"&gt;VIEW ALL {{
+            regionClassName }}&lt;/a&gt;
         </div>
         <pre>&lt;span class="ai-font-arrow-h-n next"&gt;&lt;/span&gt;
             &lt;/div&gt;</pre>

@@ -1172,15 +1172,15 @@ aside menu{{' {'}}
 }
 
 <div *ngIf="PageService.appearance == 'circle-dots'">
-    #scroll-down ul {{' {'}}
+    .aios-section-nav ul {{' {'}}
       display: inline-block;
     }
-    #scroll-down ul li {{' {'}}
+    .aios-section-nav ul li {{' {'}}
       display: block;
       position: relative;
       margin-bottom: 10px;
     }
-    #scroll-down ul li a {{' {'}}
+    .aios-section-nav ul li a {{' {'}}
       position: relative;
       border: solid 1px transparent;
       display: block;
@@ -1190,12 +1190,12 @@ aside menu{{' {'}}
       transition: all 0.3s ease-in-out, top 0.3s;
       cursor: pointer;
     }
-    #scroll-down ul li.nav-active-section a,
-    #scroll-down ul li a:hover{{' {'}}
+    .aios-section-nav ul li.nav-active-section a,
+    .aios-section-nav ul li a:hover{{' {'}}
       border: solid 1px #f05989;
       background: #f05989;
     }
-    #scroll-down ul li a::before {{' {'}}
+    .aios-section-nav ul li a::before {{' {'}}
       content: "";
       position: absolute;
       top: 50%;
@@ -1206,7 +1206,7 @@ aside menu{{' {'}}
       border-radius: 50%;
       transform: translate(-50%, -50%);
     }
-    #scroll-down ul li.nav-active-section a::before {{' {'}}
+    .aios-section-nav ul li.nav-active-section a::before {{' {'}}
       background: #fff;
     }
 </div>
