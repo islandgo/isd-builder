@@ -579,10 +579,7 @@ aside menu{{' {'}}
         gap:  {{ PageService.headerDataMenu['navGap']['value'] }};
         margin-bottom: 20px;
     }
-    
-    .header-contact span {{' {'}}
-        padding-right: 10px;
-    }
+
 </div>
 <div *ngIf="PageService.enableCombineContactAndNav">
     nav.navigation {{' {'}}
@@ -1211,69 +1208,55 @@ aside menu{{' {'}}
     }
 </div>
 
-<!-- hey -->
+
 <div *ngIf="PageService.appearance != 'circle-dots'">
     .comp-social-sidebar {{' {'}}
-        
- 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 25px;
-
     }
 
-    
-    <div *ngFor="
-    let icon of RegionsService.converObjectToArray(
-      PageService.socialFixNavList
-    );
-    let i = index
-  ">
-    .comp-social-sidebar .side-smi a 
-    <div *ngIf="icon[1]['name'] == 'email' || icon[1]['name'] == 'phone'">
-        , .comp-social-sidebar .side-smi a > span
-    </div>
-    {{' {'}}
-
-        background: transparent;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #ffffff;
-        font-size: 25px;
-        <div *ngIf='PageService.circleBackground == "true"'>
-            width: 40px;
-            height: 40px;
-            border-radius: 100%;
-            background: #ffc626;
-            </div>
-        -webkit-transition: all 0.4s ease-in-out;
-        -moz-transition: all 0.4s ease-in-out;
-        -o-transition: all 0.4s ease-in-out;
-        transition: all 0.4s ease-in-out;
-
-    }
-
-    <div *ngIf="icon[1]['name'] == 'email' || icon[1]['name'] == 'phone'">
-        .comp-social-sidebar .side-smi .phone a > span,
-        .comp-social-sidebar .side-smi .email a > span  {{' {'}}
-        font-size: 12px;
-    }
-    </div>
-</div>
-
-    .comp-social-sidebar .side-smi a:hover {{' {'}}
-        <div *ngIf='PageService.circleBackground == "true"'>
-        background: #002068;
+        .comp-social-sidebar .side-smi a 
+        <div *ngIf="PageService.socialPhone || PageService.socialEmail">
+            , .comp-social-sidebar .side-smi a > span
         </div>
+        {{' {'}}
+
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 25px;
+            <div *ngIf='PageService.circleBackground == "true"'>
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                background: #ffc626;
+                </div>
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+
+        }
+
+        <div  *ngIf="PageService.socialPhone || PageService.socialEmail">
+            .comp-social-sidebar .side-smi .phone a > span
+                ,.comp-social-sidebar .side-smi .email a > span {{' {'}}
+            font-size: 12px;
+        }
+        </div>
+
+<div *ngIf='PageService.circleBackground == "true"'>
+    .comp-social-sidebar .side-smi a:hover {{' {'}}
+        background: #002068;
     }
+</div>
     
-    .side-smi .email a,
-    .side-smi .phone a {{' {'}}
-    font-size: 12px;
-    }
+
 
     <div *ngIf="PageService.appearance == 'change-color-with-scrolldown'">
         .slide-arrow {{' {'}}
@@ -1320,7 +1303,7 @@ aside menu{{' {'}}
           }
     </div>
 </div>
-    <!-- hey -->
+
     <div *ngIf="PageService.appearance == 'change-color' || PageService.appearance == 'change-color-with-scrolldown' || PageService.appearance == 'circle-dots'">
         <div *ngFor="let region of customRegions; let i = index">
             <div *ngIf="region[1]['keyword_class'] == 'slideshow'; else default">

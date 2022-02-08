@@ -33,6 +33,8 @@ export class PageService {
   contactPhone: any;
   enablePageElementPeek: boolean;
   enablePageIonRangeSlider: boolean;
+  socialPhone: any;
+  socialEmail: any;
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit() {}
@@ -116,6 +118,14 @@ export class PageService {
               this.circleBackground =
                 obj[1]["settings"]["circle_background"]["value"];
               this.appearance = obj[1]["settings"]["appearance"]["value"];
+              this.socialPhone =
+                obj[1]["settings"]["socialIcons"]["checkListSetting"]["phone"][
+                  "enable"
+                ];
+              this.socialEmail =
+                obj[1]["settings"]["socialIcons"]["checkListSetting"]["email"][
+                  "enable"
+                ];
             }
             if (obj[0] == "intro_video") {
               this.enablePageIntroVideo = true;

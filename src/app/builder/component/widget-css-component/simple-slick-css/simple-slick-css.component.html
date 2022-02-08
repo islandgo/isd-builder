@@ -71,6 +71,76 @@
         font-size: 12px;
         }
     </div>
+    <!-- Dots -->
+    <div *ngIf='widget[1]["settings"]["dots"]["value"] == "true"'>
+        /* Dots */
+
+        .slick-dots {{ " {" }}
+        position: absolute;
+        bottom: -20px;
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: center;
+        }
+
+        .slick-dots li {{ " {" }}
+        position: relative;
+        display: inline-block;
+        font-size: 0;
+        line-height: 0;
+        width: 20px;
+        height: 20px;
+        padding: 5px;
+        cursor: pointer;
+        color: transparent;
+        border: 0;
+        outline: none;
+        background: transparent;
+        margin: 0;
+        }
+
+        .slick-dots li:hover,
+        .slick-dots li:focus {{ " {" }}
+        outline: none;
+        }
+
+        .slick-dots li:hover:before,
+        .slick-dots li:focus:before {{ " {" }}
+        opacity: 1;
+        }
+
+        .slick-dots button {{ " {" }}
+        border: 0;
+        background: transparent;
+        }
+
+        .slick-dots li:before {{ " {" }}
+        font-family: "slick";
+        font-size: 40px;
+        line-height: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        content: "•";
+        text-align: center;
+        opacity: 1;
+        color: #b2b2b2;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        }
+
+        .slick-dots li.slick-active:before {{ " {" }}
+        opacity: 1;
+        color: #ff5601;
+        }
+
+        /* Dots end */
+    </div>
 
     <!-- Bottom Gradient overlay  -->
     <div *ngIf="widget[1]['settings']['gradientBottomOverlay']['value'] == 'true'">
