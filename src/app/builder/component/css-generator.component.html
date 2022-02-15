@@ -582,7 +582,7 @@ aside menu{{' {'}}
 
 </div>
 <div *ngIf="PageService.enableCombineContactAndNav">
-    nav.navigation {{' {'}}
+    .navigation {{' {'}}
         display: flex;
         flex-direction: row-reverse;
         gap: {{ PageService.headerDataMenu['navGap']['value'] }};
@@ -651,7 +651,7 @@ aside menu{{' {'}}
 </div>
 /*#endregion Header */
 
-<div *ngIf="PageService.enablePageBurgerMenu">
+ <div *ngIf="PageService.enablePageBurgerMenu">
     /*#region burger menu */
     .burger-menu {{' {'}}
         position: relative;
@@ -701,22 +701,25 @@ aside menu{{' {'}}
     
     .bm-content .burger-navs {{' {'}}
         position: relative;
+        max-width: 620px;
+        margin: 0 auto;
+    }
+
+    .bm-content #nav2 > li > a {{' {'}}
         font-size: 18px;
         color: #ffffff;
         font-weight: 500;
         letter-spacing: 00.1em;
         line-height: 64px;
         text-transform: uppercase;
-        max-width: 620px;
-        margin: 0 auto;
-    }
+}
     
     .burger-menu span:first-child {{' {'}}
         margin-top: 2px;
     }
     
     .burger-menu span:nth-of-type(1),
-    .burger-menu span:nth-of-type(2) {{' {'}}
+    .burger-menu span:nth-of-type(2) {{' {'}} 
         display: block;
         width: 100%;
         height: 2px;
@@ -753,7 +756,7 @@ aside menu{{' {'}}
     }
     /*#endregion burger menu */
 
-</div>
+</div> 
 
 <div *ngIf="PageService.enablePageIntroVideo">
     /*#region Intro Video */
