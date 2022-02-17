@@ -83,17 +83,14 @@
 
   .qs-search,
   .qs-advanced  {{ " {" }}
+  min-height: 44px;
+  font-size: 11px;
   background: #1092b2;
   position: relative;
   width: 100%;
-  min-height: 44px;
   display: flex;
-  font-weight: 700;
   align-items: center;
   justify-content: center;
-  text-transform: uppercase;
-  letter-spacing: 00.2em;
-  font-size: 11px;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
@@ -101,35 +98,25 @@
   cursor: pointer;
   }
 
-  .qs-search input {{ " {" }}
+  .qs-search input,
+  .qs-advanced a {{ " {" }}
   color: #ffffff;
   padding: 0;
+  font-weight: 700;
+  background: transparent;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 00.2em;
   }
 
   .qs-search:hover {{ " {" }}
-  background: #50c4cb;
+  background: #404040;
   }
 
   .qs-advanced:hover {{ " {" }}
-  background: #1092b2;
+  background: #404040;
   }
-
-  .qs-search input {{ " {" }}
-  background: transparent;
-  border: none;
-  text-transform: uppercase;
-  letter-spacing: 00.2em;
-  }
-
-  .qs-search input,
-  .qs-advanced a {{ " {" }}
-  letter-spacing: 00.2em;
-  }
-
-  .qs-search input:hover,
-  .qs-advanced a:hover {{ " {" }}
-  color: #ffffff !important;
-  }
+ 
 
   <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 2"'>
 
