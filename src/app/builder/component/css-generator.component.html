@@ -169,6 +169,10 @@ body{{' {'}}
     -moz-osx-font-smoothing: grayscale; */
 {{'}'}}
 
+body.is-open {{' {'}}
+    overflow: hidden;
+  }
+
 a,
 a:hover,
 a:visited,
@@ -675,6 +679,8 @@ aside menu{{' {'}}
     }
     
     .bm-view.is-open {{' {'}}
+    overflow-x : hidden;
+    overflow-y: auto;
         visibility: visible;
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);

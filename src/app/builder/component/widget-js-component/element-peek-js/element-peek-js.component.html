@@ -1,5 +1,5 @@
 <div *ngIf="this.widget[1]['name'] == 'elementPeek'" class="elementPeek-js-widget">
-  var performanceEl = $(".{{this.region[1]["keyword_class"]}}-content");
+  var performanceEl = $(".hp-{{this.region[1]["keyword_class"]}}");
   var speed = 0;
   performanceEl.elementPeek({{' {'}}
   onViewportIn: function (object) {{' {'}}
@@ -7,7 +7,7 @@
   object.addClass("done-calculation");
 
   performanceEl
-  .find(".{{this.region[1]["keyword_class"]}}-item h3 i")
+  .find(".count")
   .each(function (index, value) {{' {'}}
   speed = 1000;
 
