@@ -1,5 +1,33 @@
 <pre>
 <div *ngIf="widget[1]['name'] == 'quick-search'">
+  .hp-quick-search {{ " {" }}
+  font-size: 0;
+  z-index: 5;
+  }
+
+  .hp-quick-search .region-quick-search-container {{ " {" }}
+  background: #ffc000;
+  padding: 50px 15px ;
+  }
+
+  .quick-search-form select,
+  .quick-search-form input {{ " {" }}
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: #777777;
+  padding-left: 14px;
+  height: 44px;
+
+  background: transparent;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  }
+
   <div *ngIf="widget[1]['settings']['templateType']['value'] != 'Quick Search template 3 (floating)' ">
     .quick-search-form select,
     .quick-search-form input {{ " {" }}
@@ -19,54 +47,6 @@
   </div>
 
 
-
-  .hp-quick-search {{ " {" }}
-  width: 100%;
-  padding: 0 24px;
-  margin: 0 auto;
-  margin-bottom: 92px;
-  font-size: 0;
-  z-index: 5;
-  }
-
-  .hp-quick-search p {{ " {" }}
-  text-align: right;
-  font-size: 11px;
-  color: #666666;
-  letter-spacing: 0.075em;
-  font-weight: 300;
-  max-width: 1180px;
-  margin: 0 auto;
-  }
-
-  <!-- TODO: -->
-  .hp-quick-search .region-quick-search-container {{ " {" }}
-  background: #ffc000;
-  padding: 42px 0 50px;
-  }
-
-  .hp-quick-search .quick-search-form {{ " {" }}
-  margin-bottom: 20px;
-  padding: 0 24px;
-  }
-
-  .quick-search-form select,
-  .quick-search-form input {{ " {" }}
-  width: 100%;
-  height: 44px;
-  outline: none;
-  -webkit-appearance: none;
-  appearance: none;
-  -moz-appearance: none;
-  font-size: 11px;
-  font-weight: 300;
-  color: #777777;
-  background: transparent;
-  cursor: pointer;
-  padding-left: 14px;
-  }
-
-
   .quick-search-form select option {{ " {" }}
   color: #ffffff;
   background: #000;
@@ -77,6 +57,7 @@
   min-height: 44px;
   font-size: 11px;
   background: #1092b2;
+
   position: relative;
   width: 100%;
   display: flex;
@@ -92,12 +73,17 @@
   .qs-search input,
   .qs-advanced a {{ " {" }}
   color: #ffffff;
-  padding: 0;
   font-weight: 700;
-  background: transparent;
+  letter-spacing: 0.2em;
+
   text-transform: uppercase;
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
   border: none;
-  letter-spacing: 00.2em;
+  background: transparent;
   }
 
   .qs-search:hover {{ " {" }}
@@ -105,7 +91,18 @@
   }
 
   .qs-advanced:hover {{ " {" }}
-  background: #404040;
+  background: #040404;
+  }
+
+  .hp-quick-search p {{ " {" }}
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.075em;
+  color: #fff;
+  
+  text-align: right;
+  max-width: 1180px;
+  margin: 0 auto;
   }
  
 

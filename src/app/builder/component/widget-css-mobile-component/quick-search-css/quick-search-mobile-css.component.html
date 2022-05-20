@@ -4,12 +4,11 @@
     grid-template-columns: repeat(100, 1fr);
     max-width: {{widget[1]["settings"]["qs_form_max_width"]["value"]}};
     margin: 0 auto;
-    grid-gap: 2px;
+    gap: 2px;
+    align-items: center;
+
     }
     <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 1"'>
-        .quick-search-form {{ " {" }}
-        align-items: end;
-        }
         <div *ngFor="
   let setting of RegionsService.converObjectToArray(
       widget[1]['settings']
@@ -28,9 +27,6 @@
     </div>
 
     <div *ngIf='widget[1]["settings"]["templateType"]["value"] == "Quick Search template 2"'>
-        .quick-search-form {{ " {" }}
-        align-items: center;
-        }
 
         .quick-search-form .site-title-primary {{ " {" }}
         grid-column: {{widget[1]["settings"]["site_title"]["selectTextValues"]["column"]}};
