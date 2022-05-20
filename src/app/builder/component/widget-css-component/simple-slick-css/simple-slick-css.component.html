@@ -1,3 +1,4 @@
+<pre>
 <div *ngIf="widget[1]['name'] == 'simple-slick'" class="slick-css-widget">
     <div *ngIf="widget[1]['settings']['asNaV']['value'] != 'true'">
         .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}{{widget[1]["suffixClass"]}} {{ "
@@ -7,8 +8,6 @@
         margin: 0 auto;
         }
 
-
-
         .hp-{{ regionData[1]["keyword_class"] }} .slick-list {{ " {" }}
         margin: 0 -{{widget[1]['settings']['slickColumnGap']['value']}};
         }
@@ -17,6 +16,9 @@
         margin: 0 {{widget[1]['settings']['slickColumnGap']['value']}};
         }
 
+        .hp-{{ regionData[1]["keyword_class"] }} .slick-slide > div:not(:last-child) {{ " {" }}
+        margin-bottom: {{widget[1]['settings']['slickRowGap']['value']}};
+        }
     </div>
 
     .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item {{ " {" }}
@@ -24,37 +26,22 @@
     display: block !important;
     }
 
-    .hp-{{ regionData[1]["keyword_class"] }} .slick-slide > div:not(:last-child) {{ " {" }}
-    margin-bottom: {{widget[1]['settings']['slickRowGap']['value']}};
-    }
-
     <!-- Arrows -->
     <div
         *ngIf="widget[1]['settings']['arrows']['value'] == 'arrows' || widget[1]['settings']['arrows']['value'] == 'arrowsWithButton'; else noArrow">
         .{{ regionData[1]["keyword_class"] }}-slick-arrow {{' {'}}
-        cursor: pointer;
-        color: #05234b;
+        color: #ffc000;
+        gap: 34px;
+
         display: flex;
         align-items: center;
         justify-content: center;
-        }
-
-        .{{ regionData[1]["keyword_class"] }}-slick-arrow .site-btn {{' {'}}
-        margin: 0 34px;
-        background: #fff;
-        -webkit-transition: all 0.4s ease-in-out;
-        -moz-transition: all 0.4s ease-in-out;
-        -o-transition: all 0.4s ease-in-out;
-        transition: all 0.4s ease-in-out;
-        }
-
-        .{{ regionData[1]["keyword_class"] }}-slick-arrow .site-btn:hover {{' {'}}
-        background: #fcef21;
-        border-color: #fcef21;
+        cursor: pointer;
         }
 
         .{{ regionData[1]["keyword_class"] }}-slick-arrow span {{' {'}}
         font-size: 22px;
+
         -webkit-transition: all 0.4s ease-in-out;
         -moz-transition: all 0.4s ease-in-out;
         -o-transition: all 0.4s ease-in-out;
@@ -62,14 +49,9 @@
         }
 
         .{{ regionData[1]["keyword_class"] }}-slick-arrow span:hover {{' {'}}
-        opacity: 0.6;
+        opacity: 0.7;
         }
 
-        .{{ regionData[1]["keyword_class"] }}-slick-arrow .site-btn {{' {'}}
-        height: 50px;
-        width: 190px;
-        font-size: 12px;
-        }
     </div>
     <!-- Dots -->
     <div *ngIf='widget[1]["settings"]["dots"]["value"] == "true"'>
@@ -234,7 +216,7 @@
         .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::after {{ " {" }}
         content: "";
         position: absolute;
-        background: url(images/communities-logo.png) center no-repeat;
+        background: url(images/{{ regionData[1]["keyword_class"] }}-logo.png) center no-repeat;
         background-size: contain;
         width: 100%;
         height: 100%;
@@ -318,11 +300,6 @@
                 top: 50%;
                 transform: translate(-50%, -50%);
             </div>
-            <!-- TODO: fix this -->
-            <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'split'">
-                right: 30px;
-                top: 20px;
-            </div>
             }
         </div>
     </div>
@@ -359,3 +336,4 @@
     margin-bottom: 10px;
     }
 </div>
+</pre>

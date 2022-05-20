@@ -56,13 +56,7 @@
         dots: {{ widget[1]['settings']['dots']['value'] }},
         autoplay: {{ widget[1]['settings']['autoplay']['value'] }},
         autoplaySpeed: {{ widget[1]['settings']['autoplaySpeed']['value'] }},
-        <div
-            *ngIf="widget[1]['settings']['arrows']['value'] == 'arrows' || widget[1]['settings']['arrows']['value'] == 'arrowsWithButton'; else noArrow">
-            arrows: true,
-        </div>
-        <ng-template #noArrow>
-            arrows: false,
-        </ng-template>
+        arrows: false,
         <div *ngIf="widget[1]['settings']['asNaV']['value'] == 'true'">
             asNavFor: sectionSlick,
         </div>
