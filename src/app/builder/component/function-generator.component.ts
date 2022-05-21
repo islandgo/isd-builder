@@ -2,6 +2,7 @@ import { Component, Input } from "@angular/core";
 import { RegionsService } from "../services/regions.service";
 import { PageService } from "./../services/page.service";
 
+
 @Component({
   selector: "function-generator",
   templateUrl: "./function-generator.component.html",
