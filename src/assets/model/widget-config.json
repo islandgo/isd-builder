@@ -54,10 +54,10 @@
       "contentPosition": {
         "inpuType": "select",
         "selectValue": [
-          "bottom-left",
           "bottom-right",
-          "center",
           "bottom-center",
+          "bottom-left",
+          "center",
           "top-left",
           "top-right",
           "below-image",

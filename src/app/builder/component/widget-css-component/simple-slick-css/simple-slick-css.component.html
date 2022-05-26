@@ -318,15 +318,33 @@
         margin-top: 18px;
         }
     </div>
+    <!-- Title Style -->
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content em {{ " {" }}
+        display: block;
+        font-style: normal;
+        text-transform: uppercase;
 
-    <!-- Content Style -->
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content h3 {{ " {" }}
-    font-size: 26px;
-    letter-spacing: 0.1em;
-    font-weight: 700;
-    color: #ffc000;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+        font-weight: 700;
+        font-size: 26px;
+        letter-spacing: 0.1em;
+        color: #ffc000;
+        margin-bottom: 10px;
+        }
+    </div>
+    <!-- Title Content Style -->
+    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'">
+
+    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content em {{ " {" }}
+      display: block;
+        font-style: normal;
+        text-transform: uppercase;
+        
+        font-weight: 700;
+        font-size: 26px;
+        letter-spacing: 0.1em;
+        color: #ffc000;
+        margin-bottom: 10px;
     }
 
     .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content p {{ " {" }}
@@ -335,5 +353,6 @@
     letter-spacing: 0.1em;
     margin-bottom: 10px;
     }
+    </div>
 </div>
 </pre>
