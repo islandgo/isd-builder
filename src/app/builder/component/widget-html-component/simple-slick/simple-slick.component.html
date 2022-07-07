@@ -7,7 +7,7 @@
             &lt;div class="{{ regionClassName }}-img canvas-wrapper"&gt;
             &lt;canvas width="{{widget[1]["settings"]["image_width"]["value"]}}"
             height="{{widget[1]["settings"]["image_height"]["value"]}}"&gt;&lt;/canvas&gt;
-            &lt;img alt="{{ regionClassName }}" class="img-{{ regionClassName }} canvas-img img-responsive"
+            &lt;img alt="{{ regionClassName }}" class="img-{{ regionClassName }} canvas-img img-responsive lazyload"
             src="&lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/{{ regionClassName }}-{{ i + 1 }}.jpg" /&gt;
             <div *ngIf="widget[1]['settings']['hoverWithImg']['value'] == 'true'">
                 &lt;img alt="{{ regionClassName }}-image-hover" class="canvas-img {{ regionClassName }}-image-hover

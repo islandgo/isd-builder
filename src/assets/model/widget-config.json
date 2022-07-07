@@ -188,23 +188,7 @@
     }
   },
   "elementPeek": {
-    "name": "elementPeek",
-    "settings": {
-      "hasRgba": {
-        "inpuType": "text",
-        "selectValue": [
-          true,
-          false
-        ],
-        "value": true,
-        "name": "has rbga"
-      },
-      "file_name": {
-        "inpuType": "text",
-        "value": "fileName.png",
-        "name": "fileName"
-      }
-    }
+    "name": "elementPeek"
   },
   "gallery_image": {
     "name": "gallery-image",
