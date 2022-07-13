@@ -7,11 +7,11 @@
 
   .hp-quick-search .region-quick-search-container {{ " {" }}
   background: #ffc000;
-  padding: 50px 15px ;
+  padding: 50px 24px ;
   }
 
   .quick-search-form select,
-  .quick-search-form input {{ " {" }}
+  .quick-search-form input:not([type="submit"]) {{ " {" }}
   font-weight: 300;
   font-size: 11px;
   letter-spacing: 0.05em;
@@ -30,7 +30,7 @@
 
   <div *ngIf="widget[1]['settings']['templateType']['value'] != 'Quick Search template 3 (floating)' ">
     .quick-search-form select,
-    .quick-search-form input {{ " {" }}
+    .quick-search-form input:not([type="submit"])  {{ " {" }}
     border: 0;
     <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "full-border"'>
       border: 1px solid #d0cece;
@@ -52,47 +52,31 @@
   background: #000;
   }
 
-  .qs-search,
-  .qs-advanced  {{ " {" }}
-  min-height: 44px;
-  font-size: 11px;
-  background: #1092b2;
+  .quick-search-form .qs-btn {{ " {" }}
+  border: none;
+}
 
-  position: relative;
+.quick-search-form .qs-btn input {{ " {" }}
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 60px;
+  letter-spacing: 0.1em;
+  border: none;
+  background: transparent;
+  border: 1px solid #6e6e6e;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  cursor: pointer;
-  }
+}
 
-  .qs-search input,
-  .qs-advanced a {{ " {" }}
+.quick-search-form .qs-btn:hover input {{ " {" }}
   color: #ffffff;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+}
 
-  text-transform: uppercase;
-  text-align: center;
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  border: none;
-  background: transparent;
-  }
+.quick-search-form .qs-btn:hover {{ " {" }}
+border: none;
+}
 
-  .qs-search:hover {{ " {" }}
-  background: #404040;
-  }
-
-  .qs-advanced:hover {{ " {" }}
-  background: #040404;
-  }
 
   .hp-quick-search p {{ " {" }}
   font-weight: 300;

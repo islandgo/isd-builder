@@ -1,337 +1,135 @@
-<div *ngIf="widget[1]['name'] == 'contact-form'" class="contact-form-css-widget">
-  .contact-form .form-md input,
-  .contact-form .form-lg textarea{{' {'}}
-  <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "full-border"'>
+<div
+  *ngIf="widget[1]['name'] == 'contact-form'"
+  class="contact-form-css-widget"
+>
+  .contact-form .form-md input, .contact-form .form-lg textarea{{ " {" }}
+  <div *ngIf="widget[1]['settings']['input_style']['value'] == 'full-border'">
     border: solid 1px #ffffff;
   </div>
-  <div *ngIf='widget[1]["settings"]["input_style"]["value"] == "border-bottom"'>
-    border: 0;
-    border-bottom: solid 1px #ffffff;
+  <div *ngIf="widget[1]['settings']['input_style']['value'] == 'border-bottom'">
+    border: 0; border-bottom: solid 1px #ffffff;
   </div>
-  color: #fff;
-  }
+  color: #fff; }
 
-  <div *ngIf='widget[1]["settings"]["sendAirplane"]["value"] == "true"'>
-    .form-btn-wrapper input {{' {'}}
-    border: 0;
-    position: absolute;
-    right: 15px;
-    bottom: 11px;
-    width: 32px;
-    height: 30px;
-    background: url(images/contact-send.png) center/cover no-repeat;
-
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-    }
-
-    .form-btn-wrapper input:hover {{' {'}}
-    opacity: 0.65;
-    }
+  <div *ngIf="widget[1]['settings']['sendAirplane']['value'] == 'true'">
+    .form-btn-wrapper input {{ " {" }} border: 0; position: absolute; right:
+    15px; bottom: 11px; width: 32px; height: 30px; background:
+    url(images/contact-send.png) center/cover no-repeat; -webkit-transition: all
+    0.4s ease-in-out; -moz-transition: all 0.4s ease-in-out; -o-transition: all
+    0.4s ease-in-out; transition: all 0.4s ease-in-out; } .form-btn-wrapper
+    input:hover {{ " {" }}
+    opacity: 0.65; }
   </div>
 
   <!-- Global -->
-  .contact-form {{' {'}}
-  position: relative;
-  width: 100%;
-  max-width: {{ widget[1]["settings"]["max-width"]["value"] }};
-  margin: 0 auto;
-  font-size: 0;
-  background: #2b2c2e;
-  padding: 46px 100px 60px;
-  z-index: 2;
-  }
+  .contact-form {{ " {" }} position: relative; width: 100%; max-width:
+  {{ widget[1]["settings"]["max-width"]["value"] }}; margin: 0 auto; font-size:
+  0; background: #2b2c2e; padding: 46px 100px 60px; z-index: 2; }
 
   <div *ngIf="template[0] != '37'">
-    .contact-form .form-md {{' {'}}
-    <div *ngIf="template[0] == '33' || template[0] == '34' || template[0] == '35' ">
-      display: inline-block;
-      vertical-align: middle;
-      margin-bottom: {{widget[1]["settings"]["row_gap"]["value"]}};
+    .contact-form .form-md {{ " {" }}
+    <div
+      *ngIf="template[0] == '33' || template[0] == '34' || template[0] == '35'"
+    >
+      display: inline-block; vertical-align: middle; margin-bottom:
+      {{ widget[1]["settings"]["row_gap"]["value"] }};
     </div>
-    <div *ngIf="template[0] == '33' || template[0] == '34'">
-      width: 50%;
-    </div>
-    <div *ngIf="template[0] == '35'">
-      width: 33%;
-    </div>
-    <div *ngIf="template[0] == '36'">
-      padding-bottom: 12px;
-    </div>
+    <div *ngIf="template[0] == '33' || template[0] == '34'">width: 50%;</div>
+    <div *ngIf="template[0] == '35'">width: 33%;</div>
+    <div *ngIf="template[0] == '36'">padding-bottom: 12px;</div>
     }
   </div>
 
-  <div *ngIf="template[0] == '33' || template[0] == '34' || template[0] == '35'">
-    .contact-form .form-md input {{' {'}}
-    width: 100%;
-    min-height: 38px;
-
-    text-transform: uppercase;
-    background: transparent;
-
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    }
-
-    .contact-form .form-lg textarea {{' {'}}
-    width: 100%;
-    min-height: {{widget[1]["settings"]["text_area_height"]["value"]}};
-    background: transparent;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    resize: none;
-    }
-
-    .contact-form .form-lg {{' {'}}
-    position: relative;
-    margin-bottom: 56px;
-    }
-
-    .contact-form .pad-left,
-    .contact-form .middle-pad-left {{' {'}}
-    padding-right: {{widget[1]["settings"]["column_gap"]["value"]}};
-    }
-
-    .contact-form .pad-right,
-    .contact-form .middle-pad-right {{' {'}}
-    padding-left: {{widget[1]["settings"]["column_gap"]["value"]}};
-    }
+  <div
+    *ngIf="template[0] == '33' || template[0] == '34' || template[0] == '35'"
+  >
+    .contact-form .form-md input {{ " {" }} width: 100%; min-height: 38px;
+    text-transform: uppercase; background: transparent; font-size: 13px;
+    letter-spacing: 0.1em; } .contact-form .form-lg textarea {{ " {" }} width:
+    100%; min-height: {{ widget[1]["settings"]["text_area_height"]["value"] }};
+    background: transparent; font-size: 13px; text-transform: uppercase;
+    letter-spacing: 0.1em; resize: none; } .contact-form .form-lg
+    {{ " {" }} position: relative; margin-bottom: 56px; } .contact-form
+    .pad-left, .contact-form .middle-pad-left {{ " {" }} padding-right:
+    {{ widget[1]["settings"]["column_gap"]["value"] }}; } .contact-form
+    .pad-right, .contact-form .middle-pad-right {{ " {" }} padding-left:
+    {{ widget[1]["settings"]["column_gap"]["value"] }}; }
   </div>
   <div *ngIf="template[0] == '36'">
-
-
-    .contact-form .form-md.pad-left {{' {'}}
-    display: inline-block;
-    vertical-align: middle;
-    width: 50%;
-    padding-right: {{widget[1]["settings"]["column_gap"]["value"]}};
-    }
-
-    .contact-form .form-md.pad-right {{' {'}}
-    display: inline-block;
-    vertical-align: middle;
-    width: 50%;
-    padding-left: {{widget[1]["settings"]["column_gap"]["value"]}};
-    }
-
-    .contact-form .form-md input,
-    .contact-form .form-lg textarea,
-    .contact-form .form-md select {{' {'}}
-    width: 100%;
-    min-height: 54px;
-    border: none;
-    outline: none;
-    -webkit-appearance: none;
-    appearance: none;
-    -moz-appearance: none;
-    background: rgba(243, 243, 243, 1);
-    font-size: 13px;
-    letter-spacing: 00.04em;
-    padding-left: 19px;
-    color: #666666;
-    }
-
-    .contact-form .form-md select {{' {'}}
-    background: #f3f3f3 url(images/c-arrow.png) no-repeat scroll right 30px
-    center;
-    cursor: pointer;
-    }
-
-    .contact-form .form-lg textarea {{' {'}}
-    padding-top: 25px;
-    height: 104px;
-    }
-
-    .contact-form .form-lg {{' {'}}
-    margin-bottom: 38px;
-    }
+    .contact-form .form-md.pad-left {{ " {" }} display: inline-block;
+    vertical-align: middle; width: 50%; padding-right:
+    {{ widget[1]["settings"]["column_gap"]["value"] }}; } .contact-form
+    .form-md.pad-right {{ " {" }} display: inline-block; vertical-align: middle;
+    width: 50%; padding-left:
+    {{ widget[1]["settings"]["column_gap"]["value"] }}; } .contact-form .form-md
+    input, .contact-form .form-lg textarea, .contact-form .form-md select
+    {{ " {" }} width: 100%; min-height: 54px; border: none; outline: none;
+    -webkit-appearance: none; appearance: none; -moz-appearance: none;
+    background: rgba(243, 243, 243, 1); font-size: 13px; letter-spacing:
+    00.04em; padding-left: 19px; color: #666666; } .contact-form .form-md select
+    {{ " {" }} background: #f3f3f3 url(images/c-arrow.png) no-repeat scroll
+    right 30px center; cursor: pointer; } .contact-form .form-lg textarea
+    {{ " {" }} padding-top: 25px; height: 104px; } .contact-form .form-lg
+    {{ " {" }}
+    margin-bottom: 38px; }
   </div>
   <div *ngIf="template[0] == '37'">
-
-    .contact-form label {{' {'}}
-    display: block;
-    text-align: left;
-    margin-bottom: 20px;
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: uppercase;
-    }
-
-    .contact-form .c-iam {{' {'}}
-    margin-bottom: 20px;
-    }
-
-    .contact-form .c-iam input[type="radio"] {{' {'}}
-    display: none;
-    }
-
-    .contact-form .c-iam .list-item-label {{' {'}}
-    display: block;
-    text-align: center;
-    border: 1px solid #fff;
-    height: 49px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-weight: 600;
-    }
-
-    .contact-form .c-iam .list-item {{' {'}}
-    margin: 0;
-    margin-left: 19px;
-    display: block;
-    width: 100%;
-    }
-
-    .contact-form .c-iam .list-item label {{' {'}}
-    margin-bottom: 0;
-    }
-
-    .contact-form .c-iam #iam {{' {'}}
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    }
-
-    .contact-form .c-iam .list-item:first-child {{' {'}}
-    margin-left: 0;
-    }
-
-    .contact-form > div {{' {'}}
-    margin-bottom: 20px;
-    }
-
-    .contact-form .c-iam input[type="radio"]:checked + .list-item-label {{' {'}}
-    background: #fff;
-    color: #000;
-    }
-
-    .contact-form .c-flex input {{' {'}}
-    background: transparent;
-    font-size: 14px;
-    border: 1px solid #fff;
-    height: 49px;
-    width: 100%;
-    outline: 0;
-    padding: 5px 10px;
-    }
-
-    .contact-form .c-flex {{' {'}}
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0;
-    }
-
-    .contact-form .c-flex > div {{' {'}}
-    margin-bottom: 20px;
-    width: 50%;
-    }
-
-    .contact-form .c-flex > div:first-child {{' {'}}
-    padding-right: 10px;
-    }
-
-    .contact-form .c-flex > div:last-child {{' {'}}
-    padding-left: 10px;
-    }
-
-    .contact-form textarea {{' {'}}
-    padding: 15px 10px;
-    width: 100%;
-    height: 136px;
-    font-size: 14px;
-    background: transparent;
-    border: 1px solid #fff;
-    resize: none;
-    outline: 0;
-    margin-bottom: 26px;
-    }
+    .contact-form label {{ " {" }} display: block; text-align: left;
+    margin-bottom: 20px; font-size: 14px; font-weight: 500; text-transform:
+    uppercase; } .contact-form .c-iam {{ " {" }} margin-bottom: 20px; }
+    .contact-form .c-iam input[type="radio"] {{ " {" }} display: none; }
+    .contact-form .c-iam .list-item-label {{ " {" }} display: block; text-align:
+    center; border: 1px solid #fff; height: 49px; display: flex; align-items:
+    center; justify-content: center; cursor: pointer; font-weight: 600; }
+    .contact-form .c-iam .list-item {{ " {" }} margin: 0; margin-left: 19px;
+    display: block; width: 100%; } .contact-form .c-iam .list-item label
+    {{ " {" }} margin-bottom: 0; } .contact-form .c-iam #iam {{ " {" }} display:
+    flex; align-items: center; justify-content: space-between; } .contact-form
+    .c-iam .list-item:first-child {{ " {" }} margin-left: 0; } .contact-form >
+    div {{ " {" }} margin-bottom: 20px; } .contact-form .c-iam
+    input[type="radio"]:checked + .list-item-label {{ " {" }} background: #fff;
+    color: #000; } .contact-form .c-flex input {{ " {" }} background:
+    transparent; font-size: 14px; border: 1px solid #fff; height: 49px; width:
+    100%; outline: 0; padding: 5px 10px; } .contact-form .c-flex
+    {{ " {" }} display: flex; align-items: center; justify-content:
+    space-between; margin-bottom: 0; } .contact-form .c-flex > div
+    {{ " {" }} margin-bottom: 20px; width: 50%; } .contact-form .c-flex >
+    div:first-child {{ " {" }} padding-right: 10px; } .contact-form .c-flex >
+    div:last-child {{ " {" }} padding-left: 10px; } .contact-form textarea
+    {{ " {" }}
+    padding: 15px 10px; width: 100%; height: 136px; font-size: 14px; background:
+    transparent; border: 1px solid #fff; resize: none; outline: 0;
+    margin-bottom: 26px; }
   </div>
   <div *ngIf="template[0] == '38'">
-
-    .cform-row
-    .cform-field:last-child
-    .cform-group
-    > .cform-field
-    .wpcf7-not-valid-tip {{' {'}}
-    font-size: 12px;
-    width: 96px;
-    left: 0;
-    }
-
-    .contact-form .cform-row {{' {'}}
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 37px;
-    }
-
-    .cform-field label,
-    .cform-field > span {{' {'}}
-    font-size: 12px;
-    line-height: 1;
-    letter-spacing: 1.2px;
-    color: #fff;
-    display: block;
-    margin-bottom: 18px;
-    }
-
-    .cform-field input:not([type="submit"]) {{' {'}}
-    width: 100%;
-    height: 40px;
-    background: transparent;
-    border: 1px solid #fff;
-    font-size: 12px;
-    line-height: 1;
-    letter-spacing: 0.1em;
-    color: #fff;
-    text-transform: uppercase;
-    padding: 0 10px;
-    }
-
-    .cform-row .cform-field:first-child,
-    .cform-row .cform-field:nth-child(2) {{' {'}}
-    width: calc(34.33% - 11.5px);
-    }
-
-    .cform-row .cform-field:last-child {{' {'}}
-    width: calc(31.33% - 23px);
-    }
-
-    .cform-row .cform-group {{' {'}}
-    display: flex;
-    justify-content: space-between;
-    }
-
-    .cform-row .cform-field:last-child .cform-group > .cform-field {{' {'}}
-    width: calc(33.33% - 11.5px);
-    }
-
-    .cform-row-full {{' {'}}
-    margin-bottom: 48px;
-    }
-
-    .cform-row-full .cform-field {{' {'}}
-    width: 100%;
-    }
-
-    .cform-field textarea {{' {'}}
-    width: 100%;
-    height: 103px;
-    background: transparent;
-    border: 1px solid #fff;
-    font-size: 12px;
-    line-height: 1;
-    letter-spacing: 0.1em;
-    color: #fff;
-    text-transform: uppercase;
-    padding: 20px 10px;
-    resize: none;
-    overflow: hidden;
-    }
+    .cform-row .cform-field:last-child .cform-group > .cform-field
+    .wpcf7-not-valid-tip {{ " {" }} font-size: 12px; width: 96px; left: 0; }
+    .contact-form .cform-row {{ " {" }} display: flex; justify-content:
+    space-between; margin-bottom: 37px; } .cform-field label, .cform-field >
+    span {{ " {" }} font-size: 12px; line-height: 1; letter-spacing: 1.2px;
+    color: #fff; display: block; margin-bottom: 18px; } .cform-field
+    input:not([type="submit"]) {{ " {" }} width: 100%; height: 40px; background:
+    transparent; border: 1px solid #fff; font-size: 12px; line-height: 1;
+    letter-spacing: 0.1em; color: #fff; text-transform: uppercase; padding: 0
+    10px; } .cform-row .cform-field:first-child, .cform-row
+    .cform-field:nth-child(2) {{ " {" }} width: calc(34.33% - 11.5px); }
+    .cform-row .cform-field:last-child {{ " {" }} width: calc(31.33% - 23px); }
+    .cform-row .cform-group {{ " {" }} display: flex; justify-content:
+    space-between; } .cform-row .cform-field:last-child .cform-group >
+    .cform-field {{ " {" }} width: calc(33.33% - 11.5px); } .cform-row-full
+    {{ " {" }} margin-bottom: 48px; } .cform-row-full .cform-field
+    {{ " {" }} width: 100%; } .cform-field textarea {{ " {" }}
+    width: 100%; height: 103px; background: transparent; border: 1px solid #fff;
+    font-size: 12px; line-height: 1; letter-spacing: 0.1em; color: #fff;
+    text-transform: uppercase; padding: 20px 10px; resize: none; overflow:
+    hidden; }
   </div>
+  .contact-form .site-btn-primary {{ " {" }} border: none; } .contact-form
+  .site-btn-primary input {{ " {" }} width: 100%; min-height: 60px;
+  letter-spacing: 0.1em; border: none; background: transparent; border: 1px
+  solid #6e6e6e; -webkit-transition: all 0.4s ease-in-out; -moz-transition: all
+  0.4s ease-in-out; -o-transition: all 0.4s ease-in-out; transition: all 0.4s
+  ease-in-out; } .contact-form .site-btn-primary:hover {{ " {" }} border: none;
+  } .contact-form .site-btn-primary:hover input {{ " {" }}
+  color: #ffffff; }
 </div>
