@@ -1,39 +1,19 @@
 <div class="background-setting-container">
-    .hp-{{this.regionData[1]['keyword_class']}} {{' {'}}
-    padding: {{ regionData[1]['grid_setting']['paddingTop']['value'] }} {{
-    regionData[1]['grid_setting']['paddingRight']['value'] }} {{ regionData[1]['grid_setting']['paddingBottom']['value']
-    }} {{ regionData[1]['grid_setting']['paddingLeft']['value'] }};
-    }
-    <div *ngIf="this.regionData[1]['background_setting']['background']['enable']">
-        .hp-{{this.regionData[1]['keyword_class']}}::before {{' {'}}
-        content: "";
-        position: absolute;
-        background: url(images/{{
-        this.regionData[1]['background_setting']['background']['settings']['imageFileName']['value'] }}) center/cover
-        no-repeat;
+
+    <div *ngIf="regionData[1]['background_setting']['background']['enable']">
+        .hp-{{regionData[1]['keyword_class']}} .site-bg canvas{{' {'}}
         <div *ngIf="this.regionData[1]['background_setting']['background']['settings']['isParallax']['value']">
             background-attachment: fixed;
+            background-size: cover;
+            background-position: center center;
         </div>
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        pointer-events: none;
         }
 
         <div *ngIf="this.regionData[1]['background_setting']['background']['settings']['hasRbga']['value']">
-            .hp-{{this.regionData[1]['keyword_class']}}::after {{' {'}}
-            content: "";
-            position: absolute;
+            .hp-{{regionData[1]['keyword_class']}} .site-bg-rgba::before {{' {'}}
             background: {{
             this.regionData[1]['background_setting']['background']['settings']['hasRbga']['selectTextValues']['rbga']
             }};
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            z-index: 5;
             }
         </div>
     </div>

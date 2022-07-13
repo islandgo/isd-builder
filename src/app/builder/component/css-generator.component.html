@@ -216,7 +216,7 @@ canvas{{' {'}}
     width: 100%;
 {{'}'}}
 
-.canvas-img{{' {'}}
+.canvas-img {{' {'}}
     position: absolute;
     width: 100%;
     height: 100%;
@@ -225,7 +225,37 @@ canvas{{' {'}}
     object-fit: cover;
 {{'}'}}
 
-/* Site title primary */
+/* Site title */
+.site-bg canvas {{' {'}}
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+.site-bg-rgba::before,
+.site-bg-rgba::after {{' {'}}
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.site-bg-grayscale canvas {{' {'}}
+    filter: grayscale(1);
+  }
+  
+  canvas {{' {'}}
+    background-repeat: no-repeat;
+  }
+  
+
 
 /* Pojo */
 
@@ -437,11 +467,13 @@ aside menu{{' {'}}
 
 .navigation {{' {'}}
     grid-column: {{ PageService.headerDataMenu['navGridColumn']['value'] }};
+
 }
 
 .header-logo img {{' {'}}
     width: 100%;
 }
+
 
 .header .navigation #nav {{' {'}}
     font-size: 14px;
@@ -451,6 +483,10 @@ aside menu{{' {'}}
     display: flex;
     gap: {{ PageService.headerDataMenu['navGap']['value'] }};
     justify-content: flex-end;
+}
+
+.header .navigation #nav > li > a:hover {{' {'}}
+    color: #fff;
 }
 <div *ngIf="PageService.navHover == 'bottom line' || PageService.navHover == 'bottom line with arrow'">
     /* Menu Before */
@@ -556,9 +592,7 @@ aside menu{{' {'}}
         bottom: -36px;
     }
 </div>
-.header .navigation #nav > li > a:hover {{' {'}}
-    color: #fff;
-}
+
 
 <div *ngIf="PageService.enableSeparatorNav">
     /* Text Line */
@@ -585,7 +619,6 @@ aside menu{{' {'}}
         justify-content: flex-end;
         color: #ffffff;
         gap:  {{ PageService.headerDataMenu['navGap']['value'] }};
-        margin-bottom: 20px;
     }
 
 </div>
@@ -594,6 +627,7 @@ aside menu{{' {'}}
         display: flex;
         flex-direction: row-reverse;
         gap: {{ PageService.headerDataMenu['navGap']['value'] }};
+        align-items: center;
     }
 </div>
 
@@ -662,108 +696,86 @@ aside menu{{' {'}}
  <div *ngIf="PageService.enablePageBurgerMenu">
     /*#region burger menu */
     .burger-menu {{' {'}}
-        position: relative;
-        width: 44px;
-        cursor: pointer;
-        grid-column: {{ PageService.headerData['burgerGridColumn']['value'] }};
-    }
-
-    .bm-drop {{' {'}}
-        position: fixed;
-        z-index: 2000; 
-        top: 0;
-        left: 0;
-        right: initial;
-        width: 100%;
-        height: 100%;
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-100%, 0, 0);
-        -webkit-transition: -webkit-transform 0.5s;
-        transition: transform 0.5s;
-    }
-    
-    .bm-view.is-open {{' {'}}
-    overflow-x : hidden;
+    position: relative;
+    width: 44px;
+    cursor: pointer;
+    grid-column: 95/-3;
+  }
+  
+  .bm-drop {{' {'}}
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    right: initial;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+  }
+  
+  .bm-view.is-open {{' {'}}
+    overflow-x: hidden;
     overflow-y: auto;
-        visibility: visible;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-    
-    .bm-menu {{' {'}}
-        position: fixed;
-        top: 0;
-        right: 0;
-        font-size: 0;
-        letter-spacing: 0;
-        z-index: 2001;
-        visibility: hidden;
-        width: 100%;
-        height: 100%;
-        min-height: 580px;
-        max-width: 808px;
-        background: var(--secondary);
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-        -webkit-transition: all 0.5s;
-        transition: all 0.5s;
-    }
-    
-    .bm-content .burger-navs {{' {'}}
-        position: relative;
-        max-width: 620px;
-        margin: 0 auto;
-    }
-
-    .bm-content #nav2 > li > a {{' {'}}
-        font-size: 18px;
-        color: #ffffff;
-        font-weight: 500;
-        letter-spacing: 00.1em;
-        line-height: 64px;
-        text-transform: uppercase;
-}
-    
-    .burger-menu span:first-child {{' {'}}
-        margin-top: 2px;
-    }
-    
-    .burger-menu span:nth-of-type(1),
-    .burger-menu span:nth-of-type(2) {{' {'}} 
-        display: block;
-        width: 100%;
-        height: 2px;
-        background: #ffffff;
-        -webkit-transition: all 0.4s ease-in-out;
-        -moz-transition: all 0.4s ease-in-out;
-        -o-transition: all 0.4s ease-in-out;
-        transition: all 0.4s ease-in-out;
-    }
-    
-    .burger-menu:hover span:nth-of-type(1),
-    .burger-menu:hover span:nth-of-type(2) {{' {'}}
-        background: #a8a8a8;
-        -webkit-transition: all 0.4s ease-in-out;
-        -moz-transition: all 0.4s ease-in-out;
-        -o-transition: all 0.4s ease-in-out;
-        transition: all 0.4s ease-in-out;
-    }
-    
-    .burger-menu span:nth-of-type(2) {{' {'}}
-        margin-top: 6px;
-        margin-bottom: 12px;
-    }
-    
-    .burger-menu span:nth-of-type(3) {{' {'}}
-        display: flex;
-        justify-content: center;
-        text-transform: uppercase;
-        font-size: 9px;
-        color: #ffffff;
-        font-weight: 200;
-        letter-spacing: 0.39em;
-        margin-left: 3px;
-    }
+    visibility: visible;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .bm-menu {{' {'}}
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: 0;
+    letter-spacing: 0;
+    z-index: 2001;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    min-height: 580px;
+    max-width: 808px;
+    background: var(--secondary);
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  
+  .bm-content .burger-navs {{' {'}}
+    position: relative;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+  
+  .bm-content #nav2 > li > a {{' {'}}
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 00.1em;
+    line-height: 64px;
+    text-transform: uppercase;
+  }
+  
+  .burger-menu span {{' {'}}
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+  
+  .burger-menu:hover span {{' {'}}
+    background: #a8a8a8;
+  }
+  
+  .burger-menu span:not(:last-child) {{' {'}}
+    margin-bottom: 4px;
+  }
     /*#endregion burger menu */
 
 </div> 

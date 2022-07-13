@@ -1,107 +1,127 @@
 <?php get_header(); ?>
 
-
 <div *ngFor="let region of customRegions; let i = index">
-    &lt;!-- {{ region[1]["keyword_class"] }} --&gt;
-    <div
-        *ngIf="PageService.appearance == 'change-color' || PageService.appearance == 'change-color-with-scrolldown' || PageService.appearance == 'circle-dots' ; else normalnormalin">
-        &lt;section class="hp-{{ region[1]["keyword_class"] }} aios-scroll-section" id="content-{{
-        region[1]["keyword_class"] }}" data-aios-scroll-title="{{ region[1]["keyword_class"] }}"&gt; &lt;div
-        class="region-{{ region[1]["keyword_class"] }}-container"&gt;
+  &lt;!-- {{ region[1]["keyword_class"] }} --&gt;
+  <div
+    *ngIf="
+      PageService.appearance == 'change-color' ||
+        PageService.appearance == 'change-color-with-scrolldown' ||
+        PageService.appearance == 'circle-dots';
+      else normalnormalin
+    "
+  >
+    &lt;section class="hp-{{ region[1]["keyword_class"] }} aios-scroll-section"
+    id="content-{{ region[1]["keyword_class"] }}" data-aios-scroll-title="{{
+      region[1]["keyword_class"]
+    }}"&gt; &lt;div class="region-{{
+      region[1]["keyword_class"]
+    }}-container"&gt;
+    <app-section-background-html [regionData]="region">
+    </app-section-background-html>
+  </div>
+  <ng-template #normalnormalin>
+    &lt;section class="hp-{{ region[1]["keyword_class"] }}"&gt; &lt;div
+    class="region-{{ region[1]["keyword_class"] }}-container"&gt;
+    <app-section-background-html [regionData]="region">
+    </app-section-background-html>
+  </ng-template>
+  <!--  -->
+  <div *ngIf="region[1]['keyword_class'] == 'slideshow'">
+    &lt;h2 class="hidden"&gt;Slideshow&lt;/h2&gt; &lt;?php if (
+    !function_exists('dynamic_sidebar') || !dynamic_sidebar("Hp Slideshow") ) :
+    ?&gt; &lt;?php endif ?&gt;
+  </div>
+  <div *ngIf="!region[1]['region_sections']['primary_section']">
+    <div *ngIf="region[1]['region_widgets']">
+      <div
+        *ngFor="
+          let widget of RegionsService.converObjectToArray(
+            region[1]['region_widgets']
+          );
+          let childIndex = index
+        "
+      >
+        <app-widget-list
+          [regionClassName]="region[1]['keyword_class']"
+          [widget]="widget"
+        ></app-widget-list>
+      </div>
     </div>
-    <ng-template #normalnormalin>
-        &lt;section class="hp-{{ region[1]["keyword_class"] }}"&gt; &lt;div
-        class="region-{{ region[1]["keyword_class"] }}-container"&gt;
-    </ng-template>
-    <!--  -->
-    <div *ngIf="region[1]['keyword_class'] == 'slideshow'">
-        &lt;h2 class="hidden"&gt;Slideshow&lt;/h2&gt;
-        &lt;?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Hp Slideshow") ) : ?&gt;
-        &lt;?php endif ?&gt;
-    </div>
-    <div *ngIf="!region[1]['region_sections']['primary_section']">
-        <div *ngIf="region[1]['region_widgets']">
-            <div *ngFor="
-            let widget of RegionsService.converObjectToArray(
-                region[1]['region_widgets']
-            );
-            let childIndex = index
-            ">
-                <app-widget-list [regionClassName]="region[1]['keyword_class']" [widget]="widget"></app-widget-list>
-            </div>
-        </div>
-    </div>
-    <div *ngFor="
-        let regionChild of RegionsService.converObjectToArray(
-            region[1]['region_sections']
-        );
-        let childIndex = index
-        ">
-        &lt;div class="{{ region[1]["keyword_class"] }}-{{
-        regionChild[1]["section_class_name"]
-        }}"&gt;
+  </div>
+  <div
+    *ngFor="
+      let regionChild of RegionsService.converObjectToArray(
+        region[1]['region_sections']
+      );
+      let childIndex = index
+    "
+  >
+    &lt;div class="{{ region[1]["keyword_class"] }}-{{
+      regionChild[1]["section_class_name"]
+    }}"&gt;
 
-        <div *ngIf="regionChild[1]['widgets']">
-            <div *ngFor="
-            let widget of RegionsService.converObjectToArray(
-                regionChild[1]['widgets']
-            );
-            let childIndex = index
-            ">
-                <app-widget-list [regionClassName]="region[1]['keyword_class']" [widget]="widget"></app-widget-list>
-            </div>
-        </div>
-        &lt;/div&gt;
+    <div *ngIf="regionChild[1]['widgets']">
+      <div
+        *ngFor="
+          let widget of RegionsService.converObjectToArray(
+            regionChild[1]['widgets']
+          );
+          let childIndex = index
+        "
+      >
+        <app-widget-list
+          [regionClassName]="region[1]['keyword_class']"
+          [widget]="widget"
+        ></app-widget-list>
+      </div>
     </div>
-    &lt;/div&gt; &lt;/section&gt;
-    <br>
-    &lt;!-- {{ region[1]["keyword_class"] }} end --&gt;
-
+    &lt;/div&gt;
+  </div>
+  &lt;/div&gt; &lt;/section&gt;
+  <br />
+  &lt;!-- {{ region[1]["keyword_class"] }} end --&gt;
 </div>
 
 <div *ngIf="PageService.enablePageIntroVideo">
-    &lt;div class="intro-video"&gt;
-    &lt;video src="&lt;?php echo get_stylesheet_directory_uri() ?&gt;/video/Final-Intro-Video.mp4" muted="" autoplay=""
-    playsinline=""&gt;&lt;/video&gt;
-    <div *ngIf="PageService.skipButton == 'true'">
-        &lt;div class="intro-video-close-wrap"&gt;
-        &lt;a href="#" aria-label="skip" class="aios-initial-setup-dead-link"&gt;&lt;img alt="skip" class="img-skip"
-        src="&lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/skip.jpg" /&gt;&lt;/a&gt;
-        &lt;/div&gt;
-    </div>
-    &lt;/div&gt;
+  &lt;div class="intro-video"&gt; &lt;video src="&lt;?php echo
+  get_stylesheet_directory_uri() ?&gt;/video/Final-Intro-Video.mp4" muted=""
+  autoplay="" playsinline=""&gt;&lt;/video&gt;
+  <div *ngIf="PageService.skipButton == 'true'">
+    &lt;div class="intro-video-close-wrap"&gt; &lt;a href="#" aria-label="skip"
+    class="aios-initial-setup-dead-link"&gt;&lt;img alt="skip" class="img-skip"
+    src="&lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/skip.jpg"
+    /&gt;&lt;/a&gt; &lt;/div&gt;
+  </div>
+  &lt;/div&gt;
 </div>
 
-
 <div *ngIf="PageService.enablePagePopUpModal">
-    &lt;!-- Intro Popup --&gt; &lt;div class="intro-popup"&gt; &lt;a
-    href="#introPopupHolder" aria-label="popup" class="aios-content-popup introPopupTrigger"
-    &gt;&lt;span
-    class="hidden"&gt;popup&lt;/span&gt;&lt;/a &gt; &lt;div class="aiosp-hide"
-    id="introPopupHolder"&gt; &lt;div class="introPopupHolder-content"&gt; &lt;div
-    class="intro-popup-form"&gt; Lorem ipsum dolor sit amet consectetur
-    adipisicing elit. Officiis, nulla qui magni praesentium quia impedit quae
-    ipsam, recusandae, eum sequi ex eligendi vel doloribus accusantium? Laborum
-    corporis nesciunt quam deserunt. &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;
-    &lt;/div&gt; &lt;!-- Intro Popup end --&gt;
+  &lt;!-- Intro Popup --&gt; &lt;div class="intro-popup"&gt; &lt;a
+  href="#introPopupHolder" aria-label="popup" class="aios-content-popup
+  introPopupTrigger" &gt;&lt;span class="hidden"&gt;popup&lt;/span&gt;&lt;/a
+  &gt; &lt;div class="aiosp-hide" id="introPopupHolder"&gt; &lt;div
+  class="introPopupHolder-content"&gt; &lt;div class="intro-popup-form"&gt;
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, nulla qui
+  magni praesentium quia impedit quae ipsam, recusandae, eum sequi ex eligendi
+  vel doloribus accusantium? Laborum corporis nesciunt quam deserunt.
+  &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;!-- Intro Popup end
+  --&gt;
 </div>
 
 <div *ngIf="PageService.enablePageSocialFiXNav">
-    &lt;div class="hp-sidebar"&gt;
-    &lt;div id="scroll-down"&gt;
-    &lt;ul class="aios-section-nav"&gt;&lt;/ul&gt;
-    &lt;ul
-    class="comp-social-sidebar"&gt;
-    <div *ngFor="
+  &lt;div class="hp-sidebar"&gt; &lt;div id="scroll-down"&gt; &lt;ul
+  class="aios-section-nav"&gt;&lt;/ul&gt; &lt;ul class="comp-social-sidebar"&gt;
+  <div
+    *ngFor="
       let icon of RegionsService.converObjectToArray(
         PageService.socialFixNavList
       );
       let i = index
-    ">
-
-        <div *ngIf="icon[1]['enable']">
-            <ng-container *ngIf="icon[1]['name'] == 'email'; else default">
-                <pre>&lt;li class="side-smi"&gt;
+    "
+  >
+    <div *ngIf="icon[1]['enable']">
+      <ng-container *ngIf="icon[1]['name'] == 'email'; else default">
+        <pre>&lt;li class="side-smi"&gt;
                     &lt;div class="email"&gt;
                         <?php echo do_shortcode('[mail_to email="sellingwithstacy@gmail.com"]
                         &lt;span class="ai-font-envelope-o"&gt;
@@ -110,10 +130,10 @@
                         [/mail_to]')?>
                     &lt;/div&gt;
                 &lt;/li&gt;</pre>
-            </ng-container>
-            <ng-template #default>
-                <ng-container *ngIf="icon[1]['name'] == 'phone'; else defaults">
-                    <pre>&lt;li class="side-smi"&gt;
+      </ng-container>
+      <ng-template #default>
+        <ng-container *ngIf="icon[1]['name'] == 'phone'; else defaults">
+          <pre>&lt;li class="side-smi"&gt;
                         &lt;div class="phone"&gt;
                             <?php echo do_shortcode('[ai_phone href="+1.407.415.9484"]
                             &lt;span class="ai-font-phone"&gt;
@@ -122,30 +142,27 @@
                             [/ai_phone]')?>
                         &lt;/div&gt;
                     &lt;/li&gt;</pre>
-                </ng-container>
-            </ng-template>
-            <ng-template #defaults>
-                &lt;li class="side-smi"&gt; &lt;a href="[ai_client_{{ icon[1]["name"] }}]"
-                target="_blank" aria-label="{{ icon[1]["name"] }}" &gt; &lt;span class="ai-font-{{
-                icon[1]["name"]
-                }}"&gt;&lt;/span&gt; &lt;/a&gt; &lt;/li&gt;
-            </ng-template>
-        </div>
+        </ng-container>
+      </ng-template>
+      <ng-template #defaults>
+        &lt;li class="side-smi"&gt; &lt;a href="[ai_client_{{
+          icon[1]["name"]
+        }}]" target="_blank" aria-label="{{ icon[1]["name"] }}" &gt; &lt;span
+        class="ai-font-{{ icon[1]["name"] }}"&gt;&lt;/span&gt; &lt;/a&gt;
+        &lt;/li&gt;
+      </ng-template>
     </div>
-    &lt;/ul&gt;
-    <div *ngIf="PageService.appearance == 'change-color-with-scrolldown'">
-        &lt;div class="slide-arrow"&gt;
-        &lt;p class="side-text"&gt;Scroll Down&lt;/p&gt;
-        &lt;div class="side-chevron"&gt;
-        &lt;span class="ai-font-arrow-g-d s-chevron"&gt;&lt;/span&gt;
-        &lt;span class="ai-font-arrow-g-d s-chevron"&gt;&lt;/span&gt;
-        &lt;/div&gt;
-        &lt;/div&gt;
-    </div>
-
-
+  </div>
+  &lt;/ul&gt;
+  <div *ngIf="PageService.appearance == 'change-color-with-scrolldown'">
+    &lt;div class="slide-arrow"&gt; &lt;p class="side-text"&gt;Scroll
+    Down&lt;/p&gt; &lt;div class="side-chevron"&gt; &lt;span
+    class="ai-font-arrow-g-d s-chevron"&gt;&lt;/span&gt; &lt;span
+    class="ai-font-arrow-g-d s-chevron"&gt;&lt;/span&gt; &lt;/div&gt;
     &lt;/div&gt;
-    &lt;/div&gt;
+  </div>
+
+  &lt;/div&gt; &lt;/div&gt;
 </div>
 
 <!-- your home html -->

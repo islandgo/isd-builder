@@ -52,7 +52,7 @@
                 "name": "logo grid column"
             },
             "navGridColumn": {
-                "value": "10/-11",
+                "value": "21/-11",
                 "inpuType": "text",
                 "name": "nav grid column"
             },

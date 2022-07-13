@@ -45,6 +45,7 @@ import { SimpleSlickMobileComponent } from "./component/widget-css-mobile-compon
 import { HtmlWidgetGeneratorComponent } from "./component/html-widget-generator.component";
 import { WelcomeContentComponent } from './component/widget-html-component/welcome-content/welcome-content.component';
 import { WelcomContentMobileComponent } from './component/widget-css-mobile-component/welcom-content-mobile/welcom-content-mobile.component';
+import { SectionBackgroundHtmlComponent } from './component/widget-html-component/section-background-html/section-background-html.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +88,7 @@ import { WelcomContentMobileComponent } from './component/widget-css-mobile-comp
     HtmlWidgetGeneratorComponent,
     WelcomeContentComponent,
     WelcomContentMobileComponent,
+    SectionBackgroundHtmlComponent,
   ],
   imports: [
     BuilderRoutes,
