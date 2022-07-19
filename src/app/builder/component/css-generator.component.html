@@ -225,7 +225,7 @@ canvas{{' {'}}
     object-fit: cover;
 {{'}'}}
 
-/* Site title */
+/* Site Bg */
 .site-bg canvas {{' {'}}
     pointer-events: none;
     position: absolute;
@@ -254,7 +254,57 @@ canvas{{' {'}}
   canvas {{' {'}}
     background-repeat: no-repeat;
   }
+
+    /* Site Title Primary */
+
+    .site-title-primary h3 {{' {'}}
+    text-align: left;
+    font-size: 22px;
+    letter-spacing: 0.2em;
+    color: #d2b48c;
+    text-transform: uppercase;
+    font-family: var(--ff-primary);
+    margin-bottom: 10px;
+}
+
+.site-title-primary h2 {{' {'}}
+    font-size: 50px;
+    line-height: 45px;
+    letter-spacing: 0.2em;
+    font-family: var(--ff-primary);
+    text-transform: uppercase;
+}
+
+
+
   
+
+  /* Site Btn Primary */
+  .site-btn-primary {{' {'}}
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 190px;
+  min-height: 60px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #000000;
+  letter-spacing: 0.1em;
+  border: 1px solid #6e6e6e;
+  background: transparent;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.site-btn-primary:hover {{' {'}}
+  color: #ffffff;
+  background: #6e6e6e;
+  border: 1px solid #6e6e6e;
+}
 
 
 /* Pojo */

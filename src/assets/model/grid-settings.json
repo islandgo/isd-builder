@@ -21,22 +21,25 @@
     "paddingTop": {
         "inpuType": "text",
         "value": "30px",
-        "name": "padding-top"
+        "name": "padding-top",
+        "paddingEnable": "true"
     },
     "paddingRight": {
         "inpuType": "text",
         "value": "24px",
-        "name": "padding-right"
+        "name": "padding-right",
+        "paddingEnable": "true"
     },
     "paddingBottom": {
         "inpuType": "text",
         "value": "30px",
-        "name": "padding-bottom"
+        "name": "padding-bottom",
+        "paddingEnable": "true"
     },
     "paddingLeft": {
         "inpuType": "text",
         "value": "24px",
-        "name": "padding-left"
+        "name": "padding-left",
+        "paddingEnable": "true"
     }
-
 }
