@@ -12,17 +12,29 @@ padding:
     {{ cssProperties[1]["value"] }}
   </div>
 </div>
-; } .region-{{ region[1]["keyword_class"] }}-container {{ " {" }}
-<div
-  *ngFor="
-    let cssProperties of RegionsService.converObjectToArray(
-      region[1]['grid_setting']
-    );
-    trackBy: PageService.indexTracker
-  "
->
-  <div *ngIf="cssProperties[1]['paddingEnable'] != 'true'">
-    {{ cssProperties[1]["name"] }}: {{ cssProperties[1]["value"] }};
+; }
+
+<div *ngIf="region[1]['keyword_class'] != 'slideshow'">
+  <div *ngIf="region[1]['grid_setting']['grid_parent']['value'] == 'grid'">
+    .region-{{ region[1]["keyword_class"] }}-container {{ " {" }}
+    <div
+      *ngFor="
+        let cssProperties of RegionsService.converObjectToArray(
+          region[1]['grid_setting']
+        );
+        trackBy: PageService.indexTracker
+      "
+    >
+      <div *ngIf="cssProperties[1]['paddingEnable'] != 'true'">
+        {{ cssProperties[1]["name"] }}: {{ cssProperties[1]["value"] }};
+      </div>
+    </div>
+    margin: 0 auto; }
+  </div>
+
+  <div *ngIf="region[1]['grid_setting']['grid_parent']['value'] == 'block'">
+    .region-{{ region[1]["keyword_class"] }}-container {{ " {" }} max-width:
+    {{ region[1]["grid_setting"]["grid_max_width"]["value"] }}; margin: 0 auto;
+    }
   </div>
 </div>
-margin: 0 auto; }
