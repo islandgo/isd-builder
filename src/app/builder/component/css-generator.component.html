@@ -46,6 +46,14 @@ TABLE OF CONTENTS
     --danger: #dc3545;
     --light: #f8f9fa;
     --dark: #343a40;
+
+    /* Custom Variables */
+    --ff-primary: "Poppins", sans-serif;
+    --ff-secondary: "Cinzel", serif;
+
+    --clr-primary: #17a2b8;
+    --clr-secondary: #343a40;
+
 {{'}'}}
 
 /*******************************************************
@@ -158,10 +166,10 @@ TABLE OF CONTENTS
 /*#region Global */
 
 body{{' {'}}
-    font-family: var(--font-family-default);
-    font-size: var(--font-size-default);
+    font-family: var(--ff-body);
+    font-size: 14px;
     background: #ffffff;
-    color: var(--font-color-default);
+    color: #000;
     margin: 0;
 
     /* Remove the comment from line 85 to 86 if the font issue in safari occurs */
@@ -255,29 +263,25 @@ canvas{{' {'}}
     background-repeat: no-repeat;
   }
 
-    /* Site Title Primary */
+    /* Site Title */
 
-    .site-title-primary h3 {{' {'}}
-    text-align: left;
-    font-size: 22px;
-    letter-spacing: 0.2em;
-    color: #d2b48c;
-    text-transform: uppercase;
+
+    .site-title .secondary-text {{' {'}}
     font-family: var(--ff-primary);
+    font-size: 22px;
+    color: #d2b48c;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
     margin-bottom: 10px;
 }
 
-.site-title-primary h2 {{' {'}}
-    font-size: 50px;
-    line-height: 45px;
-    letter-spacing: 0.2em;
+.site-title .primary-text {{' {'}}
     font-family: var(--ff-primary);
+    font-size: 50px;
+    line-height: 50px;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
 }
-
-
-
-  
 
   /* Site Btn Primary */
   .site-btn-primary {{' {'}}
@@ -292,8 +296,10 @@ canvas{{' {'}}
   font-weight: 600;
   color: #000000;
   letter-spacing: 0.1em;
+
   border: 1px solid #6e6e6e;
   background: transparent;
+  
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;

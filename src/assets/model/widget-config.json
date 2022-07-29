@@ -1,4 +1,18 @@
 {
+  "siteTitle": {
+    "name": "siteTitle",
+    "settings": {
+      "siteTitleType": {
+        "inpuType": "select",
+        "selectValue": [
+          "normal-title",
+          "one-title"
+        ],
+        "value": "normal-title",
+        "name": "Site Title Type"
+      }
+    }
+  },
   "simpleSlick": {
     "name": "simple-slick",
     "suffixClass": "-slick",
@@ -7,6 +21,15 @@
         "inpuType": "text",
         "value": "6",
         "name": "number-of-item"
+      },
+      "imageType": {
+        "inpuType": "select",
+        "selectValue": [
+          "jpg",
+          "png"
+        ],
+        "value": "jpg",
+        "name": "image-type"
       },
       "slidesToShow": {
         "inpuType": "text",
@@ -218,6 +241,15 @@
         ],
         "value": "true",
         "name": "has-image"
+      },
+      "imageType": {
+        "inpuType": "select",
+        "selectValue": [
+          "jpg",
+          "png"
+        ],
+        "value": "jpg",
+        "name": "image-type"
       },
       "contentPosition": {
         "inpuType": "select",

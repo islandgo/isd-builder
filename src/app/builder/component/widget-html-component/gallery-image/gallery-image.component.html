@@ -3,23 +3,32 @@
   }}{{ widget[1]["suffix"] }}"&gt;
   <div *ngFor="let item of [].constructor(galleryItem); let i = index">
     <div
-      *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content' && widget[1]['settings']['contentPosition']['value'] == 'below-image'">
+      *ngIf="
+        widget[1]['settings']['contentType']['value'] == 'title-content' &&
+        widget[1]['settings']['contentPosition']['value'] == 'below-image'
+      "
+    >
       &lt;div class="{{ regionClassName }}-item"&gt;
     </div>
     <div *ngIf="widget[1]['settings']['hasImage']['value'] == 'true'">
-      &lt;a href="[blogurl]" aria-label="{{ regionClassName }}-image"
-      class="{{ regionClassName }}-image"&gt;
-      &lt;div class="{{regionClassName}}-item canvas-wrapper"&gt;
-      &lt;canvas width="{{
-      widget[1]["settings"]["image_width"]["value"]}}"
-      height="{{widget[1]["settings"]["image_height"]["value"]}}"&gt;&lt;/canvas&gt; &lt;img
-      alt="{{regionClassName}}-image" class="canvas-img img-responsive lazyload" src="
-      <?php echo get_stylesheet_directory_uri() ?>/images/{{regionClassName}}-{{ i + 1 }}.jpg"&gt;
+      &lt;a href="[blogurl]" aria-label="{{ regionClassName }}-image" class="{{
+        regionClassName
+      }}-image"&gt; &lt;div class="{{ regionClassName }}-item
+      canvas-wrapper"&gt; &lt;canvas width="{{
+        widget[1]["settings"]["image_width"]["value"]
+      }}" height="{{
+        widget[1]["settings"]["image_height"]["value"]
+      }}"&gt;&lt;/canvas&gt; &lt;img alt="{{ regionClassName }}-image"
+      class="canvas-img img-responsive lazyload" src="
+      <?php echo get_stylesheet_directory_uri() ?>/images/{{
+        regionClassName
+      }}-{{ i + 1 }}.{{ imageType }}"&gt;
       <div *ngIf="widget[1]['settings']['hoverWithImg']['value'] == 'true'">
-        &lt;img alt="{{ regionClassName }}-image-hover" class="canvas-img {{ regionClassName }}-image-hover
-        img-responsive lazyload"
-        src="&lt;?php echo
-        get_stylesheet_directory_uri() ?&gt;/images/{{regionClassName }}-img-hover.jpg"&gt;
+        &lt;img alt="{{ regionClassName }}-image-hover" class="canvas-img
+        {{ regionClassName }}-image-hover img-responsive lazyload" src="&lt;?php
+        echo get_stylesheet_directory_uri() ?&gt;/images/{{
+          regionClassName
+        }}-img-hover.jpg"&gt;
       </div>
       <!-- Icon -->
       <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
@@ -29,28 +38,42 @@
       <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
         &lt;em&gt;EzekSayson&lt;/em&gt;
       </div>
-      &lt;/div&gt;
-      &lt;/a&gt;
+      <!-- Title Content -->
+      <div
+        *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'"
+      >
+        <pre>
+          &lt;div class="{{ regionClassName }}-gallery-content"&gt;
+            &lt;span&gt;Home&lt;/span&gt;
+            &lt;em&gt;Valuation&lt;/em&gt;
+          &lt;/div&gt;
+        </pre>
+      </div>
+      &lt;/div&gt; &lt;/a&gt;
     </div>
-    <!-- Title + Content -->
+    <!-- Title + Content Below Image -->
     <div
-      *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content' && widget[1]['settings']['contentPosition']['value'] == 'below-image'">
-      &lt;div class="{{ regionClassName }}-details" &gt;
-      &lt;em&gt;{{ regionClassName }}&lt;/em&gt;
-      &lt;p&gt;{{ regionClassName }}_paraghrap&lt;/p&gt;
-      &lt;a href="[blogurl]" aria-label="Read More" class="site-btn-primary"&gt;Read More&lt;/a&gt;
-      &lt;/div&gt;
+      *ngIf="
+        widget[1]['settings']['contentType']['value'] == 'title-content' &&
+        widget[1]['settings']['contentPosition']['value'] == 'below-image'
+      "
+    >
+      &lt;div class="{{ regionClassName }}-details" &gt; &lt;em&gt;{{
+        regionClassName
+      }}&lt;/em&gt; &lt;p&gt;{{ regionClassName }}_paraghrap&lt;/p&gt; &lt;a
+      href="[blogurl]" aria-label="Read More" class="site-btn-primary"&gt;Read
+      More&lt;/a&gt; &lt;/div&gt;
     </div>
     <!-- Content Only -->
     <div
-      *ngIf="widget[1]['settings']['hasImage']['value'] == 'false' && widget[1]['settings']['contentPosition']['value'] == 'below-image'">
-      &lt;div class="{{ regionClassName }}-details" &gt;
-      &lt;em&gt;{{ regionClassName }}&lt;/em&gt;
-      &lt;p&gt;{{ regionClassName }}_paraghrap&lt;/p&gt;
-      &lt;/div&gt;
-    </div>
-    <div
-      *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content' && widget[1]['settings']['contentPosition']['value'] == 'below-image'">
+      *ngIf="
+        widget[1]['settings']['hasImage']['value'] == 'true' &&
+        widget[1]['settings']['contentPosition']['value'] == 'below-image'
+      "
+    >
+      &lt;div class="{{ regionClassName }}-details" &gt; &lt;em&gt;{{
+        regionClassName
+      }}&lt;/em&gt; &lt;p&gt;{{ regionClassName }}_paraghrap&lt;/p&gt;
       &lt;/div&gt;
     </div>
   </div>

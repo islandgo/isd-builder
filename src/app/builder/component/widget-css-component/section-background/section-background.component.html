@@ -1,21 +1,20 @@
 <div class="background-setting-container">
-
-    <div *ngIf="regionData[1]['background_setting']['background']['enable']">
-        .hp-{{regionData[1]['keyword_class']}} .site-bg canvas{{' {'}}
-        <div *ngIf="this.regionData[1]['background_setting']['background']['settings']['isParallax']['value']">
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center center;
-        </div>
-        }
-
-        <div *ngIf="this.regionData[1]['background_setting']['background']['settings']['hasRbga']['value']">
-            .hp-{{regionData[1]['keyword_class']}} .site-bg-rgba::before {{' {'}}
-            background: {{
-            this.regionData[1]['background_setting']['background']['settings']['hasRbga']['selectTextValues']['rbga']
-            }};
-            }
-        </div>
+  <div *ngIf="regionData[1]['background_setting']['background']['enable']">
+    .hp-{{ regionData[1]["keyword_class"] }} .site-bg canvas{{ " {" }}
+    <div *ngIf="backgroundType['isParallax']['value']">
+      background-attachment: fixed; background-size: cover; background-position:
+      center center;
     </div>
+    }
 
+    <div *ngIf="backgroundType['hasRbga']['value']">
+      .hp-{{ regionData[1]["keyword_class"] }} .site-bg-rgba::before
+      {{ " {" }} background:
+      {{
+        this.regionData[1]["background_setting"]["background"]["settings"][
+          "hasRbga"
+        ]["selectTextValues"]["rbga"]
+      }}; }
+    </div>
+  </div>
 </div>

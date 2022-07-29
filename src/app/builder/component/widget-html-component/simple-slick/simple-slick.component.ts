@@ -11,14 +11,14 @@ export class SimpleSlickComponent implements OnInit {
   @Input() public regionClassName;
 
   slickItem: any;
-  widgetType: any;
+  imageType: any;
 
   constructor(public RegionsService: RegionsService) {}
 
   ngOnInit() {
-    this.widgetType = this.widget[1]["name"];
-    if ((this.widgetType = this.widget[1]["name"] == "simple-slick")) {
+    if (this.widget[1]["name"] == "simple-slick") {
       this.slickItem = +this.widget[1]["settings"]["number_of_item"]["value"];
+      this.imageType = this.widget[1]["settings"]["imageType"]["value"];
     }
   }
 }

@@ -1,12 +1,12 @@
 <pre>
   <div *ngIf="regionData[1]['background_setting']['background']['enable']">
     &lt;div class="site-bg 
-    <div *ngIf="regionData[1]['background_setting']['background']['settings']['hasRbga']['value']">
+    <div *ngIf="backgroundOverlay">
       site-rgba
     </div>
     "&gt;
-    &lt;canvas class="lazyload" width="1600" height="486"
-    data-bgset="&lt;?php echo get_stylesheet_directory_uri(); ?&gt;/images/{{regionData[1]['keyword_class']}}-bg"&gt;&lt;/canvas&gt;
+    &lt;canvas class="lazyload" width="{{backgroundWidth}}" height="{{backgroundHeight}}"
+    data-bgset="&lt;?php echo get_stylesheet_directory_uri(); ?&gt;/images/{{imageType}}"&gt;&lt;/canvas&gt;
     &lt;/div&gt;
   </div>
 </pre>

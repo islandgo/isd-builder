@@ -1,6 +1,14 @@
-<div *ngIf="this.widget[1]['name'] == 'site-title'" class="site-title-html-widget">
-  &lt;div class="site-title-primary"&gt;
-  {{widget[1]["settings"]["primary_text"]["value"]}}
-  {{widget[1]["settings"]["secondary_text"]["value"]}}
+<div *ngIf="widget[1]['name'] == 'siteTitle'">
+  &lt;div class="site-title"&gt;
+  <div *ngIf="siteTitleType == 'normal-title'">
+    <pre>
+      &lt;h3 class="secondary-text"&gt; &lt;/h3&gt;
+      &lt;h2 class="primary-text"&gt;  &lt;/h2&gt;
+    </pre>
+  </div>
+
+  <div *ngIf="siteTitleType == 'one-title'">
+    &lt;h2 class="primary-text"&gt;&lt;/h2&gt;
+  </div>
   &lt;/div&gt;
 </div>

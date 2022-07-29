@@ -13,7 +13,6 @@ export class ElementPeekCssComponent implements OnInit {
 
   ngOnInit() {
     if (this.widget[1]["name"] == "elementPeek") {
-      console.log(this.regionData);
     }
   }
 }

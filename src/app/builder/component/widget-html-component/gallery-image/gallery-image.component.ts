@@ -13,6 +13,7 @@ export class GalleryImageComponent implements OnInit {
   widgetType;
   widgetSettings;
   galleryItem: any;
+  imageType: any;
   constructor(public RegionsService: RegionsService) {}
 
   ngOnInit() {
@@ -20,6 +21,7 @@ export class GalleryImageComponent implements OnInit {
     if (this.widgetType == "gallery-image") {
       this.widgetSettings = this.widget[1]["settings"];
       this.galleryItem = +this.widget[1]["settings"]["number_of_item"]["value"];
+      this.imageType = this.widget[1]["settings"]["imageType"]["value"];
     }
   }
 }

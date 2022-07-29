@@ -7,7 +7,13 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class SiteTitleComponent implements OnInit {
   @Input() public widget;
+
+  siteTitleType: any;
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.widget[1]["name"] == "siteTitle") {
+      this.siteTitleType = this.widget[1]["settings"]["siteTitleType"]["value"];
+    }
+  }
 }
