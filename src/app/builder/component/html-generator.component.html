@@ -7,7 +7,7 @@
       PageService.appearance == 'change-color' ||
         PageService.appearance == 'change-color-with-scrolldown' ||
         PageService.appearance == 'circle-dots';
-      else normalnormalin
+      else defaulttemplate
     "
   >
     &lt;section class="hp-{{ region[1]["keyword_class"] }} aios-scroll-section"
@@ -16,14 +16,10 @@
     }}"&gt; &lt;div class="region-{{
       region[1]["keyword_class"]
     }}-container"&gt;
-    <app-section-background-html [regionData]="region">
-    </app-section-background-html>
   </div>
-  <ng-template #normalnormalin>
+  <ng-template #defaulttemplate>
     &lt;section class="hp-{{ region[1]["keyword_class"] }}"&gt; &lt;div
     class="region-{{ region[1]["keyword_class"] }}-container"&gt;
-    <app-section-background-html [regionData]="region">
-    </app-section-background-html>
   </ng-template>
   <div *ngIf="region[1]['keyword_class'] == 'slideshow'">
     &lt;h2 class="hidden"&gt;Slideshow&lt;/h2&gt; &lt;?php if (
@@ -76,7 +72,10 @@
     </div>
     &lt;/div&gt;
   </div>
-  &lt;/div&gt; &lt;/section&gt;
+  &lt;/div&gt;
+  <app-section-background-html [regionData]="region">
+  </app-section-background-html>
+  &lt;/section&gt;
   <br />
   &lt;!-- {{ region[1]["keyword_class"] }} end --&gt;
 </div>

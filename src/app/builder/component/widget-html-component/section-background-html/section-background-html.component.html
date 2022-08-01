@@ -4,6 +4,9 @@
     <div *ngIf="backgroundOverlay">
       site-rgba
     </div>
+    <div *ngIf="imageGrayscale">
+      site-bg-grayscale
+    </div>
     "&gt;
     &lt;canvas class="lazyload" width="{{backgroundWidth}}" height="{{backgroundHeight}}"
     data-bgset="&lt;?php echo get_stylesheet_directory_uri(); ?&gt;/images/{{imageType}}"&gt;&lt;/canvas&gt;

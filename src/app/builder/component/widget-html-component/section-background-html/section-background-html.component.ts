@@ -11,6 +11,8 @@ export class SectionBackgroundHtmlComponent implements OnInit {
   backgroundHeight: any;
   backgroundOverlay: any;
   imageType: any;
+  imageGrayscale: any;
+
   constructor() {}
 
   ngOnInit() {
@@ -30,6 +32,10 @@ export class SectionBackgroundHtmlComponent implements OnInit {
       this.imageType =
         this.regionData[1]["background_setting"]["background"]["settings"][
           "imageFileName"
+        ]["value"];
+      this.imageGrayscale =
+        this.regionData[1]["background_setting"]["background"]["settings"][
+          "grayscale"
         ]["value"];
     }
   }

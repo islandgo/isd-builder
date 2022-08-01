@@ -2,13 +2,21 @@
   &lt;div class="site-title"&gt;
   <div *ngIf="siteTitleType == 'normal-title'">
     <pre>
-      &lt;h3 class="secondary-text"&gt; &lt;/h3&gt;
-      &lt;h2 class="primary-text"&gt;  &lt;/h2&gt;
+      &lt;h3 class="secondary-text"&gt; {{ secondaryText }} &lt;/h3&gt;
+      &lt;h2 class="primary-text"&gt; {{ primaryText }}  &lt;/h2&gt;
     </pre>
   </div>
 
   <div *ngIf="siteTitleType == 'one-title'">
-    &lt;h2 class="primary-text"&gt;&lt;/h2&gt;
+    &lt;h2 class="primary-text"&gt; {{ primaryText }}&lt;/h2&gt;
+  </div>
+  <div *ngIf="siteTitleType == 'number-normal-title'">
+    <pre>
+      &lt;h3 class="secondary-text"&gt; &lt;span&gt;{{
+        numberText
+      }}&lt;/span&gt; {{ secondaryText }} &lt;/h3&gt;
+      &lt;h2 class="primary-text"&gt; {{ primaryText }}  &lt;/h2&gt;
+    </pre>
   </div>
   &lt;/div&gt;
 </div>

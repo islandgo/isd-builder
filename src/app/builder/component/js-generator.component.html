@@ -118,15 +118,7 @@ jQuery("header.header").removeClass("show-fixed");
 },
 </div>
 
-<div *ngIf="PageService.enablePageGoogleTranslator">
-    initFlagTrans: function () {{' {'}}
-    jQuery(".google-translator-flag").googleTranslator({{' {'}}
-        dropdown: true,
-        dropdownFlag: true,
-        dropdownChangeText: true,
-    {{'}'}});
-{{'}'}},
-</div>
+
 
 <div *ngIf="PageService.headerType == 'split-nav' ">
     initSplitHeader: function () {{' {'}}
@@ -185,9 +177,6 @@ jQuery("header.header").removeClass("show-fixed");
 {{'}'}};
 
 jQuery(document).ready(function (){{' {'}}
-<div *ngIf="PageService.enablePageGoogleTranslator">
-    app.initFlagTrans();
-</div>
 app.initAos();
 app.initNavigation();
 <div *ngIf="PageService.enablePageSocialFiXNav">

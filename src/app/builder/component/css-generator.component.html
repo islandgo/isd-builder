@@ -63,7 +63,8 @@ TABLE OF CONTENTS
  *******************************************************/
 
 /*#region Sub Menu */
-#nav .sub-menu{{' {'}}
+
+header.header .menu .sub-menu{{' {'}}
     position: absolute;
     width: 100%;
     min-width: 190px;
@@ -77,7 +78,7 @@ TABLE OF CONTENTS
     transition: all 0.35s ease-in-out;
 {{'}'}}
 
-#nav li:hover > .sub-menu{{' {'}}
+header.header .menu li:hover > .sub-menu{{' {'}}
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -85,23 +86,23 @@ TABLE OF CONTENTS
     
 {{'}'}}
 
-#nav > li > .sub-menu{{' {'}}
+header.header .menu > li > .sub-menu{{' {'}}
     left: 50%;
     transform: translate(-50%, 20px);
     padding-top: 48px;
 {{'}'}}
 
-#nav .sub-menu .sub-menu #fnav .sub-menu .sub-menu{{' {'}}
+header.header .menu .sub-menu .sub-menu #fnav .sub-menu .sub-menu{{' {'}}
     top: 0;
     margin-left: 100%;
 {{'}'}}
 
-#nav li{{' {'}}
+header.header .menu li{{' {'}}
     position: relative;
     display: inline-block;
 {{'}'}}
 
-#nav .sub-menu a{{' {'}}
+header.header .menu .sub-menu a{{' {'}}
     background: #ffffff;
     color: #333333;
     display: block;
@@ -110,28 +111,28 @@ TABLE OF CONTENTS
     margin: 1px 6px 0;
 {{'}'}}
 
-#nav .sub-menu a:hover{{' {'}}
+header.header .menu .sub-menu a:hover{{' {'}}
     background: #1092b2;
     color: #ffffff;
     text-decoration: none;
 {{'}'}}
-#nav .sub-menu .sub-menu{{' {'}}
+header.header .menu .sub-menu .sub-menu{{' {'}}
     margin-left: 100%;
     top: 0;
     text-align: left;
 {{'}'}}
 
-#nav li:hover > .sub-menu{{' {'}}
+header.header .menu li:hover > .sub-menu{{' {'}}
     display: block;
 {{'}'}}
 
-#nav .sub-menu li{{' {'}}
+header.header .menu .sub-menu li{{' {'}}
     position: relative;
     width: 100%;
     background: transparent;
 {{'}'}}
 
-#nav .sub-menu .sub-menu > li:first-child:before{{' {'}}
+header.header .menu .sub-menu .sub-menu > li:first-child:before{{' {'}}
     content: "";
     position: absolute;
     top: 50%;
@@ -151,7 +152,7 @@ TABLE OF CONTENTS
     opacity: 0;
 {{'}'}}
 
-#nav .sub-menu li:hover .sub-menu > li:first-child:before{{' {'}}
+header.header .menu .sub-menu li:hover .sub-menu > li:first-child:before{{' {'}}
     opacity: 1;
 {{'}'}}
 
@@ -200,6 +201,7 @@ select{{' {'}}
 
 em {{' {'}}
     font-style: normal;
+    display: block;
 }
 
 #main-wrapper{{' {'}}
@@ -237,6 +239,7 @@ canvas{{' {'}}
 .site-bg canvas {{' {'}}
     pointer-events: none;
     position: absolute;
+    background-size: cover;
     width: 100%;
     height: 100%;
     left: 0;
@@ -268,7 +271,7 @@ canvas{{' {'}}
 
     .site-title .secondary-text {{' {'}}
     font-family: var(--ff-primary);
-    font-size: 22px;
+    font-size: 50px;
     color: #d2b48c;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -284,22 +287,38 @@ canvas{{' {'}}
 }
 
   /* Site Btn Primary */
+  <div *ngIf="PageService.enablePageGlobalButton" >
+
+
   .site-btn-primary {{' {'}}
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 190px;
-  min-height: 60px;
+  max-width: {{PageService.buttonWidth}};
+  min-height: {{PageService.buttonHeight}};
+
   font-size: 12px;
   font-weight: 600;
-  color: #000000;
+  color: {{PageService.textColor}};
   letter-spacing: 0.1em;
 
-  border: 1px solid #6e6e6e;
-  background: transparent;
-  
+<div *ngIf="PageService.borderType == 'full-border'">
+    border: {{PageService.borderWidth}} solid {{PageService.borderColor}};
+</div>
+<div *ngIf="PageService.borderType == 'border-bottom'">
+    border-bottom: {{PageService.borderWidth}} solid {{PageService.borderColor}};
+</div>
+<div *ngIf=" PageService.borderRadius != '0' || PageService.borderRadius != '0px'">
+    border-radius: {{PageService.borderRadius}};
+</div>
+  background: {{PageService.backgroundColor}};
+ position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  white-space: nowrap;
+    width: 100%;
+
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
@@ -307,10 +326,10 @@ canvas{{' {'}}
 }
 
 .site-btn-primary:hover {{' {'}}
-  color: #ffffff;
-  background: #6e6e6e;
-  border: 1px solid #6e6e6e;
+  color: {{PageService.textColorHover}};
+  background: {{PageService.backgroundColorHover}};
 }
+  </div>
 
 
 /* Pojo */
@@ -531,7 +550,7 @@ aside menu{{' {'}}
 }
 
 
-.header .navigation #nav {{' {'}}
+header.header .navigation .menu {{' {'}}
     font-size: 14px;
     letter-spacing: 0.07em;
     color: #ffffff;
@@ -541,13 +560,13 @@ aside menu{{' {'}}
     justify-content: flex-end;
 }
 
-.header .navigation #nav > li > a:hover {{' {'}}
+header.header .navigation .menu > li > a:hover {{' {'}}
     color: #fff;
 }
 <div *ngIf="PageService.navHover == 'bottom line' || PageService.navHover == 'bottom line with arrow'">
     /* Menu Before */
     
-    #nav > li::before {{' {'}}
+    header.header .menu > li::before {{' {'}}
         content: "";
         position: absolute;
         width: 0;
@@ -563,7 +582,7 @@ aside menu{{' {'}}
         transition: all 0.4s ease-in-out;
     }
     
-    #nav > li:hover::before {{' {'}}
+   header.header .menu > li:hover::before {{' {'}}
         opacity: 1;
         width: 100%;
     }
@@ -572,7 +591,7 @@ aside menu{{' {'}}
 <div *ngIf="PageService.navHover == 'arrow' ">
     /* Menu After */
     
-    #nav > li::after {{' {'}}
+    header.header .menu > li::after {{' {'}}
         content: "";
         position: absolute;
         bottom: -8px;
@@ -591,7 +610,7 @@ aside menu{{' {'}}
         opacity: 0;
     }
     
-    #nav > li:hover::after {{' {'}}
+    header.header .menu > li:hover::after {{' {'}}
         opacity: 1;
         bottom: -36px;
     }
@@ -603,7 +622,7 @@ aside menu{{' {'}}
 
     /* Menu Before */
     
-    #nav > li::before {{' {'}}
+    header.header .menu > li::before {{' {'}}
         content: "";
         position: absolute;
         width: 0;
@@ -619,12 +638,12 @@ aside menu{{' {'}}
         transition: all 0.4s ease-in-out;
     }
     
-    #nav > li:hover::before {{' {'}}
+    header.header .menu > li:hover::before {{' {'}}
         opacity: 1;
         width: 100%;
     }
     
-    #nav > li::after {{' {'}}
+    header.header .menu > li::after {{' {'}}
         content: "";
         position: absolute;
         bottom: -8px;
@@ -643,7 +662,7 @@ aside menu{{' {'}}
         opacity: 0;
     }
     
-    #nav > li:hover::after {{' {'}}
+    header.header .menu > li:hover::after {{' {'}}
         opacity: 1;
         bottom: -36px;
     }
@@ -652,7 +671,7 @@ aside menu{{' {'}}
 
 <div *ngIf="PageService.enableSeparatorNav">
     /* Text Line */
-    .header .navigation #nav > li:not(:last-child) > a::before {{' {'}}
+    header.header .menu .navigation #nav > li:not(:last-child) > a::before {{' {'}}
         content: "";
         position: absolute;
         background: rgba(190, 190, 190, 1);
@@ -690,7 +709,7 @@ aside menu{{' {'}}
 
 
 /* Fixed header */
-.header.show-fixed {{' {'}}
+header.header.show-fixed {{' {'}}
     pointer-events: all;
     top: 0;
     width: 100%;
@@ -719,6 +738,13 @@ aside menu{{' {'}}
         background: gray;
     {{'}'}}
 
+    header.header .menu-primary-menu-container {{' {'}}
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
     header.header .navigation {{' {'}}
         font-size: 14px;
         letter-spacing: 00.05em;
@@ -726,26 +752,19 @@ aside menu{{' {'}}
         text-transform: uppercase;
     {{'}'}}
 
-    .header-logo .header-img {{' {'}}
-        padding: 0 50px;
-    {{'}'}}
 
-    .header #nav-primary-menu-container {{' {'}}
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 24px;
-    {{'}'}}
-    ul.aios-split-nav.nav.header-item {{' {'}}
+    header.header .nav {{' {'}}
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 30px;
     {{'}'}}
 
-    .nav > li > a:focus,
-.nav > li > a:hover {{' {'}}
-    background-color: transparent;
+    header.header .menu > li > a {{' {'}}
+      padding: 0 ;
+      background: transparent;
 }
+
 </div>
 /*#endregion Header */
 
@@ -1404,66 +1423,6 @@ aside menu{{' {'}}
   
     /*#endregion Fixed smi */
 </div>
-
-<div *ngIf="PageService.enablePageGoogleTranslator">
-    /* Gtranslate */
-    .translate-wrapper {{' {'}}
-    position: absolute;
-    right: 0;
-    top: 18px;
-    }
-
-    .nav-translate {{' {'}}
-    position: relative;
-    font-size: 0;
-    }
-
-    .nav-translate .ai-translator-dropdown-wrap,
-    .nav-translate a.google-translator-flag {{' {'}}
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    }
-
-    .skiptranslate {{' {'}}
-    display: none !important;
-    }
-
-    .nav-translate .ai-translator-dropdown-wrap,
-    .nav-translate a.google-translator-flag {{' {'}}
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    }
-
-    .nav-translate img {{' {'}}
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-    }
-
-    .nav-translate:hover img,
-    .nav-translate:focus img {{' {'}}
-    opacity: 0.7;
-    }
-
-    .nav .ai-translator-dropdown {{' {'}}
-    left: initial;
-    right: 0;
-    }
-
-    .ai-translator-dropdown ul li {{' {'}}
-    color: #000000;
-    }
-
-    /* Gtranslate end */
-</div>
-
 
 <div *ngFor="let region of customRegions; let i = index">
     /*#region {{region[1]['region_name'] }} */ <br>

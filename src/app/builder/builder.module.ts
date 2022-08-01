@@ -46,6 +46,8 @@ import { HtmlWidgetGeneratorComponent } from "./component/html-widget-generator.
 import { WelcomeContentComponent } from './component/widget-html-component/welcome-content/welcome-content.component';
 import { WelcomContentMobileComponent } from './component/widget-css-mobile-component/welcom-content-mobile/welcom-content-mobile.component';
 import { SectionBackgroundHtmlComponent } from './component/widget-html-component/section-background-html/section-background-html.component';
+import { ButtonHtmlComponent } from './component/widget-html-component/button-html/button-html.component';
+import { ButtonCssComponent } from './component/widget-css-component/button-css/button-css.component';
 
 @NgModule({
   declarations: [
@@ -89,6 +91,8 @@ import { SectionBackgroundHtmlComponent } from './component/widget-html-componen
     WelcomeContentComponent,
     WelcomContentMobileComponent,
     SectionBackgroundHtmlComponent,
+    ButtonHtmlComponent,
+    ButtonCssComponent,
   ],
   imports: [
     BuilderRoutes,

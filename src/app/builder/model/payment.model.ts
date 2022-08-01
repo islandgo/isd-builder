@@ -34,6 +34,12 @@ export class RegionSectionModel {
             inpuType: "text",
             name: "height",
           },
+          grayscale: {
+            value: false,
+            inpuType: "select",
+            selectValue: [true, false],
+            name: "Enable Grayscale",
+          },
           hasRbga: {
             value: false,
             inpuType: "select",
@@ -41,7 +47,7 @@ export class RegionSectionModel {
             selectTextValues: {
               rbga: "rgba(0,0,0,.5)",
             },
-            name: "Enable Rbga",
+            name: "Enable Overlay",
           },
           isParallax: {
             value: false,

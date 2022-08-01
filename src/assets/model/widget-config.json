@@ -6,10 +6,46 @@
         "inpuType": "select",
         "selectValue": [
           "normal-title",
+          "number-normal-title",
           "one-title"
         ],
         "value": "normal-title",
         "name": "Site Title Type"
+      },
+      "secondaryText": {
+        "inpuType": "text",
+        "value": "Featured",
+        "name": "Secondary Text"
+      },
+      "primaryText": {
+        "inpuType": "text",
+        "value": "Communities",
+        "name": "Primary Text"
+      },
+      "numberText": {
+        "inpuType": "text",
+        "value": "01",
+        "name": "Number Text"
+      }
+    }
+  },
+  "siteButton": {
+    "name": "siteButton",
+    "settings": {
+      "buttonText": {
+        "inpuType": "text",
+        "value": "Read More",
+        "name": "Site Button Text"
+      },
+      "buttonWidth": {
+        "inpuType": "text",
+        "value": "220px",
+        "name": "Site Button Width"
+      },
+      "buttonHeight": {
+        "inpuType": "text",
+        "value": "60px",
+        "name": "Site Button Height"
       }
     }
   },

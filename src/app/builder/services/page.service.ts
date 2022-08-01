@@ -18,7 +18,6 @@ export class PageService {
   enablePageSocialFiXNav: boolean;
   socialFixNavType: any;
   socialFixNavList: any;
-  enablePageGoogleTranslator: boolean;
   enableHeaderContact: boolean;
   enableSeparatorNav: boolean;
   enablePageDoubleTap: boolean;
@@ -35,6 +34,17 @@ export class PageService {
   enablePageIonRangeSlider: boolean;
   socialPhone: any;
   socialEmail: any;
+  enablePageGlobalButton: boolean;
+  borderType: any;
+  borderWidth: any;
+  borderRadius: any;
+  borderColor: any;
+  backgroundColor: any;
+  textColor: any;
+  backgroundColorHover: any;
+  textColorHover: any;
+  buttonWidth: any;
+  buttonHeight: any;
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit() {}
@@ -74,7 +84,6 @@ export class PageService {
     this.enablePageNormalHeader = false;
     this.enablePageFloatingMenu = false;
     this.enablePageSocialFiXNav = false;
-    this.enablePageGoogleTranslator = false;
     this.enableSeparatorNav = false;
     this.enablePageDoubleTap = false;
     this.enablePageIntroVideo = false;
@@ -82,6 +91,7 @@ export class PageService {
     this.enablePageElementPeek = false;
     this.enablePageIonRangeSlider = false;
     this.enableCombineContactAndNav = false;
+    this.enablePageGlobalButton = false;
     this.getPage().subscribe((data) => {
       if (data) {
         this.pageSettings = Object.entries(data);
@@ -90,6 +100,22 @@ export class PageService {
           if (obj[1]["enable"]) {
             if (obj[0] == "popup_modal") {
               this.enablePagePopUpModal = true;
+            }
+            if (obj[0] == "global_button") {
+              this.enablePageGlobalButton = true;
+              this.borderType = obj[1]["settings"]["borderType"]["value"];
+              this.borderWidth = obj[1]["settings"]["borderWidth"]["value"];
+              this.borderRadius = obj[1]["settings"]["borderRadius"]["value"];
+              this.borderColor = obj[1]["settings"]["borderColor"]["value"];
+              this.backgroundColor =
+                obj[1]["settings"]["backgroundColor"]["value"];
+              this.textColor = obj[1]["settings"]["textColor"]["value"];
+              this.backgroundColorHover =
+                obj[1]["settings"]["backgroundColorHover"]["value"];
+              this.textColorHover =
+                obj[1]["settings"]["textColorHover"]["value"];
+              this.buttonWidth = obj[1]["settings"]["width"]["value"];
+              this.buttonHeight = obj[1]["settings"]["height"]["value"];
             }
             if (obj[0] == "split_nav") {
               this.enablePageSplitNav = true;
@@ -103,9 +129,6 @@ export class PageService {
             if (obj[0] == "burger_menu") {
               this.enablePageBurgerMenu = true;
               this.headerData = obj[1]["settings"];
-            }
-            if (obj[0] == "google_translator") {
-              this.enablePageGoogleTranslator = true;
             }
             if (obj[0] == "double_tap") {
               this.enablePageDoubleTap = true;

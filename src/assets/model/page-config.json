@@ -83,6 +83,67 @@
         "name": "popup-modal",
         "settings": {}
     },
+    "global_button": {
+        "enable": false,
+        "name": "global-button",
+        "settings": {
+            "borderType": {
+                "value": "full-border",
+                "inpuType": "select",
+                "selectValue": [
+                    "full-border",
+                    "border-bottom",
+                    "none"
+                ],
+                "name": "Border Type"
+            },
+            "borderWidth": {
+                "value": "1px",
+                "inpuType": "text",
+                "name": "Border Width"
+            },
+            "borderRadius": {
+                "value": "3px",
+                "inpuType": "text",
+                "name": "Border Radius"
+            },
+            "borderColor": {
+                "value": "#000000",
+                "inpuType": "text",
+                "name": "Border Color"
+            },
+            "backgroundColor": {
+                "value": "transparent",
+                "inpuType": "text",
+                "name": "Background Color"
+            },
+            "textColor": {
+                "value": "#000000",
+                "inpuType": "text",
+                "name": "Text Color"
+            },
+            "backgroundColorHover": {
+                "value": "#000000",
+                "inpuType": "text",
+                "name": "Background Color Hover"
+            },
+            "textColorHover": {
+                "value": "#ffffff",
+                "inpuType": "text",
+                "name": "Text Color Hover"
+            },
+            "width": {
+                "value": "190px",
+                "inpuType": "text",
+                "name": "Button Width"
+            },
+            "height": {
+                "value": "60px",
+                "inpuType": "text",
+                "name": "Button Height"
+            }
+        }
+    },
     "social_fix_nav": {
         "enable": false,
         "name": "social-fix-nav",
@@ -195,11 +256,6 @@
     "ion_range_slider": {
         "enable": false,
         "name": "ion-range-slider",
-        "settings": {}
-    },
-    "google_translator": {
-        "enable": false,
-        "name": "google-translator",
         "settings": {}
     },
     "element_peek": {
