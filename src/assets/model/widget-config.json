@@ -37,6 +37,9 @@
         "value": "Read More",
         "name": "Site Button Text"
       },
+      "buttonInstruction": {
+        "name": "Pag same sa global 0 ang ilagay"
+      },
       "buttonWidth": {
         "inpuType": "text",
         "value": "220px",

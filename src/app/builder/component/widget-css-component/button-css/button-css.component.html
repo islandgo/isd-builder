@@ -1,4 +1,10 @@
 <div *ngIf="widget[1]['name'] == 'siteButton'">
-  .hp-{{ regionData[1]["keyword_class"] }} .site-btn-primary
-  {{ " {" }} max-width: {{ buttonWidth }}; min-height: {{ buttonHeight }}; }
+  <div *ngIf="buttonWidth == '0' && buttonHeight == '0'; else default"></div>
+  <ng-template #default>
+    .hp-{{ regionData[1]["keyword_class"] }} .site-btn-primary
+    {{ " {" }}
+    <div *ngIf="buttonWidth != '0'">max-width: {{ buttonWidth }};</div>
+    <div *ngIf="buttonHeight != '0'">min-height: {{ buttonHeight }};</div>
+    }
+  </ng-template>
 </div>

@@ -25,12 +25,12 @@ export class RegionSectionModel {
             name: "Image File Name",
           },
           width: {
-            value: "1600px",
+            value: "1600",
             inpuType: "text",
             name: "width",
           },
           height: {
-            value: "800px",
+            value: "800",
             inpuType: "text",
             name: "height",
           },
