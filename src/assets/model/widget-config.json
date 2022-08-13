@@ -37,9 +37,6 @@
         "value": "Read More",
         "name": "Site Button Text"
       },
-      "buttonInstruction": {
-        "name": "Pag same sa global 0 ang ilagay"
-      },
       "buttonWidth": {
         "inpuType": "text",
         "value": "220px",
@@ -69,6 +66,15 @@
         ],
         "value": "jpg",
         "name": "image-type"
+      },
+      "slickVideo": {
+        "inpuType": "select",
+        "selectValue": [
+          "true",
+          "false"
+        ],
+        "value": "false",
+        "name": "slick-video"
       },
       "slidesToShow": {
         "inpuType": "text",
@@ -183,10 +189,12 @@
       "grayScaleOnImage": {
         "inpuType": "select",
         "selectValue": [
-          "true",
-          "false"
+          "on-hover",
+          "not-in-hover",
+          "permanent",
+          "none"
         ],
-        "value": "false",
+        "value": "not-in-hover",
         "name": "gray-scale-img"
       },
       "autoplay": {

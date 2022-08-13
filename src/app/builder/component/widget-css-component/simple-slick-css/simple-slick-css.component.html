@@ -28,7 +28,7 @@
 
     <!-- Arrows -->
     <div
-        *ngIf="widget[1]['settings']['arrows']['value'] == 'arrows' || widget[1]['settings']['arrows']['value'] == 'arrowsWithButton'; else noArrow">
+        *ngIf="arrows == 'arrows' || arrows == 'arrowsWithButton'; else noArrow">
         .{{ regionData[1]["keyword_class"] }}-slick-arrow {{' {'}}
         color: #ffc000;
         gap: 34px;
@@ -54,7 +54,7 @@
 
     </div>
     <!-- Dots -->
-    <div *ngIf='widget[1]["settings"]["dots"]["value"] == "true"'>
+    <div *ngIf='dots == "true"'>
         /* Dots */
 
         .slick-dots {{ " {" }}
@@ -126,7 +126,7 @@
     </div>
 
     <!-- Bottom Gradient overlay  -->
-    <div *ngIf="widget[1]['settings']['gradientBottomOverlay']['value'] == 'true'">
+    <div *ngIf="gradientBottomOverlay == 'true'">
         .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::before {{ " {" }}
         content: "";
         position: absolute;
@@ -186,7 +186,7 @@
     </div>
 
     <!-- Hover Border -->
-    <div *ngIf="widget[1]['settings']['hoverWithBorder']['value'] == 'true'">
+    <div *ngIf="hoverWithBorder == 'true'">
         .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item::before {{ " {" }}
         border: {{widget[1]['settings']['hoverWithBorder']['selectTextValues']['border']}};
         position: absolute;
@@ -212,7 +212,7 @@
 
 
     <!-- Hover Image Logo -->
-    <div *ngIf="widget[1]['settings']['hoverWithImgLogo']['value'] == 'true'">
+    <div *ngIf="hoverWithImgLogo == 'true'">
         .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::after {{ " {" }}
         content: "";
         position: absolute;
@@ -239,7 +239,7 @@
     </div>
 
     <!-- Replacing Image -->
-    <div *ngIf="widget[1]['settings']['hoverWithImg']['value'] == 'true'">
+    <div *ngIf="hoverWithImg == 'true'">
         .{{ regionData[1]["keyword_class"] }}-item .{{ regionData[1]["keyword_class"] }}-image-hover {{ " {" }}
         filter: grayscale(1);
         opacity: 0;
@@ -255,47 +255,60 @@
     </div>
 
     <!-- Gray Scale -->
-    <div *ngIf="widget[1]['settings']['grayScaleOnImage']['value'] == 'true'">
+    <div *ngIf="grayscale != 'none'">
         .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item img {{ " {" }}
         -webkit-transition: all 0.4s ease-in-out;
         -moz-transition: all 0.4s ease-in-out;
         -o-transition: all 0.4s ease-in-out;
         transition: all 0.4s ease-in-out;
+        <div *ngIf="grayscale == 'not-in-hover'">
+            filter: grayscale(1);
+        </div>
+        <div *ngIf="grayscale == 'permanent'">
+            filter: grayscale(1);
+        </div>
         }
 
-        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item:hover img {{ " {" }}
-        filter: grayscale(1);
-        }
+        <div *ngIf="grayscale != 'permanent'">
+            .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item:hover img {{ " {" }}
+            <div *ngIf="grayscale == 'on-hover'">
+                filter: grayscale(1);
+            </div>
+            <div *ngIf="grayscale == 'not-in-hover'">
+                filter: none;
+            </div>
+            }
+        </div>
     </div>
-    <!-- Content Position -->
-    <div *ngIf="widget[1]['settings']['contentType']['value'] != 'testimonial'">
-        <div *ngIf="widget[1]['settings']['contentPosition']['value'] != 'below-image'">
+  <!-- Testimonials -->
+    <div *ngIf="contentType != 'testimonial'">
+        <div *ngIf="contentPosition != 'below-image'">
             .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content {{ " {" }}
             position: absolute;
             width: auto;
             z-index: 4;
-            <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-left'">
+            <div *ngIf="contentPosition == 'bottom-left'">
                 left: 30px;
                 bottom: 20px;
             </div>
-            <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-right'">
+            <div *ngIf="contentPosition == 'bottom-right'">
                 right: 30px;
                 bottom: 20px;
             </div>
-            <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-center'">
+            <div *ngIf="contentPosition == 'bottom-center'">
                 left: 50%;
                 transform: translateX(-50%);
                 bottom: 20px;
             </div>
-            <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'top-left'">
+            <div *ngIf="contentPosition == 'top-left'">
                 left: 30px;
                 top: 20px;
             </div>
-            <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'top-right'">
+            <div *ngIf="contentPosition == 'top-right'">
                 right: 30px;
                 top: 20px;
             </div>
-            <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'center'">
+            <div *ngIf="contentPosition == 'center'">
                 left: 50%;
                 top: 50%;
                 transform: translate(-50%, -50%);
@@ -303,8 +316,8 @@
             }
         </div>
     </div>
-
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'testimonial'">
+<!-- Testimonials -->
+    <div *ngIf="contentType == 'testimonial'">
         .hp-testimonials .testimonials-content {{ " {" }}
         display: flex !important;
         flex-direction: column;
@@ -312,14 +325,70 @@
         align-items: center;
         }
     </div>
-
-    <div *ngIf="widget[1]['settings']['contentPosition']['value'] == 'below-image'">
+  <!-- Content Position -->
+    <div *ngIf="contentPosition == 'below-image'">
         .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content {{ " {" }}
         margin-top: 18px;
         }
     </div>
+    <!-- Slick Video Play -->
+    <div *ngIf="slickVideo == 'true'">
+        .{{ regionData[1]["keyword_class"] }}-item {{ " {" }}
+        position: relative;
+        }
+        .site-play-btn {{ " {" }}
+        align-items: center;
+        cursor: pointer;
+        border-radius: 100%;
+        border: 2px solid #fff;
+        color: #fff;
+        display: flex;
+        font-size: 20px;
+        height: 70px;
+        justify-content: center;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 70px;
+        z-index: 2;
+
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+        }
+
+        .site-play-btn::after {{ " {" }}
+        position: absolute;
+        pointer-events: none;
+        content: "";
+        top: 50%;
+        left: 50%;
+        width: 80px;
+        height: 80px;
+        border: 1.3px solid rgba(255, 255, 255, 0.4);
+        border-radius: 100%;
+        z-index: 1;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        transform: translate(-50%, -50%);
+        }
+
+        .{{ regionData[1]["keyword_class"] }}-item:hover .site-play-btn::after {{ " {" }}
+        opacity: 0;
+        }
+
+        .{{ regionData[1]["keyword_class"] }}-item:hover .site-play-btn {{ " {" }}
+        background: #d50000;
+        border-color: #d50000;
+        }
+
+    </div>
     <!-- Title Style -->
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
+    <div *ngIf="contentType == 'title'">
         .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content em {{ " {" }}
         display: block;
         font-style: normal;
@@ -333,7 +402,7 @@
         }
     </div>
     <!-- Title Content Style -->
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'">
+    <div *ngIf="contentType == 'title-content'">
 
     .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content em {{ " {" }}
       display: block;
