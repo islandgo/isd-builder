@@ -23,7 +23,8 @@ export class QuickSearchMobileCssComponent implements OnInit {
 
   resetCounter() {
     if (this.widget[1]["name"] == "quick-search") {
-      return this.RegionsService.convertNumberToWord(this.counter++);
+      // return this.RegionsService.convertNumberToWord(this.counter++);
+      return this.counter++;
     }
   }
 }

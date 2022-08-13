@@ -1,39 +1,45 @@
 <div *ngIf="widget[1]['name'] == 'simple-slick'" class="slick-html-widget">
   &lt;div class="{{ regionClassName }}{{ widget[1]["suffixClass"] }}"&gt;
   <div *ngFor="let item of [].constructor(slickItem); let i = index">
-    <div *ngIf="widget[1]['settings']['contentType']['value'] != 'testimonial'">
+    <div *ngIf="contentType != 'testimonial'">
       <pre>
-            &lt;a href="[blogurl]" aria-label="{{ regionClassName }}" class="{{ regionClassName }}-item"&gt;
+        <div *ngIf="slickVideo == 'true'; else default">
+           &lt;a href="https://www.youtube.com/watch?v=mSgTCmR5aPQ" aria-label="{{ regionClassName }}" class="{{ regionClassName }}-item aios-video-popup" target="_blank"&gt;
+        </div>
+        <ng-template #default>
+          &lt;a href="[blogurl]" aria-label="{{ regionClassName }}" class="{{ regionClassName }}-item"&gt;
+        </ng-template>
             &lt;div class="{{ regionClassName }}-img canvas-wrapper"&gt;
-            &lt;canvas width="{{widget[1]["settings"]["image_width"]["value"]}}"
-            height="{{widget[1]["settings"]["image_height"]["value"]}}"&gt;&lt;/canvas&gt;
+            &lt;canvas width="{{imageWidth}}"
+            height="{{imageHeight}}"&gt;&lt;/canvas&gt;
             &lt;img alt="{{ regionClassName }}" class="img-{{ regionClassName }} canvas-img img-responsive lazyload"
             src="&lt;?php echo get_stylesheet_directory_uri() ?&gt;/images/{{ regionClassName }}-{{ i + 1 }}.{{imageType}}" /&gt;
-            <div *ngIf="widget[1]['settings']['hoverWithImg']['value'] == 'true'">
+            <div *ngIf="slickVideo == 'true'">
+              &lt;span class="site-play-btn ai-font-play-button-a"&gt;&lt;/span&gt;
+            </div>
+            <div *ngIf="hoverWithImg == 'true'">
                 &lt;img alt="{{ regionClassName }}-image-hover" class="canvas-img {{ regionClassName }}-image-hover
                 img-responsive"
+                width="{{imageWidth}}"
+                height="{{imageHeight}}"
                 src="&lt;?php echo
                 get_stylesheet_directory_uri() ?&gt;/images/{{regionClassName }}-img-hover.jpg"&gt;
             </div>&lt;/div&gt;</pre>
       &lt;div class="{{ regionClassName }}-content"&gt;
       <!-- Icon -->
-      <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
+      <div *ngIf="contentType == 'icon'">
         &lt;span class="ai-font-instagram"&gt;&lt;/span&gt;
       </div>
       <!-- Title -->
-      <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
-        &lt;em&gt;EzekSayson&lt;/em&gt;
-      </div>
+      <div *ngIf="contentType == 'title'">&lt;em&gt;EzekSayson&lt;/em&gt;</div>
 
       <!-- Title + Content " -->
-      <div
-        *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'"
-      >
+      <div *ngIf="contentType == 'title-content'">
         &lt;em&gt;EzekSayson&lt;/em&gt; &lt;p&gt;sample&lt;/p&gt;
       </div>
       <!-- Title + Content -->
       <!-- Listings " -->
-      <div *ngIf="widget[1]['settings']['contentType']['value'] == 'listings'">
+      <div *ngIf="contentType == 'listings'">
         <pre>
                     &lt;h3&gt;$62,000,000&lt;/h3&gt;
                     &lt;p&gt;1700 East Walnut Avenue &lt;br&gt; El Segundo, CA 90245&lt;/p&gt;
@@ -51,7 +57,7 @@
     </div>
 
     <!-- Testimonial -->
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'testimonial'">
+    <div *ngIf="contentType == 'testimonial'">
       <pre>
 &lt;div class="{{ regionClassName }}-content"&gt;
                 &lt;span class="quote"&gt;“&lt;/span&gt;
@@ -64,18 +70,13 @@
 
   &lt;/div&gt;
   <!-- Arrow -->
-  <div
-    *ngIf="
-      widget[1]['settings']['arrows']['value'] == 'arrows' ||
-      widget[1]['settings']['arrows']['value'] == 'arrowsWithButton'
-    "
-  >
+  <div *ngIf="arrows == 'arrows' || arrows == 'arrowsWithButton'">
     <pre>
 &lt;div class="{{ regionClassName }}-slick-arrow"&gt;
         &lt;span class="ai-font-arrow-h-p prev"&gt;&lt;/span&gt;</pre
     >
-    <div *ngIf="widget[1]['settings']['arrows']['value'] == 'arrowsWithButton'">
-      &lt;a href="[blogurl]" class="site-btn" aria-label="VIEW ALL
+    <div *ngIf="arrows == 'arrowsWithButton'">
+      &lt;a href="[blogurl]" class="site-btn-primary" aria-label="VIEW ALL
       {{ regionClassName }}"&gt;VIEW ALL {{ regionClassName }}&lt;/a&gt;
     </div>
     <pre>

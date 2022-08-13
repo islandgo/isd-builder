@@ -12,6 +12,12 @@ export class SimpleSlickComponent implements OnInit {
 
   slickItem: any;
   imageType: any;
+  slickVideo: any;
+  contentType: any;
+  arrows: any;
+  hoverWithImg: any;
+  imageWidth: any;
+  imageHeight: any;
 
   constructor(public RegionsService: RegionsService) {}
 
@@ -19,6 +25,13 @@ export class SimpleSlickComponent implements OnInit {
     if (this.widget[1]["name"] == "simple-slick") {
       this.slickItem = +this.widget[1]["settings"]["number_of_item"]["value"];
       this.imageType = this.widget[1]["settings"]["imageType"]["value"];
+      // Start
+      this.slickVideo = this.widget[1]["settings"]["slickVideo"]["value"];
+      this.contentType = this.widget[1]["settings"]["contentType"]["value"];
+      this.arrows = this.widget[1]["settings"]["arrows"]["value"];
+      this.hoverWithImg = this.widget[1]["settings"]["hoverWithImg"]["value"];
+      this.imageWidth = this.widget[1]["settings"]["image_width"]["value"];
+      this.imageHeight = this.widget[1]["settings"]["image_height"]["value"];
     }
   }
 }
