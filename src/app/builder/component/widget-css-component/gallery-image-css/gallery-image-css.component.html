@@ -1,316 +1,227 @@
-<div *ngIf="widget[1]['name'] == 'gallery-image'" class="gallery-image-container">
+<pre>
+  <div *ngIf="widget[1]['name'] == 'gallery-image'" class="gallery-image-container">
+    .{{ regionData[1]["keyword_class"] }}-item {{ " {" }}
 
+    display: block;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    }
+   
+    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::before,
+    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::after  {{ " {" }}
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      inset:0;
+      z-index: 1;
 
-
-  .{{ regionData[1]["keyword_class"] }}-image {{ " {" }}
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 100%;
-  cursor: pointer;
+      -webkit-transition: all 0.4s ease-in-out;
+      -moz-transition: all 0.4s ease-in-out;
+      -o-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
   }
-
-
-  <!-- Bottom Gradient overlay  -->
-  <div *ngIf="widget[1]['settings']['gradientBottomOverlay']['value'] == 'true'">
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::before {{ " {" }}
-    content: "";
-    position: absolute;
-    pointer-events: none;
-
-    width: 100%;
-    height: 100%;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
-
-    /* Permalink - use to edit and share this gradient:
-    https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+56,0.65+100 */
-    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 56%, rgba(0,0,0,0.65) 100%); /* FF3.6-15
-    */
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 56%,rgba(0,0,0,0.65) 100%); /*
-    Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 56%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+,
-    FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000',
-    endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
-
-    }
-  </div>
-  <!-- overlay -->
-  <div
-    *ngIf="widget[1]['settings']['overlay']['value'] == 'not-in-hover' || widget[1]['settings']['overlay']['value'] == 'on-hover' ">
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::before {{ " {" }}
-    content: "";
-    position: absolute;
-    background: {{ widget[1]['settings']['overlay']['selectTextValues']['rbga'] }};
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 1;
-    <div *ngIf="widget[1]['settings']['overlay']['value'] == 'on-hover'">
-      opacity: 0;
+    <div *ngIf="gradientBottomOverlay == 'true'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::before {{ " {" }}
+      /* Permalink - use to edit and share this gradient:
+      https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+56,0.65+100 */
+      background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 56%, rgba(0,0,0,0.65) 100%); /* FF3.6-15
+      */
+      background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 56%,rgba(0,0,0,0.65) 100%); /*
+      Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 56%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+,
+      FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000',
+      endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+      }
     </div>
-    pointer-events: none;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-    }
-
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item:hover .{{
-    regionData[1]["keyword_class"] }}-img::before {{ " {" }}
-    <div *ngIf="widget[1]['settings']['overlay']['value'] == 'not-in-hover'">
-      opacity: 0;
+    <!-- overlay -->
+    <div
+      *ngIf="overlay == 'not-in-hover' || overlay == 'on-hover' ">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::after {{ " {" }}
+      background: {{ widget[1]['settings']['overlay']['selectTextValues']['rbga'] }};
+      <div *ngIf="overlay == 'on-hover'">
+        opacity: 0;
+      </div>
+      }
+  
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item:hover .{{
+      regionData[1]["keyword_class"] }}-img::after {{ " {" }}
+      <div *ngIf="overlay == 'not-in-hover'">
+        opacity: 0;
+      </div>
+  
+      <div *ngIf="overlay == 'on-hover'">
+        opacity: 1;
+      </div>
+      }
     </div>
 
-    <div *ngIf="widget[1]['settings']['overlay']['value'] == 'on-hover'">
+    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item::before,
+    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item::after {{ " {" }}
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      inset:0;  
+      z-index: 2;
+
+       -webkit-transition: all 0.4s ease-in-out;
+      -moz-transition: all 0.4s ease-in-out;
+      -o-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
+  }
+  
+    <!-- Hover Border -->
+    <div *ngIf="hoverWithBorder == 'true'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item::before {{ " {" }}
+      border: {{widget[1]['settings']['hoverWithBorder']['selectTextValues']['border']}};
+      opacity: 0;
+      }
+  
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item:hover::before {{ "
+      {" }}
       opacity: 1;
+      }
     </div>
-    }
-  </div>
+  
+  
+    <!-- Hover Image Logo -->
+    <div *ngIf="hoverWithImgLogo == 'true'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::after {{ " {" }}
+      background: url(images/communities-logo.png) center no-repeat;
+      background-size: contain;
+      inset: initial;
 
-  <!-- Hover Border -->
-  <div *ngIf="widget[1]['settings']['hoverWithBorder']['value'] == 'true'">
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item::before {{ " {" }}
-    border: {{widget[1]['settings']['hoverWithBorder']['selectTextValues']['border']}};
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 2;
-    pointer-events: none;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-    opacity: 0;
-    }
+      width: 100%;
+      height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
 
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item:hover::before {{ "
-    {" }}
-    opacity: 1;
-    }
-  </div>
-
-
-  <!-- Hover Image Logo -->
-  <div *ngIf="widget[1]['settings']['hoverWithImgLogo']['value'] == 'true'">
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-img::after {{ " {" }}
-    content: "";
-    position: absolute;
-    background: url(images/communities-logo.png) center no-repeat;
-    background-size: contain;
-    width: 100%;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    opacity: 0;
-    pointer-events: none;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-    }
-
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item:hover .{{
-    regionData[1]["keyword_class"] }}-img::after {{ " {" }}
-    opacity: 1;
-    }
-  </div>
-
-  <!-- Replacing Image -->
-  <div *ngIf="widget[1]['settings']['hoverWithImg']['value'] == 'true'">
-    .{{ regionData[1]["keyword_class"] }}-item .{{ regionData[1]["keyword_class"] }}-image-hover {{ " {" }}
-    filter: grayscale(1);
-    opacity: 0;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-    }
-
-    .{{ regionData[1]["keyword_class"] }}-item:hover .{{ regionData[1]["keyword_class"] }}-image-hover {{ " {" }}
-    opacity: 1;
-    }
-  </div>
-
-  <!-- Gray Scale -->
-  <div *ngIf="widget[1]['settings']['grayScaleOnImage']['value'] == 'true'">
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item img {{ " {" }}
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-    }
-
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item:hover img {{ " {" }}
-    filter: grayscale(1);
-    }
-  </div>
-
-
-
-  .{{ regionData[1]["keyword_class"] }}-image::before {{ " {" }}
-  content: "";
-  position: absolute;
-  pointer-events: none;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  opacity: 0;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-  background: rgba(0,0,0, 0.5);
-  }
-
-  .{{ regionData[1]["keyword_class"] }}-image:hover::before {{ " {" }}
-  opacity: 1;
-  }
-  <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image span {{ " {" }}
-    color: #fff;
-    position: absolute;
-    font-size: 23px;
-    z-index: 1;
-    }
-  </div>
-
-
-  <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image em {{ " {" }}
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 25px;
-    position: absolute;
-    letter-spacing: 0.01em;
-    z-index: 1;
-    }
-  </div>
-
-  <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title-content'">
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
-    regionData[1]["keyword_class"] }}-details {{ " {" }}
-    position: relative;
-    z-index: 1;
-    }
-
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
-    regionData[1]["keyword_class"] }}-details em {{ " {" }}
-    color: #ffbE19;
-    text-transform: uppercase;
-    font-size: 20px;
-    margin-bottom: 16px;
-    }
-
-    .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{
-    regionData[1]["keyword_class"] }}-details p {{ " {" }}
-    color: #ffbE19;
-    font-size: 16px;
-    margin-bottom: 32px;
-    }
-  </div>
-
-  <div
-    *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-left' && widget[1]['settings']['contentType']['value'] != 'title-content'">
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image span {{ " {" }}
+      opacity: 0;
+      }
+  
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item:hover .{{
+      regionData[1]["keyword_class"] }}-img::after {{ " {" }}
+      opacity: 1;
+      }
     </div>
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image em {{ " {" }}
+  
+    <!-- Replacing Image -->
+    <div *ngIf="hoverWithImg == 'true'">
+      .{{ regionData[1]["keyword_class"] }}-item .{{ regionData[1]["keyword_class"] }}-image-hover {{ " {" }}
+      filter: grayscale(1);
+      opacity: 0;
+      -webkit-transition: all 0.4s ease-in-out;
+      -moz-transition: all 0.4s ease-in-out;
+      -o-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
+      }
+  
+      .{{ regionData[1]["keyword_class"] }}-item:hover .{{ regionData[1]["keyword_class"] }}-image-hover {{ " {" }}
+      opacity: 1;
+      }
     </div>
-    left: 15px;
-    bottom: 15px;
-    }
-  </div>
+  
+    <!-- Gray Scale -->
+    <div *ngIf="grayScaleOnImage == 'true'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item .{{ regionData[1]["keyword_class"] }}-img img {{ " {" }}
+      -webkit-transition: all 0.4s ease-in-out;
+      -moz-transition: all 0.4s ease-in-out;
+      -o-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
+      }
+  
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-item:hover .{{ regionData[1]["keyword_class"] }}-img img {{ " {" }}
+      filter: grayscale(1);
+      }
+    </div>
+  
+  
+  <!-- Content Position -->
+    <div *ngIf="contentPosition != 'below-image'">
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-details {{ " {" }}
+        position: absolute;
+        width: auto;
+        z-index: 4;
+        <div *ngIf="contentPosition == 'bottom-left'">
+            left: 30px;
+            bottom: 20px;
+        </div>
+        <div *ngIf="contentPosition == 'bottom-right'">
+            right: 30px;
+            bottom: 20px;
+        </div>
+        <div *ngIf="contentPosition == 'bottom-center'">
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 20px;
+        </div>
+        <div *ngIf="contentPosition == 'top-left'">
+            left: 30px;
+            top: 20px;
+        </div>
+        <div *ngIf="contentPosition == 'top-right'">
+            right: 30px;
+            top: 20px;
+        </div>
+        <div *ngIf="contentPosition == 'center'">
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        </div>
+        }
+    </div>
 
-  <div
-    *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-right' && widget[1]['settings']['contentType']['value'] != 'title-content'">
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image span {{ " {" }}
+    <div *ngIf="contentPosition == 'below-image'">
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-details {{ " {" }}
+        margin-top: 18px;
+        }
     </div>
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image em {{ " {" }}
-    </div>
-    right: 15px;
-    bottom: 15px;
-    }
-  </div>
 
-  <div
-    *ngIf="widget[1]['settings']['contentPosition']['value'] == 'bottom-center' && widget[1]['settings']['contentType']['value'] != 'title-content'">
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image span {{ " {" }}
-    </div>
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image em {{ " {" }}
-    </div>
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 15px;
+    <!-- Content Type -->
+    <div *ngIf="contentType == 'icon'">
+      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-details span {{ " {" }}
+        color: #fff;
+        font-size: 23px;
     }
-  </div>
+    </div>
+      <div *ngIf="contentType == 'title'">
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-details em {{ " {" }}
+        display: block;
+        text-transform: uppercase;
 
-  <div
-    *ngIf="widget[1]['settings']['contentPosition']['value'] == 'center' && widget[1]['settings']['contentType']['value'] != 'title-content'">
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image span {{ " {" }}
+        font-weight: 700;
+        font-size: 26px;
+        letter-spacing: 0.1em;
+        color: #ffc000;
+        margin-bottom: 10px;
+        }
     </div>
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image em {{ " {" }}
-    </div>
-    left: 50%;
-    top:50%;
-    transform: translate(-50%,-50%);
-    }
-  </div>
+    <!-- Title Content Style -->
+    <div *ngIf="contentType == 'title-content'">
 
-  <div
-    *ngIf="widget[1]['settings']['contentPosition']['value'] == 'top-left' && widget[1]['settings']['contentType']['value'] != 'title-content'">
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image span {{ " {" }}
-    </div>
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image em {{ " {" }}
-    </div>
-    left: 15px;
-    top: 15px;
-    }
-  </div>
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-details em {{ " {" }}
+              display: block;
+              font-style: normal;
+              text-transform: uppercase;
+              
+              font-weight: 700;
+              font-size: 26px;
+              letter-spacing: 0.1em;
+              color: #ffc000;
+              margin-bottom: 10px;
+          }
 
-  <div
-    *ngIf="widget[1]['settings']['contentPosition']['value'] == 'top-right' && widget[1]['settings']['contentType']['value'] != 'title-content'">
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image span {{ " {" }}
+        .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-content span {{ " {" }}
+          font-size: 15px;
+          color: #ffc000;
+          letter-spacing: 0.1em;
+          margin-bottom: 10px;
+          }
     </div>
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image em {{ " {" }}
-    </div>
-    right: 15px;
-    top: 15px;
-    }
-  </div>
 
-  <div
-    *ngIf="widget[1]['settings']['contentPosition']['value'] == 'below-image' && widget[1]['settings']['contentType']['value'] != 'title-content'">
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'icon'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image span {{ " {" }}
-    </div>
-    <div *ngIf="widget[1]['settings']['contentType']['value'] == 'title'">
-      .hp-{{ regionData[1]["keyword_class"] }} .{{ regionData[1]["keyword_class"] }}-image em {{ " {" }}
-    </div>
-    position: relative;
-    right: 15px;
-    top: 15px;
-    }
+   
   </div>
-</div>
+</pre>
