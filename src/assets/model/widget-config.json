@@ -264,21 +264,44 @@
     "name": "gallery-image",
     "suffix": "-container",
     "settings": {
-      "grid_parent": {
-        "inpuType": "select",
-        "selectValue": [
-          "grid",
-          "block"
-        ],
-        "value": "grid",
-        "name": "display",
-        "cssOnly": true
+      "number_of_item": {
+        "inpuType": "text",
+        "value": "6",
+        "name": "number-of-item"
       },
       "grid_template_columns": {
         "inpuType": "text",
         "value": "repeat(3,1fr)",
         "name": "grid-template-columns",
         "cssOnly": true
+      },
+      "grid_max_width": {
+        "inpuType": "text",
+        "value": "1250px",
+        "name": "max-width",
+        "cssOnly": true
+      },
+      "grid_row_gap": {
+        "inpuType": "text",
+        "value": "0px",
+        "name": "grid-row-gap",
+        "cssOnly": true
+      },
+      "grid_column_gap": {
+        "inpuType": "text",
+        "value": "0px",
+        "name": "grid-column-gap",
+        "cssOnly": true
+      },
+      "image_width": {
+        "inpuType": "text",
+        "value": "370",
+        "name": "image width"
+      },
+      "image_height": {
+        "inpuType": "text",
+        "value": "370",
+        "name": "image height"
       },
       "hasImage": {
         "inpuType": "select",
@@ -384,39 +407,6 @@
         ],
         "value": "false",
         "name": "gray-scale-img"
-      },
-      "grid_max_width": {
-        "inpuType": "text",
-        "value": "1250px",
-        "name": "max-width",
-        "cssOnly": true
-      },
-      "grid_row_gap": {
-        "inpuType": "text",
-        "value": "0px",
-        "name": "grid-row-gap",
-        "cssOnly": true
-      },
-      "grid_column_gap": {
-        "inpuType": "text",
-        "value": "0px",
-        "name": "grid-column-gap",
-        "cssOnly": true
-      },
-      "number_of_item": {
-        "inpuType": "text",
-        "value": "6",
-        "name": "number-of-item"
-      },
-      "image_width": {
-        "inpuType": "text",
-        "value": "370",
-        "name": "image width"
-      },
-      "image_height": {
-        "inpuType": "text",
-        "value": "370",
-        "name": "image height"
       }
     }
   },
