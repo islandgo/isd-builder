@@ -46,6 +46,9 @@
         "inpuType": "text",
         "value": "60px",
         "name": "Site Button Height"
+      },
+      "instruction": {
+        "name": "Pag same height or width sa global -> burahin ang laman sa text box"
       }
     }
   },
@@ -303,15 +306,6 @@
         "value": "370",
         "name": "image height"
       },
-      "hasImage": {
-        "inpuType": "select",
-        "selectValue": [
-          "true",
-          "false"
-        ],
-        "value": "true",
-        "name": "has-image"
-      },
       "imageType": {
         "inpuType": "select",
         "selectValue": [
@@ -412,7 +406,41 @@
   },
   "welcome_content": {
     "name": "welcome-content",
-    "settings": {}
+    "settings": {
+      "welcomeImage": {
+        "inpuType": "select",
+        "selectValue": [
+          "left",
+          "right"
+        ],
+        "value": "left",
+        "name": "Welcome Image"
+      },
+      "welcomeDetails": {
+        "inpuType": "select",
+        "selectValue": [
+          "left",
+          "right"
+        ],
+        "value": "right",
+        "name": "Welcome Details"
+      },
+      "imageFileName": {
+        "inpuType": "text",
+        "value": "welcome-agent.png",
+        "name": "Image File Name"
+      },
+      "image_width": {
+        "inpuType": "text",
+        "value": "450",
+        "name": "image width"
+      },
+      "image_height": {
+        "inpuType": "text",
+        "value": "590",
+        "name": "image height"
+      }
+    }
   },
   "contact_form": {
     "name": "contact-form",
